@@ -1,0 +1,344 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Abiteboul \bgroup \em et al.\egroup
+  }{1996}]{abiteboul1996temporal}
+Serge Abiteboul, Laurent Herr, and J~Bussche.
+\newblock Temporal versus first-order logic to query temporal databases.
+\newblock Technical report, Stanford InfoLab, 1996.
+
+\bibitem[\protect\citeauthoryear{Baader and Ohlbach}{1995}]{baader1995multi}
+Franz Baader and Hans~Ju{\"u}rgen Ohlbach.
+\newblock A multi-dimensional terminological knowledge representation language.
+\newblock {\em Journal of Applied Non-Classical Logics}, 5(2):153--197, 1995.
+
+\bibitem[\protect\citeauthoryear{Baier and Katoen}{2008}]{Baier:PMC:2008}
+Christel Baier and JoostPieter Katoen.
+\newblock {\em Principles of Model Checking}.
+\newblock The MIT Press, 2008.
+
+\bibitem[\protect\citeauthoryear{Benthem}{1977}]{Benthem1977Modal}
+van J. F. A.~K Benthem.
+\newblock Modal correspondence theory.
+\newblock 1977.
+
+\bibitem[\protect\citeauthoryear{Bienvenu \bgroup \em et al.\egroup
+  }{2010}]{Bienvenu2010Knowledge}
+Meghyn Bienvenu, H{\'e}lene Fargier, and Pierre Marquis.
+\newblock Knowledge compilation in the modal logic s5.
+\newblock In {\em Twenty-Fourth AAAI Conference on Artificial Intelligence,
+  AAAI 2010, Atlanta, Georgia, Usa, July}, pages 261--266, 2010.
+
+\bibitem[\protect\citeauthoryear{Bobrow \bgroup \em et al.\egroup
+  }{1997}]{bobrow1997special}
+Daniel~G Bobrow, Devika Subramanian, Russell Greiner, and Judea Pearl.
+\newblock Special issue on relevance 97 (1-2).
+\newblock {\em Artificial Intelligence Journal}, 1997.
+
+\bibitem[\protect\citeauthoryear{Bolotov}{1999}]{Bolotov:1999:JETAI}
+Alexander Bolotov.
+\newblock A clausal resolution method for ctl branching-time temporal logic.
+\newblock {\em Journal of Experimental \& Theoretical Artificial Intelligence},
+  11(1):77--93, 1999.
+
+\bibitem[\protect\citeauthoryear{Bolotov}{2000}]{bolotov2000clausal}
+Alexander Bolotov.
+\newblock {\em Clausal resolution for branching-time temporal logic.}
+\newblock PhD thesis, Manchester Metropolitan University, 2000.
+
+\bibitem[\protect\citeauthoryear{Browne \bgroup \em et al.\egroup
+  }{1988}]{DBLP:journals/tcs/BrowneCG88}
+Michael~C. Browne, Edmund~M. Clarke, and Orna Grumberg.
+\newblock Characterizing finite kripke structures in propositional temporal
+  logic.
+\newblock {\em Theor. Comput. Sci.}, 59:115--131, 1988.
+
+\bibitem[\protect\citeauthoryear{Chaki \bgroup \em et al.\egroup
+  }{2004}]{chaki2004expressive}
+Sagar Chaki, Edmund Clarke, Orna Grumberg, Jo{\"e}l Ouaknine, Natasha
+  Sharygina, Tayssir Touili, and Helmut Veith.
+\newblock An expressive verification framework for state/event systems.
+\newblock Technical report, CARNEGIE-MELLON UNIV PITTSBURGH PA SCHOOL OF
+  COMPUTER SCIENCE, 2004.
+
+\bibitem[\protect\citeauthoryear{Chaki \bgroup \em et al.\egroup
+  }{2005}]{chaki2005concurrent}
+Sagar Chaki, Edmund Clarke, Jo{\"e}l Ouaknine, Natasha Sharygina, and Nishant
+  Sinha.
+\newblock Concurrent software verification with states, events, and deadlocks.
+\newblock {\em Formal Aspects of Computing}, 17(4):461--483, 2005.
+
+\bibitem[\protect\citeauthoryear{Chomicki and
+  Niwinski}{1995}]{chomicki1995feasibility}
+Jan Chomicki and Damian Niwinski.
+\newblock On the feasibility of checking temporal integrity constraints.
+\newblock {\em Journal of Computer and System Sciences}, 51(3):523--535, 1995.
+
+\bibitem[\protect\citeauthoryear{Chomicki}{1994}]{chomicki1994temporal}
+Jan Chomicki.
+\newblock Temporal query languages: a survey.
+\newblock In {\em International Conference on Temporal Logic}, pages 506--534.
+  Springer, 1994.
+
+\bibitem[\protect\citeauthoryear{Clarke and Emerson}{1981}]{clarke1981design}
+Edmund~M Clarke and E~Allen Emerson.
+\newblock Design and synthesis of synchronization skeletons using branching
+  time temporal logic.
+\newblock In {\em Workshop on Logic of Programs}, pages 52--71. Springer, 1981.
+
+\bibitem[\protect\citeauthoryear{Clarke \bgroup \em et al.\egroup
+  }{1986}]{DBLP:journals/toplas/ClarkeES86}
+Edmund~M. Clarke, E.~Allen Emerson, and A.~Prasad Sistla.
+\newblock Automatic verification of finite-state concurrent systems using
+  temporal logic specifications.
+\newblock {\em {ACM} Trans. Program. Lang. Syst.}, 8(2):244--263, 1986.
+
+\bibitem[\protect\citeauthoryear{Clarke \bgroup \em et al.\egroup
+  }{1994}]{clarke1994model}
+Edmund~M Clarke, Orna Grumberg, and David~E Long.
+\newblock Model checking and abstraction.
+\newblock {\em ACM transactions on Programming Languages and Systems (TOPLAS)},
+  16(5):1512--1542, 1994.
+
+\bibitem[\protect\citeauthoryear{Clarke \bgroup \em et al.\egroup
+  }{2018}]{DBLP:reference/mc/ClarkeHV18}
+Edmund~M. Clarke, Thomas~A. Henzinger, and Helmut Veith.
+\newblock Introduction to model checking.
+\newblock In {\em Handbook of Model Checking.\/}
+  \shortcite{DBLP:reference/mc/ClarkeHV18}, pages 1--26.
+
+\bibitem[\protect\citeauthoryear{Delgrande}{2017}]{DBLP:journals/jair/Delgrande17}
+James~P. Delgrande.
+\newblock A knowledge level account of forgetting.
+\newblock {\em J. Artif. Intell. Res.}, 60:1165--1213, 2017.
+
+\bibitem[\protect\citeauthoryear{Eiter and Wang}{2008}]{Eiter2008Semantic}
+Thomas Eiter and Kewen Wang.
+\newblock {\em Semantic forgetting in answer set programming}.
+\newblock Elsevier Science Publishers Ltd., 2008.
+
+\bibitem[\protect\citeauthoryear{Emerson and
+  Halpern}{1986}]{emerson1986sometimes}
+E~Allen Emerson and Joseph~Y Halpern.
+\newblock ``sometimes" and ``not never" revisited: on branching versus linear
+  time temporal logic.
+\newblock {\em Journal of the ACM (JACM)}, 33(1):151--178, 1986.
+
+\bibitem[\protect\citeauthoryear{Emerson}{1990}]{emerson1990temporal}
+E~Allen Emerson.
+\newblock Temporal and modal logic.
+\newblock In {\em Formal Models and Semantics}, pages 995--1072. Elsevier,
+  1990.
+
+\bibitem[\protect\citeauthoryear{Fagin \bgroup \em et al.\egroup
+  }{2004}]{fagin2004reasoning}
+Ronald Fagin, Joseph~Y Halpern, Yoram Moses, and Moshe Vardi.
+\newblock {\em Reasoning about knowledge}.
+\newblock MIT press, 2004.
+
+\bibitem[\protect\citeauthoryear{Fang \bgroup \em et al.\egroup
+  }{2019}]{fang2019forgetting}
+Liangda Fang, Yongmei Liu, and Hans Van~Ditmarsch.
+\newblock Forgetting in multi-agent modal logics.
+\newblock {\em Artificial Intelligence}, 266:51--80, 2019.
+
+\bibitem[\protect\citeauthoryear{Ghosh \bgroup \em et al.\egroup
+  }{2016}]{ghosh2016arsenal}
+Shalini Ghosh, Daniel Elenius, Wenchao Li, Patrick Lincoln, Natarajan Shankar,
+  and Wilfried Steiner.
+\newblock Arsenal: automatic requirements specification extraction from natural
+  language.
+\newblock In {\em NASA Formal Methods Symposium}, pages 41--46. Springer, 2016.
+
+\bibitem[\protect\citeauthoryear{Hodkinson \bgroup \em et al.\egroup
+  }{2000}]{hodkinson2000decidable}
+Ian Hodkinson, Frank Wolter, and Michael Zakharyaschev.
+\newblock Decidable fragments of first-order temporal logics.
+\newblock {\em Annals of Pure and Applied logic}, 106(1-3):85--134, 2000.
+
+\bibitem[\protect\citeauthoryear{Konev \bgroup \em et al.\egroup
+  }{2009}]{konev2009forgetting}
+Boris Konev, Dirk Walther, and Frank Wolter.
+\newblock Forgetting and uniform interpolation in large-scale description logic
+  terminologies.
+\newblock In {\em Twenty-First International Joint Conference on Artificial
+  Intelligence}, 2009.
+
+\bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
+Jerome Lang and Pierre Marquis.
+\newblock On propositional definability.
+\newblock {\em Artificial Intelligence}, 172(8):991--1017, 2008.
+
+\bibitem[\protect\citeauthoryear{Lang and Marquis}{2010}]{Lang2010Reasoning}
+Jerome Lang and Pierre Marquis.
+\newblock {\em Reasoning under inconsistency: a forgetting-based approach}.
+\newblock Elsevier Science Publishers Ltd, 2010.
+
+\bibitem[\protect\citeauthoryear{Laroussinie and
+  Markey}{2014}]{laroussinie2014quantified}
+Fran{\c{c}}ois Laroussinie and Nicolas Markey.
+\newblock Quantified ctl: expressiveness and complexity.
+\newblock {\em arXiv preprint arXiv:1411.4332}, 2014.
+
+\bibitem[\protect\citeauthoryear{Lin and Reiter}{1994}]{lin1994forget}
+Fangzhen Lin and Ray Reiter.
+\newblock Forget it.
+\newblock In {\em Working Notes of AAAI Fall Symposium on Relevance}, pages
+  154--159, 1994.
+
+\bibitem[\protect\citeauthoryear{Lin}{2001}]{lin2001strongest}
+Fangzhen Lin.
+\newblock On strongest necessary and weakest sufficient conditions.
+\newblock {\em Artificial Intelligence}, 128(1):143--159, 2001.
+
+\bibitem[\protect\citeauthoryear{Lin}{2003}]{lin2003compiling}
+Fangzhen Lin.
+\newblock Compiling causal theories to successor state axioms and strips-like
+  systems.
+\newblock {\em Journal of Artificial Intelligence Research}, 19:279--314, 2003.
+
+\bibitem[\protect\citeauthoryear{Liu and Wen}{2011}]{Yongmei:IJCAI:2011}
+Yongmei Liu and Ximing Wen.
+\newblock On the progression of knowledge in the situation calculus.
+\newblock In {\em IJCAI 2011, Proceedings of the 22nd International Joint
+  Conference on Artificial Intelligence}, pages 976--982, Barcelona, Catalonia,
+  Spain, 2011. IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Lutz and Wolter}{2011}]{Lutz:IJCAI:2011}
+Carsten Lutz and Frank Wolter.
+\newblock Foundations for uniform interpolation and forgetting in expressive
+  description logics.
+\newblock In {\em IJCAI 2011, Proceedings of the 22nd International Joint
+  Conference on Artificial Intelligence}, pages 989--995, Barcelona, Catalonia,
+  Spain, 2011. IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Manna and Pnueli}{1995}]{manna1995temporal}
+Zohar Manna and Amir Pnueli.
+\newblock {\em Temporal Verification of Reactive Systems: Safety}, volume~2.
+\newblock Springer Science \& Business Media, 1995.
+
+\bibitem[\protect\citeauthoryear{Marquis}{2003}]{Marquis2003Propositional}
+Pierre Marquis.
+\newblock {\em Propositional independence: formula-variable independence and
+  forgetting}.
+\newblock AI Access Foundation, 2003.
+
+\bibitem[\protect\citeauthoryear{Pnueli and Manna}{1992}]{pnueli1992temporal}
+Amir Pnueli and Zohar Manna.
+\newblock The temporal logic of reactive and concurrent systems.
+\newblock {\em Springer}, 16:12, 1992.
+
+\bibitem[\protect\citeauthoryear{Pnueli}{1977}]{pnueli1977temporal}
+Amir Pnueli.
+\newblock The temporal logic of programs.
+\newblock In {\em 18th Annual Symposium on Foundations of Computer Science
+  (sfcs 1977)}, pages 46--57. IEEE, 1977.
+
+\bibitem[\protect\citeauthoryear{Pnueli}{1986}]{pnueli1986applications}
+Amir Pnueli.
+\newblock Applications of temporal logic to the specification and verification
+  of reactive systems: a survey of current trends.
+\newblock In {\em Current trends in Concurrency}, pages 510--584. Springer,
+  1986.
+
+\bibitem[\protect\citeauthoryear{Schild}{1993}]{schild1993combining}
+Klaus Schild.
+\newblock Combining terminological logics with tense logic.
+\newblock In {\em Portuguese Conference on Artificial Intelligence}, pages
+  105--120. Springer, 1993.
+
+\bibitem[\protect\citeauthoryear{Sernadas}{1980}]{sernadas1980temporal}
+Amilcar Sernadas.
+\newblock Temporal aspects of logical procedure definition.
+\newblock {\em Information systems}, 5(3):167--187, 1980.
+
+\bibitem[\protect\citeauthoryear{Su \bgroup \em et al.\egroup
+  }{2009}]{Kaile:JAIR:2009}
+Kaile Su, Abdul Sattar, Guanfeng Lv, and Yan Zhang.
+\newblock Variable forgetting in reasoning about knowledge.
+\newblock {\em Journal of Artificial Intelligence Research}, 35:677--716, 2009.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2010}]{Wang:AMAI:2010}
+Zhe Wang, Kewen Wang, Rodney~W. Topor, and Jeff~Z. Pan.
+\newblock Forgetting for knowledge bases in \textrm{DL-Lite}.
+\newblock {\em Annuals of Mathematics and Artificial Intelligence},
+  58(1-2):117--151, 2010.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2012}]{Yisong:KR:2012}
+Yisong Wang, Yan Zhang, Yi~Zhou, and Mingyi Zhang.
+\newblock Forgetting in logic programs under strong equivalence.
+\newblock In {\em Principles of Knowledge Representation and Reasoning:
+  Proceedings of the Thirteenth International Conference}, pages 643--647,
+  Rome, Italy, 2012. AAAI Press.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2013}]{Yisong:IJCAI:2013}
+Yisong Wang, Kewen Wang, and Mingyi Zhang.
+\newblock Forgetting for answer set programs revisited.
+\newblock In {\em IJCAI 2013, Proceedings of the 23rd International Joint
+  Conference on Artificial Intelligence}, pages 1162--1168, Beijing, China,
+  2013. IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Wang}{2015}]{Yisong:2015:arx}
+Yisong Wang.
+\newblock On forgetting in tractable propositional fragments.
+\newblock http://arxiv.org/abs/1502.02799, 2015.
+
+\bibitem[\protect\citeauthoryear{Wong}{2009}]{Wong:PhD:Thesis}
+Ka-Shu Wong.
+\newblock {\em Forgetting in Logic Programs}.
+\newblock PhD thesis, The University of New South Wales, 2009.
+
+\bibitem[\protect\citeauthoryear{Zhang and Foo}{2006}]{DBLP:Zhang:AIJ2006}
+Yan Zhang and Norman~Y. Foo.
+\newblock Solving logic program conflict through strong and weak forgettings.
+\newblock {\em Artificial Intelligence}, 170(8-9):739--778, 2006.
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2009a}]{Zhang2009Knowledge}
+Yan Zhang and Yi~Zhou.
+\newblock Knowledge forgetting: Properties and applications.
+\newblock {\em Artificial Intelligence}, 173(16):1525--1537, 2009.
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2009b}]{Yan:AIJ:2009}
+Yan Zhang and Yi~Zhou.
+\newblock Knowledge forgetting: Properties and applications.
+\newblock {\em Artificial Intelligence}, 173(16-17):1525--1537, 2009.
+
+\bibitem[\protect\citeauthoryear{Zhang \bgroup \em et al.\egroup
+  }{2005}]{Zhang2005Solving}
+Yan Zhang, Norman~Y. Foo, and Kewen Wang.
+\newblock Solving logic program conflict through strong and weak forgettings.
+\newblock In {\em Ijcai-05, Proceedings of the Nineteenth International Joint
+  Conference on Artificial Intelligence, Edinburgh, Scotland, Uk, July
+  30-August}, pages 627--634, 2005.
+
+\bibitem[\protect\citeauthoryear{Zhang \bgroup \em et al.\egroup
+  }{2008}]{zhang2008first}
+Lan Zhang, Ullrich Hustadt, and Clare Dixon.
+\newblock First-order resolution for ctl.
+\newblock Technical report, Citeseer, 2008.
+
+\bibitem[\protect\citeauthoryear{Zhang \bgroup \em et al.\egroup
+  }{2009}]{zhang2009refined}
+Lan Zhang, Ullrich Hustadt, and Clare Dixon.
+\newblock A refined resolution calculus for ctl.
+\newblock In {\em International Conference on Automated Deduction}, pages
+  245--260. Springer, 2009.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017}]{zhao2017role}
+Yizheng Zhao and Renate~A Schmidt.
+\newblock Role forgetting for alcoqh ($\delta$)-ontologies using an
+  ackermann-based approach.
+\newblock In {\em Proceedings of the 26th International Joint Conference on
+  Artificial Intelligence}, pages 1354--1361. AAAI Press, 2017.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2018}]{ZhaoSchmidt18a}
+Y.~Zhao and R.~A. Schmidt.
+\newblock Fame: An automated tool for semantic forgetting in expressive
+  description logics.
+\newblock In D.~Galmiche, S.~Schulz, and R.~Sebastiani, editors, {\em Automated
+  Reasoning (IJCAR 2018)}, volume 10900 of {\em Lecture Notes in Artificial
+  Intelligence}, pages 19--27. Springer, 2018.
+
+\end{thebibliography}
