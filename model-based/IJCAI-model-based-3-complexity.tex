@@ -219,15 +219,15 @@ We also investigate some properties and algorithm for the forgetting.
 \end{abstract}
 
 \section{Introduction}
-Weakest precondition, we also call weakest sufficient condition (WSC), is introduced by Dijkstra in~\cite{dijkstra1978guarded}.
-Strongest postcondition (we also call strongest necessary condition (SNC)), a dual concept, was introduced subsequently.
-The SNC is the most general consequent and the WSC is the most general precondition.
-In program correctness methods, SNC and WSC meet their toughest challenge when
-they deal with iterative constructs~\cite{mraihi2011computing}.
+\emph{Weakest precondition}, we also call \emph{weakest sufficient condition} (WSC), is introduced by Dijkstra in~\cite{dijkstra1978guarded}.
+\emph{Strongest postcondition} (we also call \emph{strongest necessary condition} (SNC)), a dual concept, was introduced subsequently. 
+WSC was widely used in program \emph{verification}, especially in generating counterexamples~\cite{dailler2018instrumenting}.
+%In program correctness methods, SNC and WSC meet their toughest challenge when
+%they deal with iterative constructs~\cite{mraihi2011computing}.
 It is known that the computing of WSC for code fragment $S$ with respect to assertion $Q$  requires $S$  must terminate~\cite{tremblay1996logic}.
 
 
-However, in model checking of concurrent system with there is at least one successor state for each state $s$ in this system, the termination of this system is impossible.
+However, in \emph{model checking} of concurrent system with there is at least one successor state for each state $s$ in this system, the termination of this system is impossible.
 Informally, given a transition system $\Hm$ with $s_0$ as an initial state and a specification $\varphi$ (in this article we suppose it is a {\em Computation Tree Logic}
 (\CTL\ in short)~\cite{clarke1981design} formula), we should decide whether $(\Hm, s_0) \models \varphi$. It is a good thing if $(\Hm, s_0) \models \varphi$ indeed. However, if $(\Hm, s_0) \nvDash \varphi$, how can we find the WSC $\psi$ under a given set of atoms such that $(\Hm, s_0) \models \psi \supset \varphi$.
 It can be shown by the following example.
@@ -268,9 +268,9 @@ which is defined for states of a given \MPK-structure.
 
 
 
-As a logical notion, forgetting was first formally defined
+As a logical notion, \emph{forgetting} was first formally defined
 in propostional and first order logics by Lin and Reiter~\cite{lin1994forget}.
-Over the last twenty years, researchers have developed forgetting notions and theories not only in classical logic but also in other non-classical logic systems, such as forgetting in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. In application, forgetting has been used in planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
+Over the last twenty years, researchers have developed forgetting notions and theories not only in classical logic but also in other non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. In application, forgetting has been used in planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
 %knowledge compilation \cite{Zhang2009Knowledge,Bienvenu2010Knowledge},
 createing restricted views of ontologies~\cite{ZhaoSchmidt18a}, strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and so on.
 
