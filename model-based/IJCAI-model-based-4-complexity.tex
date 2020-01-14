@@ -205,14 +205,22 @@
 \maketitle
 
 \begin{abstract}
-This article describes a method to compute the SNC (WSC) of a given property (a \CTL\ formula) under a given transition system (expressed as a Kripke structure) by proposing a semantic forgetting for \CTL.
+
+Computation Tree Logic  (\CTL) is 
+%a well-studied branching-time temporal logic which stands as one of the standard
+one of the central formalisms in formal verification.  As a specification language, it is used to express a property that the system at hand is expected to satisfy. From both the verification and the system design points of view, some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties such that a further abstraction might be more desirable.  In such regard,  the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given specification are very informative; hence, might be of crucial importance.  In such scenario, how to subtract such piece of information without altering the relevant system behaviour or violating the existing specifications rises as a natural question.  To address such scenario in a principled way, we develop a formal framework based on the notion of \emph{forgetting} (a line of research in knowledge representation) for \CTL, and investigate its theoretical properties. In particular,  we show that our framework satisfies essential postulates of forgetting, and can be used to compute SNC and WSC of a \CTL specification under a given model. Furthermore, we outline the computational complexity of our work, including various results for the relevant fragment $\CTL_{\ALL\NEXT}$.
+
+
+
+
 %Model checking is an automatic, model-based, property-verification approach. It is intended to be used for concurrent, reactive systems and originated as a post-development methodology.
 %Specification, which prescribes what the system has to do and what not, is used to product the properties that a system should satisfy.
 %Computation Tree Logic (\CTL) is one of the main logical formalisms for program specification and verification.
 %In order to compute the SNC (WSC) of a given property (a \CTL\ formula) under a given transition system, we study forgetting in CTL from the sematic forgetting point of view.
-We show that the CTL system is close under our definition of forgetting, and this definition satisfies those four postulates of forgetting at first.
-By changing a transition system $\Hm$ into its characteristic formula, we can compute the WSC (SNC) of a property under the transition system.
-We also investigate some properties and algorithm for the forgetting.
+%a decent amount of study has been carried out under the name o
+%We show that the CTL system is close under our definition of forgetting, and this definition satisfies those four postulates of forgetting at first.
+%By changing a transition system $\Hm$ into its characteristic formula, we can compute the WSC (SNC) of a property under the transition system.
+%We also investigate some properties and algorithm for the forgetting.
 %And then we will show the SNC and WSC can be computed by using the technology of forgetting.
 %Besides, an algorithm model-based has been put forward to compute forgetting in \CTL.
 %Keywords: Forgetting, \CTL, Bisimulation, Specification, Resolution.
@@ -389,9 +397,10 @@ The priorities for the \CTL\ connectives are assumed to be (from the highest to 
 \end{equation*}
 
 We are now in the position to define the semantics of $\cal L$.
-Let ${\cal M}=(S,R,L,s_0)$ be an model structure, $s\in S$ and $\phi$ a formula of $\cal L$.
+Let ${\cal M}=(S,R,L,s_0)$ be a model structure, $s\in S$ and $\phi$ a formula of $\cal L$.
 The {\em satisfiability} relationship between $({\cal M},s)$ and $\phi$,
 written $({\cal M},s)\models\phi$, is inductively defined on the structure of $\phi$ as follows:
+
 \begin{itemize}
   \item $({\cal M},s)\not\models\bot$;
   \item $({\cal M},s)\models p$ iff $p\in L(s)$;
@@ -1015,7 +1024,7 @@ Then we have the following model-based Algorithm~\ref{alg:compute:forgetting:by:
 By Lemma~\ref{lem:models:formula} and Theorem~\ref{thm:VBChFEQ} we can prove the correctness of this algorithm.
 
 
-\begin{algorithm}[[tb]
+\begin{algorithm}[tb]
 \caption{Model-based: Computing forgetting}
 \label{alg:compute:forgetting:by:VB}
 \KwIn{A CTL formula $\varphi$ and a set $V$ of atoms}
