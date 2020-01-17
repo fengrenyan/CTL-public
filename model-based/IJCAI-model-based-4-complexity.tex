@@ -363,7 +363,7 @@ The {\em signature} of the language $\cal L$ of \CTL\ includes:
 \begin{itemize}
   \item a finite set of Boolean variables, called {\em atoms} of $\cal L$: $\cal A$;
   \item the classical connectives: $\lor$ and $\neg$;
-  \item the propositional constants: $\bot$;
+  %\item the propositional constants: $\bot$;
   \item the path quantifiers: $\ALL$ and $\EXIST$;
   \item the temporal operators: \NEXT, \FUTURE, \GLOBAL\, \UNTIL\ and \UNLESS, that
   means `neXt state', `some Future state', `all future states (Globally)', `Until' and `Unless', respectively;
@@ -373,7 +373,7 @@ The {\em signature} of the language $\cal L$ of \CTL\ includes:
 The {\em (existential normal form or ENF in short) formulas} of
 $\cal L$ are inductively defined via a Backus Naur form:
 \begin{equation}\label{def:CTL:formulas}
-  \phi ::= \bot\mid p \mid\neg\phi \mid \phi\lor\phi \mid
+  \phi ::=  p \mid\neg\phi \mid \phi\lor\phi \mid
     \EXIST \NEXT \phi \mid
     %\EXIST \FUTURE \phi \mid
     \EXIST \GLOBAL \phi \mid
@@ -469,40 +469,34 @@ ${\cal K}_i=({\cal M}_i,s_i)$ with $i\in\{1,2\}$,
 Now, we define the notion of $V$-bisimulation between \MPK-structures:
 \begin{definition}[$V$-bisimulation]
   \label{def:V-bisimulation}
-   Let $V\subseteq\cal A$. The $V$-{\em bisimular relation} ${\cal B}$ between
-   \MPK-structures is defined as:
-  \[({\cal K}_1,{\cal K}_2)\in {\cal B}\mbox{ if and only if } ({\cal K}_1,{\cal K}_2)\in {\Hb_i}\mbox{ for all }i\ge 0.\]
-\end{definition}
-In this case, ${\cal K}_1$ and ${\cal K}_2$ are called $V$-bisimular.
-
-
-
-\begin{proposition}\label{Vbi:Equ}
-Let $V\subseteq\cal A$
-%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
-and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
-Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
-  \begin{enumerate}[(i)]
-    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
-    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
-    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
-   \end{enumerate}
- where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
-\end{proposition}
-
-
-Two pathes $\pi_i=(s_{i,1},s_{i,2},\ldots)$ of $\Hm_i$ with $i\in \{1,2\}$
- are $V$-{\em bisimular} if
- \[({\cal K}_{1,j},{\cal K}_{2,j})\in {\cal B} \mbox { for every $j\ge 0$ }\]
+   Let $V\subseteq\cal A$. Given   two \MPK-structures ${\cal K}_1$ and ${\cal K}_2$ are $V$-{\em bisimilar},  denoted ${\cal K}_1 \lrto_V {\cal K}_2$
+ if and only if $ ({\cal K}_1,{\cal K}_2)\in {\Hb_i}\mbox{ for all }i\ge 0.$ Moreover, two paths $\pi_i=(s_{i,1},s_{i,2},\ldots)$ of $\Hm_i$ with $i\in \{1,2\}$
+ are $V$-{\em bisimilar} if
+$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 0$ }$
  where ${\cal K}_{i,j}=(\Hm_i,s_{i,j})$.
 
- In the following we abbreviated $({\cal K}_1,{\cal K}_2)\in \cal B$
- by $(s_1,s_2)\in \cal B$
- when the underlying model structures of states $s_1$ and $s_2$ are clear from their contexts
- or there is no confusion.
-  The $V$-bisimular relation is uniformly abbreviated as $\lrto_V$ for convenience.% when it is clear
+\end{definition}
+
+%\begin{proposition}\label{Vbi:Equ}
+%Let $V\subseteq\cal A$
+%%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+%and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+%Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+%  \begin{enumerate}[(i)]
+%    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
+%    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+%    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+%   \end{enumerate}
+% where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+%\end{proposition}
+
+
+
+ In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
+ by $s_1 \lrto_V s_2 $
+ whenever the underlying model structures of states $s_1$ and $s_2$ are clear from the context.% when it is clear
   %from its context.
  % The next lemma easily follows from the above definition,
 \begin{lemma}\label{lem:equive}
@@ -533,7 +527,7 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
 
 
 
-Intuitively, if two \MPK-structures are $V$-bisimular, then they satisfy the same formula $\varphi$ that dose not contain any atoms in $V$, \ie $\IR(\varphi, V)$.
+Intuitively, if two \MPK-structures are $V$-bisimilar, then they satisfy the same formula $\varphi$ that dose not contain any atoms in $V$, \ie $\IR(\varphi, V)$.
 \begin{theorem}\label{thm:V-bisimulation:EQ}
   Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
   ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
@@ -542,7 +536,7 @@ Intuitively, if two \MPK-structures are $V$-bisimular, then they satisfy the sam
 
 
 Let $V\subseteq\cal A$, ${\cal M}_i~(i=1,2)$ be  model structures.
-A computation tree $\Tr_n(s_1)$ of ${\cal M}_1$ is $V$-{\em bisimular}
+A computation tree $\Tr_n(s_1)$ of ${\cal M}_1$ is $V$-{\em bisimilar}
 to a computation tree $\Tr_n(s_2)$ of ${\cal M}_2$, written
 $({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$ (or simply
 $\Tr_n(s_1)\lrto_V\Tr_n(s_2)$), if % $({\cal M}_1,s_1)\lrto_V({\cal M}_2,s_2)$.
@@ -564,13 +558,13 @@ hold trivially for $n=0$.
   \[(s_1,s_2)\in{\cal B}_n\mbox{ iff }
   \Tr_j(s_1)\lrto_V\Tr_j(s_2)\mbox{ for every $0\le j\le n$}.\]
 \end{proposition}
-This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto_V s_2$, otherwise there is some $k$ such that $\Tr_k(s_1)$ and $\Tr_k(s_2)$ are not $V$-bisimular.
+This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto_V s_2$, otherwise there is some $k$ such that $\Tr_k(s_1)$ and $\Tr_k(s_2)$ are not $V$-bisimilar.
 
 \begin{proposition}\label{pro:k}
   Let $V\subseteq \Ha$, $\Hm$ be a model structure and $s,s'\in S$
   such that $(s,s')\notin \cal B$.
   There exists a least number $k$ such that
-  $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimular.
+  $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.
 \end{proposition}
 In this case the  model structure ${\cal M}$ is called $V$-{\em distinguishable} (by
 states $s$ and $s'$ at the least depth $k$), which is denoted by $\dis_V({\cal M},s,s',k)$.
@@ -601,15 +595,14 @@ Let $V\subseteq \Ha$, $\Hm =(S,R,L,s_0)$ be a model structure and $s\in S$.
 The {\em characterize formula} of the computation tree $\Tr_n(s)$ on $V$,
 written ${\cal F}_V(\Tr_n(s))$, is defined recursively as:
 \begin{align*}
-  & {\cal F}_V(\Tr_0(s)) = \bigwedge_{p \in V\cap L(s)}p
+   {\cal F}_V(\Tr_0(s)) &=  \bigwedge_{p \in V\cap L(s)}p
      \wedge \bigwedge_{q\in V-L(s)} \neg q,\\
-  & {\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
-    \EXIST \NEXT T(s')
-    \wedge
-    \ALL \NEXT \bigvee_{(s,s')\in R} T(s')
-    \wedge {\cal F}_V(\Tr_0(s))
+   {\cal F}_V(\Tr_{k+1}(s))& = \bigwedge_{(s,s')\in R}
+    \EXIST \NEXT {\cal F}_V(\Tr_k(s'))\\
+  &\wedge
+    \ALL \NEXT \left( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \right) \wedge {\cal F}_V(\Tr_0(s))
 \end{align*}
-for $k\ge 0$, where $T(s') = {\cal F}_V(\Tr_k(s'))$.
+for $k\ge 0$.
 \end{definition}
 The characterize formula of a computation tree formally exhibit the context of each node on $V$ (atoms are true at this node if they are in V, else false) and the temporal relation between states recursively. In this way, we know:
 
@@ -694,19 +687,22 @@ Then we have:
 It follows that any \CTL\ formula can be described by the disjunction of the characterizing formulas of all the models of itself due to the number of models of a \CTL\ formula is finite.
 
 \begin{theorem}\label{CF}
-Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ be a model structure with initial state $s_0$
-and $\Hm'=(S',R', L',s_0')$ be a model structure with initial state $s_0'$.
-Then  $$(\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
-\mbox{ if and only if }
-({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$$
+Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
+\begin{itemize}
+\item[(a)] $ (\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
+\text{ iff }
+({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$
+
+\item[(b)] $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
+
+
+
+\end{itemize}
+
 \end{theorem}
 
 By the following theorem we also have that given a set $V\subseteq \Ha$, the characterizing formula of an initial \MPK-structure is equivalent uniquely describe this initial \MPK-structure on $V$.
-\begin{theorem}\label{thm:VBChFEQ}
-Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure with initial state $s_0$
-and $\Hm'=(S',R', L',s_0')$ a model structure with initial state $s_0'$.
-If $({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$ then ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
-\end{theorem}
+
 %\begin{proof}
 %This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
 %\end{proof}
@@ -750,28 +746,31 @@ For this reason, the forgetting result is denoted by $\CTLforget(\phi,V)$.
 
 %In the case $\psi$ is a result of forgetting $V$ from $\phi$, there are usually some
 %expected properties (called {\em postulates}: (\W), (\PP), (\NgP) and (\textbf{IR})) for it~\cite{Yan:AIJ:2009}.
-In the case $\psi$ is a result of forgetting $V$ from $\phi$, there are usually some
-expected properties (called {\em postulates}) for them~\cite{Yan:AIJ:2009}:
+Assume you are given a formula $\varphi$, and $\varphi'$ is the formula after forgetting $V$, then we have the following desired properties, also called {\em postulates} of forgetting~\cite{Yan:AIJ:2009}.
 \begin{itemize}
-  \item Weakening (\W): $\varphi \models \psi$;
+  \item Weakening (\W): $\varphi \models \varphi'$;
   \item Positive Persistence (\PP):
-    if $\IR(\eta, V)$ and $\varphi \models \eta$, then $\psi \models \eta$;
-  \item Negative Persistence (\NgP): if $\IR(\eta, V)$ and $\varphi \nvDash \eta$, then $\psi \nvDash \eta$;
-  \item Irrelevance (\textbf{IR}): $\IR(\psi, V)$.
+  Given $\eta \in \CTL$ if $\IR(\eta, V)$ and $\varphi \models \eta$, then $\varphi' \models \eta$;
+  \item Negative Persistence (\NgP):   Given $\eta \in \CTL$  if $\IR(\eta, V)$ and $\varphi \nvDash \eta$, then $\varphi' \nvDash \eta$;
+  \item Irrelevance (\textbf{IR}): $\IR(\varphi', V)$.
 \end{itemize}
+
+%lets explain them here
+
+Intuitive enough, the postulate (\W) says, forgetting weakens the original formula.  (\PP)  and  (\NgP) correspond to the fact that so long as forgotten atoms $V$ are irrelevant to the remaining positive and the negative information, respectively, they do not affect them. (\IR) states that forgotten atoms $V$ are not relevant for the final formula anymore (i.e., $\varphi'$ is $V$-irrelevant).
 
 
 
 \begin{theorem}\label{thm:close}(Representation theorem).
-Let $\varphi$ and $\psi$ be two formulas and $V \subseteq \Ha$.
+Let $\varphi$, $\varphi'$ and $\psi$ be \CTL\ formulas and $V \subseteq \Ha$.
 Then the following statements are equivalent:
 \begin{enumerate}[(i)]
-  \item $\psi \equiv \CTLforget(\varphi, V)$,
-  \item $\psi \equiv \{\phi | \varphi \models \phi \& \IR(\phi, V)\}$,
+  \item $\varphi' \equiv \CTLforget(\varphi, V)$,
+  \item $\varphi'\equiv \{\psi | \varphi \models \psi \text{ and } \IR(\psi, V)\}$,
   \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
 \end{enumerate}
 \end{theorem}
-We can see from this theorem that our definition of forgetting under CTL is close, \ie for any CTL formula the result of forgetting is also a CTL formula,  and captures the four postulates that forgetting should satisfy.
+The above theorem says that \CTL\ is closed under our definition of forgetting, \ie, for any CTL formula the result of forgetting is also a CTL formula,  and captures and entailed by the four postulates that forgetting should satisfy.
 
 \begin{lemma}\label{lem:KF:eq}
 	Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
@@ -1096,35 +1095,35 @@ work is to find an efficient algorithm to compute forgetting in \CTL\ and then W
 
 
 \section{Proof}
-\textbf{Proposition}~\ref{Vbi:Equ}
-Let $V\subseteq\cal A$
-%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
-and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
-Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
-  \begin{enumerate}[(i)]
-    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
-    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
-    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
-   \end{enumerate}
- where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.\\
-\begin{proof}
-$(\Rto)$
-(a) It is apparent that $L_1(s_1)\setminus V = L_2(s_2)\setminus V$;
-(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
-$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')\setminus V = L_2(s_2')\setminus V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
-(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
- This is similar with (b).
-
-$(\Lto)$ (a) $L_1(s_1)\setminus V = L_2(s_2)\setminus V$ implies that $(s_1, s_2) \in \Hb_0$;
-(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
-(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
-$\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
-$\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
-\end{proof}
+%\textbf{Proposition}~\ref{Vbi:Equ}
+%Let $V\subseteq\cal A$
+%%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+%and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+%Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+%  \begin{enumerate}[(i)]
+%    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
+%    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+%    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+%   \end{enumerate}
+% where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.\\
+%\begin{proof}
+%$(\Rto)$
+%(a) It is apparent that $L_1(s_1)\setminus V = L_2(s_2)\setminus V$;
+%(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+%$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')\setminus V = L_2(s_2')\setminus V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+%(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+% This is similar with (b).
+%
+%$(\Lto)$ (a) $L_1(s_1)\setminus V = L_2(s_2)\setminus V$ implies that $(s_1, s_2) \in \Hb_0$;
+%(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
+%(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
+%$\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
+%$\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
+%\end{proof}
 
 
 \begin{lemma}\label{lem:B:relations}
@@ -1192,9 +1191,41 @@ Where ${\cal K}_i^j = (\Hm_i, s_i^j)$ with $i \in \{1, 2\}$ and $0 < j \leq n+1$
 
 (ii) It is clear from (i).
 
-(iii) It is clear from Proposition~\ref{Vbi:Equ}.
+(iii) 
+%It is clear from Proposition~\ref{Vbi:Equ}.
+%\begin{proposition}\label{Vbi:Equ}
+Let $V\subseteq\cal A$
+%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+  \begin{enumerate}[(a)]
+    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
+    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+   \end{enumerate}
+ where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$. 
+ 
+ 
+ $(\Rto)$
+(a) It is apparent that $L_1(s_1)\setminus V = L_2(s_2)\setminus V$;
+(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')\setminus V = L_2(s_2')\setminus V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+ This is similar with (b).
 
-(iv) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' \subseteq S_1 \times S_3$ and $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation between $s_1$ and $s_3$ from the three points of Proposition~\ref{Vbi:Equ} of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+$(\Lto)$ (a) $L_1(s_1)\setminus V = L_2(s_2)\setminus V$ implies that $(s_1, s_2) \in \Hb_0$;
+(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
+(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
+%\end{proposition}
+
+
+(iv) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' \subseteq S_1 \times S_3$ and $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation between $s_1$ and $s_3$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
 \begin{enumerate}[(a)]
   \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
   \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
@@ -1303,7 +1334,7 @@ $s_1 \Hb_0 s_1'$. Therefore $s \Hb_1 s'$, and then we will have $s \Hb_n s'$ by 
 \textbf{Proposition}~\ref{pro:k}   Let $V\subseteq \Ha$, $\Hm$ be a model structure and $s,s'\in S$
   such that $(s,s')\notin \cal B$.
   There exists a least number $k$ such that
-  $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimular.\\
+  $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.\\
 \begin{proof}
 If $(s,s') \notin \cal B$, then there exists a least constant $k$ such that $(s_i, s_j) \notin \Hb_k$, and then there is a least constant m ($m \leq k$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-corresponding by Proposition~\ref{B_to_T}. Let $c=m$, the lemma is proved.
 \end{proof}
@@ -1349,13 +1380,20 @@ This result can be proved by inducting on $n$.
 \begin{proof}
 Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$ due to $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$. On the other hand, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$. Then there is a $(\Hm, s_0)\in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm, s_0)$. And then $(\Hm, s_0) \lrto_{\O} (\Hm', s_0')$ by Theorem~\ref{CF}. Therefore, $(\Hm, s_0)$ is also a model of $\varphi$ by Theorem~\ref{thm:V-bisimulation:EQ}.
 \end{proof}
+bisimilar
+
+\textbf{Theorem}~\ref{CF}
+Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
+\begin{itemize}
+\item[\textit{(a)}] $ (\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
+\text{ iff }
+({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$
+
+\item[\textit{(b)}] $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
 
 
-\textbf{Theorem}~\ref{CF} Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ be a model structure with initial state $s_0$
-and $\Hm'=(S',R', L',s_0')$ be a model structure with initial state $s_0'$.
-Then  $$(\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
-\mbox{ if and only if }
-({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$$
+
+\end{itemize}
 
 In order to prove Theorem~\ref{CF}, we prove the following two lemmas at first.
 
@@ -1421,7 +1459,7 @@ Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $
 
 Now we are in the position of proving Theorem~\ref{CF}.\\
 \begin{proof}
-Let ${\cal F}_V(\Hm, s_0)$ be the characterizing formula of $(\Hm, s_0)$ on $V$.
+(a) Let ${\cal F}_V(\Hm, s_0)$ be the characterizing formula of $(\Hm, s_0)$ on $V$.
 It is apparent that $\IR({\cal F}_V(\Hm, s_0), \overline V)$. We will show that $(\Hm, s_0) \models {\cal F}_V(\Hm, s_0)$ at first.
 
 It is apparent that $(\Hm, s_0) \models {\cal F}_V(\Tr_c(s_0))$ by Lemma~\ref{Bn:to:Tn}.
@@ -1492,14 +1530,14 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
         (3) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((2), Lemma~\ref{Bn:to:Tn}) \\
         (4) $L(s_{k+1}) \setminus \overline V = L'(s_{k+1}') \setminus \overline V$  \hfill   ((3), $c \geq 0)$\\
 
+(b) This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
+
 \end{proof}
 
-\textbf{Theorem}\ref{thm:VBChFEQ} Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure with initial state $s_0$
-and $\Hm'=(S',R', L',s_0')$ a model structure with initial state $s_0'$.
-If $({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$ then ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.\\
-\begin{proof}
-This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
-\end{proof}
+%\textbf{Theorem}\ref{thm:VBChFEQ} Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure with initial state $s_0$
+%and $\Hm'=(S',R', L',s_0')$ a model structure with initial state $s_0'$.
+%If $({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$ then ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.\\
+
 
 
 \textbf{Theorem}~\ref{thm:close}
