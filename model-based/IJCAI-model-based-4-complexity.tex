@@ -731,7 +731,7 @@ of equivalence the forgetting result is unique (up to equivalence).
 By Lemma~\ref{lem:models:formula},such a formula always exists, which
 is equivalent to
 \begin{equation*}
-  \bigvee_{{\cal K}\in  \{{\cal K}'\mbox{ is initial}\mid \exists {\cal K}''\in\Mod(\phi)\ \&\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
+  \bigvee_{{\cal K}\in  \{{\cal K}'\mbox{ is initial }\mid \exists {\cal K}''\in\Mod(\phi)\ \&\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
 \end{equation*}
 For this reason, the forgetting result is denoted by $\CTLforget(\phi,V)$.
 
@@ -774,19 +774,19 @@ The above theorem says that \CTL\ is closed under our definition of forgetting, 
 
 \begin{lemma}\label{lem:KF:eq}
 	Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
-		\overline{\Var(\varphi\cup\{\alpha\})}$. Then
+		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
 	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.
 \end{lemma}
 
 
 \begin{proposition}\label{disTF}
-Let $\varphi$ be a formula, $V$ a set of atoms and $p$ an atom such that $p \notin V$. Then:
+Let $\varphi$ be a formula, $V$ a set of atoms and $p$ an atom such that $p \notin V$. Then,
 \[
 \CTLforget(\varphi, \{p\} \cup V) \equiv \CTLforget(\CTLforget(\varphi, p), V).
 \]
 \end{proposition}
-This means that the result of forgetting $V$ from $\varphi$ can be obtained by forgetting atom in $V$ one by one.
-Similarly, a consequence of the previous proposition is:
+This means that the result of forgetting $V$ from $\varphi$ can be obtained by forgetting atoms in $V$ one by one.
+Moreover, the order of atoms does not matter (commutativity), which follows from  Proposition~\ref{disTF}.
 
 \begin{corollary}\label{disTFV}
 Let $\varphi$ be a formula and $V_i\subseteq{\cal A}~(i=1,2)$. Then:
@@ -796,7 +796,7 @@ Let $\varphi$ be a formula and $V_i\subseteq{\cal A}~(i=1,2)$. Then:
 \end{corollary}
 
 
-The following results, which are satisfied in both classical proposition logic and modal logic \SFive, further illustrate other essential semantic properties of forgetting.
+The following results, which are satisfied in both classical proposition logic and modal logic \SFive~\cite{Yan:AIJ:2009}, further illustrate other essential semantic properties of forgetting.
 \begin{proposition}\label{pro:ctl:forget:1}
 Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$. We have
 \begin{enumerate}[(i)]
@@ -810,7 +810,7 @@ Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$.
 \end{proposition}
 
 
-Another interest result is that the forgetting of $P T \varphi$ ($P\in \{\EXIST, \ALL\}$, $T \in \{\FUTURE, \NEXT\}$) on $V\subseteq \Ha$ can be computed by $PT \CTLforget(\varphi, V)$. This give a convenient method to compute forgetting.
+Another interesting result is that the forgetting of $P T \varphi$ ($P\in \{\EXIST, \ALL\}$, $T \in \{\FUTURE, \NEXT\}$) on $V\subseteq \Ha$ can be computed by $PT \CTLforget(\varphi, V)$. This gives us a convenient method to compute forgetting since we can push the forgetting operator to a subformula without affecting the semantics.
 \begin{proposition}\label{pro:ctl:forget:2}
   Let $V\subseteq\cal A$ and $\phi$ a formula.% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
@@ -928,16 +928,18 @@ the WSC part can be talked similarly.
 %
 %\end{proof}
 
-For the case of formula, we have that the SCN (WSC) of any formula can be defined as follows:
-\begin{definition}\label{formulaNS}
-    Let $\Gamma$ be a formula or an initial \MPK-structure, $\alpha$ be a formula and $P\subseteq (\Var(\Gamma) \cup \Var(\alpha))$. A formula $\varphi$ of $P$ is  said to be a NC (SC) of $\alpha$ on $P$ under $\Gamma$ iff $\Gamma \models \alpha \rto \varphi$. It is said to be a SNC (WSC) if it is a NC (SC), and for any other NC (SC) $\varphi'$, we have that $\Gamma \models \varphi \rto \varphi'$ ($\Gamma \models \varphi' \rto \varphi$).
-    \end{definition}
+In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can replace $q$ (in the definition)  by any formula $\alpha$, and redefine  $V$ as a subset of $\Var(\alpha) \cup \Var(\phi)$.
+
+%  For the case of formula, we have that the SCN (WSC) of any formula can be defined as follows:
+%\begin{definition}\label{formulaNS}
+   % Let $\Gamma$ be a formula or an initial \MPK-structure, $\alpha$ be a formula and $P\subseteq (\Var(\Gamma) \cup \Var(\alpha))$. A formula $\varphi$ of $P$ is  said to be a NC (SC) of $\alpha$ on $P$ under $\Gamma$ iff $\Gamma \models \alpha \rto \varphi$. It is said to be a SNC (WSC) if it is a NC (SC), and for any other NC (SC) $\varphi'$, we have that $\Gamma \models \varphi \rto \varphi'$ ($\Gamma \models \varphi' \rto \varphi$).
+   % \end{definition}
 
 
-  It is seems that the SNC (WSC) of any formula can be obtained by changing to that of a proposition. Formally:
+  It is seems that the SNC and WSC of any formula can be reduced to that of a proposition. 
 \begin{proposition}\label{formulaNS_to_p}
-     Let $\Gamma$ be a formula, $P$, and $\alpha$ be as in Definition \ref{formulaNS}. A formula $\varphi$ of P is the SNC (WSC) of $\alpha$ on P under  $\Gamma$ iff it is the SNC (WSC) of q on P under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$, where q is a new proposition not in $\Gamma$ and $\alpha$.
-    \end{proposition}
+     Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
+ Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$.   \end{proposition}
 
 We propose the theorem of computing the SNC (WSC) of an atom due to the SNC (WSC) of a formula can be changed to the SNC (WSC) of an atom by Proposition~\ref{formulaNS_to_p}.
 \begin{theorem}\label{thm:SNC:WSC:forget}
@@ -1020,8 +1022,8 @@ By the definition of forgetting in \CTL, the set of models of the result of forg
 
 %By this theorem, we can see that any initial \MPK-structures ${\cal K}$ that satisfy $\varphi$ can be transformed to an initial \MPK-structure ${\cal K}'$ such that ${\cal K} \lrto_{\Ha \setminus V} {\cal K}'$ and ${\cal K} \models \varphi$ iff ${\cal K}' \models \varphi$ due to $\IR(\varphi, \Ha\setminus V)$, in which $V= \Var(\varphi)$. Therefore, the size of the model of $\varphi$ is at most $2^m$ by Theorem~\ref{thm:VBChFEQ}(we only consider the number of states of this model).
 
-Then we have the following model-based Algorithm~\ref{alg:compute:forgetting:by:VB} to computing the forgetting under CTL.
-By Lemma~\ref{lem:models:formula} and Theorem~\ref{thm:VBChFEQ} we can prove the correctness of this algorithm.
+Then we have the following model-based Algorithm~\ref{alg:compute:forgetting:by:VB} to compute the forgetting under CTL.
+By Lemma~\ref{lem:models:formula} and Theorem~\ref{CF} we can prove the correctness of this algorithm.
 
 
 \begin{algorithm}[tb]
@@ -1034,17 +1036,19 @@ $T' = {\O}$ // the set of possible initial \MPK-structures \;
 %$m=|\Var(\varphi)|$\;
 $n=|\Ha|$\;
 
-\For {i=1, ..., $2^n$}{
+\For {$i=1, ..., 2^n$}{
        % Enumerating all possible initial \MPK-structures $(\Hm, s_0)$ with $\Hm=(S, R, L,s_0)$ and $|S|=i$\;
         \For {$s_j\in \{s_1, \dots, s_i\}$}{
             Let $s_j$ be an initial state, construct $\Hm=(S, R, L,s_j)$ by the definition of model structure with $S=\{s_1, \dots, s_i\}$\;
-            \If {for each $\cal K\in T'$, $(\Hm, s_j) \nleftrightarrow_{\overline {\Var(\varphi)}} \cal K$}{
-                 Let $T':=T' \cup \{(\Hm, s_j)\}$\;
+            \For {$\cal K\in T'$} {
+             \If {$(\Hm, s_j) \nleftrightarrow_{\overline {\Var(\varphi)}} \cal K$}{
+                 Let $T' \leftarrow T' \cup \{(\Hm, s_j)\}$\;
+             }
              }
         }
         \For {$(\Hm, s_0) \in T'$ }{
             \If {$(\Hm,s_0) \models \varphi$}{
-                $T:= T \cup \{(\Hm,s_0)\}$\;
+                $T \leftarrow T \cup \{(\Hm,s_0)\}$\;
             }
         }
        % For all initial \MPK-structures $(\Hm, s_0)$ \If {$(\Hm,s_0) \models \varphi$}{
@@ -1777,15 +1781,16 @@ The proof of the other part of the proposition is similar.
 
 
 
-\textbf{Proposition}~\ref{formulaNS_to_p}  Let $\Gamma$ be a formula, $P$, and $\alpha$ be as in Definition \ref{formulaNS}. A formula $\varphi$ of P is the SNC (WSC) of $\alpha$ on P under  $\Gamma$ iff it is the SNC (WSC) of q on P under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$, where q is a new proposition not in $\Gamma$ and $\alpha$.\\
+\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$. Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$.   
+
 \begin{proof}
     We prove this for SNC. The case for WSC is similar.
-    Let $\emph{SNC}(\varphi,\alpha,P,\Gamma)$ denote that $\varphi$ is the SNC of $\alpha$ on $P$ under $\Gamma$, and  $\emph{NC}(\varphi,\alpha,P,\Gamma)$ denote that $\varphi$ is the NC of $\alpha$ on $P$ under $\Gamma$.
+    Let $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the SNC of $\alpha$ on $V$ under $\Gamma$, and  $\emph{NC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the NC of $\alpha$ on $V$ under $\Gamma$.
 
-    ($\Rto$) if $\emph{SNC}(\varphi,\alpha,P,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,P,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,P,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $P$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $P$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and {\bfseries (pp)}, \ie $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,P,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,P,\Gamma')$ holds.
+    ($\Rto$) if $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,V,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $V$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $V$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and {\bfseries (pp)}, \ie $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,V,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,V,\Gamma')$ holds.
 
-    ($\Lto$) if $\emph{SNC}(\varphi,q,P,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,P,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,P,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and {\bfseries (pp)}, \ie $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,P,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $P$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,P,\Gamma')$. According to $\emph{SNC}(\varphi,q,P,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and {\bfseries (pp)}, we have
-    $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$, and $\Gamma \models \varphi \rto \varphi'$ by Lemma \ref{lem:KF:eq}. Hence, $\emph{SNC}(\varphi,\alpha,P,\Gamma)$ holds.
+    ($\Lto$) if $\emph{SNC}(\varphi,q,V,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and {\bfseries (pp)}, \ie $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,V,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $V$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,V,\Gamma')$. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and {\bfseries (pp)}, we have
+    $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$, and $\Gamma \models \varphi \rto \varphi'$ by Lemma \ref{lem:KF:eq}. Hence, $\emph{SNC}(\varphi,\alpha,V, \Gamma)$ holds.
     \end{proof}
 
 
@@ -1860,12 +1865,12 @@ As we know that any initial \MPK-structure ${\cal K}$ can be described as a char
 \textbf{Proposition}\ref{pro:time:alg1} Let $\varphi$ be a CTL formula and $V\subseteq \Ha$. The time and space complexity of
 Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.\\
 \begin{proof}
-The time and space spend by Algorithm~\ref{alg:compute:forgetting:by:VB} is mainly the \textbf{for} cycles from sentence 4 to 16.
-Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m}$ number of label functions and $i$ number of possible initial states. In the case, we need the memory for the initial \MPK-model in each time is $(i+i^i+i^{2^m}+1)$.
+The time and space spent by Algorithm~\ref{alg:compute:forgetting:by:VB} is mainly the \textbf{for} cycles between lines 4 and 16.
+Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m}$ number of label functions and $i$ number of possible initial states. In this case, we need the memory for the initial \MPK-model in each time is $(i+i^i+i^{2^m}+1)$.
 %Therefore, in the worst case is $i=2^m$, that is we need $(2^m + 2^{2m}+m*2^m+1)$ memory to store the initial \MPK-model.
 
 For each $1\leq i \leq 2^m$, there is at most $i*i^i*i^{2^m}*i=i^2*i^{(i+2^m)}$ possible initial \MPK-models.
-If we suppose that we can obtain an initial \MPK-models in unit time, then in it will spend $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{2+2*2^m}$ unit time in the worst case. Therefore, the time and space complexity are $O(2^{m*2^m})$.
+Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{2+2*2^m}$ steps in the worst case. Therefore, the time and space complexity are $O(2^{m*2^m})$.
 \end{proof}
 
 
