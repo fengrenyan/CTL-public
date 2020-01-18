@@ -493,7 +493,7 @@ $ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 0$ }$
 %\end{proposition}
 
 
-
+It's apparent that $\lrto_V$ is a binary relation, denoted as $\cal B$, \ie ${\cal K}_1 \lrto_V {\cal K}_2$ iff $({\cal K}_1, {\cal K}_2) \in \cal B$.
  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
  by $s_1 \lrto_V s_2 $
  whenever the underlying model structures of states $s_1$ and $s_2$ are clear from the context.% when it is clear
@@ -649,7 +649,7 @@ The following example show how to compute characterizing formula:
 % in which $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2, s_0)\}$, $L(s_0)= \{a\}$, $L(s_1) =\{a,c\}$ and $L(s_2) = \{b,c\}$. Let $V=\{a, b\}$, compute the characterizing formula of ${\cal K}$ on $V$.
 Let ${\cal K} = (\Hm, s_0)$ in Figure~\ref{Kripke_1} be an initial \MPK-structure and $V=\{a, b\}$, then compute the characterizing formula of ${\cal K}$ on $V$.
 
-It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) - \overline V = L(s_1) -\overline V$, $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ due to there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ (there is only one immediate successor $s'=s_0$) there is $L(s_2) - \overline V \neq L(s') - \overline V$. Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S\ \&\ \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
+It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) \setminus \overline V = L(s_1) \setminus \overline V$, $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ due to there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ (there is only one immediate successor $s'=s_0$) there is $L(s_2)\setminus \overline V \neq L(s') \setminus \overline V$. Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S\ \&\ \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
 %It is apparent that $\Hb_0=\{(s_0, s_1)\}$ and $\Hb_1={\O}$, then $ch(\Hm, s_0) = 1$.
 Then we have:
 \begin{align*}
@@ -886,7 +886,7 @@ Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of 
 In this section, we will give the definition of SNC (WSC) and show that the SNC (WSC) of a specification (a \CTL\ formula) under a given initial \MPK-structure and set $V$ of atoms can be obtained from forgetting in \CTL.
 The SNC (WSC) of a proposition will be given at first:
 \begin{definition}[sufficient and necessary condition]\label{def:NC:SC}
-Let $\phi$ be a formula or an initial \MPK-structure, $\psi$ be a formula, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)-V$
+Let $\phi$ be a formula or an initial \MPK-structure, $\psi$ be a formula, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)\setminus V$
 and $\Var(\psi)\subseteq V$.
 \begin{itemize}
   \item $\psi$  is a {\em necessary condition} (NC in short) of $q$ on $V$ under $\phi$
@@ -943,18 +943,18 @@ In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can
 
 We propose the theorem of computing the SNC (WSC) of an atom due to the SNC (WSC) of a formula can be changed to the SNC (WSC) of an atom by Proposition~\ref{formulaNS_to_p}.
 \begin{theorem}\label{thm:SNC:WSC:forget}
- Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)-V$.
+ Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)\setminus V$.
  \begin{enumerate}[(i)]
-   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\})-V)$
+   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\})\setminus V)$
    is a SNC of $q$ on $V$ under $\varphi$.
-   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\})-V)$
+   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\})\setminus V)$
    is a WSC of $q$ on $V$ under $\varphi$.
  \end{enumerate}
  \end{theorem}
 
  As we have said before that any initial $\MPK$-structure can be characterized by a \CTL\ formula, we can obtain the SNC (WSC) of an initial $\MPK$-structure for satisfy some needed property (formula) by forgetting.
 \begin{theorem}\label{thm:inK:SNC}
-Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha - V$). Then:
+Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha \setminus V$). Then:
  \begin{enumerate}[(i)]
    \item the SNC of $q$ on $V$ under ${\cal K}$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$.
    \item the WSC of $q$ on $V$ under ${\cal K}$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$.
@@ -1198,6 +1198,7 @@ Where ${\cal K}_i^j = (\Hm_i, s_i^j)$ with $i \in \{1, 2\}$ and $0 < j \leq n+1$
 (iii) 
 %It is clear from Proposition~\ref{Vbi:Equ}.
 %\begin{proposition}\label{Vbi:Equ}
+The following property show our result directly.
 Let $V\subseteq\cal A$
 %${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
 and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
@@ -1211,6 +1212,7 @@ Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
    \end{enumerate}
  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$. 
  
+ We prove it form the following two aspects:
  
  $(\Rto)$
 (a) It is apparent that $L_1(s_1)\setminus V = L_2(s_2)\setminus V$;
