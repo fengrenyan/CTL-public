@@ -362,6 +362,7 @@ of the \CTL~\cite{DBLP:journals/toplas/ClarkeES86}.
 The {\em signature} of the language $\cal L$ of \CTL\ includes:
 \begin{itemize}
   \item a finite set of Boolean variables, called {\em atoms} of $\cal L$: $\cal A$;
+  \item constant symbols $\bot$ and $\top$
   \item the classical connectives: $\lor$ and $\neg$;
   %\item the propositional constants: $\bot$;
   \item the path quantifiers: $\ALL$ and $\EXIST$;
@@ -373,7 +374,7 @@ The {\em signature} of the language $\cal L$ of \CTL\ includes:
 The {\em (existential normal form or ENF in short) formulas} of
 $\cal L$ are inductively defined via a Backus Naur form:
 \begin{equation}\label{def:CTL:formulas}
-  \phi ::=  p \mid\neg\phi \mid \phi\lor\phi \mid
+  \phi ::=  \bot \mid \top \mid p \mid\neg\phi \mid \phi\lor\phi \mid
     \EXIST \NEXT \phi \mid
     %\EXIST \FUTURE \phi \mid
     \EXIST \GLOBAL \phi \mid
@@ -403,7 +404,7 @@ The {\em satisfiability} relationship between $({\cal M},s)$ and $\phi$,
 written $({\cal M},s)\models\phi$, is inductively defined on the structure of $\phi$ as follows:
 
 \begin{itemize}
-  \item $({\cal M},s)\not\models\bot$;
+  \item $({\cal M},s)\not\models\bot$ \text{ and }  $({\cal M},s)\models\top$;
   \item $({\cal M},s)\models p$ iff $p\in L(s)$;
   \item $({\cal M},s)\models \phi_1\lor\phi_2$ iff
     $({\cal M},s)\models \phi_1$ or $({\cal M},s)\models \phi_2$;
@@ -585,14 +586,18 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 
 
 %Intuitively, forgetting an atom results in a weaker theory which entails the same set of formulae that are irrelevant to the atom.
-%To present the representation property of forgetting in \CTL\ and compute WSC (SNC) under an initial \MPK-structure, we will give the Characterize formula of an initial \MPK-structure on $V$ in the next subsection.
-Before define the concept of forgetting in \CTL\, we will give the Characterize formula of an initial \MPK-structure on $V$ in the next subsection.
+%To present the representation property of forgetting in \CTL\ and compute WSC (SNC) under an initial \MPK-structure, we will give the characterizing formula of an initial \MPK-structure on $V$ in the next subsection.
+%Before define the concept of forgetting in \CTL\, we will give the characterizing formula of an initial \MPK-structure on $V$ in the next subsection.
 
-\subsection{Characterize formula of initial \MPK-structure}
-Given a set $V\subseteq\Ha$, we can define a formula $\varphi$ of $V$ (that is $\Var(\varphi) \subseteq V$) in \CTL\ to equivalent uniquely describe a computation tree.
+\subsection{Characterization of Initial \MPK-structure} 
+
+In order to introduce our notion of forgetting, and to compute strongest necessary and weakest sufficient conditions, we need a formula that captures the  initial \MPK-structure on $V$ syntactically. We call such formula as characterizing formula.
+In the following, we present such characterization. 
+
+Given a set $V\subseteq\Ha$, we define a formula $\varphi$ of $V$ (that is $\Var(\varphi) \subseteq V$) in \CTL\ that describes a computation tree.
 \begin{definition}\label{def:V:char:formula}
 Let $V\subseteq \Ha$, $\Hm =(S,R,L,s_0)$ be a model structure and $s\in S$.
-The {\em characterize formula} of the computation tree $\Tr_n(s)$ on $V$,
+The {\em characterizing formula} of the computation tree $\Tr_n(s)$ on $V$,
 written ${\cal F}_V(\Tr_n(s))$, is defined recursively as:
 \begin{align*}
    {\cal F}_V(\Tr_0(s)) &=  \bigwedge_{p \in V\cap L(s)}p
@@ -604,13 +609,13 @@ written ${\cal F}_V(\Tr_n(s))$, is defined recursively as:
 \end{align*}
 for $k\ge 0$.
 \end{definition}
-The characterize formula of a computation tree formally exhibit the context of each node on $V$ (atoms are true at this node if they are in V, else false) and the temporal relation between states recursively. In this way, we know:
+The characterizing formula of a computation tree formally exhibit the context of each node on $V$ (atoms are true at this node if they are in V, else false) and the temporal relation between states recursively. In this way, we know:
 
 \begin{lemma}\label{lem:Vb:TrFormula:Equ}
 Let $V\subseteq \Ha$, $\Hm=(S, R, L, s_0)$ and $\Hm'=(S', R', L', s_0')$ be two model structures,
 $s\in S$, $s'\in S'$ and $n\ge 0$. If $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$, then ${\cal F}_V(\Tr_n(s)) \equiv {\cal F}_V(\Tr_n(s'))$.
 \end{lemma}
-Let $s'=s$, it shows that for any formula $\varphi$ of $V$, if $\varphi$ is a characterize formula of $\Tr_n(s)$ then $\varphi \equiv {\cal F}_V(\Tr_n(s))$.
+Let $s'=s$, it shows that for any formula $\varphi$ of $V$, if $\varphi$ is a characterizing formula of $\Tr_n(s)$ then $\varphi \equiv {\cal F}_V(\Tr_n(s))$.
 
 
 
@@ -709,11 +714,11 @@ By the following theorem we also have that given a set $V\subseteq \Ha$, the cha
 
 
 
-\subsection{Semantic properties of forgetting in \CTL}
-In this subsection we will give the definition of forgetting in \CTL\ and study essential semantic properties of forgetting.
- We will first show that our forgetting satisfy these postulates~\cite{Yan:AIJ:2009} that precisely characterize the semantics of forgetting. We then discuss other semantic properties of forgetting.
+\subsection{Semantic Properties of Forgetting in \CTL}
+In this subsection we will give the definition of forgetting in \CTL\ and study it's semantic properties.
+ We will first show via a representation theorem that our definition of forgetting correspond to the readily existing notion of forgetting which is characterised by several desirable properties (also called postulates) suggested in~\cite{Yan:AIJ:2009}. Next, we discuss various additional semantic properties of forgetting.
 
-Now we give the formal definition of forgetting in \CTL\ from the semantic forgetting point view.
+Now, we give the formal definition of forgetting in \CTL\ from the semantic point view.
 \begin{definition}[Forgetting]\label{def:V:forgetting}
   Let $V\subseteq\cal A$ and $\phi$ a formula.
 A formula $\psi$ with $\Var(\psi)\cap V=\emptyset$
@@ -823,10 +828,10 @@ Another interesting result is that the forgetting of $P T \varphi$ ($P\in \{\EXI
 
 
 
-\subsection{Main complexity}
-In the following we consider the main complexities of reasoning problems on forgetting in \CTL.
+\subsection{Complexity Results}
+In the following, we outline the computational complexity of the various tasks regarding the forgetting in \CTL\ and its popular fragment $\CTL_{\ALL\FUTURE}$.  It turns out that the model-checking on forgetting without any restriction is NP-complete.
 %In this part we talk about the main complexity of entailment complexity of forgetting in \CTL.
-\begin{proposition}\label{modelChecking}
+\begin{proposition}[Model Checking on Forgetting]\label{modelChecking}
 Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $V$ a set of atoms. Deciding whether $(\Hm,s_0)$ is a model of $\forget(\varphi, V )$ is NP-complete.
 \end{proposition}
 %\begin{proof}
@@ -882,7 +887,7 @@ Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of 
 \end{enumerate}
 \end{corollary}
 
-\section{SNC and WSC}
+\section{Strongest Necessary and Weakest Sufficient Conditions}
 In this section, we will give the definition of SNC (WSC) and show that the SNC (WSC) of a specification (a \CTL\ formula) under a given initial \MPK-structure and set $V$ of atoms can be obtained from forgetting in \CTL.
 The SNC (WSC) of a proposition will be given at first:
 \begin{definition}[sufficient and necessary condition]\label{def:NC:SC}
@@ -989,7 +994,7 @@ For the Example~\ref{exmp:1}, the WSC of $\varphi$ on $V$ under ${\cal K} =(\Hm,
 \end{example}
 
 
-\section{Algorithm to compute forgetting}
+\section{Algorithm to Compute Forgetting}
 To compute the forgetting in \CTL, we propose a model-based method in this part.
 Literally speaking, the model-based method means that we can obtain the result of forgetting in \CTL\ by obtain all the possible finite models of this result.
 By the definition of forgetting in \CTL, the set of models of the result of forgetting is also a finite set of initial \MPK-structures.
@@ -1372,7 +1377,7 @@ This result can be proved by inducting on $n$.
     \EXIST \NEXT {\cal F}_V(\Tr_{n-k}(s_k'))\right)
     \wedge \ALL \NEXT\left(\bigvee_{(s_{k-1}',s_k')\in R}
     {\cal F}_V(\Tr_{n-k}(s_k') )\right)
-    \wedge {\cal F}_V(\Tr_0(s_{k-1}'))$ by the definition of characterize formula of the computation tree.
+    \wedge {\cal F}_V(\Tr_0(s_{k-1}'))$ by the definition of characterizing formula of the computation tree.
  Then we have for any $(s_{k-1}, s_k) \in R$ there is $(s_{k-1}', s_k') \in R'$ such that $\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$ by $\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$. Besides, for any $(s_{k-1}', s_k') \in R'$ there is $(s_{k-1}, s_k) \in R$ such that $\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$ by $\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$.
  Therefore, we have ${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$ by induction hypothesis.
 \end{proof}
