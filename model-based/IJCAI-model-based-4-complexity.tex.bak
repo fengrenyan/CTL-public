@@ -364,7 +364,7 @@ of the \CTL~\cite{DBLP:journals/toplas/ClarkeES86}.
 The {\em signature} of the language $\cal L$ of \CTL\ includes:
 \begin{itemize}
   \item a finite set of Boolean variables, called {\em atoms} of $\cal L$: $\cal A$;
-  \item constant symbols: $\bot$ and $\top$;
+  \item constant symbols $\bot$ and $\top$
   \item the classical connectives: $\lor$ and $\neg$;
   %\item the propositional constants: $\bot$;
   \item the path quantifiers: $\ALL$ and $\EXIST$;
@@ -457,7 +457,7 @@ Inspired by the notion of bisimulation in~\cite{DBLP:journals/tcs/BrowneCG88}, w
 between \MPK-structures on $V$ as follows: let
 ${\cal K}_i=({\cal M}_i,s_i)$ with $i\in\{1,2\}$,
 \begin{itemize}
-  \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$ if $L_1(s_1)- V=L_2(s_2)- V$;  % and ${\cal K}'=(\tuple{S', R',L'},s')$;
+  \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$ if $L_1(s_1)\setminus V=L_2(s_2)\setminus V$;  % and ${\cal K}'=(\tuple{S', R',L'},s')$;
   \item for $n\ge 0$, $({\cal K}_1,{\cal K}_2)\in\Hb_{n+1}$ if
   \begin{itemize}
     \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$,
@@ -486,7 +486,7 @@ $ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 0$ }$
 %and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
 %Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
 %  \begin{enumerate}[(i)]
-%    \item $L_1(s_1)- V = L_2(s_2)- V$,
+%    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
 %    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
 %    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
 %    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
@@ -544,7 +544,7 @@ to a computation tree $\Tr_n(s_2)$ of ${\cal M}_2$, written
 $({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$ (or simply
 $\Tr_n(s_1)\lrto_V\Tr_n(s_2)$), if % $({\cal M}_1,s_1)\lrto_V({\cal M}_2,s_2)$.
 \begin{itemize}
-  \item $L_1(s_1)- V=L_2(s_2)- V$,
+  \item $L_1(s_1)\setminus V=L_2(s_2)\setminus V$,
   \item for every subtree $\Tr_{n-1}(s_1')$ of $\Tr_n(s_1)$,
   $\Tr_n(s_2)$ has a subtree $\Tr_{n-1}(s_2')$ such that
   $\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$, and
@@ -591,10 +591,10 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 %To present the representation property of forgetting in \CTL\ and compute WSC (SNC) under an initial \MPK-structure, we will give the characterizing formula of an initial \MPK-structure on $V$ in the next subsection.
 %Before define the concept of forgetting in \CTL\, we will give the characterizing formula of an initial \MPK-structure on $V$ in the next subsection.
 
-\subsection{Characterization of Initial \MPK-structure}
+\subsection{Characterization of Initial \MPK-structure} 
 
 In order to introduce our notion of forgetting, and to compute strongest necessary and weakest sufficient conditions, we need a formula that captures the  initial \MPK-structure on $V$ syntactically. We call such formula as characterizing formula.
-In the following, we present such characterization.
+In the following, we present such characterization. 
 
 Given a set $V\subseteq\Ha$, we define a formula $\varphi$ of $V$ (that is $\Var(\varphi) \subseteq V$) in \CTL\ that describes a computation tree.
 \begin{definition}\label{def:V:char:formula}
@@ -656,7 +656,7 @@ The following example show how to compute characterizing formula:
 % in which $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2, s_0)\}$, $L(s_0)= \{a\}$, $L(s_1) =\{a,c\}$ and $L(s_2) = \{b,c\}$. Let $V=\{a, b\}$, compute the characterizing formula of ${\cal K}$ on $V$.
 Let ${\cal K} = (\Hm, s_0)$ in Figure~\ref{Kripke_1} be an initial \MPK-structure and $V=\{a, b\}$, then compute the characterizing formula of ${\cal K}$ on $V$.
 
-It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) - \overline V = L(s_1) - \overline V$, $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ due to there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ (there is only one immediate successor $s'=s_0$) there is $L(s_2)- \overline V \neq L(s') - \overline V$. Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S\ \&\ \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
+It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) \setminus \overline V = L(s_1) \setminus \overline V$, $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ due to there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ (there is only one immediate successor $s'=s_0$) there is $L(s_2)\setminus \overline V \neq L(s') \setminus \overline V$. Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S\ \&\ \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
 %It is apparent that $\Hb_0=\{(s_0, s_1)\}$ and $\Hb_1={\O}$, then $ch(\Hm, s_0) = 1$.
 Then we have:
 \begin{align*}
@@ -845,7 +845,7 @@ Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $
 %forgetting is NP-hard.
 %\end{proof}
 
-The fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective correspond to specification descriptions for properties that is desired to hold in all branches eventually. Such properties are of special interest in concurrent systems e.g., mutual exclusion and  waiting events~\cite{Baier:PMC:2008}.
+The fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective correspond to specification descriptions for properties that is desired to hold in all branches eventually. Such properties are of special interest in concurrent systems e.g., mutual exclusion and  waiting events~\cite{Baier:PMC:2008}.  
 In the following, we report various complexity results concerning forgetting and the logical entailment in this fragment.
 
 \begin{theorem}[Entailment on Forgetting]\label{thm:comF}
@@ -895,7 +895,7 @@ Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of 
 In this section, we will give the definition of SNC (WSC) and show that the SNC (WSC) of a specification (a \CTL\ formula) under a given initial \MPK-structure and set $V$ of atoms can be obtained from forgetting in \CTL.
 The SNC (WSC) of a proposition will be given at first:
 \begin{definition}[sufficient and necessary condition]\label{def:NC:SC}
-Let $\phi$ be a formula or an initial \MPK-structure, $\psi$ be a formula, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)- V$
+Let $\phi$ be a formula or an initial \MPK-structure, $\psi$ be a formula, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)\setminus V$
 and $\Var(\psi)\subseteq V$.
 \begin{itemize}
   \item $\psi$  is a {\em necessary condition} (NC in short) of $q$ on $V$ under $\phi$
@@ -945,25 +945,25 @@ In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can
    % \end{definition}
 
 
-  It is seems that the SNC and WSC of any formula can be reduced to that of a proposition.
+  It is seems that the SNC and WSC of any formula can be reduced to that of a proposition. 
 \begin{proposition}\label{formulaNS_to_p}
      Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
  Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$.   \end{proposition}
 
 We propose the theorem of computing the SNC (WSC) of an atom due to the SNC (WSC) of a formula can be changed to the SNC (WSC) of an atom by Proposition~\ref{formulaNS_to_p}.
 \begin{theorem}\label{thm:SNC:WSC:forget}
- Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)- V$.
+ Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)\setminus V$.
  \begin{enumerate}[(i)]
-   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\})- V)$
+   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\})\setminus V)$
    is a SNC of $q$ on $V$ under $\varphi$.
-   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\})- V)$
+   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\})\setminus V)$
    is a WSC of $q$ on $V$ under $\varphi$.
  \end{enumerate}
  \end{theorem}
 
  As we have said before that any initial $\MPK$-structure can be characterized by a \CTL\ formula, we can obtain the SNC (WSC) of an initial $\MPK$-structure for satisfy some needed property (formula) by forgetting.
 \begin{theorem}\label{thm:inK:SNC}
-Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha - V$). Then:
+Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha \setminus V$). Then:
  \begin{enumerate}[(i)]
    \item the SNC of $q$ on $V$ under ${\cal K}$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$.
    \item the WSC of $q$ on $V$ under ${\cal K}$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$.
@@ -994,7 +994,7 @@ Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on 
 %\end{proof}
 
 \begin{example}
-For the Example~\ref{exmp:1}, the WSC of $\varphi$ on $V$ under ${\cal K} =(\Hm, s_0)$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge (q \equiv \varphi) \wedge \neg q, \Ha - V)$.
+For the Example~\ref{exmp:1}, the WSC of $\varphi$ on $V$ under ${\cal K} =(\Hm, s_0)$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge (q \equiv \varphi) \wedge \neg q, \Ha \setminus V)$.
 \end{example}
 
 
@@ -1022,14 +1022,14 @@ By the definition of forgetting in \CTL, the set of models of the result of forg
 %  \item $|S'|$ is at most $2^m$,
 %  \item $|R'|$ is at most $2^m * 2^m$,
 %  \item $|L'|$ is at most $2^m * 2^m$,
-%  \item ${\cal K} \lrto_{\Ha - V} {\cal K}'$ and $(\Hm', s_0') \models \varphi$.
+%  \item ${\cal K} \lrto_{\Ha \setminus V} {\cal K}'$ and $(\Hm', s_0') \models \varphi$.
 %\end{enumerate}
 %\end{theorem}
 %\begin{proof}
-%If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
+%If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha \setminus V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
 %\end{proof}
 
-%By this theorem, we can see that any initial \MPK-structures ${\cal K}$ that satisfy $\varphi$ can be transformed to an initial \MPK-structure ${\cal K}'$ such that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ and ${\cal K} \models \varphi$ iff ${\cal K}' \models \varphi$ due to $\IR(\varphi, \Ha- V)$, in which $V= \Var(\varphi)$. Therefore, the size of the model of $\varphi$ is at most $2^m$ by Theorem~\ref{thm:VBChFEQ}(we only consider the number of states of this model).
+%By this theorem, we can see that any initial \MPK-structures ${\cal K}$ that satisfy $\varphi$ can be transformed to an initial \MPK-structure ${\cal K}'$ such that ${\cal K} \lrto_{\Ha \setminus V} {\cal K}'$ and ${\cal K} \models \varphi$ iff ${\cal K}' \models \varphi$ due to $\IR(\varphi, \Ha\setminus V)$, in which $V= \Var(\varphi)$. Therefore, the size of the model of $\varphi$ is at most $2^m$ by Theorem~\ref{thm:VBChFEQ}(we only consider the number of states of this model).
 
 Then we have the following model-based Algorithm~\ref{alg:compute:forgetting:by:VB} to compute the forgetting under CTL.
 By Lemma~\ref{lem:models:formula} and Theorem~\ref{CF} we can prove the correctness of this algorithm.
@@ -1114,7 +1114,7 @@ work is to find an efficient algorithm to compute forgetting in \CTL\ and then W
 %and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
 %Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
 %  \begin{enumerate}[(i)]
-%    \item $L_1(s_1)- V = L_2(s_2)- V$,
+%    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
 %    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
 %    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
 %    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
@@ -1123,13 +1123,13 @@ work is to find an efficient algorithm to compute forgetting in \CTL\ and then W
 % where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.\\
 %\begin{proof}
 %$(\Rto)$
-%(a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
+%(a) It is apparent that $L_1(s_1)\setminus V = L_2(s_2)\setminus V$;
 %(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
-%$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')- V = L_2(s_2')- V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+%$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')\setminus V = L_2(s_2')\setminus V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
 %(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
 % This is similar with (b).
 %
-%$(\Lto)$ (a) $L_1(s_1)- V = L_2(s_2)- V$ implies that $(s_1, s_2) \in \Hb_0$;
+%$(\Lto)$ (a) $L_1(s_1)\setminus V = L_2(s_2)\setminus V$ implies that $(s_1, s_2) \in \Hb_0$;
 %(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
 %    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
 %(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
@@ -1196,15 +1196,15 @@ Denote as $\Hb_0, \Hb_1, \dots$ when the underlying set $V$ is clear from the co
 
 (i) Base: it is clear for $n = 0$.\\
 Step: For $n > 0$, supposing if $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_1}$ and $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$ then $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_1 \cup V_2}$ for all $0 \leq i \leq n$. We will show that if $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1}$ and $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_2}$ then $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1 \cup V_2}$.\\
-(a) It is evident that $L_1(s_1) - (V_1 \cup V_2) = L_2(s_2) - (V_1\cup V_2)$.\\
+(a) It is evident that $L_1(s_1) \setminus (V_1 \cup V_2) = L_2(s_2) \setminus (V_1\cup V_2)$.\\
 (b) We will show that for each $(s_1, s_1^1) \in R_1$ there is a $(s_2, s_2^1) \in R_2$ such that $(s_1^1, s_2^1) \in \Hb_n^{V_1 \cup V_2}$. There is $({\cal K}_1^1, {\cal K}_2^1) \in \Hb_{n-1}^{V_1 \cup V_2}$
-due to $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_1 \cup V_2}$ by inductive assumption. Then we only need to prove for each $(s_1^1, s_1^2) \in R_1$ there is a $(s_2^1, s_2^2) \in R_2$ such that $({\cal K}_1^2, {\cal K}_2^2) \in \Hb_{n-2}^{V_1 \cup V_2}$ and for each $(s_2^1, s_2^2) \in R_2$ there is a $(s_1^1, s_1^2) \in R_1$ such that $({\cal K}_1^2, {\cal K}_2^2) \in \Hb_{n-2}^{V_1 \cup V_2}$. Therefore, we only need to prove that for each $(s_1^n, s_1^{n+1}) \in R_1$ there is a $(s_2^n, s_2^{n+1}) \in R_2$ such that $({\cal K}_1^{n+1}, {\cal K}_2^{n+1}) \in \Hb_0^{V_1 \cup V_2}$ and for each $(s_2^n, s_2^{n+1}) \in R_2$ there is a $(s_1^n, s_1^{n+1}) \in R_1$ such that $({\cal K}_1^{n+1}, {\cal K}_2^{n+1}) \in \Hb_0^{V_1 \cup V_2}$. It is apparent that $L_1(s_1^{n+1}) - (V_1 \cup V_2) = L_1(s_2^{n+1}) - (V_1 \cup V_2)$ due to $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1}$ and $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_2}$.
+due to $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_1 \cup V_2}$ by inductive assumption. Then we only need to prove for each $(s_1^1, s_1^2) \in R_1$ there is a $(s_2^1, s_2^2) \in R_2$ such that $({\cal K}_1^2, {\cal K}_2^2) \in \Hb_{n-2}^{V_1 \cup V_2}$ and for each $(s_2^1, s_2^2) \in R_2$ there is a $(s_1^1, s_1^2) \in R_1$ such that $({\cal K}_1^2, {\cal K}_2^2) \in \Hb_{n-2}^{V_1 \cup V_2}$. Therefore, we only need to prove that for each $(s_1^n, s_1^{n+1}) \in R_1$ there is a $(s_2^n, s_2^{n+1}) \in R_2$ such that $({\cal K}_1^{n+1}, {\cal K}_2^{n+1}) \in \Hb_0^{V_1 \cup V_2}$ and for each $(s_2^n, s_2^{n+1}) \in R_2$ there is a $(s_1^n, s_1^{n+1}) \in R_1$ such that $({\cal K}_1^{n+1}, {\cal K}_2^{n+1}) \in \Hb_0^{V_1 \cup V_2}$. It is apparent that $L_1(s_1^{n+1}) \setminus (V_1 \cup V_2) = L_1(s_2^{n+1}) \setminus (V_1 \cup V_2)$ due to $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1}$ and $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_2}$.
 Where ${\cal K}_i^j = (\Hm_i, s_i^j)$ with $i \in \{1, 2\}$ and $0 < j \leq n+1$.\\
 (c) It is similar with (b).
 
 (ii) It is clear from (i).
 
-(iii)
+(iii) 
 %It is clear from Proposition~\ref{Vbi:Equ}.
 %\begin{proposition}\label{Vbi:Equ}
 The following property show our result directly.
@@ -1213,24 +1213,24 @@ Let $V\subseteq\cal A$
 and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
 Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
   \begin{enumerate}[(a)]
-    \item $L_1(s_1)- V = L_2(s_2)- V$,
+    \item $L_1(s_1)\setminus V = L_2(s_2)\setminus V$,
     \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
     such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
     \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
     such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
    \end{enumerate}
- where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
-
+ where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$. 
+ 
  We prove it form the following two aspects:
-
+ 
  $(\Rto)$
-(a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
+(a) It is apparent that $L_1(s_1)\setminus V = L_2(s_2)\setminus V$;
 (b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
-$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')- V = L_2(s_2')- V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')\setminus V = L_2(s_2')\setminus V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
 (c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
  This is similar with (b).
 
-$(\Lto)$ (a) $L_1(s_1)- V = L_2(s_2)- V$ implies that $(s_1, s_2) \in \Hb_0$;
+$(\Lto)$ (a) $L_1(s_1)\setminus V = L_2(s_2)\setminus V$ implies that $(s_1, s_2) \in \Hb_0$;
 (b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
     such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
 (c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
@@ -1247,20 +1247,20 @@ $\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
   \item if $(w_3, u_3) \in \Hr_3$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_2, u_3) \in \Hb_2$; and then $\exists u_1 \in S_1$ such that $(w_1, u_1) \in \Hr_1$ and $(u_1, u_2) \in \Hb$, hence $(u_1, u_3) \Hb'$ by the definition of $\Hb'$.
 \end{enumerate}
 
-(v) We will show that $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_2}$ for all $n \ge 0$ inductively.
+(v) We will show that $({\cal K}_1, {\cal K}_2) \in \Hb_n^W$ for all $n \ge 0$ inductively.
 
-Base: $L_1(s_1) - V_1 = L_2(s_2) - V_1$\\
-$\Rto$ $\forall q \in {\cal A} - V_1$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$\\
-$\Rto$ $\forall q \in {\cal A} - V_2$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$ due to $V_1 \subseteq V_2$\\
-$\Rto$ $L_1(s_1) - V_2 = L_2(s_2) - V_2$, \ie\ $({\cal K}_1, {\cal K}_2) \in \Hb_0^{V_2}$.
+Base: $L_1(s_1) \setminus V = L_2(s_2) \setminus V$\\
+$\Rto$ $\forall q \in A\setminus V$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$\\
+$\Rto$ $\forall q \in A\setminus W$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$ due to $V \subseteq W$\\
+$\Rto$ $L_1(s_1) \setminus W = L_2(s_2) \setminus W$, \ie\ $({\cal K}_1, {\cal K}_2) \in \Hb_0^W$.
 
-Step: Supposing that $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$ for all $0 \leq i \leq k$ ($k > 0)$, we will show $({\cal K}_1, {\cal K}_2) \in \Hb_{k+1}^{V_2}$.
+Step: Supposing that $({\cal K}_1, {\cal K}_2) \in \Hb_i^W$ for all $0 \leq i \leq k$ ($k > 0)$, we will show $({\cal K}_1, {\cal K}_2) \in \Hb_{k+1}^W$.
 \begin{enumerate} [(a)]
-  \item It is apparent that $L_1(s_1) - V_2 = L_2(s_2) - V_2$ by base.
-  \item $\forall (s_1, s_{1,1}) \in R_1$, we will show that there is a $(s_2, s_{2, 1}) \in R_2$ \st\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k-1}^{V_2}$ by inductive assumption, we need only to prove the following points:\\
-      (a) $\forall (s_{1, k}, s_{1, k+1}) \in R_1$ there is a $(s_{2, k}, s_{2, k+1})\in R_2$ \st\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. It is easy to see that $L_1(s_{1, k+1}) - V_1 = L_1(s_{2, k+1}) - V_1$, then there is $L_1(s_{1, k+1})- V_2 = L_1(s_{2, k+1}) - V_2$. Therefore, $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$.\\
-      (b) $\forall (s_{2, k}, s_{2, k+1}) \in R_1$ there is a $(s_{1, k}, s_{1, k+1}) \in R_1$ \st\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. This can be proved as (a).
-  \item $\forall (s_2, s_{2,1}) \in R_1$, we will show that there is a $(s_1, s_{1, 1}) \in R_2$ \st\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. This can be proved as (ii).
+  \item It is apparent that $L_1(s_1) \setminus W = L_2(s_2) \setminus W$ by base.
+  \item $\forall (s_1, s_{1,1}) \in R_1$, we will show that there is a $(s_2, s_{2, 1}) \in R_2$ \st\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^W$. $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k-1}^W$ by inductive assumption, we need only to prove the following points:\\
+      (a) $\forall (s_{1, k}, s_{1, k+1}) \in R_1$ there is a $(s_{2, k}, s_{2, k+1})\in R_2$ \st\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^W$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^V$. It is easy to see that $L_1(s_{1, k+1}) \setminus V = L_1(s_{2, k+1}) \setminus V$, then there is $L_1(s_{1, k+1})\setminus W = L_1(s_{2, k+1}) \setminus W$. Therefore, $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^W$.\\
+      (b) $\forall (s_{2, k}, s_{2, k+1}) \in R_1$ there is a $(s_{1, k}, s_{1, k+1}) \in R_1$ \st\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^W$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^V$. This can be proved as (a).
+  \item $\forall (s_2, s_{2,1}) \in R_1$, we will show that there is a $(s_1, s_{1, 1}) \in R_2$ \st\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^W$. This can be proved as (ii).
 \end{enumerate}
 Where ${\cal K}_{i, j}=(\Hm_i, s_{i,j})$ and $(s_{i, k}, s_{i, k+1}) \in R_i$ means that $s_{i, k+1}$ is the $(k+2)$-th node in the path
  $(s_i, s_{i, 1}, s_{i,2}, \dots , s_{i, k+1}, \dots)$ ($i=1,2$).
@@ -1284,7 +1284,7 @@ This theorem can be proved by inducting on the formula $\varphi$ and supposing $
 
 Here we only prove the only-if direction. The other direction can be similarly proved.
 
-\textbf{Case} $\varphi = p$ where $p \in \Ha - V$:\\
+\textbf{Case} $\varphi = p$ where $p \in \Ha \setminus V$:\\
 $(\Hm, s) \models \varphi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
 $\LRto$ $p \in L'(s')$ \hfill ($s \lrto_V s'$)\\
 $\LRto$ $(\Hm', s') \models \varphi$
@@ -1341,8 +1341,8 @@ Therefore,  $Tr_n(s) \lrto_V Tr_n(s')$ by use such method recursively, and then 
 %It is easy to prove this by the definition of
 
 $(\Lto)$ If $Tr_j(s) \lrto_V Tr_j(s')$ for all $j \leq n$, then $s \Hb_n s'$.
-$Tr_0(s) \lrto_V Tr_0(s')$ implies $L(s) - V = L'(s') - V$ and then $s \Hb_0 s'$.
-$Tr_1(s) \lrto_V Tr_1(s')$ implies $L(s) - V = L'(s')- V$ and for every successors $s_1$ of the root of one, it is possible to find a successor of the root of the other $s_1'$ such that
+$Tr_0(s) \lrto_V Tr_0(s')$ implies $L(s) \setminus V = L'(s') \setminus V$ and then $s \Hb_0 s'$.
+$Tr_1(s) \lrto_V Tr_1(s')$ implies $L(s) \setminus V = L'(s')\setminus V$ and for every successors $s_1$ of the root of one, it is possible to find a successor of the root of the other $s_1'$ such that
 $s_1 \Hb_0 s_1'$. Therefore $s \Hb_1 s'$, and then we will have $s \Hb_n s'$ by use such method recursively.
 \end{proof}
 
@@ -1367,7 +1367,7 @@ $s\in S$, $s'\in S'$ and $n\ge 0$. If $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$, 
 \begin{proof}
 This result can be proved by inducting on $n$.
 
-\textbf{Base.} It is apparent that for any $s_n\in S$ and $s_n' \in S'$, if $\Tr_0(s_n) \lrto_{\overline V} \Tr_0(s_n')$ then ${\cal F}_V(\Tr_0(s_n)) \equiv {\cal F}_V(\Tr_0(s_n'))$ due to $L(s_n) - \overline V = L'(s_n') - \overline V$ by known.
+\textbf{Base.} It is apparent that for any $s_n\in S$ and $s_n' \in S'$, if $\Tr_0(s_n) \lrto_{\overline V} \Tr_0(s_n')$ then ${\cal F}_V(\Tr_0(s_n)) \equiv {\cal F}_V(\Tr_0(s_n'))$ due to $L(s_n) \setminus \overline V = L'(s_n') \setminus \overline V$ by known.
 
 \textbf{Step.} Supposing that for $k=m$ $(0< m \leq n)$ there is if $\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$ then ${\cal F}_V(\Tr_{n-k}(s_k)) \equiv {\cal F}_V(\Tr_{n-k}(s_k'))$, then we will show if $\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$ then ${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$. Apparent that:\\
  ${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) =$
@@ -1441,9 +1441,9 @@ Where $T(s') ={\cal F}_V(\Tr_k(s'))$. It is apparent that $({\cal M},s)\models {
     {\cal F}_V(\Tr_k(s'') )$. Therefore, $({\cal M},s)\models \ALL \NEXT\left(\bigvee_{(s,s'')\in R}
     {\cal F}_V(\Tr_k(s'') )\right)$.
 
-(ii)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) - \overline V = L'(s') - \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
+(ii)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) \setminus \overline V = L'(s') \setminus \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
     \textbf{Step}. Supposing $n>0$ and the result talked in (ii) is correct in $n-1$.\\
-   (a) It is easy to see that $L(s) - \overline V = L'(s') - \overline V$.\\
+   (a) It is easy to see that $L(s) \setminus \overline V = L'(s') \setminus \overline V$.\\
    (b) We will show that for each $(s, s_1) \in R$, there is a $(s', s_1') \in R'$ such that $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$.
       Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models \ALL \NEXT\left(\bigvee_{(s',s_1')\in R}{\cal F}_V(\Tr_{n-1}(s_1') )\right)$.
       Therefore, for each $(s, s_1) \in R$ there is a $(s', s_1') \in R'$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1') )$. Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.\\
@@ -1466,7 +1466,7 @@ Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure, $k={ch({\cal M},V)}$ 
 \end{itemize}
 \end{lemma}
 \begin{proof}
-Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha - V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
+Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha \setminus V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
 \end{proof}
 
 
@@ -1516,7 +1516,7 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
 
 \textbf{Step}. Supposing $\Tr_k(s_0) \lrto_{\overline V} \Tr_k(s_0')$ ($k > 0$), we will prove $\Tr_{k+1}(s_0) \lrto_{\overline V} \Tr_{k+1}(s_0')$. We should only show that $\Tr_1(s_k) \lrto_{\overline V} \Tr_1(s_k')$. Where $(s_0, s_1), (s_1, s_2)$, $\dots$, $(s_{k-1}, s_k) \in R$ and $(s_0', s_1'), (s_1', s_2'), \dots, (s_{k-1}', s_k') \in R'$, \ie $s_{i+1}$ ($s_{i+1}'$) is an immediate successor of $s_i$ ($s_i'$) for all $0 \leq i \leq k-1$.
 
-      (i) It is apparent that $L(s_k) - \overline V = L'(s_k') - \overline V$ by inductive assumption.
+      (i) It is apparent that $L(s_k) \setminus \overline V = L'(s_k') \setminus \overline V$ by inductive assumption.
 
       Before talking about the other points, note the following fact that:\\
       $(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$\\
@@ -1526,24 +1526,24 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
         (III) $(\Hm', s_0') \models \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$  \hfill  ((I),(II))\\
 
       % It is apparent that $L'(s_0') - \overline V = L(s_0) - \overline V$;\\
-        (ii) We will show that for each $(s_k, s_{k+1}) \in R$ there is a $(s_k', s_{k+1}') \in R'$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
+        (ii) We will show that for each $(s_k, s_{k+1}) \in R$ there is a $(s_k', s_{k+1}') \in R'$ such that $L(s_{k+1}) \setminus \overline V = L'(s_{k+1}') \setminus \overline V$.\\
         (1) $(\Hm', s_0') \models \bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$  \hfill  (III)\\
         (2) $\forall (s_0, s_1) \in R$, $\exists (s_0', s_1') \in R'$ \st\ $(\Hm', s_1') \models {\cal F}_V(\Tr_c(s_1))$  \hfill  (2)\\
         (3) $\Tr_c(s_1) \lrto_{\overline V} \Tr_c(s_1')$  \hfill  ((2), Lemma~\ref{Bn:to:Tn}) \\
-        (4) $L(s_1) - \overline V = L'(s_1') - \overline V$  \hfill   ((3), $c \geq 0)$\\
+        (4) $L(s_1) \setminus \overline V = L'(s_1') \setminus \overline V$  \hfill   ((3), $c \geq 0)$\\
         (5) $(\Hm', s_1') \models {\cal F}_V(\Tr_c(s_1)) \rto \left(\bigwedge_{(s_1,s_2)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_2))\right) \wedge \ALL \NEXT \left(\bigvee_{(s_1,s_2)\in R} {\cal F}_V(\Tr_c(s_2))\right)$     \hfill  \textbf{(fact)}\\
         (6) $(\Hm', s_1') \models \left(\bigwedge_{(s_1,s_2)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_2))\right) \wedge \ALL \NEXT \left(\bigvee_{(s_1,s_2)\in R} {\cal F}_V(\Tr_c(s_2))\right)$ \hfill ((2), (5))\\
         (7) $\dots \dots$ \\
         (8) $(\Hm', s_k') \models \left(\bigwedge_{(s_k,s_{k+1})\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_{k+1}))\right) \wedge \ALL \NEXT \left(\bigvee_{(s_k,s_{k+1})\in R} {\cal F}_V(\Tr_c(s_{k+1}))\right)$       \hfill (similar with (6))\\
         (9) $\forall (s_k, s_{k+1}) \in R$, $\exists (s_k', s_{k+1}') \in R'$ \st\ $(\Hm', s_{k+1}') \models {\cal F}_V(\Tr_c(s_{k+1}))$  \hfill  (8)\\
         (10) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((9), Lemma~\ref{Bn:to:Tn}) \\
-        (11) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((10), $c \geq 0)$\\
+        (11) $L(s_{k+1}) \setminus \overline V = L'(s_{k+1}') \setminus \overline V$  \hfill   ((10), $c \geq 0)$\\
 
-        (iii) We will show that for each $(s_k', s_{k+1}') \in R'$ there is a $(s_k, s_{k+1})\in R$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
+        (iii) We will show that for each $(s_k', s_{k+1}') \in R'$ there is a $(s_k, s_{k+1})\in R$ such that $L(s_{k+1}) \setminus \overline V = L'(s_{k+1}') \setminus \overline V$.\\
         (1) $(\Hm', s_k') \models \ALL \NEXT \left(\bigvee_{(s_k,s_{k+1})\in R} {\cal F}_V(\Tr_c(s_{k+1}))\right)$  \hfill (by (8) talked above)\\
         (2) $\forall (s_k', s_{k+1}') \in R'$, $\exists (s_k, s_{k+1}) \in R$ \st\ $(\Hm', s_{k+1}') \models {\cal F}_V(\Tr_c(s_{k+1}'))$  \hfill (1) \\
         (3) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((2), Lemma~\ref{Bn:to:Tn}) \\
-        (4) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((3), $c \geq 0)$\\
+        (4) $L(s_{k+1}) \setminus \overline V = L'(s_{k+1}') \setminus \overline V$  \hfill   ((3), $c \geq 0)$\\
 
 (b) This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
 
@@ -1568,13 +1568,13 @@ Then the following statements are equivalent:
 $(i) \LRto (ii)$. To prove this, we will show that:
 \begin{align*}
  & \Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi | \varphi \models \phi, \IR(\phi, V)\})\\
- & = \Mod(\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)).
+ & = \Mod(\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha\setminus V}(\Hm, s_0)).
 \end{align*}
 Firstly, suppose that $(\Hm', s_0')$ is a model of $\CTLforget(\varphi, V)$. Then there exists an  an initial \MPK-structure $(\Hm, s_0)$ such that $(\Hm, s_0)$ is a model of $\varphi$ and $(\Hm, s_0) \lrto_V (\Hm', s_0')$. By Theorem~\ref{thm:V-bisimulation:EQ}, we have $(\Hm', s_0') \models \phi$ for all $\phi$ that $\varphi\models \phi$ and $\IR(\phi, V)$. Thus, $(\Hm', s_0')$ is a model of $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
 
-Secondly, suppose that $(\Hm', s_0')$ is a models of $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Thus, $(\Hm', s_0')$ $\models$ $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$ due to $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$ is irrelevant to $V$.
+Secondly, suppose that $(\Hm', s_0')$ is a models of $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Thus, $(\Hm', s_0')$ $\models$ $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha\setminus V}(\Hm, s_0)$ due to $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha\setminus V}(\Hm, s_0)$ is irrelevant to $V$.
 
-Finally, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$. Then there exists $(\Hm, s_0) \in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha- V}(\Hm, s_0)$. Hence, $(\Hm, s_0)$ $\lrto_V$ $(\Hm', s_0')$ by Theorem~\ref{CF}. Thus $(\Hm', s_0')$ is also a model of $\CTLforget(\varphi,V)$.
+Finally, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha\setminus V}(\Hm, s_0)$. Then there exists $(\Hm, s_0) \in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha\setminus V}(\Hm, s_0)$. Hence, $(\Hm, s_0)$ $\lrto_V$ $(\Hm', s_0')$ by Theorem~\ref{CF}. Thus $(\Hm', s_0')$ is also a model of $\CTLforget(\varphi,V)$.
 
 
 $(ii)\Rto (iii)$. It is not difficult to prove it.
@@ -1748,9 +1748,9 @@ forgetting is NP-hard~\cite{Zhang2008Properties}.
 Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ (a fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective) formulas and $V$ a set of atoms. Then we have the
 results:
 \begin{enumerate}[(i)]
-  \item deciding  $\forget(\varphi, V ) \models^? \psi$ is co-NP-complete,
-  \item deciding  $\psi \models^? \forget(\varphi, V)$ is $\Pi_2^P$-complete,
-  \item deciding $\forget(\varphi, V) \models^? \forget(\psi, V)$ is $\Pi_2^P$-complete.
+  \item deciding if $\forget(\varphi, V ) \models \psi$ is co-NP-complete,
+  \item deciding if $\psi \models \forget(\varphi, V)$ is $\Pi_2^P$-complete,
+  \item deciding if $\forget(\varphi, V) \models \forget(\psi, V)$ is $\Pi_2^P$-complete.
 \end{enumerate}
 \begin{proof}
 (1) It is proved that deciding whether $\psi$ is satisfiable is NP-Complete~\cite{DBLP:journals/ijfcs/MeierTVM15}. The hardness is easy to see by setting $\forget(\varphi, \Var(\varphi))\equiv \top$, \ie deciding whether $\psi$ is valid.
@@ -1792,7 +1792,7 @@ The proof of the other part of the proposition is similar.
 
 
 
-\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$. Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$.
+\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$. Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$.   
 
 \begin{proof}
     We prove this for SNC. The case for WSC is similar.
@@ -1805,16 +1805,16 @@ The proof of the other part of the proposition is similar.
     \end{proof}
 
 
-\textbf{Theorem}~\ref{thm:SNC:WSC:forget} Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)- V$.
+\textbf{Theorem}~\ref{thm:SNC:WSC:forget} Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)\setminus V$.
  \begin{enumerate}[(i)]
-   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\})- V)$
+   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\})\setminus V)$
    is a SNC of $q$ on $V$ under $\varphi$.
-   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\})- V)$
+   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\})\setminus V)$
    is a WSC of $q$ on $V$ under $\varphi$.
  \end{enumerate}
 \begin{proof}
  We will prove the SNC part, while it is not difficult to prove the WSC part according to Proposition \ref{dual}.
- Let ${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$.
+ Let ${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})\setminus V)$.
 
    The ``NC" part: It's easy to see that $\varphi \wedge q \models {\cal F}$ by {\bfseries (W)}. Hence, $\varphi\models q \rto {\cal F}$, this means
    ${\cal F}$ is a NC of $q$ on $P$ under $\varphi$.
@@ -1825,7 +1825,7 @@ The proof of the other part of the proposition is similar.
 %    \\
     The ``SNC" part: for all $\psi'$, $\psi'$ is the NC of $q$ on $V$ under $\varphi$, s.t. $\varphi \models {\cal F} \rto \psi'$.
     Suppose that there is a NC $\psi$ of $q$ on $V$ under $\varphi$ and $\psi$ is not logic equivalence with ${\cal F}$ under $\varphi$, s.t. $\varphi \models \psi \rto {\cal F}$.
-    We know that $\varphi \wedge q \models \psi$ iff ${\cal F} \models \psi$ by {\bfseries (PP)}, since $\emph{IR}(\psi, (\Var(\varphi) \cup \{q\})- V)$. Hence, $\varphi \wedge {\cal F} \models \psi$ by $\varphi \wedge q \models \psi$ (by suppose).
+    We know that $\varphi \wedge q \models \psi$ iff ${\cal F} \models \psi$ by {\bfseries (PP)}, since $\emph{IR}(\psi, (\Var(\varphi) \cup \{q\})\setminus V)$. Hence, $\varphi \wedge {\cal F} \models \psi$ by $\varphi \wedge q \models \psi$ (by suppose).
     We can see that $\varphi \wedge \psi \models {\cal F}$ by suppose. Therefore, $\varphi \models \psi \lrto {\cal F}$, which means $\psi$ is logic equivalence with ${\cal F}$ under $\varphi$.
     This is contradict with the suppose. Then ${\cal F}$ is the SNC of $q$ on $P$ under $\varphi$.
  \end{proof}
@@ -1837,14 +1837,14 @@ The proof of the other part of the proposition is similar.
 
 
 
-\textbf{Theorem}~\ref{thm:inK:SNC} Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha - V$). Then:
+\textbf{Theorem}~\ref{thm:inK:SNC} Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha \setminus V$). Then:
  \begin{enumerate}[(i)]
    \item the SNC of $q$ on $V$ under ${\cal K}$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$.
    \item the WSC of $q$ on $V$ under ${\cal K}$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$.
  \end{enumerate}
 \begin{proof}
 (i)
-As we know that any initial \MPK-structure ${\cal K}$ can be described as a characterizing formula ${\cal F}_{\Ha}({\cal K})$, then the SNC of $q$ on $V$ under ${\cal F}_{\Ha}({\cal K})$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, \Ha - V)$.
+As we know that any initial \MPK-structure ${\cal K}$ can be described as a characterizing formula ${\cal F}_{\Ha}({\cal K})$, then the SNC of $q$ on $V$ under ${\cal F}_{\Ha}({\cal K})$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, \Ha \setminus V)$.
  %We will prove that $\CTLforget({\cal F}_{V \cup \{q\}}({\cal K}_{|V \cup \{q\}}) \wedge q, q)  \equiv  \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, \Ha - V)$.
 
 %($\Rto$) $\forall {\cal K}_1 \in \Mod(\CTLforget({\cal F}_{V \cup \{q\}}({\cal K}_{|V \cup \{q\}}) \wedge q, q))$\\
@@ -1870,7 +1870,7 @@ As we know that any initial \MPK-structure ${\cal K}$ can be described as a char
 
 %\textbf{Theorem}\ref{thm:state:bound}
 %\begin{proof}
-%If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
+%If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha \setminus V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
 %\end{proof}
 
 \textbf{Proposition}\ref{pro:time:alg1} Let $\varphi$ be a CTL formula and $V\subseteq \Ha$. The time and space complexity of

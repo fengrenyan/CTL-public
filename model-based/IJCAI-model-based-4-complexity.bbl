@@ -31,10 +31,30 @@ Edmund~M. Clarke, E.~Allen Emerson, and A.~Prasad Sistla.
   temporal logic specifications.
 \newblock {\em {ACM} Trans. Program. Lang. Syst.}, 8(2):244--263, 1986.
 
+\bibitem[\protect\citeauthoryear{Dailler \bgroup \em et al.\egroup
+  }{2018}]{dailler2018instrumenting}
+Sylvain Dailler, David Hauzar, Claude March{\'e}, and Yannick Moy.
+\newblock Instrumenting a weakest precondition calculus for counterexample
+  generation.
+\newblock {\em Journal of logical and algebraic methods in programming},
+  99:97--113, 2018.
+
 \bibitem[\protect\citeauthoryear{Dijkstra}{1978}]{dijkstra1978guarded}
 Edsger~W Dijkstra.
 \newblock Guarded commands, nondeterminacy, and formal derivation of programs.
 \newblock In {\em Programming Methodology}, pages 166--175. Springer, 1978.
+
+\bibitem[\protect\citeauthoryear{Ding and Zhang}{2006}]{ding2006ctl}
+Yulin Ding and Yan Zhang.
+\newblock Ctl model update: Semantics, computations and implementation.
+\newblock In {\em ECAI}, pages 362--366, 2006.
+
+\bibitem[\protect\citeauthoryear{Eiter and
+  Kern-Isberner}{2019}]{eiter2019brief}
+Thomas Eiter and Gabriele Kern-Isberner.
+\newblock A brief survey on forgetting from a knowledge representation and
+  reasoning perspective.
+\newblock {\em KI-K{\"u}nstliche Intelligenz}, 33(1):9--33, 2019.
 
 \bibitem[\protect\citeauthoryear{Eiter and Wang}{2008}]{Eiter2008Semantic}
 Thomas Eiter and Kewen Wang.
@@ -81,6 +101,11 @@ Fangzhen Lin.
   systems.
 \newblock {\em Journal of Artificial Intelligence Research}, 19:279--314, 2003.
 
+\bibitem[\protect\citeauthoryear{Lin}{2018}]{DBLP:journals/aim/Lin18}
+Fangzhen Lin.
+\newblock Machine theorem discovery.
+\newblock {\em {AI} Magazine}, 39(2):53--59, 2018.
+
 \bibitem[\protect\citeauthoryear{Liu and Wen}{2011}]{Yongmei:IJCAI:2011}
 Yongmei Liu and Ximing Wen.
 \newblock On the progression of knowledge in the situation calculus.
@@ -96,6 +121,13 @@ Carsten Lutz and Frank Wolter.
   Conference on Artificial Intelligence}, pages 989--995, Barcelona, Catalonia,
   Spain, 2011. IJCAI/AAAI.
 
+\bibitem[\protect\citeauthoryear{Martinez-Araiza and
+  L{\'o}pez-Mellado}{2016}]{martinez2016ctl}
+Ulises Martinez-Araiza and Ernesto L{\'o}pez-Mellado.
+\newblock Ctl model repair for inter-organizational business processes modelled
+  as owfn.
+\newblock {\em IFAC-PapersOnLine}, 49(2):6--11, 2016.
+
 \bibitem[\protect\citeauthoryear{Meier \bgroup \em et al.\egroup
   }{2015}]{DBLP:journals/ijfcs/MeierTVM15}
 Arne Meier, Michael Thomas, Heribert Vollmer, and Martin Mundhenk.
@@ -103,11 +135,25 @@ Arne Meier, Michael Thomas, Heribert Vollmer, and Martin Mundhenk.
   ctl\({}^{\mbox{{\(\star\)}}}\).
 \newblock {\em Int. J. Found. Comput. Sci.}, 26(8):1189, 2015.
 
+\bibitem[\protect\citeauthoryear{Ramdani \bgroup \em et al.\egroup
+  }{2019}]{ramdani2019r}
+Mohamed Ramdani, Laid Kahloul, Mohamed Khalgui, and Yousra Hafidi.
+\newblock R-tnces rebuilding: A new method of ctl model update for
+  reconfigurable systems.
+\newblock In {\em Proceedings of the 14th International Conference on
+  Evaluation of Novel Approaches to Software Engineering}, pages 159--168.
+  SCITEPRESS-Science and Technology Publications, Lda, 2019.
+
 \bibitem[\protect\citeauthoryear{Su \bgroup \em et al.\egroup
   }{2009}]{Kaile:JAIR:2009}
 Kaile Su, Abdul Sattar, Guanfeng Lv, and Yan Zhang.
 \newblock Variable forgetting in reasoning about knowledge.
 \newblock {\em Journal of Artificial Intelligence Research}, 35:677--716, 2009.
+
+\bibitem[\protect\citeauthoryear{Tremblay}{1996}]{tremblay1996logic}
+Jean-Paul Tremblay.
+\newblock {\em Logic and Discrete Mathematics: a Computer Science Perspective}.
+\newblock Upper Saddle River, NJ: Prentice Hall, 1996.
 
 \bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
   }{2010}]{Wang:AMAI:2010}
@@ -136,6 +182,13 @@ Yisong Wang, Kewen Wang, and Mingyi Zhang.
 Ka-Shu Wong.
 \newblock {\em Forgetting in Logic Programs}.
 \newblock PhD thesis, The University of New South Wales, 2009.
+
+\bibitem[\protect\citeauthoryear{Woodcock and
+  Morgan}{1990}]{woodcock1990refinement}
+Jim~CP Woodcock and Carroll Morgan.
+\newblock Refinement of state-based concurrent systems.
+\newblock In {\em International Symposium of VDM Europe}, pages 340--351.
+  Springer, 1990.
 
 \bibitem[\protect\citeauthoryear{Zhang and Foo}{2006}]{DBLP:Zhang:AIJ2006}
 Yan Zhang and Norman~Y. Foo.
