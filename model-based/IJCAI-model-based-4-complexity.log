@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.26)  17 JAN 2020 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.26)  18 JAN 2020 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -862,6 +862,11 @@ Underfull \hbox (badness 6842) in paragraph at lines 569--575
  []
 
 [3]
+Overfull \hbox (1.33292pt too wide) detected at line 583
+\OML/cmm/m/it/10 ch\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; V\OT1/
+cmr/m/n/10 ) = []
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 591.
 
@@ -997,7 +1002,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1164--1168
  []
 
 [7]
-Underfull \hbox (badness 2932) in paragraph at lines 1254--1257
+Underfull \hbox (badness 2932) in paragraph at lines 1256--1259
 \OT1/ptm/m/n/10 Where $\OMS/cmsy/m/n/10 K[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10
  M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and $\OT1/cmr/m/n/
 10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it
@@ -1005,90 +1010,90 @@ Underfull \hbox (badness 2932) in paragraph at lines 1254--1257
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 1254--1257
+Underfull \hbox (badness 1490) in paragraph at lines 1256--1259
 \OT1/ptm/m/n/10 means that $\OML/cmm/m/it/10 s[]$ \OT1/ptm/m/n/10 is the $\OT1/
 cmr/m/n/10 (\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 2)$\OT1/ptm/m/n/10 -th node in
  the path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1254--1257
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1259
 
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1272.
+LaTeX Warning: Command \O invalid in math mode on input line 1274.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1317
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1332--1337
+Underfull \hbox (badness 10000) in paragraph at lines 1311--1319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1338--1345
+Underfull \hbox (badness 10000) in paragraph at lines 1334--1339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1377
+Underfull \hbox (badness 10000) in paragraph at lines 1340--1347
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1379
 \OT1/ptm/m/n/10 there is if $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/
 m/n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr
 /m/n/10 )$ \OT1/ptm/m/n/10 then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1377
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1379
 \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
 ) \OMS/cmsy/m/n/10 ^^Q F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/
 n/10 ))$\OT1/ptm/m/n/10 , then we will
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1377
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1379
 \OT1/ptm/m/n/10 show if $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/
 10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n
 /10 )$ \OT1/ptm/m/n/10 then
  []
 
 
-Underfull \hbox (badness 1960) in paragraph at lines 1361--1377
+Underfull \hbox (badness 1960) in paragraph at lines 1363--1379
 \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
 ) \OMS/cmsy/m/n/10 ^^Q F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/
 n/10 ))$\OT1/ptm/m/n/10 . Ap-par-
  []
 
 
-Overfull \hbox (3.84908pt too wide) in paragraph at lines 1361--1377
+Overfull \hbox (3.84908pt too wide) in paragraph at lines 1363--1379
 \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
 ) =$ $[] \OMS/cmsy/m/n/10 ^
  []
 
 
-Overfull \hbox (3.84908pt too wide) in paragraph at lines 1361--1377
+Overfull \hbox (3.84908pt too wide) in paragraph at lines 1363--1379
 \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
 ) =$ $[] \OMS/cmsy/m/n/10 ^
  []
 
 
-Underfull \hbox (badness 2478) in paragraph at lines 1361--1377
+Underfull \hbox (badness 2478) in paragraph at lines 1363--1379
 [][] [] \OMS/cmsy/m/n/10 ^ F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cm
 r/m/n/10 ))$ \OT1/ptm/m/n/10 by
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 1361--1377
+Underfull \hbox (badness 1072) in paragraph at lines 1363--1379
 \OT1/ptm/m/n/10 by $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) 
 \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
 $\OT1/ptm/m/n/10 . Be-sides, for
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 1361--1377
+Underfull \hbox (badness 3930) in paragraph at lines 1363--1379
 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]
  [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 by
  $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
@@ -1096,23 +1101,22 @@ Underfull \hbox (badness 3930) in paragraph at lines 1361--1377
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1377
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1379
 
  []
 
-[8]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1385.
+LaTeX Warning: Command \O invalid in math mode on input line 1387.
 
 
-Underfull \hbox (badness 7415) in paragraph at lines 1383--1388
+Underfull \hbox (badness 7415) in paragraph at lines 1385--1390
 \OT1/ptm/b/n/10 Proof: \OT1/ptm/m/n/10 Let $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M
 []\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be a model of $\OML/
 cmm/m/it/10 '$\OT1/ptm/m/n/10 . Then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1433--1444
+Underfull \hbox (badness 10000) in paragraph at lines 1435--1446
 \OT1/ptm/m/n/10 Since $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\
 OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1
 /cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , then
@@ -1121,12 +1125,12 @@ OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1
  []
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 1433--1444
+Underfull \hbox (badness 3977) in paragraph at lines 1435--1446
 [][] []$\OT1/ptm/m/n/10 . There-fore, for each
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 1433--1444
+Underfull \hbox (badness 1448) in paragraph at lines 1435--1446
 \OT1/ptm/m/n/10 a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT1/cmr/m/n/10 ) \O
 MS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R$ \OT1/ptm/m/n/10 such that $[][]\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m
@@ -1134,7 +1138,7 @@ n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1433--1444
+Underfull \hbox (badness 10000) in paragraph at lines 1435--1446
 \OT1/ptm/m/n/10 Since $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\
 OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1
 /cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , then
@@ -1143,13 +1147,13 @@ OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1433--1444
+Underfull \hbox (badness 10000) in paragraph at lines 1435--1446
 [][] [][]\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr
 /m/n/10 ))$\OT1/ptm/m/n/10 . There-fore, for each
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 1433--1444
+Underfull \hbox (badness 1067) in paragraph at lines 1435--1446
 \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
 $\OT1/ptm/m/n/10 . Hence, $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/
 n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m
@@ -1157,17 +1161,17 @@ n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1433--1444
+Underfull \hbox (badness 10000) in paragraph at lines 1435--1446
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1457--1460
+Underfull \hbox (badness 10000) in paragraph at lines 1459--1462
 
  []
 
 
-Underfull \hbox (badness 1221) in paragraph at lines 1469--1474
+Underfull \hbox (badness 1221) in paragraph at lines 1471--1476
 \OT1/ptm/m/n/10 We must show that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/
 m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][] \OML/
 cmm/m/it/10 G\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/
@@ -1175,13 +1179,13 @@ n/10 )$\OT1/ptm/m/n/10 . Let
  []
 
 
-Underfull \hbox (badness 5105) in paragraph at lines 1469--1474
+Underfull \hbox (badness 5105) in paragraph at lines 1471--1476
 \OMS/cmsy/m/n/10 X \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](
 \OML/cmm/m/it/10 s\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! []$
  []
 
 [9]
-Underfull \hbox (badness 2875) in paragraph at lines 1480--1484
+Underfull \hbox (badness 2875) in paragraph at lines 1482--1486
 \OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\
 OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$ $[][] [][]\OMS/cmsy/m/n
 /10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$  \OT1/ptm/
@@ -1189,12 +1193,12 @@ m/n/10 (by
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1491
+Underfull \hbox (badness 10000) in paragraph at lines 1487--1493
 
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 1498--1500
+Underfull \hbox (badness 1062) in paragraph at lines 1500--1502
 \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS
 /cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cms
 y/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and $[]\OT1/
@@ -1204,89 +1208,89 @@ t/10 ; s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1516
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1518
 \OMS/cmsy/m/n/10 )$ $8\OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 
 S[]$\OT1/ptm/m/n/10 , $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; 
 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1516
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1518
 \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 )) 
 \OMS/cmsy/m/n/10 !$ $[]$ $^$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1516
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1518
 \OT1/ptm/m/n/10 (I) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
 T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 !
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1516
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1518
 []$ $\OMS/cmsy/m/n/10 ^$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1516
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1518
 \OT1/ptm/m/n/10 (III) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; 
 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = []$ $\OMS/cmsy/m/n/1
 0 ^$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1516
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1518
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1530
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1532
 \OT1/ptm/m/n/10 (5) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
 T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 !
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1530
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1532
 [] \OMS/cmsy/m/n/10 ^
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1530
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1532
 \OT1/ptm/m/n/10 (6) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^
  []
 
 
-Underfull \hbox (badness 4108) in paragraph at lines 1518--1530
+Underfull \hbox (badness 4108) in paragraph at lines 1520--1532
 \OT1/ptm/m/n/10 (8) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1530
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1532
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1531--1536
+Underfull \hbox (badness 10000) in paragraph at lines 1533--1538
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1539--1540
+Underfull \hbox (badness 10000) in paragraph at lines 1541--1542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1564--1565
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
 []\OT1/ptm/m/n/10 Secondly, sup-pose that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[
 ]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a mod-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1564--1565
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
 \OT1/ptm/m/n/10 els of $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^^\OMS/cmsy/m/n/10 
 j\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^^;
  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^^; V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$
@@ -1295,31 +1299,31 @@ j\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^^;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1564--1565
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
 \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$ $[][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/1
 0 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 d
 ue to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+Underfull \hbox (badness 10000) in paragraph at lines 1568--1569
 []\OT1/ptm/m/n/10 Finally, sup-pose that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]
 \OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a model of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+Underfull \hbox (badness 10000) in paragraph at lines 1568--1569
 [][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; 
 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . Then there ex-ists
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 1578--1580
+Underfull \hbox (badness 10000) in paragraph at lines 1580--1582
 
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 1600--1605
+Underfull \hbox (badness 4132) in paragraph at lines 1602--1607
 \OT1/ptm/m/n/10 and then $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ;
  s\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 '
  \OMS/cmsy/m/n/10 [ f\OML/cmm/m/it/10 q \OMS/cmsy/m/n/10 $ \OML/cmm/m/it/10 \O
@@ -1327,17 +1331,17 @@ MS/cmsy/m/n/10 g\OML/cmm/m/it/10 ; q\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 by
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1600--1605
+Underfull \hbox (badness 10000) in paragraph at lines 1602--1607
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1636--1638
+Underfull \hbox (badness 10000) in paragraph at lines 1638--1640
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1658--1662
+Underfull \hbox (badness 10000) in paragraph at lines 1660--1664
 []\OT1/ptm/m/n/10 (iv) ($\OMS/cmsy/m/n/10 )$\OT1/ptm/m/n/10 ) $\OMS/cmsy/m/n/10
  8\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OMS
 /cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 _ \O
@@ -1345,7 +1349,7 @@ ML/cmm/m/it/10  []; V\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1658--1662
+Underfull \hbox (badness 10000) in paragraph at lines 1660--1664
 \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \
 OT1/ptm/m/n/10 or $\OMS/cmsy/m/n/10 9\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/
 cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([](\OM
@@ -1353,22 +1357,22 @@ L/cmm/m/it/10  []; V\OT1/cmr/m/n/10 ))$ \OT1/ptm/m/n/10 s.t.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1670--1672
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1674
 
  []
 
 [11]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1689.
+LaTeX Warning: Command \O invalid in math mode on input line 1691.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
+Underfull \hbox (badness 10000) in paragraph at lines 1694--1695
 \OT1/ptm/m/n/10 we only need to prove $[]\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m/it/
 10 ^^^; V\OT1/cmr/m/n/10 )) =
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 1694--1699
+Underfull \hbox (badness 2261) in paragraph at lines 1696--1701
 \OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 for any sub-structure $\OT1/cmr/m/n/10 (\OM
 S/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 of $\
 OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \OT1/p
@@ -1376,13 +1380,13 @@ tm/m/n/10 there is
  []
 
 
-Underfull \hbox (badness 7291) in paragraph at lines 1706--1707
+Underfull \hbox (badness 7291) in paragraph at lines 1708--1709
 \OT1/ptm/m/n/10 we only need to prove $[]$ $\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m/
 it/10 ^^^$\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )) =
  []
 
 
-Underfull \hbox (badness 4846) in paragraph at lines 1708--1713
+Underfull \hbox (badness 4846) in paragraph at lines 1710--1715
 \OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 there is a sub-structure $\OT1/cmr/m/n/10 (
 \OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 of
  $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \OT
@@ -1390,23 +1394,23 @@ Underfull \hbox (badness 4846) in paragraph at lines 1708--1713
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1721--1723
+Underfull \hbox (badness 10000) in paragraph at lines 1723--1725
 
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 1726--1735
+Underfull \hbox (badness 1275) in paragraph at lines 1728--1737
 \OT1/ptm/m/n/10 propo-si-tional vari-able for-get-ting is NP-hard [] []Zhang an
 d
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1726--1735
+Underfull \hbox (badness 10000) in paragraph at lines 1728--1737
 
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 1760--1761
+Underfull \hbox (badness 1048) in paragraph at lines 1762--1763
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 but 
 $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \U/ms
 b/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  ; V\OT1/cmr/m/n/10 )$\OT1/ptm/m
@@ -1414,44 +1418,44 @@ b/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  ; V\OT1/cmr/m/n/10 )$\OT1/ptm/m
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 1762--1763
+Underfull \hbox (badness 1400) in paragraph at lines 1764--1765
 []\OT1/ptm/m/n/10 Hardness. It fol-lows from (2) due to the fact that
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1764--1765
-
- []
-
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 1778--1780
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1767
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1792--1795
+Underfull \hbox (badness 10000) in paragraph at lines 1780--1782
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1815--1821
+Underfull \hbox (badness 10000) in paragraph at lines 1794--1797
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1856--1858
+Underfull \hbox (badness 10000) in paragraph at lines 1817--1823
 
  []
 
 
-Underfull \hbox (badness 6708) in paragraph at lines 1872--1875
+Underfull \hbox (badness 10000) in paragraph at lines 1858--1860
+
+ []
+
+
+Underfull \hbox (badness 6708) in paragraph at lines 1874--1877
 []\OT1/ptm/m/n/10 For each $\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/i
 t/10 i \OMS/cmsy/m/n/10 ^^T \OT1/cmr/m/n/10 2[]$\OT1/ptm/m/n/10 , there is at m
 ost
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1872--1875
+Underfull \hbox (badness 10000) in paragraph at lines 1874--1877
 
  []
 
@@ -1493,17 +1497,17 @@ Underfull \hbox (badness 4048) in paragraph at lines 166--171
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1880.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1882.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1880.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1882.
  (./IJCAI-model-based-4-complexity.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1880.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1880.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1882.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1882.
 
 Package rerunfilecheck Info: File `IJCAI-model-based-4-complexity.out' has not 
 changed.
 (rerunfilecheck)             Checksum: CD657E2D2B75F8022DFE86862A552D03;818.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1880.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1882.
  )
 (\end occurred inside a group at level 1)
 
@@ -1512,7 +1516,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1880.
 Here is how much of TeX's memory you used:
  9223 strings out of 492995
  134802 string characters out of 6132704
- 257391 words of memory out of 5000000
+ 255391 words of memory out of 5000000
  12447 multiletter control sequences out of 15000+600000
  40445 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1539,7 +1543,7 @@ onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 /urw/times/utmbi8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on IJCAI-model-based-4-complexity.pdf (14 pages, 313352 bytes).
+Output written on IJCAI-model-based-4-complexity.pdf (14 pages, 313688 bytes).
 PDF statistics:
  518 PDF objects out of 1000 (max. 8388607)
  475 compressed objects within 5 object streams

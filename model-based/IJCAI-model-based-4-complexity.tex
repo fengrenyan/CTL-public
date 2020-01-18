@@ -493,7 +493,7 @@ $ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 0$ }$
 %\end{proposition}
 
 
-It's apparent that $\lrto_V$ is a binary relation, denoted as $\cal B$, \ie ${\cal K}_1 \lrto_V {\cal K}_2$ iff $({\cal K}_1, {\cal K}_2) \in \cal B$.
+It's apparent that $\lrto_V$ is a binary relation.
  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
  by $s_1 \lrto_V s_2 $
  whenever the underlying model structures of states $s_1$ and $s_2$ are clear from the context.% when it is clear
@@ -562,8 +562,8 @@ This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto
 
 \begin{proposition}\label{pro:k}
   Let $V\subseteq \Ha$, $\Hm$ be a model structure and $s,s'\in S$
-  such that $(s,s')\notin \cal B$.
-  There exists a least number $k$ such that
+  such that $s\not\lrto_V s'$.
+  There exists a least  $k$ such that
   $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.
 \end{proposition}
 In this case the  model structure ${\cal M}$ is called $V$-{\em distinguishable} (by
@@ -577,7 +577,7 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
   \begin{array}{ll}
     \max\{k\mid s,s'\in S\ \&\ \dis_V({\cal M},s,s',k)\},\\
          \ \ \qquad \qquad \qquad \hbox{${\cal M}$ is $V$-distinguishable;} \\
-    \min\{k\mid {\cal B}_{k}={\cal B}\}, \ \ \ \qquad \qquad \hbox{otherwise.}
+    \min\{k\mid {\cal B}_{k}={\cal B}_{k+1}\}, \ \ \ \quad \qquad \hbox{otherwise.}
   \end{array}
 \right.
 \]
@@ -731,7 +731,7 @@ of equivalence the forgetting result is unique (up to equivalence).
 By Lemma~\ref{lem:models:formula},such a formula always exists, which
 is equivalent to
 \begin{equation*}
-  \bigvee_{{\cal K}\in  \{{\cal K}'\mbox{ is initial }\mid \exists {\cal K}''\in\Mod(\phi)\ \&\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
+  \bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi)\ \text{ and }\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
 \end{equation*}
 For this reason, the forgetting result is denoted by $\CTLforget(\phi,V)$.
 
@@ -757,7 +757,7 @@ Assume you are given a formula $\varphi$, and $\varphi'$ is the formula after fo
 
 %lets explain them here
 
-Intuitive enough, the postulate (\W) says, forgetting weakens the original formula.  (\PP)  and  (\NgP) correspond to the fact that so long as forgotten atoms $V$ are irrelevant to the remaining positive and the negative information, respectively, they do not affect them. (\IR) states that forgotten atoms $V$ are not relevant for the final formula anymore (i.e., $\varphi'$ is $V$-irrelevant).
+Intuitive enough, the postulate (\W) says, forgetting weakens the original formula.  (\PP)  and  (\NgP) correspond to the fact that so long as forgotten atoms $V$ are irrelevant to the remaining positive and the negative information, respectively, they do not affect them. (\textbf{\IR}) states that forgotten atoms $V$ are not relevant for the final formula anymore (i.e., $\varphi'$ is $V$-irrelevant).
 
 
 
@@ -1135,7 +1135,7 @@ work is to find an efficient algorithm to compute forgetting in \CTL\ and then W
    Then,  for each $i\ge 0$,
    \begin{enumerate}[(i)]
      \item $\Hb_{i+1}\subseteq \Hb_i$;
-     \item there is the leat number $k\ge 0$ such that $\Hb_{k+1}=\Hb_k$;
+     \item there is a (smallest) $k\ge 0$ such that $\Hb_{k+1}=\Hb_k$;
      \item $\Hb_i$ is reflexive, symmetric and transitive.
    \end{enumerate}
 \end{lemma}
@@ -1163,7 +1163,7 @@ work is to find an efficient algorithm to compute forgetting in \CTL\ and then W
 
 \textbf{Lemma}~\ref{lem:equive}  The relation $\lrto_V$ is an equivalence relation.\\
 \begin{proof}
-It is clear from Lemma~\ref{lem:B:relations} due to there is the leat number $k \geq $ 0 such that $\Hb_k = \Hb$.
+It is clear from Lemma~\ref{lem:B:relations} (ii) such that there is a $k \geq $ 0 where $\Hb_k = \Hb_{k+1}$ which is  $\lrto_V$, and it is reflexive, symmetric and transitive by (iii).
 \end{proof}
 
 
@@ -1183,7 +1183,7 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
  \end{enumerate}
 \begin{proof}
 In order to distinguish the relations $\Hb_0, \Hb_1, \dots$ for different set $V \subseteq \Ha$, by $\Hb_i^V$ we mean the relation $\Hb_1, \Hb_2, \dots$ for $V \subseteq \Ha$.
-Denote as $\Hb_0, \Hb_1, \dots$ when the underlying set $V$ is clear from their contexts or there is no confusion.
+Denote as $\Hb_0, \Hb_1, \dots$ when the underlying set $V$ is clear from the context. Moreover, for the ease of notation, we will refer to $\lrto_V$ by $\Hb$ (i.e., without subindex).
 
 (i) Base: it is clear for $n = 0$.\\
 Step: For $n > 0$, supposing if $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_1}$ and $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$ then $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_1 \cup V_2}$ for all $0 \leq i \leq n$. We will show that if $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1}$ and $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_2}$ then $({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1 \cup V_2}$.\\
@@ -1338,11 +1338,11 @@ $s_1 \Hb_0 s_1'$. Therefore $s \Hb_1 s'$, and then we will have $s \Hb_n s'$ by 
 \end{proof}
 
 \textbf{Proposition}~\ref{pro:k}   Let $V\subseteq \Ha$, $\Hm$ be a model structure and $s,s'\in S$
-  such that $(s,s')\notin \cal B$.
-  There exists a least number $k$ such that
+  such that $s\not\lrto_V s'$.
+  There exists a least  $k$ such that
   $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.\\
 \begin{proof}
-If $(s,s') \notin \cal B$, then there exists a least constant $k$ such that $(s_i, s_j) \notin \Hb_k$, and then there is a least constant m ($m \leq k$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-corresponding by Proposition~\ref{B_to_T}. Let $c=m$, the lemma is proved.
+If $s\not\lrto_V s'$, then there exists a least constant $k$ such that $(s_i, s_j) \notin \Hb_k$, and then there is a least constant m ($m \leq k$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-corresponding by Proposition~\ref{B_to_T}. Let $c=m$, the lemma is proved.
 \end{proof}
 
 
