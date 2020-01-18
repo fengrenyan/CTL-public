@@ -843,14 +843,16 @@ Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $
 %forgetting is NP-hard.
 %\end{proof}
 
-By this proposition, we have:
+The fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective correspond to specification descriptions for properties that is desired to hold in all branches eventually. Such properties are of special interest in concurrent systems e.g., mutual exclusion and  waiting events~\cite{Baier:PMC:2008}.  
+In the following, we report various complexity results concerning forgetting and the logical entailment in this fragment.
+
 \begin{theorem}\label{thm:comF}
-Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ (a fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective) formulas and $V$ a set of atoms. Then we have the
+Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of atoms. Then,
 results:
 \begin{enumerate}[(i)]
-  \item deciding if $\forget(\varphi, V ) \models \psi$ is co-NP-complete,
-  \item deciding if $\psi \models \forget(\varphi, V)$ is $\Pi_2^P$-complete,
-  \item deciding if $\forget(\varphi, V) \models \forget(\psi, V)$ is $\Pi_2^P$-complete.
+  \item deciding  $\forget(\varphi, V ) \models^? \psi$ is co-NP-complete,
+  \item deciding  $\psi \models^? \forget(\varphi, V)$ is $\Pi_2^P$-complete,
+  \item deciding $\forget(\varphi, V) \models^? \forget(\psi, V)$ is $\Pi_2^P$-complete.
 \end{enumerate}
 %Where $X\in\{\ALL, \EXIST\}$.
 \end{theorem}
@@ -877,13 +879,13 @@ results:
 %
 %\end{proof}
 
-The theorem implies:
+The following results follow from Theorem~\ref{thm:comF} and extends them to semantic equivalence.
 \begin{corollary}
 Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of atoms. Then
 \begin{enumerate}[(i)]
-  \item deciding if $\psi \equiv \forget(\varphi, V)$ is $\Pi_2^P$-complete,
-  \item deciding if $\forget(\varphi, V) \equiv \varphi$ is co-NP-complete,
-  \item deciding if $\forget(\varphi, V) \equiv \forget(\psi, V)$ is $\Pi_2^P$-complete.
+  \item deciding $\psi \equiv^? \forget(\varphi, V)$ is $\Pi_2^P$-complete,
+  \item deciding $\forget(\varphi, V) \equiv^? \varphi$ is co-NP-complete,
+  \item deciding $\forget(\varphi, V) \equiv^? \forget(\psi, V)$ is $\Pi_2^P$-complete.
 \end{enumerate}
 \end{corollary}
 
