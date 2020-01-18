@@ -246,10 +246,10 @@ However, in the case of model checking, it concerns properties about execution r
 It can be shown by the following example.
 
 \begin{example}\label{exmp:1}
-A Beverage Vending Machine %, which has been established as standard in the field of process calculi,
+ We give a simplified variant of an example from~\cite{Baier:PMC:2008}. A Beverage Vending Machine %, which has been established as standard in the field of process calculi,
  can be described as a Kripke structure $\Hm=(S, R, L, s_0)$ in Figure~\ref{BVM} on $V_a=\{select, pay, beer, soda\}$.
  % with $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2,s_0)\}$, $L(s_0)=\{select\}$, $L(s_1)=\{pay, soda\}$, $L(s_2)=\{pay, beer\}$ and $s_0$ is an initial state.
-Which means that when we in $s_0$ if we select soda and pay for it then we change to the $s_1$, else if we select beer and pay for it then we change to the $s_2$, after takeing out the drink we transform to $s_0$. This is somewhat different from that in~\cite{Baier:PMC:2008} for simply.
+This means that  if we are in $s_0$, (s)elect (so)da and pay for it then we are in $s_1$, else if we (s)elect (b)eer and (p)ay for it then we  are in $s_2$, after taking out the drink we are back to $s_0$ again.
 For convenience, we use $s$ for $select$, $p$ for $pay$, $b$ for $beer$, $so$ for $soda$ and $r$ for orange juice.
 %It follows that $s_0$ is an initial state.
 Let $\varphi=\ALL\GLOBAL \ALL \FUTURE(p\wedge r)$, which means $p\wedge r$ will be satisfied infinite times in the structure, be a \CTL\ formula.
@@ -319,14 +319,16 @@ Finally, we conclude this paper.
  \section{Preliminaries}
  We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. In this part, we will introduce the structure we will use for \CTL\ and syntax and semantic of \CTL.
 \subsection{Model structure in \CTL}
-In general, a transition system~\footnote{According to \cite{Baier:PMC:2008},
-a {\em transition system} TS is a tuple $(S, Act,\rto,I, AP, L)$ where
-(1) $S$ is a set of states,
-(2) $\textrm{Act}$ is a set of actions,
-(3) $\rto\subseteq S\times \textrm{Act}\times S$ is a transition relation,
-(4) $I\subseteq S$ is a set of initial states,
-(5) $\textrm{AP}$ is a set of atomic propositions, and
-(6) $L:S\rto 2^{\textrm{AP}}$ is a labeling function.} is described as a \emph{model\ structure} (or \emph{Kripke \ structure}), and a model structure is a triple $\Hm=(S,R,L)$, where
+In general, a transition system
+%\footnote{According to \cite{Baier:PMC:2008},
+%a {\em transition system} TS is a tuple $(S, Act,\rto,I, AP, L)$ where
+%(1) $S$ is a set of states,
+%(2) $\textrm{Act}$ is a set of actions,
+%(3) $\rto\subseteq S\times \textrm{Act}\times S$ is a transition relation,
+%(4) $I\subseteq S$ is a set of initial states,
+%(5) $\textrm{AP}$ is a set of atomic propositions, and
+%(6) $L:S\rto 2^{\textrm{AP}}$ is a labeling function.}
+ can be described by a \emph{model\ structure} (or \emph{Kripke \ structure}) (see~\cite{Baier:PMC:2008} for details). A model structure is a triple $\Hm=(S,R,L)$, where
 \begin{itemize}
   \item $S$ is a finite nonempty set of states,
   \item $R\subseteq S\times S$ and, for each $s\in S$, there
@@ -392,11 +394,11 @@ using the forms of (\ref{def:CTL:formulas}).
 %above definition for formulas of \CTL,
 %each of the \CTL\ {\em temporal connectives} has the form $XY$
 %where $X\in \{\ALL,\EXIST\}$ and  $Y\in\{\NEXT, \FUTURE, \GLOBAL, \UNTIL\}$.
-The priorities for the \CTL\ connectives are assumed to be (from the highest to the lowest):
-\begin{equation*}
-  \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL
-  \prec \land \prec \lor \prec \EXIST\UNTIL, \ALL\UNTIL, \EXIST \UNLESS, \ALL \UNLESS, \rto.
-\end{equation*}
+%The priorities for the \CTL\ connectives are assumed to be (from the highest to the lowest):
+%\begin{equation*}
+ % \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL
+ % \prec \land \prec \lor \prec \EXIST\UNTIL, \ALL\UNTIL, \EXIST \UNLESS, \ALL \UNLESS, \rto.
+%\end{equation*}
 
 We are now in the position to define the semantics of $\cal L$.
 Let ${\cal M}=(S,R,L,s_0)$ be a model structure, $s\in S$ and $\phi$ a formula of $\cal L$.
@@ -550,7 +552,7 @@ $\Tr_n(s_1)\lrto_V\Tr_n(s_2)$), if % $({\cal M}_1,s_1)\lrto_V({\cal M}_2,s_2)$.
 %  $\Tr_n(s_1)$ has a subtree $\Tr_{n-1}(s_1')$ such that
 %  $\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$.
 \end{itemize}
-Please note that the last condition in the above definition
+Note that the last condition in the above definition
 hold trivially for $n=0$.
 
 \begin{proposition}\label{B_to_T}
@@ -766,7 +768,7 @@ Intuitive enough, the postulate (\W) says, forgetting weakens the original formu
 
 
 
-\begin{theorem}\label{thm:close}(Representation theorem).
+\begin{theorem}[Representation Theorem]\label{thm:close}
 Let $\varphi$, $\varphi'$ and $\psi$ be \CTL\ formulas and $V \subseteq \Ha$.
 Then the following statements are equivalent:
 \begin{enumerate}[(i)]
@@ -784,7 +786,7 @@ The above theorem says that \CTL\ is closed under our definition of forgetting, 
 \end{lemma}
 
 
-\begin{proposition}\label{disTF}
+\begin{proposition}[Commutativity]\label{disTF}
 Let $\varphi$ be a formula, $V$ a set of atoms and $p$ an atom such that $p \notin V$. Then,
 \[
 \CTLforget(\varphi, \{p\} \cup V) \equiv \CTLforget(\CTLforget(\varphi, p), V).
@@ -816,8 +818,8 @@ Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$.
 
 
 Another interesting result is that the forgetting of $P T \varphi$ ($P\in \{\EXIST, \ALL\}$, $T \in \{\FUTURE, \NEXT\}$) on $V\subseteq \Ha$ can be computed by $PT \CTLforget(\varphi, V)$. This gives us a convenient method to compute forgetting since we can push the forgetting operator to a subformula without affecting the semantics.
-\begin{proposition}\label{pro:ctl:forget:2}
-  Let $V\subseteq\cal A$ and $\phi$ a formula.% and $Q\in \{\EXIST, \ALL\}$.
+\begin{proposition}[Linearity]\label{pro:ctl:forget:2}
+  Let $V\subseteq\cal A$ and $\phi \in \CTL$,% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
     \item $\CTLforget(\ALL\NEXT\phi,V)\equiv \ALL\NEXT \CTLforget(\phi,V)$.
     \item $\CTLforget(\EXIST\NEXT\phi,V)\equiv\EXIST\NEXT \CTLforget(\phi,V)$.
@@ -846,7 +848,7 @@ Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $
 The fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective correspond to specification descriptions for properties that is desired to hold in all branches eventually. Such properties are of special interest in concurrent systems e.g., mutual exclusion and  waiting events~\cite{Baier:PMC:2008}.  
 In the following, we report various complexity results concerning forgetting and the logical entailment in this fragment.
 
-\begin{theorem}\label{thm:comF}
+\begin{theorem}[Entailment on Forgetting]\label{thm:comF}
 Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of atoms. Then,
 results:
 \begin{enumerate}[(i)]
