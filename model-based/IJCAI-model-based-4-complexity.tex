@@ -786,7 +786,7 @@ The above theorem says that \CTL\ is closed under our definition of forgetting, 
 \end{lemma}
 
 
-\begin{proposition}[Commutativity]\label{disTF}
+\begin{proposition}\label{disTF}
 Let $\varphi$ be a formula, $V$ a set of atoms and $p$ an atom such that $p \notin V$. Then,
 \[
 \CTLforget(\varphi, \{p\} \cup V) \equiv \CTLforget(\CTLforget(\varphi, p), V).
@@ -795,7 +795,7 @@ Let $\varphi$ be a formula, $V$ a set of atoms and $p$ an atom such that $p \not
 This means that the result of forgetting $V$ from $\varphi$ can be obtained by forgetting atoms in $V$ one by one.
 Moreover, the order of atoms does not matter (commutativity), which follows from  Proposition~\ref{disTF}.
 
-\begin{corollary}\label{disTFV}
+\begin{corollary}[Commutativity]\label{disTFV}
 Let $\varphi$ be a formula and $V_i\subseteq{\cal A}~(i=1,2)$. Then:
 \[
 \CTLforget(\varphi, V_1 \cup V_2) \equiv \CTLforget(\CTLforget(\varphi, V_1), V_2).
@@ -834,7 +834,7 @@ Another interesting result is that the forgetting of $Q T \varphi$ ($Q\in \{\EXI
 In the following, we outline the computational complexity of the various tasks regarding the forgetting in \CTL\ and its popular fragment $\CTL_{\ALL\FUTURE}$.  It turns out that the model-checking on forgetting without any restriction is NP-complete.
 %In this part we talk about the main complexity of entailment complexity of forgetting in \CTL.
 \begin{proposition}[Model Checking on Forgetting]\label{modelChecking}
-Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $V$ a set of atoms. Deciding whether $(\Hm,s_0)$ is a model of $\forget(\varphi, V )$ is NP-complete.
+Let~$(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $V$ a set of atoms. Deciding whether $(\Hm,s_0)$ is a model of $\forget(\varphi, V )$ is NP-complete.
 \end{proposition}
 %\begin{proof}
 %The problem can be determined by the following two things: (1) guessing
