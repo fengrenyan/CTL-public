@@ -1,14 +1,17 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  19 JAN 2020 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.26)  19 JAN 2020 23:02
 entering extended mode
-**D:/CTL-git/CTL-public/model-based/IJCAI-model-based-4-complexity.tex
-(D:/CTL-git/CTL-public/model-based/IJCAI-model-based-4-complexity.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for loaded.
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**IJCAI-model-based-4-complexity.tex
+(./IJCAI-model-based-4-complexity.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 IJCAI--PRICAI--20 Multiple authors example
-(C:\CTEX\MiKTeX\tex\latex\base\article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(C:\CTEX\MiKTeX\tex\latex\base\size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -21,16 +24,15 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-(D:\CTL-git\CTL-public\model-based\ijcai20.sty
+) (./ijcai20.sty
 Conference Style, version of November 2018
 \titlepad=\skip43
 \titlebox=\skip44
 Named Citation Style, version of 30 November 1994
-) (C:\CTEX\MiKTeX\tex\latex\psnfss\times.sty
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(C:\CTEX\MiKTeX\tex\latex\soul\soul.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks14
 \SOUL@lasttoken=\toks15
@@ -42,97 +44,104 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen104
 \SOUL@ulht=\dimen105
 )
-(C:\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(C:\CTEX\MiKTeX\tex\latex\hyperref\hyperref.sty
-Package: hyperref 2012/02/06 v6.82o Hypertext links for LaTeX
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
-Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
-Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
-Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
-Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
-Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
-Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
-Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-(C:\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
-Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen106
 \Hy@linkcounter=\count87
 \Hy@pagecounter=\count88
 
-(C:\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def
-File: pd1enc.def 2012/02/06 v6.82o Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count89
 
-(C:\CTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4046.
-Package hyperref Info: Link nesting OFF on input line 4051.
-Package hyperref Info: Hyper index ON on input line 4054.
-Package hyperref Info: Plain pages OFF on input line 4061.
-Package hyperref Info: Backreferencing OFF on input line 4066.
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4284.
+Package hyperref Info: Bookmarks ON on input line 4751.
 \c@Hy@tempcnt=\count90
-LaTeX Info: Redefining \url on input line 4637.
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen107
 \Fld@menulength=\count91
-\Field@Width=\dimen107
-\Fld@charsize=\dimen108
-Package hyperref Info: Hyper figures OFF on input line 5757.
-Package hyperref Info: Link nesting OFF on input line 5762.
-Package hyperref Info: Hyper index ON on input line 5765.
-Package hyperref Info: backreferencing OFF on input line 5772.
-Package hyperref Info: Link coloring OFF on input line 5777.
-Package hyperref Info: Link coloring with OCG OFF on input line 5782.
-Package hyperref Info: PDF/A mode OFF on input line 5787.
-LaTeX Info: Redefining \ref on input line 5827.
-LaTeX Info: Redefining \pageref on input line 5831.
+\Field@Width=\dimen108
+\Fld@charsize=\dimen109
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
 \Hy@abspage=\count92
 \c@Item=\count93
 \c@Hfootnote=\count94
@@ -140,35 +149,37 @@ LaTeX Info: Redefining \pageref on input line 5831.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\CTEX\MiKTeX\tex\latex\hyperref\hpdftex.def
-File: hpdftex.def 2012/02/06 v6.82o Hyperref driver for pdfTeX
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
 \Fld@listcount=\count95
 \c@bookmark@seq@number=\count96
 
-(C:\CTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip46
 )
-(C:\CTEX\MiKTeX\tex\latex\base\inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks20
 \inpenc@posthook=\toks21
 
-(C:\CTEX\MiKTeX\tex\latex\base\utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(C:\CTEX\MiKTeX\tex\latex\base\t1enc.dfu
-File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00BB (decimal 187)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C0 (decimal 192)
@@ -233,50 +244,94 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00FD (decimal 253)
    defining Unicode char U+00FE (decimal 254)
    defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
    defining Unicode char U+0102 (decimal 258)
    defining Unicode char U+0103 (decimal 259)
    defining Unicode char U+0104 (decimal 260)
    defining Unicode char U+0105 (decimal 261)
    defining Unicode char U+0106 (decimal 262)
    defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
    defining Unicode char U+010C (decimal 268)
    defining Unicode char U+010D (decimal 269)
    defining Unicode char U+010E (decimal 270)
    defining Unicode char U+010F (decimal 271)
    defining Unicode char U+0110 (decimal 272)
    defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
    defining Unicode char U+0118 (decimal 280)
    defining Unicode char U+0119 (decimal 281)
    defining Unicode char U+011A (decimal 282)
    defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
    defining Unicode char U+011E (decimal 286)
    defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
    defining Unicode char U+0130 (decimal 304)
    defining Unicode char U+0131 (decimal 305)
    defining Unicode char U+0132 (decimal 306)
    defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
    defining Unicode char U+0139 (decimal 313)
    defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
    defining Unicode char U+013D (decimal 317)
    defining Unicode char U+013E (decimal 318)
    defining Unicode char U+0141 (decimal 321)
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0143 (decimal 323)
    defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
    defining Unicode char U+0147 (decimal 327)
    defining Unicode char U+0148 (decimal 328)
    defining Unicode char U+014A (decimal 330)
    defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
    defining Unicode char U+0150 (decimal 336)
    defining Unicode char U+0151 (decimal 337)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
    defining Unicode char U+0154 (decimal 340)
    defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
    defining Unicode char U+0158 (decimal 344)
    defining Unicode char U+0159 (decimal 345)
    defining Unicode char U+015A (decimal 346)
    defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
    defining Unicode char U+015E (decimal 350)
    defining Unicode char U+015F (decimal 351)
    defining Unicode char U+0160 (decimal 352)
@@ -285,10 +340,22 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+0163 (decimal 355)
    defining Unicode char U+0164 (decimal 356)
    defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
    defining Unicode char U+016E (decimal 366)
    defining Unicode char U+016F (decimal 367)
    defining Unicode char U+0170 (decimal 368)
    defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
    defining Unicode char U+0178 (decimal 376)
    defining Unicode char U+0179 (decimal 377)
    defining Unicode char U+017A (decimal 378)
@@ -296,9 +363,40 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+017C (decimal 380)
    defining Unicode char U+017D (decimal 381)
    defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
    defining Unicode char U+2018 (decimal 8216)
    defining Unicode char U+2019 (decimal 8217)
    defining Unicode char U+201A (decimal 8218)
@@ -310,14 +408,18 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(C:\CTEX\MiKTeX\tex\latex\base\ot1enc.dfu
-File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00B8 (decimal 184)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C5 (decimal 197)
@@ -335,6 +437,14 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
    defining Unicode char U+2018 (decimal 8216)
@@ -345,8 +455,8 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(C:\CTEX\MiKTeX\tex\latex\base\omsenc.dfu
-File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -371,77 +481,79 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(C:\CTEX\MiKTeX\tex\latex\caption\caption.sty
-Package: caption 2011/11/10 v3.2e Customizing captions (AR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(C:\CTEX\MiKTeX\tex\latex\caption\caption3.sty
-Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
-\captionmargin=\dimen109
-\captionmargin@=\dimen110
-\captionwidth=\dimen111
-\caption@indent=\dimen112
-\caption@parindent=\dimen113
-\caption@hangindent=\dimen114
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen110
+\captionmargin@=\dimen111
+\captionwidth=\dimen112
+\caption@tempdima=\dimen113
+\caption@indent=\dimen114
+\caption@parindent=\dimen115
+\caption@hangindent=\dimen116
 )
 \c@ContinuedFloat=\count97
 Package caption Info: hyperref package is loaded.
 )
-(C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(C:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 \Gread@gobject=\count98
 ))
-\Gin@req@height=\dimen115
-\Gin@req@width=\dimen116
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
 )
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
-Package: amstext 2000/06/29 v2.01
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
-\ex@=\dimen117
+\ex@=\dimen119
 ))
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen118
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen120
 )
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count99
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 213.
 \uproot@=\count100
 \leftroot@=\count101
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 375.
 \classnum@=\count102
 \DOTSCASE@=\count103
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen119
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\big@size=\dimen121
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count104
 \c@MaxMatrixCols=\count105
 \dotsspace@=\muskip11
@@ -452,69 +564,69 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \column@=\count109
 \maxfields@=\count110
 \andhelp@=\toks24
-\eqnshift@=\dimen120
-\alignsep@=\dimen121
-\tagshift@=\dimen122
-\tagwidth@=\dimen123
-\totwidth@=\dimen124
-\lineht@=\dimen125
+\eqnshift@=\dimen122
+\alignsep@=\dimen123
+\tagshift@=\dimen124
+\tagwidth@=\dimen125
+\totwidth@=\dimen126
+\lineht@=\dimen127
 \@envbody=\toks25
 \multlinegap=\skip48
 \multlinetaggap=\skip49
 \mathdisplay@stack=\toks26
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-(C:\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
-Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen126
-\lightrulewidth=\dimen127
-\cmidrulewidth=\dimen128
-\belowrulesep=\dimen129
-\belowbottomsep=\dimen130
-\aboverulesep=\dimen131
-\abovetopsep=\dimen132
-\cmidrulesep=\dimen133
-\cmidrulekern=\dimen134
-\defaultaddspace=\dimen135
+(/usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen128
+\lightrulewidth=\dimen129
+\cmidrulewidth=\dimen130
+\belowrulesep=\dimen131
+\belowbottomsep=\dimen132
+\aboverulesep=\dimen133
+\abovetopsep=\dimen134
+\cmidrulesep=\dimen135
+\cmidrulekern=\dimen136
+\defaultaddspace=\dimen137
 \@cmidla=\count111
 \@cmidlb=\count112
-\@aboverulesep=\dimen136
-\@belowrulesep=\dimen137
+\@aboverulesep=\dimen138
+\@belowrulesep=\dimen139
 \@thisruleclass=\count113
 \@lastruleclass=\count114
-\@thisrulewidth=\dimen138
+\@thisrulewidth=\dimen140
 )
-(C:\CTEX\MiKTeX\tex\latex\setspace\setspace.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\CTEX\MiKTeX\tex\latex\psnfss\helvet.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(C:\CTEX\MiKTeX\tex\latex\psnfss\courier.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(C:\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
-Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks27
 )
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
-Package: subfigure 2002/07/30 v2.1.4 subfigure package
+(/usr/local/texlive/2017/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip50
 \subfigcapskip=\skip51
-\subfigcaptopadj=\dimen139
+\subfigcaptopadj=\dimen141
 \subfigbottomskip=\skip52
-\subfigcapmargin=\dimen140
+\subfigcapmargin=\dimen142
 \subfiglabelskip=\skip53
 \c@subfigure=\count115
 \c@lofdepth=\count116
@@ -524,66 +636,69 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(C:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip54
 \subfig@bottom=\skip55
 )
-(C:\CTEX\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-Package: algorithm2e 2008/00/00 v3.10 algorithms environments
+(/usr/local/texlive/2017/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count119
 
-(C:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(C:\CTEX\MiKTeX\tex\latex\tools\xspace.sty
-Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+\algocf@hangindent=\skip56
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-(C:\CTEX\MiKTeX\tex\latex\ltxmisc\relsize.sty
-Package: relsize 2003/07/04 ver 3.1
-
-
-Package relsize Warning: Failed to get list of font sizes.
-(relsize)                Falling back to old definition. on input line 81.
-
+(/usr/local/texlive/2017/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
 )
 ********************************************************
-Package `algorithm2e' Release 4.01 -- december 14 2009 --
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
 - algorithm2e-announce@lirmm.fr mailing list for announcement about releases
 - algorithm2e-discussion@lirmm.fr mailing list for discussion about package
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (fiorio@lirmm.fr)
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
 ********************************************************
-\skiptotal=\skip56
-\skiplinenumber=\skip57
-\skiprule=\skip58
-\skiphlne=\skip59
-\skiptext=\skip60
-\skiplength=\skip61
-\algomargin=\skip62
-\skipalgocfslide=\skip63
-\algowidth=\dimen141
-\inoutsize=\dimen142
-\inoutline=\dimen143
-\interspacetitleruled=\dimen144
-\interspacealgoruled=\dimen145
-\interspacetitleboxruled=\dimen146
+\skiptotal=\skip57
+\skiplinenumber=\skip58
+\skiprule=\skip59
+\skiphlne=\skip60
+\skiptext=\skip61
+\skiplength=\skip62
+\algomargin=\skip63
+\skipalgocfslide=\skip64
+\algowidth=\dimen143
+\inoutsize=\dimen144
+\inoutindent=\dimen145
+\interspacetitleruled=\dimen146
+\interspacealgoruled=\dimen147
+\interspacetitleboxruled=\dimen148
+\algocf@ruledwidth=\skip65
 \algocf@inoutbox=\box28
 \algocf@inputbox=\box29
-\AlCapSkip=\skip64
-\AlCapHSkip=\skip65
+\AlCapSkip=\skip66
+\AlCapHSkip=\skip67
+\algoskipindent=\skip68
 \algocf@nlbox=\box30
 \algocf@hangingbox=\box31
-\algocf@capbox=\box32
-\algoheightruledefault=\skip66
-\algoheightrule=\skip67
-\algotitleheightruledefault=\skip68
-\algotitleheightrule=\skip69
+\algocf@untilbox=\box32
+\algocf@skipuntil=\skip69
+\algocf@capbox=\box33
+\algoheightruledefault=\skip70
+\algoheightrule=\skip71
+\algotitleheightruledefault=\skip72
+\algotitleheightrule=\skip73
 \c@algocfline=\count120
 \c@algocfproc=\count121
 \c@algocf=\count122
-\algocf@algoframe=\box33
-\algocf@algobox=\box34
-) (D:\CTL-git\CTL-public\model-based\IJCAI-model-based-4-complexity.aux)
+\algocf@algoframe=\box34
+\algocf@algobox=\box35
+) (./IJCAI-model-based-4-complexity.aux)
+\openout1 = `IJCAI-model-based-4-complexity.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
@@ -600,17 +715,17 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 88.
 
-(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\AtBeginShipoutBox=\box35
+\AtBeginShipoutBox=\box36
 Package hyperref Info: Link coloring OFF on input line 88.
 
-(C:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
-Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count123
 )
@@ -618,33 +733,50 @@ LaTeX Info: Redefining \ref on input line 88.
 LaTeX Info: Redefining \pageref on input line 88.
 LaTeX Info: Redefining \nameref on input line 88.
 
-(D:\CTL-git\CTL-public\model-based\IJCAI-model-based-4-complexity.out)
-(D:\CTL-git\CTL-public\model-based\IJCAI-model-based-4-complexity.out)
+(./IJCAI-model-based-4-complexity.out) (./IJCAI-model-based-4-complexity.out)
 \@outlinefile=\write3
+\openout3 = `IJCAI-model-based-4-complexity.out'.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-(C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count124
-\scratchdimen=\dimen147
-\scratchbox=\box36
+\scratchdimen=\dimen149
+\scratchbox=\box37
 \nofMPsegments=\count125
 \nofMParguments=\count126
 \everyMPshowfont=\toks28
 \MPscratchCnt=\count127
-\MPscratchDim=\dimen148
+\MPscratchDim=\dimen150
 \MPnumerator=\count128
 \makeMPintoPDFobject=\count129
 \everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 \c@definition=\count130
 \c@examp=\count131
 \c@lemma=\count132
 \c@proposition=\count133
 \c@theorem=\count134
-\titlearea=\box37
+\titlearea=\box38
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 206.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -653,23 +785,23 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 LaTeX Warning: No \author given.
 
-\actualheight=\skip70
+\actualheight=\skip74
 
 LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 226.
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 226.
 
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
 
-<BVM.png, id=65, 290.08376pt x 115.43124pt>
+<BVM.png, id=66, 290.08376pt x 115.43124pt>
 File: BVM.png Graphic file (type png)
  <use BVM.png>
 Package pdftex.def Info: BVM.png used on input line 259.
@@ -684,25 +816,24 @@ Underfull \hbox (badness 1205) in paragraph at lines 249--262
 \OT1/ptm/m/n/10 from [] []Baier and Ka-toen, 2008[][]. A Bev-er-age Vend-ing
  []
 
-[1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
- <D:/CTL-git/CTL-public/model-based/BVM.png>]
+ <./BVM.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 321.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 333.
 
- (C:\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 333.
-
-[2]
+ [2]
 Underfull \hbox (badness 6842) in paragraph at lines 572--578
-\OT1/ptm/m/n/10 In this case the mod-el struc-ture $\OMS/cmsy/m/n/10 M$ \OT1/pt
-m/m/n/10 is called $\OML/cmm/m/it/10 V$\OT1/ptm/m/n/10 -
+\OT1/ptm/m/n/10 In this case the model struc-ture $\OMS/cmsy/m/n/10 M$ \OT1/ptm
+/m/n/10 is called $\OML/cmm/m/it/10 V$\OT1/ptm/m/n/10 -
  []
 
 [3]
@@ -718,12 +849,12 @@ Overfull \hbox (14.6415pt too wide) in paragraph at lines 638--638
 [] 
  []
 
-<k1.png, id=188, 463.7325pt x 195.73125pt>
+<k1.png, id=190, 463.7325pt x 195.73125pt>
 File: k1.png Graphic file (type png)
  <use k1.png>
 Package pdftex.def Info: k1.png used on input line 683.
 (pdftex.def)             Requested size: 142.26378pt x 60.04587pt.
- [4 <D:/CTL-git/CTL-public/model-based/k1.png>]
+ [4 <./k1.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 777.
 
@@ -734,14 +865,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 837--838
 [5]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 901.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1043.
 
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1043.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1043.
 
 LaTeX Warning: Command \O invalid in math mode on input line 1043.
 
 
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1044.
+
+
 LaTeX Warning: Command \O invalid in math mode on input line 1044.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1046.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
+
+
+Package relsize Warning: Font size 6.94446pt is too small.
+(relsize)                Using 7.0pt instead on input line 1077.
 
 
 Underfull \hbox (badness 1655) in paragraph at lines 1086--1088
@@ -751,7 +958,7 @@ T1/cmr/m/n/10 (\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p\OMS/cmsy/m/n/10 g\OML/cmm/m
 /it/10 ; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 
 )\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p\OMS/
 cmsy/m/n/10 g\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 M[] \OT1/
-cmr/m/n/10 =$
+cmr/m/n/10 =
  []
 
 
@@ -759,7 +966,7 @@ Underfull \hbox (badness 1275) in paragraph at lines 1086--1088
 \OT1/ptm/m/it/10 i.e. $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/
 10 )) = \OMS/cmsy/m/n/10 fK[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 M[]\OML/cmm/m
 /it/10 ; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 
-)\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 K[] \OT1/cmr/m/n/10 =$
+)\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 K[] \OT1/cmr/m/n/10 =
  []
 
 [6]
@@ -783,8 +990,8 @@ m/it/10 R[]$
 
 Underfull \hbox (badness 1990) in paragraph at lines 1250--1253
 \OT1/ptm/m/n/10 mean that $\OML/cmm/m/it/10 s[]$ \OT1/ptm/m/n/10 is the $\OT1/c
-mr/m/n/10 (\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 2)$\OT1/ptm/m/n/10 -th n-ode in
- the path
+mr/m/n/10 (\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 2)$\OT1/ptm/m/n/10 -th node in 
+the path
  []
 
 
@@ -811,11 +1018,11 @@ Underfull \hbox (badness 1226) in paragraph at lines 1344--1349
 
 
 Underfull \hbox (badness 1577) in paragraph at lines 1344--1349
-$\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/
-cmsy/m/n/10   \OML/cmm/m/it/10 V \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 L[]\OT1/cmr
-/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it
-/10 V$ \OT1/ptm/m/n/10 and then $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT1/c
-mr/m/n/10 ) \OMS/cmsy/m/n/10 2 B[]$\OT1/ptm/m/n/10 .
+\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/c
+msy/m/n/10 ^^@ \OML/cmm/m/it/10 V \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 L[]\OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m
+/it/10 V$ \OT1/ptm/m/n/10 and then $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT
+1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 B[]$\OT1/ptm/m/n/10 .
  []
 
 
@@ -837,9 +1044,9 @@ m/n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1373--1389
-$\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 
-)) \OMS/cmsy/m/n/10  F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n
-/10 ))$\OT1/ptm/m/n/10 , then we will
+\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
+) \OMS/cmsy/m/n/10 ^^Q F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/
+n/10 ))$\OT1/ptm/m/n/10 , then we will
  []
 
 
@@ -851,27 +1058,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1373--1389
 
 
 Underfull \hbox (badness 1960) in paragraph at lines 1373--1389
-$\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 
-)) \OMS/cmsy/m/n/10  F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n
-/10 ))$\OT1/ptm/m/n/10 . Ap-par-
+\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
+) \OMS/cmsy/m/n/10 ^^Q F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/
+n/10 ))$\OT1/ptm/m/n/10 . Ap-par-
  []
 
 
 Overfull \hbox (3.84908pt too wide) in paragraph at lines 1373--1389
-$\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 
-)) =$ $[] \OMS/cmsy/m/n/10 ^$
+\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
+) =$ $[] \OMS/cmsy/m/n/10 ^
  []
 
 
 Overfull \hbox (3.84908pt too wide) in paragraph at lines 1373--1389
-$\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 
-)) =$ $[] \OMS/cmsy/m/n/10 ^$
+\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
+) =$ $[] \OMS/cmsy/m/n/10 ^
  []
 
 
 Underfull \hbox (badness 2478) in paragraph at lines 1373--1389
-$[][] [] \OMS/cmsy/m/n/10 ^ F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/c
-mr/m/n/10 ))$ \OT1/ptm/m/n/10 by
+[][] [] \OMS/cmsy/m/n/10 ^ F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cm
+r/m/n/10 ))$ \OT1/ptm/m/n/10 by
  []
 
 
@@ -883,10 +1090,10 @@ $\OT1/ptm/m/n/10 . Be-sides, for
 
 
 Underfull \hbox (badness 3930) in paragraph at lines 1373--1389
-$[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[
-] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 b
-y $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
-$[]$
+[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]
+ [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 by
+ $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
+[]
  []
 
 
@@ -896,16 +1103,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 1373--1389
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1442--1453
-\OT1/ptm/m/n/10 S-ince $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT
-1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , the
-n $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OM
-S/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$
+\OT1/ptm/m/n/10 Since $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1
+/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , then
+ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OMS
+/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =
  []
 
 
 Underfull \hbox (badness 3977) in paragraph at lines 1442--1453
-$[][] []$\OT1/ptm/m/n/10 . There-fore, for each
+[][] []$\OT1/ptm/m/n/10 . There-fore, for each
  []
 
 
@@ -918,25 +1125,25 @@ n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1442--1453
-\OT1/ptm/m/n/10 S-ince $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT
-1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , the
-n $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OM
-S/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$
+\OT1/ptm/m/n/10 Since $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1
+/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , then
+ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OMS
+/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1442--1453
-$[][] [][]\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cm
-r/m/n/10 ))$\OT1/ptm/m/n/10 . There-fore, for each
+[][] [][]\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr
+/m/n/10 ))$\OT1/ptm/m/n/10 . There-fore, for each
  []
 
 
 Underfull \hbox (badness 1067) in paragraph at lines 1442--1453
-$\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 
-)$\OT1/ptm/m/n/10 . Hence, $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m
-/n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/
-m/n/10 )$ \OT1/ptm/m/n/10 by
+\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )
+$\OT1/ptm/m/n/10 . Hence, $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/
+n/10 ) \OMS/cmsy/m/n/10 $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m
+/n/10 )$ \OT1/ptm/m/n/10 by
  []
 
 
@@ -949,12 +1156,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 1466--1469
 
  []
 
+
+Underfull \hbox (badness 1221) in paragraph at lines 1478--1483
+\OT1/ptm/m/n/10 We must show that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/
+m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][] \OML/
+cmm/m/it/10 G\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/
+n/10 )$\OT1/ptm/m/n/10 . Let
+ []
+
+
+Underfull \hbox (badness 5105) in paragraph at lines 1478--1483
+\OMS/cmsy/m/n/10 X \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](
+\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! []$
+ []
+
 [9]
 Underfull \hbox (badness 2875) in paragraph at lines 1489--1493
-$\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$ $[][] [][]\OMS/cmsy/m/
-n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$  \OT1/ptm
-/m/n/10 (by
+\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$ $[][] [][]\OMS/cmsy/m/n
+/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$  \OT1/ptm/
+m/n/10 (by
  []
 
 
@@ -963,20 +1184,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 1494--1500
  []
 
 
+Underfull \hbox (badness 1062) in paragraph at lines 1507--1509
+\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS
+/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cms
+y/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and $[]\OT1/
+cmr/m/n/10 (\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/i
+t/10 ; s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/
+10 , hence
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1519--1525
-$[] \OMS/cmsy/m/n/10 ^$
+[] \OMS/cmsy/m/n/10 ^
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1519--1525
 \OT1/ptm/m/n/10 (I) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
-T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 !$
+T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 !
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1519--1525
-$[]$ $\OMS/cmsy/m/n/10 ^$
+[]$ $\OMS/cmsy/m/n/10 ^$
  []
 
 
@@ -995,26 +1226,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 1519--1525
 Underfull \hbox (badness 10000) in paragraph at lines 1527--1539
 \OT1/ptm/m/n/10 (5) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
-T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 !$
+T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 !
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1527--1539
-$[] \OMS/cmsy/m/n/10 ^$
+[] \OMS/cmsy/m/n/10 ^
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1527--1539
 \OT1/ptm/m/n/10 (6) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
-]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^$
-
+]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^
  []
 
 
 Underfull \hbox (badness 4108) in paragraph at lines 1527--1539
 \OT1/ptm/m/n/10 (8) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
-]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^$
-
+]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^
  []
 
 
@@ -1038,16 +1267,16 @@ LaTeX Warning: Command \O invalid in math mode on input line 1556.
 
 Underfull \hbox (badness 7415) in paragraph at lines 1554--1558
 \OT1/ptm/b/n/10 Proof: \OT1/ptm/m/n/10 Let $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M
-[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be a mod-el of $\OML
-/cmm/m/it/10 '$\OT1/ptm/m/n/10 . Then
+[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be a model of $\OML/
+cmm/m/it/10 '$\OT1/ptm/m/n/10 . Then
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1554--1558
-$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \
-OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (
-\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 due 
-to
+\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \O
+MS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\
+OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 due t
+o
  []
 
 
@@ -1065,35 +1294,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 1554--1558
 [10]
 Underfull \hbox (badness 10000) in paragraph at lines 1582--1583
 []\OT1/ptm/m/n/10 Secondly, sup-pose that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[
-]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a mod-el-
+]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a mod-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1582--1583
-\OT1/ptm/m/n/10 s of $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 \OMS/cmsy/m/n/10 j\OM
-L/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ; []\OT
-1/cmr/m/n/10 (\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\OT1/ptm
-/m/n/10 . Thus, $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT
-1/cmr/m/n/10 )$
+\OT1/ptm/m/n/10 els of $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^^\OMS/cmsy/m/n/10 
+j\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^^;
+ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^^; V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$
+\OT1/ptm/m/n/10 . Thus, $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 
+; s[]\OT1/cmr/m/n/10 )$
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1582--1583
-$\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$ $[][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/
-10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 
-due to
+\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$ $[][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/1
+0 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 d
+ue to
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1584--1585
 []\OT1/ptm/m/n/10 Finally, sup-pose that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]
-\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a mod-el of
+\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a model of
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1584--1585
-$[][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ;
- s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . Then there ex-ist-s
+[][] \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; 
+s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . Then there ex-ists
  []
 
 
@@ -1118,8 +1347,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1618--1623
 
 Underfull \hbox (badness 2772) in paragraph at lines 1654--1656
 \OT1/ptm/m/n/10 of $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; p\OT1/cmr/m/n/10 
-)\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , then there ex-ist-s an
- ini-tial \OT1/ptm/m/sc/10 k\OT1/ptm/m/n/10 -
+)\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , then there ex-ists an 
+ini-tial \OT1/ptm/m/sc/10 k\OT1/ptm/m/n/10 -
  []
 
 
@@ -1129,10 +1358,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1676--1680
-$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ 
-\OT1/ptm/m/n/10 or $\OMS/cmsy/m/n/10 9\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML
-/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([](\O
-ML/cmm/m/it/10  []; V\OT1/cmr/m/n/10 ))$ \OT1/ptm/m/n/10 s.t.
+\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \
+OT1/ptm/m/n/10 or $\OMS/cmsy/m/n/10 9\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/
+cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([](\OM
+L/cmm/m/it/10  []; V\OT1/cmr/m/n/10 ))$ \OT1/ptm/m/n/10 s.t.
  []
 
 [11]
@@ -1142,30 +1371,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 1688--1690
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
-\OT1/ptm/m/n/10 we on-ly need to prove $[]\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m/it
-/10 ; V\OT1/cmr/m/n/10 )) =$
+\OT1/ptm/m/n/10 we only need to prove $[]\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m/it/
+10 ^^^; V\OT1/cmr/m/n/10 )) =
  []
 
 
 Underfull \hbox (badness 2261) in paragraph at lines 1712--1719
-$\OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 for any sub-structure $\OT1/cmr/m/n/10 (\O
-MS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 of $
-\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \OT1/
-ptm/m/n/10 there is
+\OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 for any sub-structure $\OT1/cmr/m/n/10 (\OM
+S/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 of $\
+OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \OT1/p
+tm/m/n/10 there is
  []
 
 
 Underfull \hbox (badness 7291) in paragraph at lines 1726--1727
-\OT1/ptm/m/n/10 we on-ly need to prove $[]$ $\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m
-/it/10 $\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )) =$
+\OT1/ptm/m/n/10 we only need to prove $[]$ $\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m/
+it/10 ^^^$\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )) =
  []
 
 
 Underfull \hbox (badness 4846) in paragraph at lines 1728--1735
-$\OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 there is a sub-structure $\OT1/cmr/m/n/10 
-(\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 o
-f $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \O
-T1/ptm/m/n/10 s.t.
+\OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 there is a sub-structure $\OT1/cmr/m/n/10 (
+\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 of
+ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \OT
+1/ptm/m/n/10 s.t.
  []
 
 
@@ -1175,8 +1404,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1743--1745
 
 
 Underfull \hbox (badness 1275) in paragraph at lines 1748--1757
-\OT1/ptm/m/n/10 propo-si-tion-al vari-able for-get-ting is NP-hard [] []Zhang a
-nd
+\OT1/ptm/m/n/10 propo-si-tional vari-able for-get-ting is NP-hard [] []Zhang an
+d
  []
 
 
@@ -1186,15 +1415,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1748--1757
 
 [12]
 Underfull \hbox (badness 1048) in paragraph at lines 1782--1783
-$[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 but
- $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \U/m
-sb/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  ; V\OT1/cmr/m/n/10 )$\OT1/ptm/
-m/n/10 , \OT1/ptm/m/it/10 i.e. \OT1/ptm/m/n/10 , there is
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 but 
+$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \U/ms
+b/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  ; V\OT1/cmr/m/n/10 )$\OT1/ptm/m
+/n/10 , \OT1/ptm/m/it/10 i.e. \OT1/ptm/m/n/10 , there is
  []
 
 
 Underfull \hbox (badness 1400) in paragraph at lines 1784--1785
-[]\OT1/ptm/m/n/10 Hardness. It fol-lows from (2) due to the fac-t that
+[]\OT1/ptm/m/n/10 Hardness. It fol-lows from (2) due to the fact that
  []
 
 
@@ -1224,8 +1453,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 1878--1880
 
 
 Underfull \hbox (badness 6708) in paragraph at lines 1894--1897
-[]\OT1/ptm/m/n/10 For each $\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10  \OML/cmm/m/it/
-10 i \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 2[]$\OT1/ptm/m/n/10 , there is at most
+[]\OT1/ptm/m/n/10 For each $\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/i
+t/10 i \OMS/cmsy/m/n/10 ^^T \OT1/cmr/m/n/10 2[]$\OT1/ptm/m/n/10 , there is at m
+ost
  []
 
 
@@ -1233,25 +1463,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 1894--1897
 
  []
 
-(D:\CTL-git\CTL-public\model-based\IJCAI-model-based-4-complexity.bbl
+(./IJCAI-model-based-4-complexity.bbl
 Underfull \hbox (badness 4217) in paragraph at lines 16--20
 []\OT1/ptm/m/n/10 Michael C. Browne, Ed-mund M.
  []
 
 [13]
+Underfull \hbox (badness 1264) in paragraph at lines 43--46
+\OT1/ptm/m/it/10 Pro-gram-ming Method-ol-ogy\OT1/ptm/m/n/10 , pages 166--175. S
+pringer,
+ []
+
+
 Underfull \hbox (badness 1052) in paragraph at lines 54--58
 \OT1/ptm/m/n/10 Kern-Isberner.  A brief sur-vey on for-get-ting from a
  []
 
 
 Underfull \hbox (badness 1622) in paragraph at lines 71--74
-\OT1/ptm/m/n/10 On propo-si-tion-al de-fin-abil-i-ty.  \OT1/ptm/m/it/10 Ar-ti-f
-i-cial In-tel-li-gence\OT1/ptm/m/n/10 ,
+\OT1/ptm/m/n/10 On propo-si-tional de-fin-abil-ity.  \OT1/ptm/m/it/10 Ar-ti-fi-
+cial In-tel-li-gence\OT1/ptm/m/n/10 ,
  []
 
 
 Underfull \hbox (badness 3029) in paragraph at lines 82--86
-[]\OT1/ptm/m/n/10 J[]er[]ome Lang, Pao-lo Lib-er-a-tore, and
+[]\OT1/ptm/m/n/10 J[]er[]ome Lang, Paolo Lib-er-a-tore, and
  []
 
 
@@ -1291,37 +1527,47 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1902.
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1902.
- (D:\CTL-git\CTL-public\model-based\IJCAI-model-based-4-complexity.aux)
+ (./IJCAI-model-based-4-complexity.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1902.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1902.
 
 Package rerunfilecheck Info: File `IJCAI-model-based-4-complexity.out' has not 
 changed.
-(rerunfilecheck)             Checksum: 7CADB74220C19DCEB89442FDE096CCF4;872.
- ) 
+(rerunfilecheck)             Checksum: A8BEABBCE6B8B1EEC51168CAFCA86C26;859.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1902.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 8927 strings out of 495354
- 125264 string characters out of 3183858
- 257722 words of memory out of 3000000
- 11777 multiletter control sequences out of 15000+200000
- 34074 words of font info for 61 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 36i,20n,38p,1471b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C
-:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/CTEX/Mi
-KTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1
-/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTE
-X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on IJCAI-model-based-4-complexity.pdf (15 pages, 347891 bytes).
+ 9214 strings out of 492995
+ 134793 string characters out of 6132704
+ 257012 words of memory out of 5000000
+ 12435 multiletter control sequences out of 15000+600000
+ 34074 words of font info for 61 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,20n,39p,1436b,2502s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on IJCAI-model-based-4-complexity.pdf (15 pages, 290999 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
+ 539 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
  200 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

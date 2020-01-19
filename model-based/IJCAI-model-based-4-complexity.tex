@@ -735,7 +735,7 @@ is a {\em result of forgetting $V$ from} $\phi$, if
 Note that if both $\psi$ and $\psi'$ are results of forgetting $V$ from $\phi$ then
 $\Mod(\psi)=\Mod(\psi')$, \ie, $\psi$ and $\psi'$ have the same models. In the sense
 of equivalence the forgetting result is unique (up to equivalence).
-By Lemma~\ref{lem:models:formula},such a formula always exists, which
+By Lemma~\ref{lem:models:formula}, such a formula always exists, which
 is equivalent to
 \begin{equation*}
   \bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi)\ \text{ and }\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
@@ -818,7 +818,7 @@ Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$.
 
 
 Another interesting result is that the forgetting of $Q T \varphi$ ($Q\in \{\EXIST, \ALL\}$, $T \in \{\FUTURE, \NEXT\}$) on $V\subseteq \Ha$ can be computed by $QT \CTLforget(\varphi, V)$. This gives us a convenient method to compute forgetting since we can push the forgetting operator to a subformula without affecting the semantics.
-\begin{proposition}[Linearity]\label{pro:ctl:forget:2}
+\begin{proposition}[Homogeneity]\label{pro:ctl:forget:2}
   Let $V\subseteq\cal A$ and $\phi \in \CTL$,% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
     \item $\CTLforget(\ALL\NEXT\phi,V)\equiv \ALL\NEXT \CTLforget(\phi,V)$.
