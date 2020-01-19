@@ -335,7 +335,7 @@ In general, a transition system
   is $s'\in S$ such that $(s,s')\in R$,
   \item $L$ is a labeling function $S\rto 2^{\cal A}$.
 \end{itemize}
-We call a model structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, \ie, the labeling function $L$ map every state to $V$ (not the $\Ha$).  A \emph{path} $\pi_{s_i}$ start from $s_i$ of $\Hm$ is a infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
+We call a model structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, \ie, the labeling function $L$ map every state to $V$ (not the $\Ha$).  A \emph{path} $\pi_{s_i}$ start from $s_i$ of $\Hm$ is an infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
 A sate $s\in S$ is {\em initial} if for any state $s'\in S$, there is a path $\pi_s$ s.t $s'\in \pi_s$.
 We denote this model structure as $(S,R,L,s_0)$, where $s_0$ is initial.
 
@@ -475,7 +475,7 @@ Now, we define the notion of $V$-bisimulation between \MPK-structures:
    Let $V\subseteq\cal A$. Given   two \MPK-structures ${\cal K}_1$ and ${\cal K}_2$ are $V$-{\em bisimilar},  denoted ${\cal K}_1 \lrto_V {\cal K}_2$
  if and only if $ ({\cal K}_1,{\cal K}_2)\in {\Hb_i}\mbox{ for all }i\ge 0.$ Moreover, two paths $\pi_i=(s_{i,1},s_{i,2},\ldots)$ of $\Hm_i$ with $i\in \{1,2\}$
  are $V$-{\em bisimilar} if
-$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 0$ }$
+$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 1$ }$
  where ${\cal K}_{i,j}=(\Hm_i,s_{i,j})$.
 
 \end{definition}
@@ -547,7 +547,7 @@ $\Tr_n(s_1)\lrto_V\Tr_n(s_2)$), if % $({\cal M}_1,s_1)\lrto_V({\cal M}_2,s_2)$.
   \item $L_1(s_1)- V=L_2(s_2)- V$,
   \item for every subtree $\Tr_{n-1}(s_1')$ of $\Tr_n(s_1)$,
   $\Tr_n(s_2)$ has a subtree $\Tr_{n-1}(s_2')$ such that
-  $\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$, and
+  $\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$, and vice verse.
   %\item for every subtree $\Tr_{n-1}(s_2')$ of $\Tr_n(s_2)$,
 %  $\Tr_n(s_1)$ has a subtree $\Tr_{n-1}(s_1')$ such that
 %  $\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$.
@@ -614,7 +614,7 @@ for $k\ge 0$.
 The characterizing formula of a computation tree formally exhibit the context of each node on $V$ (atoms are true at this node if they are in V, else false) and the temporal relation between states recursively. In this way, we know:
 
 \begin{lemma}\label{lem:Vb:TrFormula:Equ}
-Let $V\subseteq \Ha$, $\Hm=(S, R, L, s_0)$ and $\Hm'=(S', R', L', s_0')$ be two model structures,
+Let $V\subseteq \Ha$, $\Hm$ and $\Hm'$ be two model structures,
 $s\in S$, $s'\in S'$ and $n\ge 0$. If $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$, then ${\cal F}_V(\Tr_n(s)) \equiv {\cal F}_V(\Tr_n(s'))$.
 \end{lemma}
 Let $s'=s$, it shows that for any formula $\varphi$ of $V$, if $\varphi$ is a characterizing formula of $\Tr_n(s)$ then $\varphi \equiv {\cal F}_V(\Tr_n(s))$.
@@ -685,6 +685,20 @@ Then we have:
 \end{figure}
 \end{example}
 
+By the following theorem we also have that given a set $V\subseteq \Ha$, the characterizing formula of an initial \MPK-structure is equivalent uniquely describe this initial \MPK-structure on $V$.
+\begin{theorem}\label{CF}
+Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
+\begin{enumerate}[(i)]
+ \item $(\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
+\text{ iff }
+({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$;
+
+\item $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
+\end{enumerate}
+
+\end{theorem}
+
+Moreover, we know that any initial \MPK-structure can be described as a \CTL\ formula from the definition of characterizing formula. Then,
 \begin{lemma}\label{lem:models:formula}
   Let $\varphi$ be a formula. We have
   \begin{equation}
@@ -693,22 +707,8 @@ Then we have:
 \end{lemma}
 It follows that any \CTL\ formula can be described by the disjunction of the characterizing formulas of all the models of itself due to the number of models of a \CTL\ formula is finite.
 
-\begin{theorem}\label{CF}
-Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
-\begin{itemize}
-\item[(a)] $ (\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
-\text{ iff }
-({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$
-
-\item[(b)] $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
 
 
-
-\end{itemize}
-
-\end{theorem}
-
-By the following theorem we also have that given a set $V\subseteq \Ha$, the characterizing formula of an initial \MPK-structure is equivalent uniquely describe this initial \MPK-structure on $V$.
 
 %\begin{proof}
 %This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
@@ -1166,7 +1166,7 @@ work is to find an efficient algorithm to compute forgetting in \CTL\ and then W
     such that $(s_1,s_1')\in \Hb_{n}$ by inductive assumption\\
   $\Rto$ $(s,s')\in \Hb_{n+1}$.
 
-  (ii) and (iii) are evident by the above definition.
+  (ii) and (iii) are evident from (i) and the definition of $\Hb_i$.
 \end{proof}
 
 
@@ -1221,7 +1221,7 @@ Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
    \end{enumerate}
  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
 
- We prove it form the following two aspects:
+ We prove it from the following two aspects:
 
  $(\Rto)$
 (a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
@@ -1240,14 +1240,16 @@ $\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
 %\end{proposition}
 
 
-(iv) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' \subseteq S_1 \times S_3$ and $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation between $s_1$ and $s_3$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+(iv) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
 \begin{enumerate}[(a)]
   \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
   \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
   \item if $(w_3, u_3) \in \Hr_3$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_2, u_3) \in \Hb_2$; and then $\exists u_1 \in S_1$ such that $(w_1, u_1) \in \Hr_1$ and $(u_1, u_2) \in \Hb$, hence $(u_1, u_3) \Hb'$ by the definition of $\Hb'$.
 \end{enumerate}
 
-(v) We will show that $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_2}$ for all $n \ge 0$ inductively.
+(v) Let ${\cal K}_{i, j}=(\Hm_i, s_{i,j})$ and $(s_{i, k}, s_{i, k+1}) \in R_i$ mean that $s_{i, k+1}$ is the $(k+2)$-th node in the path
+ $(s_i, s_{i, 1}, s_{i,2}, \dots , s_{i, k+1}, \dots)$ ($i=1,2$).
+We will show that $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_2}$ for all $n \ge 0$ inductively.
 
 Base: $L_1(s_1) - V_1 = L_2(s_2) - V_1$\\
 $\Rto$ $\forall q \in {\cal A} - V_1$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$\\
@@ -1262,8 +1264,7 @@ Step: Supposing that $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$ for all $0 \leq 
       (b) $\forall (s_{2, k}, s_{2, k+1}) \in R_1$ there is a $(s_{1, k}, s_{1, k+1}) \in R_1$ \st\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. This can be proved as (a).
   \item $\forall (s_2, s_{2,1}) \in R_1$, we will show that there is a $(s_1, s_{1, 1}) \in R_2$ \st\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. This can be proved as (ii).
 \end{enumerate}
-Where ${\cal K}_{i, j}=(\Hm_i, s_{i,j})$ and $(s_{i, k}, s_{i, k+1}) \in R_i$ means that $s_{i, k+1}$ is the $(k+2)$-th node in the path
- $(s_i, s_{i, 1}, s_{i,2}, \dots , s_{i, k+1}, \dots)$ ($i=1,2$).
+
 \end{proof}
 
 %\textbf{Proposition}\ref{pro:VQ}
@@ -1280,50 +1281,50 @@ Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
   ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
   ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.\\
 \begin{proof}
-This theorem can be proved by inducting on the formula $\varphi$ and supposing $\Var(\varphi) \cap V = \O$.
+This theorem can be proved by inducting on the formula $\phi$ and supposing $\Var(\phi) \cap V = \O$.
 
 Here we only prove the only-if direction. The other direction can be similarly proved.
 
-\textbf{Case} $\varphi = p$ where $p \in \Ha - V$:\\
-$(\Hm, s) \models \varphi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
+\textbf{Case} $\phi = p$ where $p \in \Ha - V$:\\
+$(\Hm, s) \models \phi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
 $\LRto$ $p \in L'(s')$ \hfill ($s \lrto_V s'$)\\
-$\LRto$ $(\Hm', s') \models \varphi$
+$\LRto$ $(\Hm', s') \models \phi$
 
-\textbf{Case} $\varphi = \neg \psi$:\\
-$(\Hm, s) \models \varphi$ iff $(\Hm, s) \nvDash \psi$ \\
+\textbf{Case} $\phi = \neg \psi$:\\
+$(\Hm, s) \models \phi$ iff $(\Hm, s) \nvDash \psi$ \\
 $\LRto$ $(\Hm', s') \nvDash \psi$  \hfill   (induction hypothesis)\\
-$\LRto$ $(\Hm', s') \models \varphi$
+$\LRto$ $(\Hm', s') \models \phi$
 
-\textbf{Case} $\varphi = \psi_1 \vee \psi_2$:\\
-$(\Hm, s) \models \varphi$\\
+\textbf{Case} $\phi = \psi_1 \vee \psi_2$:\\
+$(\Hm, s) \models \phi$\\
 $\LRto$ $(\Hm, s) \models \psi_1$ or $(\Hm, s) \models \psi_2$\\
 $\LRto$ $(\Hm', s') \models \psi_1$ or $(\Hm', s') \models \psi_2$   \hfill  (induction hypothesis)\\
-$\LRto$ $(\Hm', s') \models \varphi$
+$\LRto$ $(\Hm', s') \models \phi$
 
-\textbf{Case} $\varphi = \EXIST \NEXT \psi$:\\
+\textbf{Case} $\phi = \EXIST \NEXT \psi$:\\
 %By Lemma~\ref{V_path}, we assume there are two paths $\pi = s, s_1, ...$ and $\pi' = s', s_1', ...$ such that $\pi \lrto_V \pi'$.\\
-$\Hm, s \models \varphi$ \\
+$\Hm, s \models \phi$ \\
 $\LRto$ There is a path $\pi = (s, s_1, ...)$ such that $\Hm, s_1 \models \psi$\\
 $\LRto$ There is a path $\pi' = (s', s_1', ...)$ such that $\pi \lrto_V \pi'$ \hfill   ($s \lrto_V s'$, Proposition~\ref{div})\\
 $\LRto$ $s_1 \lrto_V s_1'$  \hfill ($\pi \lrto_V \pi'$)\\
 $\LRto$ $(\Hm', s_1') \models \psi$  \hfill  (induction hypothesis)\\
-$\LRto$ $(\Hm', s') \models \varphi$
+$\LRto$ $(\Hm', s') \models \phi$
 
-\textbf{Case} $\varphi = \EXIST \GLOBAL \psi$:\\
-$\Hm, s \models \varphi$ \\
+\textbf{Case} $\phi = \EXIST \GLOBAL \psi$:\\
+$\Hm, s \models \phi$ \\
 $\LRto$ There is a path $\pi =(s=s_0, s_1, ...)$ such that for each $i \geq 0$ there is $(\Hm, s_i) \models \psi$\\
 $\LRto$ There is a path $\pi' = (s'=s_0', s_1', ...)$ such that $\pi \lrto_V \pi'$   \hfill ($s \lrto_V s'$, Proposition~\ref{div})\\
 $\LRto$ $s_i \lrto_V s_i'$ for each $i \geq 0$ \hfill ($\pi \lrto_V \pi'$)\\
 $\LRto$ $(\Hm', s_i') \models \psi$ for each $i \geq 0$  \hfill  (induction hypothesis)\\
-$\LRto$ $(\Hm', s') \models \varphi$
+$\LRto$ $(\Hm', s') \models \phi$
 
-\textbf{Case} $\varphi = \EXIST [\psi_1 \UNTIL \psi_2]$:\\
+\textbf{Case} $\phi = \EXIST [\psi_1 \UNTIL \psi_2]$:\\
 %\textbf{Case} $\varphi = \MPE \FUTURE \psi$:
-$\Hm, s \models \varphi$ \\
+$\Hm, s \models \phi$ \\
 $\LRto$ There is a path $\pi= (s=s_0, s_1, ...)$ such that there is $i \geq 0$ such that $(\Hm, s_i) \models \psi_2$, and for all $0 \leq j < i$, $(\Hm, s_j) \models \psi_1$\\
 $\LRto$ There is a path $\pi' = (s=s_0', s_1', ...)$ such that $\pi \lrto_V \pi'$  \hfill  ($s \lrto_V s'$, Proposition~\ref{div})\\
 $\LRto$ $(\Hm', s_i') \models \psi_2$, and for all $0 \leq j < i$ $(\Hm', s_j') \models \psi_1$   \hfill   (induction hypothesis)\\
-$\LRto$ $(\Hm', s') \models \varphi$
+$\LRto$ $(\Hm', s') \models \phi$
 \end{proof}
 
 
@@ -1334,16 +1335,16 @@ $\LRto$ $(\Hm', s') \models \varphi$
 \begin{proof}
 We will prove this from two aspects:
 
-$(\Rto)$ If $s \Hb_n s'$, then $Tr_j(s) \lrto_V Tr_j(s')$ for all $0 \leq j \leq n$. $s \Hb_n s'$ implies both roots of $Tr_n(s)$ and $Tr_n(s')$ have the same atoms except those atoms in $V$.
-Besides, for any $s_1$ with $s\rto s_1$, there is a $s_1'$ with $s'\rto s_1'$ s.t. $s_1 \Hb_{n-1} s_1'$ and vice versa.
-Then we have $Tr_1(s) \lrto_V Tr_1(s')$.
-Therefore,  $Tr_n(s) \lrto_V Tr_n(s')$ by use such method recursively, and then $Tr_j(s) \lrto_V Tr_j(s')$ for all $0 \leq j \leq n$.
+$(\Rto)$ If $(s_1, s_2) \in \Hb_n$, then $Tr_j(s_1) \lrto_V Tr_j(s_2)$ for all $0 \leq j \leq n$. $(s, s') \in \Hb_n$ implies both roots of $Tr_n(s_1)$ and $Tr_n(s_2)$ have the same atoms except those atoms in $V$.
+Besides, for any $s_{1,1}$ with $(s_1, s_{1,1}) \in R_1$, there is a $s_{2,1}$ with $(s_2, s_{2,1})\in R_2$ s.t. $(s_{1,1}, s_{2,1}) \in \Hb_{n-1}$ and vice versa.
+Then we have $Tr_1(s_1) \lrto_V Tr_1(s_2)$.
+Therefore,  $Tr_n(s_1) \lrto_V Tr_n(s_2)$ by use such method recursively, and then $Tr_j(s_1) \lrto_V Tr_j(s_2)$ for all $0 \leq j \leq n$.
 %It is easy to prove this by the definition of
 
-$(\Lto)$ If $Tr_j(s) \lrto_V Tr_j(s')$ for all $j \leq n$, then $s \Hb_n s'$.
-$Tr_0(s) \lrto_V Tr_0(s')$ implies $L(s) - V = L'(s') - V$ and then $s \Hb_0 s'$.
-$Tr_1(s) \lrto_V Tr_1(s')$ implies $L(s) - V = L'(s')- V$ and for every successors $s_1$ of the root of one, it is possible to find a successor of the root of the other $s_1'$ such that
-$s_1 \Hb_0 s_1'$. Therefore $s \Hb_1 s'$, and then we will have $s \Hb_n s'$ by use such method recursively.
+$(\Lto)$ If $Tr_j(s_1) \lrto_V Tr_j(s_2)$ for all $0\leq j \leq n$, then $(s_1, s_2) \in \Hb_n$.
+$Tr_0(s_1) \lrto_V Tr_0(s_2)$ implies $L(s_1) - V = L'(s_2) - V$ and then $(s, s') \in \Hb_0$.
+$Tr_1(s_1) \lrto_V Tr_1(s_2)$ implies $L(s_1) - V = L'(s_2)- V$ and for every successors $s$ of the root of one, it is possible to find a successor of the root of the other $s'$ such that
+$(s, s')\in \Hb_0$. Therefore $(s_1, s_2) \in \Hb_1$, and then we will have $(s_1, s_2) \in \Hb_n$ by use such method recursively.
 \end{proof}
 
 \textbf{Proposition}~\ref{pro:k}   Let $V\subseteq \Ha$, $\Hm$ be a model structure and $s,s'\in S$
@@ -1362,7 +1363,7 @@ If $s\not\lrto_V s'$, then there exists a least constant $k$ such that $(s_i, s_
 
 
 
-\textbf{Lemma}\ref{lem:Vb:TrFormula:Equ} Let $V\subseteq \Ha$, $\Hm=(S, R, L, s_0)$ and $\Hm'=(S', R', L', s_0')$ be two model structures,
+\textbf{Lemma}\ref{lem:Vb:TrFormula:Equ} Let $V\subseteq \Ha$, $\Hm$ and $\Hm'$ be two model structures,
 $s\in S$, $s'\in S'$ and $n\ge 0$. If $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$, then ${\cal F}_V(\Tr_n(s)) \equiv {\cal F}_V(\Tr_n(s'))$.\\
 \begin{proof}
 This result can be proved by inducting on $n$.
@@ -1388,27 +1389,24 @@ This result can be proved by inducting on $n$.
 
 
 
-\textbf{Lemma}~\ref{lem:models:formula} Let $\varphi$ be a formula. We have
-  \begin{equation}
-    \varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
-    \end{equation}
-\begin{proof}
-Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$ due to $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$. On the other hand, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$. Then there is a $(\Hm, s_0)\in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm, s_0)$. And then $(\Hm, s_0) \lrto_{\O} (\Hm', s_0')$ by Theorem~\ref{CF}. Therefore, $(\Hm, s_0)$ is also a model of $\varphi$ by Theorem~\ref{thm:V-bisimulation:EQ}.
-\end{proof}
-bisimilar
+%\textbf{Lemma}~\ref{lem:models:formula} Let $\varphi$ be a formula. We have
+%  \begin{equation}
+%    \varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
+%    \end{equation}
+%\begin{proof}
+%Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$ due to $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$. On the other hand, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$. Then there is a $(\Hm, s_0)\in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm, s_0)$. And then $(\Hm, s_0) \lrto_{\O} (\Hm', s_0')$ by Theorem~\ref{CF}. Therefore, $(\Hm, s_0)$ is also a model of $\varphi$ by Theorem~\ref{thm:V-bisimulation:EQ}.
+%\end{proof}
+
 
 \textbf{Theorem}~\ref{CF}
 Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
-\begin{itemize}
-\item[\textit{(a)}] $ (\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
-\text{ iff }
-({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$
+\begin{enumerate}[(i)]
+\item  $(\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
+\text{ iff } ({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$;
 
-\item[\textit{(b)}] $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
+\item  $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
 
-
-
-\end{itemize}
+\end{enumerate}
 
 In order to prove Theorem~\ref{CF}, we prove the following two lemmas at first.
 
@@ -1474,7 +1472,7 @@ Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $
 
 Now we are in the position of proving Theorem~\ref{CF}.\\
 \begin{proof}
-(a) Let ${\cal F}_V(\Hm, s_0)$ be the characterizing formula of $(\Hm, s_0)$ on $V$.
+(i) Let ${\cal F}_V(\Hm, s_0)$ be the characterizing formula of $(\Hm, s_0)$ on $V$.
 It is apparent that $\IR({\cal F}_V(\Hm, s_0), \overline V)$. We will show that $(\Hm, s_0) \models {\cal F}_V(\Hm, s_0)$ at first.
 
 It is apparent that $(\Hm, s_0) \models {\cal F}_V(\Tr_c(s_0))$ by Lemma~\ref{Bn:to:Tn}.
@@ -1516,7 +1514,7 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
 
 \textbf{Step}. Supposing $\Tr_k(s_0) \lrto_{\overline V} \Tr_k(s_0')$ ($k > 0$), we will prove $\Tr_{k+1}(s_0) \lrto_{\overline V} \Tr_{k+1}(s_0')$. We should only show that $\Tr_1(s_k) \lrto_{\overline V} \Tr_1(s_k')$. Where $(s_0, s_1), (s_1, s_2)$, $\dots$, $(s_{k-1}, s_k) \in R$ and $(s_0', s_1'), (s_1', s_2'), \dots, (s_{k-1}', s_k') \in R'$, \ie $s_{i+1}$ ($s_{i+1}'$) is an immediate successor of $s_i$ ($s_i'$) for all $0 \leq i \leq k-1$.
 
-      (i) It is apparent that $L(s_k) - \overline V = L'(s_k') - \overline V$ by inductive assumption.
+      (a) It is apparent that $L(s_k) - \overline V = L'(s_k') - \overline V$ by inductive assumption.
 
       Before talking about the other points, note the following fact that:\\
       $(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$\\
@@ -1526,7 +1524,7 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
         (III) $(\Hm', s_0') \models \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$  \hfill  ((I),(II))\\
 
       % It is apparent that $L'(s_0') - \overline V = L(s_0) - \overline V$;\\
-        (ii) We will show that for each $(s_k, s_{k+1}) \in R$ there is a $(s_k', s_{k+1}') \in R'$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
+        (b) We will show that for each $(s_k, s_{k+1}) \in R$ there is a $(s_k', s_{k+1}') \in R'$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
         (1) $(\Hm', s_0') \models \bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$  \hfill  (III)\\
         (2) $\forall (s_0, s_1) \in R$, $\exists (s_0', s_1') \in R'$ \st\ $(\Hm', s_1') \models {\cal F}_V(\Tr_c(s_1))$  \hfill  (2)\\
         (3) $\Tr_c(s_1) \lrto_{\overline V} \Tr_c(s_1')$  \hfill  ((2), Lemma~\ref{Bn:to:Tn}) \\
@@ -1539,14 +1537,23 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
         (10) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((9), Lemma~\ref{Bn:to:Tn}) \\
         (11) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((10), $c \geq 0)$\\
 
-        (iii) We will show that for each $(s_k', s_{k+1}') \in R'$ there is a $(s_k, s_{k+1})\in R$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
+        (c) We will show that for each $(s_k', s_{k+1}') \in R'$ there is a $(s_k, s_{k+1})\in R$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
         (1) $(\Hm', s_k') \models \ALL \NEXT \left(\bigvee_{(s_k,s_{k+1})\in R} {\cal F}_V(\Tr_c(s_{k+1}))\right)$  \hfill (by (8) talked above)\\
         (2) $\forall (s_k', s_{k+1}') \in R'$, $\exists (s_k, s_{k+1}) \in R$ \st\ $(\Hm', s_{k+1}') \models {\cal F}_V(\Tr_c(s_{k+1}'))$  \hfill (1) \\
         (3) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((2), Lemma~\ref{Bn:to:Tn}) \\
         (4) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((3), $c \geq 0)$\\
 
-(b) This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
+(ii) This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
 
+\end{proof}
+
+
+\textbf{Lemma}~\ref{lem:models:formula} Let $\varphi$ be a formula. We have
+  \begin{equation}
+    \varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
+    \end{equation}
+\begin{proof}
+Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$ due to $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$. On the other hand, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$. Then there is a $(\Hm, s_0)\in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm, s_0)$. And then $(\Hm, s_0) \lrto_{\O} (\Hm', s_0')$ by Theorem~\ref{CF}. Therefore, $(\Hm, s_0)$ is also a model of $\varphi$ by Theorem~\ref{thm:V-bisimulation:EQ}.
 \end{proof}
 
 %\textbf{Theorem}\ref{thm:VBChFEQ} Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure with initial state $s_0$
