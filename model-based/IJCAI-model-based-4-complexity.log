@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  19 JAN 2020 11:16
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  19 JAN 2020 15:57
 entering extended mode
 **D:/CTL-git/CTL-public/model-based/IJCAI-model-based-4-complexity.tex
 (D:/CTL-git/CTL-public/model-based/IJCAI-model-based-4-complexity.tex
@@ -1123,6 +1123,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1618--1623
  []
 
 
+Underfull \hbox (badness 2772) in paragraph at lines 1654--1656
+\OT1/ptm/m/n/10 of $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; p\OT1/cmr/m/n/10 
+)\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , then there ex-ist-s an
+ ini-tial \OT1/ptm/m/sc/10 k\OT1/ptm/m/n/10 -
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
 
  []
@@ -1330,7 +1337,7 @@ KTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1
 /urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTE
 X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on IJCAI-model-based-4-complexity.pdf (15 pages, 347893 bytes).
+Output written on IJCAI-model-based-4-complexity.pdf (15 pages, 347951 bytes).
 PDF statistics:
  533 PDF objects out of 1000 (max. 8388607)
  200 named destinations out of 1000 (max. 500000)

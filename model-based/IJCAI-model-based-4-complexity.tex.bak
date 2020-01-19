@@ -688,13 +688,13 @@ Then we have:
 By the following theorem we also have that given a set $V\subseteq \Ha$, the characterizing formula of an initial \MPK-structure is equivalent uniquely describe this initial \MPK-structure on $V$.
 \begin{theorem}\label{CF}
 Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
-\begin{itemize}
-\item[(a)] $ (\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
+\begin{enumerate}[(i)]
+ \item $(\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
 \text{ iff }
-({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0').$
+({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$;
 
-\item[(b)] $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
-\end{itemize}
+\item $s_0 \lrto_{\overline V} s_0'$ implies  ${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$.
+\end{enumerate}
 
 \end{theorem}
 
@@ -1413,14 +1413,14 @@ In order to prove Theorem~\ref{CF}, we prove the following two lemmas at first.
 \begin{lemma}\label{Bn:to:Tn}
 Let $V\subseteq \Ha$, $\Hm=(S, R, L,s_0)$ and $\Hm'=(S', R', L',s_0')$ be two model structures,
 $s\in S$, $s'\in S'$ and $n\ge 0$.
-\begin{enumerate}[(a)]
+\begin{enumerate}[(i)]
   \item $({\cal M},s)\models{\cal F}_V(\Tr_n(s))$.
   \item If $({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$ then
   $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-(a) It is apparent from the definition of ${\cal F}_V(\Tr_n(s))$.
+(i) It is apparent from the definition of ${\cal F}_V(\Tr_n(s))$.
 Base. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$.\\
 Step. For $k \geq 0$, supposing the result talked in (i) is correct in $k - 1$, we will show that $({\cal M},s)\models {\cal F}_V(\Tr_{k+1}(s))$, \ie:
 \begin{equation*}
@@ -1439,7 +1439,7 @@ Where $T(s') ={\cal F}_V(\Tr_k(s'))$. It is apparent that $({\cal M},s)\models {
     {\cal F}_V(\Tr_k(s'') )$. Therefore, $({\cal M},s)\models \ALL \NEXT\left(\bigvee_{(s,s'')\in R}
     {\cal F}_V(\Tr_k(s'') )\right)$.
 
-(b)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) - \overline V = L'(s') - \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
+(ii)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) - \overline V = L'(s') - \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
     \textbf{Step}. Supposing $n>0$ and the result talked in (ii) is correct in $n-1$.\\
    (a) It is easy to see that $L(s) - \overline V = L'(s') - \overline V$.\\
    (b) We will show that for each $(s, s_1) \in R$, there is a $(s', s_1') \in R'$ such that $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$.
@@ -1472,7 +1472,7 @@ Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $
 
 Now we are in the position of proving Theorem~\ref{CF}.\\
 \begin{proof}
-(a) Let ${\cal F}_V(\Hm, s_0)$ be the characterizing formula of $(\Hm, s_0)$ on $V$.
+(i) Let ${\cal F}_V(\Hm, s_0)$ be the characterizing formula of $(\Hm, s_0)$ on $V$.
 It is apparent that $\IR({\cal F}_V(\Hm, s_0), \overline V)$. We will show that $(\Hm, s_0) \models {\cal F}_V(\Hm, s_0)$ at first.
 
 It is apparent that $(\Hm, s_0) \models {\cal F}_V(\Tr_c(s_0))$ by Lemma~\ref{Bn:to:Tn}.
@@ -1514,7 +1514,7 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
 
 \textbf{Step}. Supposing $\Tr_k(s_0) \lrto_{\overline V} \Tr_k(s_0')$ ($k > 0$), we will prove $\Tr_{k+1}(s_0) \lrto_{\overline V} \Tr_{k+1}(s_0')$. We should only show that $\Tr_1(s_k) \lrto_{\overline V} \Tr_1(s_k')$. Where $(s_0, s_1), (s_1, s_2)$, $\dots$, $(s_{k-1}, s_k) \in R$ and $(s_0', s_1'), (s_1', s_2'), \dots, (s_{k-1}', s_k') \in R'$, \ie $s_{i+1}$ ($s_{i+1}'$) is an immediate successor of $s_i$ ($s_i'$) for all $0 \leq i \leq k-1$.
 
-      (i) It is apparent that $L(s_k) - \overline V = L'(s_k') - \overline V$ by inductive assumption.
+      (a) It is apparent that $L(s_k) - \overline V = L'(s_k') - \overline V$ by inductive assumption.
 
       Before talking about the other points, note the following fact that:\\
       $(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$\\
@@ -1524,7 +1524,7 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
         (III) $(\Hm', s_0') \models \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$  \hfill  ((I),(II))\\
 
       % It is apparent that $L'(s_0') - \overline V = L(s_0) - \overline V$;\\
-        (ii) We will show that for each $(s_k, s_{k+1}) \in R$ there is a $(s_k', s_{k+1}') \in R'$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
+        (b) We will show that for each $(s_k, s_{k+1}) \in R$ there is a $(s_k', s_{k+1}') \in R'$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
         (1) $(\Hm', s_0') \models \bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$  \hfill  (III)\\
         (2) $\forall (s_0, s_1) \in R$, $\exists (s_0', s_1') \in R'$ \st\ $(\Hm', s_1') \models {\cal F}_V(\Tr_c(s_1))$  \hfill  (2)\\
         (3) $\Tr_c(s_1) \lrto_{\overline V} \Tr_c(s_1')$  \hfill  ((2), Lemma~\ref{Bn:to:Tn}) \\
@@ -1537,13 +1537,13 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
         (10) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((9), Lemma~\ref{Bn:to:Tn}) \\
         (11) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((10), $c \geq 0)$\\
 
-        (iii) We will show that for each $(s_k', s_{k+1}') \in R'$ there is a $(s_k, s_{k+1})\in R$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
+        (c) We will show that for each $(s_k', s_{k+1}') \in R'$ there is a $(s_k, s_{k+1})\in R$ such that $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$.\\
         (1) $(\Hm', s_k') \models \ALL \NEXT \left(\bigvee_{(s_k,s_{k+1})\in R} {\cal F}_V(\Tr_c(s_{k+1}))\right)$  \hfill (by (8) talked above)\\
         (2) $\forall (s_k', s_{k+1}') \in R'$, $\exists (s_k, s_{k+1}) \in R$ \st\ $(\Hm', s_{k+1}') \models {\cal F}_V(\Tr_c(s_{k+1}'))$  \hfill (1) \\
         (3) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((2), Lemma~\ref{Bn:to:Tn}) \\
         (4) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((3), $c \geq 0)$\\
 
-(b) This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
+(ii) This is following Lemma~\ref{lem:Vb:TrFormula:Equ} and the definition of the characterizing formula of initial \MPK-structure ${\cal K}$ on $V$.
 
 \end{proof}
 
@@ -1569,6 +1569,14 @@ Then the following statements are equivalent:
 \begin{enumerate}[(i)]
   \item $\psi \equiv \CTLforget(\varphi, V)$,
   \item $\psi \equiv \{\phi | \varphi \models \phi \& \IR(\phi, V)\}$,
+  \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
+\end{enumerate}
+
+Let $\varphi$, $\varphi'$ and $\psi$ be \CTL\ formulas and $V \subseteq \Ha$.
+Then the following statements are equivalent:
+\begin{enumerate}[(i)]
+  \item $\varphi' \equiv \CTLforget(\varphi, V)$,
+  \item $\varphi'\equiv \{\psi | \varphi \models \psi \text{ and } \IR(\psi, V)\}$,
   \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
 \end{enumerate}
 \begin{proof}
