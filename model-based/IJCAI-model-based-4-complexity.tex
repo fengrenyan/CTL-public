@@ -782,7 +782,7 @@ The above theorem says that \CTL\ is closed under our definition of forgetting, 
 \begin{lemma}\label{lem:KF:eq}
 	Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
 		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
-	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.
+	$\forget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$.
 \end{lemma}
 
 
@@ -817,7 +817,7 @@ Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$.
 \end{proposition}
 
 
-Another interesting result is that the forgetting of $P T \varphi$ ($P\in \{\EXIST, \ALL\}$, $T \in \{\FUTURE, \NEXT\}$) on $V\subseteq \Ha$ can be computed by $PT \CTLforget(\varphi, V)$. This gives us a convenient method to compute forgetting since we can push the forgetting operator to a subformula without affecting the semantics.
+Another interesting result is that the forgetting of $Q T \varphi$ ($Q\in \{\EXIST, \ALL\}$, $T \in \{\FUTURE, \NEXT\}$) on $V\subseteq \Ha$ can be computed by $QT \CTLforget(\varphi, V)$. This gives us a convenient method to compute forgetting since we can push the forgetting operator to a subformula without affecting the semantics.
 \begin{proposition}[Linearity]\label{pro:ctl:forget:2}
   Let $V\subseteq\cal A$ and $\phi \in \CTL$,% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
@@ -1518,7 +1518,7 @@ $(\Rto)$ If $(\Hm',s_0') \models {\cal F}_V(M,s_0)$, then $s_0 \lrto_{\overline 
 
       Before talking about the other points, note the following fact that:\\
       $(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$\\
-      $\Rto$ $\forall s'\in S'$, $(\Hm', s')\models {\cal F}_V(\Tr_c(s)) \rto$ $\left(\bigwedge_{(s,s_1)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left( \bigvee_{(s,s_1)\in R} {\cal F}_V(\Tr_c(s_1))\right)$  for any $s\in S$.   \hfill  \textbf{(fact)}\\
+      $\Rto$ $\forall s'\in S'$, $(\Hm', s')\models {\cal F}_V(\Tr_c(s)) \rto$ \\ $\left(\bigwedge_{(s,s_1)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)\wedge \ALL \NEXT \left( \bigvee_{(s,s_1)\in R} {\cal F}_V(\Tr_c(s_1))\right)$  for any $s\in S$.   \hfill  \textbf{(fact)}\\
       (I) $(\Hm', s_0') \models {\cal F}_V(\Tr_c(s_0)) \rto \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$     \hfill  \textbf{(fact)}\\
         (II) $(\Hm', s_0') \models {\cal F}_V(\Tr_c(s_0)))$  \hfill  (known)\\
         (III) $(\Hm', s_0') \models \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$  \hfill  ((I),(II))\\
@@ -1603,10 +1603,10 @@ Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}
 %	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.
 %\end{lemma}
   \textbf{Lemma}~\ref{lem:KF:eq} Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
-		\overline{\Var(\varphi\cup\{\alpha\})}$. Then
-	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.\\
+		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
+	$\forget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$.\\
     \begin{proof}
-	Let $\varphi' =\varphi \cup\{q\lrto\alpha\}$. For any model $({\cal M},s)$ of $\CTLforget(\Gamma', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
+	Let $\varphi' =\varphi \wedge (q\lrto\alpha)$. For any model $({\cal M},s)$ of $\CTLforget(\Gamma', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
 	by Theorem~\ref{thm:V-bisimulation:EQ}.
 
 	Let $(\Hm,s) \in \Mod(\varphi)$ with ${\cal M}=(S, R, L,s)$. We construct $(\Hm', s)$ with $\Hm' = (S, R, L',s)$ as follows:
@@ -1617,7 +1617,7 @@ Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}
        & otherwise.
     \end{align*}
 	It is clear that $({\cal M}',s) \models \varphi$, $({\cal M}',s) \models q\lrto \alpha$ and
-	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$. Therefore $({\cal M}', s) \models \varphi \cup\{q\lrto \alpha\}$, and then $({\cal M}, s) \models \CTLforget (\varphi \cup\{q\lrto\alpha\}, q)$ by
+	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$. Therefore $({\cal M}', s) \models \varphi \wedge (q\lrto\alpha)$, and then $({\cal M}, s) \models \CTLforget (\varphi \wedge (q\lrto\alpha), q)$ by
 	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$.
 \end{proof}
 
@@ -1673,7 +1673,7 @@ Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$.
 
 The (ii) and (iii) can be proved similarly.
 
-(iv) ($\Rto$) $\forall (\Hm,s) \in \Mod(\CTLforget(\psi_1 \vee \psi_2, V))$, $\exists (\Hm',s') \in \Mod(\psi_1\vee \psi_2)$ s.t. $(\Hm,s) \lrto_V (\Hm',s')$ and $(\Hm',s') \models \psi_1$ or $(\Hm',s') \models \psi_2$ \\
+(iv) ($\Rto$) $\forall (\Hm,s)\in \Mod(\CTLforget(\psi_1 \vee \psi_2, V))$, $\exists (\Hm',s')$ $\in$  $\Mod(\psi_1\vee \psi_2)$ s.t. $(\Hm,s) \lrto_V (\Hm',s')$ and $(\Hm',s') \models \psi_1$ or $(\Hm',s') \models \psi_2$ \\
 $\Rto$ $\exists (\Hm_1,s_1) \in \Mod(\CTLforget(\psi_1, V))$ s.t. $(\Hm',s') \lrto_V (\Hm_1,s_1)$ or $\exists (\Hm_2,s_2) \in \Mod(\CTLforget(\psi_2, V))$ s.t. $(\Hm',s') \lrto_V (\Hm_2,s_2)$ \\
 %$\Rto$ $(\Hm,s) \lrto_V (\Hm_1,s_1)$ or $(\Hm,s) \lrto_V (\Hm_2,s_2)$\\
 $\Rto$ $(\Hm,s) \models \CTLforget(\psi_1, V) \vee \CTLforget(\psi_2, V)$ by Theorem~\ref{thm:V-bisimulation:EQ}.
@@ -1701,10 +1701,10 @@ Let $V\subseteq\cal A$ and $\phi$ a formula.% and $Q\in \{\EXIST, \ALL\}$.
 \begin{proof}
 Let $\Hm=(S, R, L,s_0)$ with initial state $s_0$ and $\Hm'=(S', R', L',s_0')$ with initial state $s_0'$, then we call $\Hm', s_0'$ be a sub-structure of $\Hm,s_0$ if:
 \begin{itemize}
-  \item $S'=\{s' | s'$ is reachable from $s_0'\}$ and $S' \subseteq S$,
+  \item $S' \subseteq S$ and $S'=\{s' | s'$ is reachable from $s_0'\}$,
   \item $R' =\{(s_1, s_2)| s_1, s_2 \in S'$ and $(s_1, s_2) \in R\}$,
   \item $L': S' \rto \Ha$ and $\forall s_1 \in S'$ there is $L'(s_1) = L(s_1)$, and
-  \item there is a stete $s\in S$ reachable from $s_0$ such that $(\Hm, s) \lrto_{{\O}} (\Hm', s_0')$.
+  \item $s_0'$ is $s_0$ or a state reachable from $s_0$.
 \end{itemize}
 
 (i) In order to prove $\CTLforget(\ALL \NEXT \phi, V) \equiv \ALL \NEXT(\CTLforget(\phi, V))$, we only need to prove $\Mod(\CTLforget(\ALL \NEXT \phi, V)) = \Mod( \ALL\NEXT\CTLforget(\phi, V))$:
@@ -1712,12 +1712,14 @@ Let $\Hm=(S, R, L,s_0)$ with initial state $s_0$ and $\Hm'=(S', R', L',s_0')$ wi
 $(\Rto)$ $\forall (\Hm', s') \in \Mod(\CTLforget(\ALL \NEXT \phi, V))$ there exists an initial \MPK-structure $(\Hm, s)$ s.t. $(\Hm, s)\models \ALL \NEXT \phi$ and $(\Hm, s) \lrto_V (\Hm',s')$\\
 $\Rto$ for any sub-structure $(\Hm_1, s_1)$ of $(\Hm, s)$ there is $(\Hm_1, s_1) \models \phi$, where $s_1$ is a directed successor of $s$ \\
 $\Rto$ there is an initial \MPK-structure $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1,s_1)$\\
-$\Rto$ it is easy to construct an initial \MPK-structure $(\Hm_3, s_3)$ by $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2)$ is a sub-structure of $(\Hm_3, s_3)$ that $s_2$ is a direct successor of $s_3$ and $(\Hm_3, s_3) \lrto_V (\Hm,s)$\\
-$\Rto$ $\Hm_3, s_3 \models \ALL \NEXT (\CTLforget(\phi,V))$, especially, let $\Hm_3, s_3 = \Hm', s'$, we have $\Hm', s' \models \ALL \NEXT (\CTLforget(\phi,V))$.
+$\Rto$ it is easy to construct an initial \MPK-structure $(\Hm_3, s_3)$ by $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2)$ is a sub-structure of $(\Hm_3, s_3)$ with $s_2$ is a direct successor of $s_3$ and $(\Hm_3, s_3) \lrto_V (\Hm,s)$\\
+$\Rto$ $(\Hm_3, s_3) \models \ALL \NEXT (\CTLforget(\phi,V))$ and $(\Hm_3, s_3) \lrto_V (\Hm',s')$\\
+%, especially, let $\Hm_3, s_3 = \Hm', s'$, we have 
+$\Rto$ $(\Hm', s') \models \ALL \NEXT (\CTLforget(\phi,V))$.
 
-$(\Lto)$ $\forall$ $(\Hm_3, s_3) \in \Mod(\ALL \NEXT (\CTLforget(\phi,V)))$, then for any sub-structure $(\Hm_2, s_2)$ whit $s_2$ is a directed successor $s_3$ of $(\Hm_3, s_3)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$\\
-$\Rto$ there is an initial \MPK-structure $(\Hm_1, s_1)$ s.t. $(\Hm_1, s_1) \models \phi$ and $(\Hm_1, s_1) \lrto_V (\Hm_2, s_2)$\\
-$\Rto$ it is easy to construct an initial structure $(\Hm,s)$ by $(\Hm_1, s_1)$ s.t. $(\Hm_1, s_1)$ is a sub-structure of $(\Hm, s)$ that $s_1$ is a direct successor of $s$ and $(\Hm, s)\lrto_V (\Hm_3, s_3)$\\
+$(\Lto)$ $\forall$ $(\Hm_3, s_3) \in \Mod(\ALL \NEXT (\CTLforget(\phi,V)))$, then for any sub-structure $(\Hm_2, s_2)$ with $s_2$ is a directed successor of $s_3$ there is $(\Hm_2, s_2) \models \CTLforget(\phi,V)$\\
+$\Rto$ for any $(\Hm_2, s_2)$ there is an initial \MPK-structure $(\Hm_1, s_1)$ s.t. $(\Hm_1, s_1) \models \phi$ and $(\Hm_1, s_1) \lrto_V (\Hm_2, s_2)$\\
+$\Rto$ it is easy to construct an initial structure $(\Hm,s)$ by $(\Hm_1, s_1)$ s.t. $(\Hm_1, s_1)$ is a sub-structure of $(\Hm, s)$ with $s_1$ is a direct successor of $s$ and $(\Hm, s)\lrto_V (\Hm_3, s_3)$\\
 $\Rto$ $(\Hm, s) \models \ALL \NEXT \phi$ and then $(\Hm_3, s_3) \models \CTLforget(\ALL \NEXT \phi, V)$.
 
 
@@ -1727,7 +1729,9 @@ $(\Rto)$ $\forall \Hm', s' \in \Mod(\CTLforget(\EXIST \NEXT \phi, V))$ there exi
 $\Rto$ there is a sub-structure $(\Hm_1, s_1)$ of $(\Hm, s)$ s.t. $(\Hm_1, s_1) \models \phi$, where $s_1$ is a directed successor of $s$\\
 $\Rto$ there is an initial \MPK-structure $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1,s_1)$\\
 $\Rto$ it is easy to construct an initial \MPK-structure $(\Hm_3, s_3)$ by $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2)$ is a sub-structure of $(\Hm_3, s_3)$ that $s_2$ is a direct successor of $s_3$ and $(\Hm_3, s_3) \lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm_3, s_3) \models \EXIST \NEXT (\CTLforget(\phi,V))$, especially, let $(\Hm_3, s_3) = (\Hm', s')$, we have $(\Hm', s') \models \EXIST \NEXT (\CTLforget(\phi,V))$.
+$\Rto$ $(\Hm_3, s_3) \models \EXIST \NEXT (\CTLforget(\phi,V))$\\
+%, especially, let $(\Hm_3, s_3) = (\Hm', s')$, we have 
+$\Rto$ $(\Hm', s') \models \EXIST \NEXT (\CTLforget(\phi,V))$.
 
 $(\Lto)$ $\forall$ $(\Hm_3, s_3) \in \Mod(\EXIST \NEXT (\CTLforget(\phi,V)))$, then there exists a sub-structure $(\Hm_2, s_2)$ of $(\Hm_3, s_3)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$\\
 $\Rto$ there is an initial \MPK-structure $(\Hm_1, s_1)$ s.t. $(\Hm_1, s_1) \models \phi$ and $(\Hm_1, s_1) \lrto_V (\Hm_2, s_2)$\\
@@ -1805,9 +1809,9 @@ The proof of the other part of the proposition is similar.
     We prove this for SNC. The case for WSC is similar.
     Let $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the SNC of $\alpha$ on $V$ under $\Gamma$, and  $\emph{NC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the NC of $\alpha$ on $V$ under $\Gamma$.
 
-    ($\Rto$) if $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,V,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $V$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $V$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and $(\PP)$, \ie $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,V,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,V,\Gamma')$ holds.
+    ($\Rto$) We will show that if $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,V,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $V$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $V$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and $(\PP)$, \ie $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,V,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,V,\Gamma')$ holds.
 
-    ($\Lto$) if $\emph{SNC}(\varphi,q,V,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and $(\PP)$, \ie $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,V,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $V$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,V,\Gamma')$. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and $(\PP)$, we have
+    ($\Lto$) We will show that if $\emph{SNC}(\varphi,q,V,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and $(\PP)$, \ie $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,V,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $V$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,V,\Gamma')$. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and $(\PP)$, we have
     $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$, and $\Gamma \models \varphi \rto \varphi'$ by Lemma \ref{lem:KF:eq}. Hence, $\emph{SNC}(\varphi,\alpha,V, \Gamma)$ holds.
     \end{proof}
 

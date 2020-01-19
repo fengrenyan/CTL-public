@@ -769,11 +769,11 @@ Intuitive enough, the postulate (\W) says, forgetting weakens the original formu
 
 
 \begin{theorem}[Representation Theorem]\label{thm:close}
-Let $\varphi$, $\varphi'$ and $\psi$ be \CTL\ formulas and $V \subseteq \Ha$.
+Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\ formulas and $V \subseteq \Ha$.
 Then the following statements are equivalent:
 \begin{enumerate}[(i)]
   \item $\varphi' \equiv \CTLforget(\varphi, V)$,
-  \item $\varphi'\equiv \{\psi | \varphi \models \psi \text{ and } \IR(\psi, V)\}$,
+  \item $\varphi'\equiv \{\phi | \varphi \models \phi \text{ and } \IR(\phi, V)\}$,
   \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
 \end{enumerate}
 \end{theorem}
@@ -782,7 +782,7 @@ The above theorem says that \CTL\ is closed under our definition of forgetting, 
 \begin{lemma}\label{lem:KF:eq}
 	Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
 		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
-	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.
+	$\forget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$.
 \end{lemma}
 
 
@@ -1564,19 +1564,11 @@ Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{
 
 \textbf{Theorem}~\ref{thm:close}
 (Representation theorem).
-Let $\varphi$ and $\psi$ be two formulas and $V \subseteq \Ha$.
-Then the following statements are equivalent:
-\begin{enumerate}[(i)]
-  \item $\psi \equiv \CTLforget(\varphi, V)$,
-  \item $\psi \equiv \{\phi | \varphi \models \phi \& \IR(\phi, V)\}$,
-  \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
-\end{enumerate}
-
-Let $\varphi$, $\varphi'$ and $\psi$ be \CTL\ formulas and $V \subseteq \Ha$.
+Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\ formulas and $V \subseteq \Ha$.
 Then the following statements are equivalent:
 \begin{enumerate}[(i)]
   \item $\varphi' \equiv \CTLforget(\varphi, V)$,
-  \item $\varphi'\equiv \{\psi | \varphi \models \psi \text{ and } \IR(\psi, V)\}$,
+  \item $\varphi'\equiv \{\phi | \varphi \models \phi \text{ and } \IR(\phi, V)\}$,
   \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
 \end{enumerate}
 \begin{proof}
@@ -1594,14 +1586,14 @@ Finally, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{\Hm, s_0\in \Mod(\v
 
 $(ii)\Rto (iii)$. It is not difficult to prove it.
 
-$(iii)\Rto (ii)$. Suppose that all postulates hold. By Positive Persistence, we have $\psi \models \{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Now
-we show that $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \models \psi$. Otherwise, there exists formula $\phi'$ such that $\psi \models \phi'$ but $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \nvDash \phi'$. There are three cases:
+$(iii)\Rto (ii)$. Suppose that all postulates hold. By Positive Persistence, we have $\varphi' \models \{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Now
+we show that $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$. Otherwise, there exists formula $\phi'$ such that $\varphi' \models \phi'$ but $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \nvDash \phi'$. There are three cases:
 \begin{itemize}
-  \item $\phi'$ is relevant to $V$. Thus, $\psi$ is also relevant to $V$, a contradiction to Irrelevance.
+  \item $\phi'$ is relevant to $V$. Thus, $\varphi'$ is also relevant to $V$, a contradiction to Irrelevance.
   \item $\phi'$ is irrelevant to $V$ and $\varphi \models \phi'$. This contradicts to our assumption.
-  \item $\phi'$ is irrelevant to $V$ and $\varphi \nvDash \phi'$. By Negative Persistence, $\psi \nvDash \phi'$, a contradiction.
+  \item $\phi'$ is irrelevant to $V$ and $\varphi \nvDash \phi'$. By Negative Persistence, $\varphi' \nvDash \phi'$, a contradiction.
 \end{itemize}
-Thus, $\psi$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
+Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
 \end{proof}
 
 
@@ -1611,10 +1603,10 @@ Thus, $\psi$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
 %	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.
 %\end{lemma}
   \textbf{Lemma}~\ref{lem:KF:eq} Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
-		\overline{\Var(\varphi\cup\{\alpha\})}$. Then
-	$\forget(\varphi \cup\{q\lrto\alpha\}, q)\equiv \varphi$.\\
+		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
+	$\forget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$.\\
     \begin{proof}
-	Let $\varphi' =\varphi \cup\{q\lrto\alpha\}$. For any model $({\cal M},s)$ of $\CTLforget(\Gamma', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
+	Let $\varphi' =\varphi \wedge (q\lrto\alpha)$. For any model $({\cal M},s)$ of $\CTLforget(\Gamma', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
 	by Theorem~\ref{thm:V-bisimulation:EQ}.
 
 	Let $(\Hm,s) \in \Mod(\varphi)$ with ${\cal M}=(S, R, L,s)$. We construct $(\Hm', s)$ with $\Hm' = (S, R, L',s)$ as follows:
@@ -1625,7 +1617,7 @@ Thus, $\psi$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
        & otherwise.
     \end{align*}
 	It is clear that $({\cal M}',s) \models \varphi$, $({\cal M}',s) \models q\lrto \alpha$ and
-	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$. Therefore $({\cal M}', s) \models \varphi \cup\{q\lrto \alpha\}$, and then $({\cal M}, s) \models \CTLforget (\varphi \cup\{q\lrto\alpha\}, q)$ by
+	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$. Therefore $({\cal M}', s) \models \varphi \wedge (q\lrto\alpha)$, and then $({\cal M}, s) \models \CTLforget (\varphi \wedge (q\lrto\alpha), q)$ by
 	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$.
 \end{proof}
 
@@ -1635,7 +1627,7 @@ Thus, $\psi$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
 \CTLforget(\varphi, \{p\} \cup V) \equiv \CTLforget(\CTLforget(\varphi, p), V).
 \]
 \begin{proof}
-Let $(\Hm_1, s_1) $ with ${\cal M}_1=(S_1, R_1, L_1,s_1)$ be a model of $\CTLforget(\varphi, \{p\} \cup V)$. By the definition, there exists a model $(\Hm,s)$ with ${\cal M} = (S, R,L,s)$ of $\varphi$, such that $(\Hm_1, s_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm, s)$ via a binary relation $\Hb$. We construct an initial \MPK-structure $(\Hm_2, s_2)$ with ${\cal M}_2 = (S_2, R_2, L_2,s_2)$ as follows:
+Let $(\Hm_1, s_1) $ with ${\cal M}_1=(S_1, R_1, L_1,s_1)$ be a model of $\CTLforget(\varphi, \{p\} \cup V)$. By the definition, there exists a model $(\Hm,s)$ with ${\cal M} = (S, R,L,s)$ of $\varphi$, such that $(\Hm_1, s_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm, s)$. We construct an initial \MPK-structure $(\Hm_2, s_2)$ with ${\cal M}_2 = (S_2, R_2, L_2,s_2)$ as follows:
 \begin{enumerate}[(1)]
   \item for $s_2$: let $s_2$ be the state such that:
   \begin{itemize}
@@ -1645,13 +1637,13 @@ Let $(\Hm_1, s_1) $ with ${\cal M}_1=(S_1, R_1, L_1,s_1)$ be a model of $\CTLfor
   \end{itemize}
   \item for another:
   \begin{enumerate}[(i)]
-    \item for all pairs  $w \in S$ and $w_1 \in S_1$ such that $w \Hb w_1$, let $w_2 \in S_2$ and
+    \item for all pairs  $w \in S$ and $w_1 \in S_1$ such that $w \lrto_{\{p\} \cup V} w_1$, let $w_2 \in S_2$ and
         \begin{itemize}
           \item $p \in L_2(w_2)$ iff $p \in L_1(w_1)$,
           \item for all $q \in V$, $q \in L_2(w_2)$ iff $q\in L(w)$,
           \item for all other atoms $q'$, $q' \in L_2(w_2)$ iff $q' \in L_1(w_1)$ iff $q'\in L(w)$.
         \end{itemize}
-    \item if $w_1' \Hr_1 w_1$, $w_2$ is constructed based on $w_1$ and $w_2'\in S_2$ is constructed based on $w_1'$, then $w_2' \Hr_2 w_2$.
+    \item if $(w_1', w_1)\in R_1$, $w_2$ is constructed based on $w_1$ and $w_2'\in S_2$ is constructed based on $w_1'$, then $(w_2', w_2)\in R_2$.
      %And if $w' \Hr^i w$, $w_2$ is constructed based on $w$ and $w_2'\in \Hw_2$ is constructed based on $w'$, then $w_2' \Hr_2^i w_2$
     %\item if $\exists w_1'\in \Hw_1$ such that $w_1' \Hr_1 w_1$, then let $w_2' \in \Hw_2$, $w_2' \Hr_2 w_2$, and if $w_1' \neq s_1$ then do (i) for $w_2'$, else let$w_2' = s_2$.
   \end{enumerate}
@@ -1659,7 +1651,7 @@ Let $(\Hm_1, s_1) $ with ${\cal M}_1=(S_1, R_1, L_1,s_1)$ be a model of $\CTLfor
 \end{enumerate}
 Then we have $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$. Thus, $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$. And therefore $(\Hm_1, s_1) \models \CTLforget(\CTLforget(\varphi, p), V)$.
 
-On the other hand, suppose that $(\Hm_1, s_1)$ be a model of $\CTLforget(\CTLforget(\varphi, p), V)$, then there exists an initial Kripke structure $(\Hm_2, s_2)$ such that $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$, and there exists $(\Hm, s)$ such that $(\Hm, s) \models \varphi$ and $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$. Therefore, $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$ by Proposition~\ref{div}, and consequently, $(\Hm_1, s_1) \models \CTLforget(\varphi, \{p\} \cup V)$.
+On the other hand, suppose that $(\Hm_1, s_1)$ be a model of $\CTLforget(\CTLforget(\varphi, p), V)$, then there exists an initial \MPK-structure $(\Hm_2, s_2)$ such that $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$, and there exists $(\Hm, s)$ such that $(\Hm, s) \models \varphi$ and $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$. Therefore, $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$ by Proposition~\ref{div}, and consequently, $(\Hm_1, s_1) \models \CTLforget(\varphi, \{p\} \cup V)$.
 \end{proof}
 
 
@@ -1681,7 +1673,7 @@ Let $\varphi$, $\varphi_i$, $\psi_i$ ($i=1,2$) be formulas and $V\subseteq \Ha$.
 
 The (ii) and (iii) can be proved similarly.
 
-(iv) ($\Rto$) $\forall (\Hm,s) \in \Mod(\CTLforget(\psi_1 \vee \psi_2, V))$, $\exists (\Hm',s') \in \Mod(\psi_1\vee \psi_2)$ s.t. $(\Hm,s) \lrto_V (\Hm',s')$ and $(\Hm',s') \models \psi_1$ or $(\Hm',s') \models \psi_2$ \\
+(iv) ($\Rto$) $\forall (\Hm,s)\in \Mod(\CTLforget(\psi_1 \vee \psi_2, V))$, $\exists (\Hm',s')$ $\in$  $\Mod(\psi_1\vee \psi_2)$ s.t. $(\Hm,s) \lrto_V (\Hm',s')$ and $(\Hm',s') \models \psi_1$ or $(\Hm',s') \models \psi_2$ \\
 $\Rto$ $\exists (\Hm_1,s_1) \in \Mod(\CTLforget(\psi_1, V))$ s.t. $(\Hm',s') \lrto_V (\Hm_1,s_1)$ or $\exists (\Hm_2,s_2) \in \Mod(\CTLforget(\psi_2, V))$ s.t. $(\Hm',s') \lrto_V (\Hm_2,s_2)$ \\
 %$\Rto$ $(\Hm,s) \lrto_V (\Hm_1,s_1)$ or $(\Hm,s) \lrto_V (\Hm_2,s_2)$\\
 $\Rto$ $(\Hm,s) \models \CTLforget(\psi_1, V) \vee \CTLforget(\psi_2, V)$ by Theorem~\ref{thm:V-bisimulation:EQ}.
@@ -1693,7 +1685,7 @@ $\Rto$ $(\Hm_1,s_1) \models \psi_1 \vee \psi_2$\\
 $\Rto$ there is an initial \MPK-structure $(\Hm_2,s_2)$ s.t. $(\Hm_1,s_1) \lrto_V (\Hm_2,s_2)$ and $(\Hm_2,s_2) \models \CTLforget(\psi_1 \vee \psi_2, V)$\\
 $\Rto$ $(\Hm,s) \lrto_V (\Hm_2,s_2)$ and $(\Hm,s) \models \CTLforget(\psi_1 \vee \psi_2, V)$.
 
-The (v) can be proved as (iV).
+The (v) can be proved as (iv).
 \end{proof}
 
 
@@ -1813,9 +1805,9 @@ The proof of the other part of the proposition is similar.
     We prove this for SNC. The case for WSC is similar.
     Let $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the SNC of $\alpha$ on $V$ under $\Gamma$, and  $\emph{NC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the NC of $\alpha$ on $V$ under $\Gamma$.
 
-    ($\Rto$) if $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,V,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $V$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $V$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and {\bfseries (pp)}, \ie $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,V,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,V,\Gamma')$ holds.
+    ($\Rto$) if $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,V,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $V$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $V$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and $(\PP)$, \ie $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,V,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,V,\Gamma')$ holds.
 
-    ($\Lto$) if $\emph{SNC}(\varphi,q,V,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and {\bfseries (pp)}, \ie $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,V,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $V$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,V,\Gamma')$. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and {\bfseries (pp)}, we have
+    ($\Lto$) if $\emph{SNC}(\varphi,q,V,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and $(\PP)$, \ie $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,V,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $V$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,V,\Gamma')$. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and $(\PP)$, we have
     $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$, and $\Gamma \models \varphi \rto \varphi'$ by Lemma \ref{lem:KF:eq}. Hence, $\emph{SNC}(\varphi,\alpha,V, \Gamma)$ holds.
     \end{proof}
 

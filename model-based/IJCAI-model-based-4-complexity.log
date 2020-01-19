@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  19 JAN 2020 15:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  19 JAN 2020 20:59
 entering extended mode
 **D:/CTL-git/CTL-public/model-based/IJCAI-model-based-4-complexity.tex
 (D:/CTL-git/CTL-public/model-based/IJCAI-model-based-4-complexity.tex
@@ -964,15 +964,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1494--1500
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1519--1525
-$\OMS/cmsy/m/n/10 )$ $8\OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10
- S[]$\OT1/ptm/m/n/10 , $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ;
- s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1519--1525
-$\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ))
- \OMS/cmsy/m/n/10 !$ $[]$ $^$
+$[] \OMS/cmsy/m/n/10 ^$
  []
 
 
@@ -1110,11 +1102,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1596--1598
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 1618--1623
+Underfull \hbox (badness 4595) in paragraph at lines 1618--1623
 \OT1/ptm/m/n/10 and then $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ;
  s\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 '
- \OMS/cmsy/m/n/10 [ f\OML/cmm/m/it/10 q \OMS/cmsy/m/n/10 $ \OML/cmm/m/it/10 \O
-MS/cmsy/m/n/10 g\OML/cmm/m/it/10 ; q\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 by
+ \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q \OMS/cmsy/m/n/10 $ \OML
+/cmm/m/it/10 \OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; q\OT1/cmr/m/n/10 )$ \OT1/ptm/
+m/n/10 by
  []
 
 
@@ -1136,14 +1129,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1676--1680
-[]\OT1/ptm/m/n/10 (iv) ($\OMS/cmsy/m/n/10 )$\OT1/ptm/m/n/10 ) $\OMS/cmsy/m/n/10
- 8\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OMS
-/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 _ \O
-ML/cmm/m/it/10  []; V\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1676--1680
 $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ 
 \OT1/ptm/m/n/10 or $\OMS/cmsy/m/n/10 9\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML
 /cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([](\O
@@ -1156,16 +1141,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1688--1690
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1707.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
 \OT1/ptm/m/n/10 we on-ly need to prove $[]\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m/it
 /10 ; V\OT1/cmr/m/n/10 )) =$
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 1712--1717
+Underfull \hbox (badness 2261) in paragraph at lines 1712--1719
 $\OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 for any sub-structure $\OT1/cmr/m/n/10 (\O
 MS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 of $
 \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \OT1/
@@ -1173,13 +1155,13 @@ ptm/m/n/10 there is
  []
 
 
-Underfull \hbox (badness 7291) in paragraph at lines 1724--1725
+Underfull \hbox (badness 7291) in paragraph at lines 1726--1727
 \OT1/ptm/m/n/10 we on-ly need to prove $[]$ $\OT1/cmr/m/n/10 ([]([][]\OML/cmm/m
 /it/10 $\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )) =$
  []
 
 
-Underfull \hbox (badness 4846) in paragraph at lines 1726--1731
+Underfull \hbox (badness 4846) in paragraph at lines 1728--1735
 $\OMS/cmsy/m/n/10 )$ \OT1/ptm/m/n/10 there is a sub-structure $\OT1/cmr/m/n/10 
 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 o
 f $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )$ \O
@@ -1187,23 +1169,23 @@ T1/ptm/m/n/10 s.t.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1739--1741
+Underfull \hbox (badness 10000) in paragraph at lines 1743--1745
 
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 1744--1753
+Underfull \hbox (badness 1275) in paragraph at lines 1748--1757
 \OT1/ptm/m/n/10 propo-si-tion-al vari-able for-get-ting is NP-hard [] []Zhang a
 nd
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1744--1753
+Underfull \hbox (badness 10000) in paragraph at lines 1748--1757
 
  []
 
 [12]
-Underfull \hbox (badness 1048) in paragraph at lines 1778--1779
+Underfull \hbox (badness 1048) in paragraph at lines 1782--1783
 $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 but
  $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \U/m
 sb/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  ; V\OT1/cmr/m/n/10 )$\OT1/ptm/
@@ -1211,43 +1193,43 @@ m/n/10 , \OT1/ptm/m/it/10 i.e. \OT1/ptm/m/n/10 , there is
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 1780--1781
+Underfull \hbox (badness 1400) in paragraph at lines 1784--1785
 []\OT1/ptm/m/n/10 Hardness. It fol-lows from (2) due to the fac-t that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1782--1783
+Underfull \hbox (badness 10000) in paragraph at lines 1786--1787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1796--1798
+Underfull \hbox (badness 10000) in paragraph at lines 1800--1802
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1810--1813
+Underfull \hbox (badness 10000) in paragraph at lines 1814--1817
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1833--1839
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1843
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1874--1876
+Underfull \hbox (badness 10000) in paragraph at lines 1878--1880
 
  []
 
 
-Underfull \hbox (badness 6708) in paragraph at lines 1890--1893
+Underfull \hbox (badness 6708) in paragraph at lines 1894--1897
 []\OT1/ptm/m/n/10 For each $\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10  \OML/cmm/m/it/
 10 i \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 2[]$\OT1/ptm/m/n/10 , there is at most
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1890--1893
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1897
 
  []
 
@@ -1304,14 +1286,14 @@ Underfull \hbox (badness 4048) in paragraph at lines 219--224
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1898.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1902.
  [15
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1898.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1902.
  (D:\CTL-git\CTL-public\model-based\IJCAI-model-based-4-complexity.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1898.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1898.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1902.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1902.
 
 Package rerunfilecheck Info: File `IJCAI-model-based-4-complexity.out' has not 
 changed.
@@ -1320,7 +1302,7 @@ changed.
 Here is how much of TeX's memory you used:
  8927 strings out of 495354
  125264 string characters out of 3183858
- 258722 words of memory out of 3000000
+ 257722 words of memory out of 3000000
  11777 multiletter control sequences out of 15000+200000
  34074 words of font info for 61 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1337,7 +1319,7 @@ KTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1
 /urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTE
 X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on IJCAI-model-based-4-complexity.pdf (15 pages, 347951 bytes).
+Output written on IJCAI-model-based-4-complexity.pdf (15 pages, 347891 bytes).
 PDF statistics:
  533 PDF objects out of 1000 (max. 8388607)
  200 named destinations out of 1000 (max. 500000)
