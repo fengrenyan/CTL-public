@@ -1892,12 +1892,18 @@ Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m
 %Therefore, in the worst case is $i=2^m$, that is we need $(2^m + 2^{2m}+m*2^m+1)$ memory to store the initial \MPK-model.
 
 For each $1\leq i \leq 2^m$, there is at most $i*i^i*i^{2^m}*i=i^2*i^{(i+2^m)}$ possible initial \MPK-models.
-Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{2+2*2^m}$ steps in the worst case. Therefore, the time and space complexity are $O(2^{m*2^m})$.
+Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case. 
 
-For the computing of characterizing formula, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, \ie $ch(\Hm,V)=i$, we will spend:
+Let $k=m-n$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, \ie $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
 \begin{align*}
- $(k+(\dots + (k + 2ik)*(2i))\dots *(2i))$
+ & N(i)=(k+(\dots + (k + 2ik)*(2i))\dots *(2i))\\
+ & = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
+ & = \frac{(2i)^i -1}{2i-1} k.
 \end{align*}
+In the worst case, \ie there is $i=2^m$ initial \MPK-models with $2^m$ nodes, we will spent $2^m*N(i)$ space to store the result of forgetting.
+
+It is obvious that computing the charazation number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
+Therefore, the time and space complexity are $O(2^{(m*2^m)})$.
 \end{proof}
 
 
