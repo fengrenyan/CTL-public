@@ -578,7 +578,7 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 \[ch({\cal M},V)=
 \left\{
   \begin{array}{ll}
-    \max\{k\mid s,s'\in S\ \&\ \dis_V({\cal M},s,s',k)\},\\
+    \max\{k\mid s,s'\in S \text{ and }\dis_V({\cal M},s,s',k)\},\\
          \ \ \qquad \qquad \qquad \hbox{${\cal M}$ is $V$-distinguishable;} \\
     \min\{k\mid {\cal B}_{k}={\cal B}_{k+1}\}, \ \ \ \quad \qquad \hbox{otherwise.}
   \end{array}
@@ -656,7 +656,7 @@ The following example show how to compute characterizing formula:
 % in which $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2, s_0)\}$, $L(s_0)= \{a\}$, $L(s_1) =\{a,c\}$ and $L(s_2) = \{b,c\}$. Let $V=\{a, b\}$, compute the characterizing formula of ${\cal K}$ on $V$.
 Let ${\cal K} = (\Hm, s_0)$ in Figure~\ref{Kripke_1} be an initial \MPK-structure and $V=\{a, b\}$, then compute the characterizing formula of ${\cal K}$ on $V$.
 
-It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) - \overline V = L(s_1) - \overline V$, $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ due to there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ (there is only one immediate successor $s'=s_0$) there is $L(s_2)- \overline V \neq L(s') - \overline V$. Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S\ \&\ \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
+It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) - \overline V = L(s_1) - \overline V$, $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ due to there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ (there is only one immediate successor $s'=s_0$) there is $L(s_2)- \overline V \neq L(s') - \overline V$. Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S \text{ and } \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
 %It is apparent that $\Hb_0=\{(s_0, s_1)\}$ and $\Hb_1={\O}$, then $ch(\Hm, s_0) = 1$.
 Then we have:
 \begin{align*}
@@ -1093,7 +1093,7 @@ Let $V'=\{p\}$, then
 \end{example}
 
 \begin{proposition}\label{pro:time:alg1}
- Let $\varphi$ be a CTL formula and $V\subseteq \Ha$. The time and space complexity of
+ Let $\varphi$ be a CTL formula and $V\subseteq \Ha$ with $|\Ha|=m$ and $|V|=n$. The time and space complexity of
 Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space complexity is $O(2^{2m})$, where $|\Ha| = m$.
 \end{proposition}
 
@@ -1691,7 +1691,7 @@ The (v) can be proved as (iv).
 
 
 \textbf{Proposition}~\ref{pro:ctl:forget:2}
-Let $V\subseteq\cal A$ and $\phi$ a formula.% and $Q\in \{\EXIST, \ALL\}$.
+Let $V\subseteq\cal A$ and $\phi \in \CTL$.% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
     \item $\CTLforget(\ALL\NEXT\phi,V)\equiv \ALL\NEXT \CTLforget(\phi,V)$.
     \item $\CTLforget(\EXIST\NEXT\phi,V)\equiv\EXIST\NEXT \CTLforget(\phi,V)$.
@@ -1714,7 +1714,7 @@ $\Rto$ for any sub-structure $(\Hm_1, s_1)$ of $(\Hm, s)$ there is $(\Hm_1, s_1)
 $\Rto$ there is an initial \MPK-structure $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1,s_1)$\\
 $\Rto$ it is easy to construct an initial \MPK-structure $(\Hm_3, s_3)$ by $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2)$ is a sub-structure of $(\Hm_3, s_3)$ with $s_2$ is a direct successor of $s_3$ and $(\Hm_3, s_3) \lrto_V (\Hm,s)$\\
 $\Rto$ $(\Hm_3, s_3) \models \ALL \NEXT (\CTLforget(\phi,V))$ and $(\Hm_3, s_3) \lrto_V (\Hm',s')$\\
-%, especially, let $\Hm_3, s_3 = \Hm', s'$, we have 
+%, especially, let $\Hm_3, s_3 = \Hm', s'$, we have
 $\Rto$ $(\Hm', s') \models \ALL \NEXT (\CTLforget(\phi,V))$.
 
 $(\Lto)$ $\forall$ $(\Hm_3, s_3) \in \Mod(\ALL \NEXT (\CTLforget(\phi,V)))$, then for any sub-structure $(\Hm_2, s_2)$ with $s_2$ is a directed successor of $s_3$ there is $(\Hm_2, s_2) \models \CTLforget(\phi,V)$\\
@@ -1730,7 +1730,7 @@ $\Rto$ there is a sub-structure $(\Hm_1, s_1)$ of $(\Hm, s)$ s.t. $(\Hm_1, s_1) 
 $\Rto$ there is an initial \MPK-structure $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1,s_1)$\\
 $\Rto$ it is easy to construct an initial \MPK-structure $(\Hm_3, s_3)$ by $(\Hm_2, s_2)$ s.t. $(\Hm_2, s_2)$ is a sub-structure of $(\Hm_3, s_3)$ that $s_2$ is a direct successor of $s_3$ and $(\Hm_3, s_3) \lrto_V (\Hm,s)$\\
 $\Rto$ $(\Hm_3, s_3) \models \EXIST \NEXT (\CTLforget(\phi,V))$\\
-%, especially, let $(\Hm_3, s_3) = (\Hm', s')$, we have 
+%, especially, let $(\Hm_3, s_3) = (\Hm', s')$, we have
 $\Rto$ $(\Hm', s') \models \EXIST \NEXT (\CTLforget(\phi,V))$.
 
 $(\Lto)$ $\forall$ $(\Hm_3, s_3) \in \Mod(\EXIST \NEXT (\CTLforget(\phi,V)))$, then there exists a sub-structure $(\Hm_2, s_2)$ of $(\Hm_3, s_3)$ s.t. $(\Hm_2, s_2) \models \CTLforget(\phi,V)$\\
@@ -1884,15 +1884,26 @@ As we know that any initial \MPK-structure ${\cal K}$ can be described as a char
 %If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
 %\end{proof}
 
-\textbf{Proposition}\ref{pro:time:alg1} Let $\varphi$ be a CTL formula and $V\subseteq \Ha$. The time and space complexity of
+\textbf{Proposition}\ref{pro:time:alg1} Let $\varphi$ be a CTL formula and $V\subseteq \Ha$  with $|\Ha|=m$ and $|V|=n$. The time and space complexity of
 Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.\\
 \begin{proof}
-The time and space spent by Algorithm~\ref{alg:compute:forgetting:by:VB} is mainly the \textbf{for} cycles between lines 4 and 16.
+The time and space spent by Algorithm~\ref{alg:compute:forgetting:by:VB} is mainly the \textbf{for} cycles between lines 4 and 18.
 Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m}$ number of label functions and $i$ number of possible initial states. In this case, we need the memory for the initial \MPK-model in each time is $(i+i^i+i^{2^m}+1)$.
 %Therefore, in the worst case is $i=2^m$, that is we need $(2^m + 2^{2m}+m*2^m+1)$ memory to store the initial \MPK-model.
 
 For each $1\leq i \leq 2^m$, there is at most $i*i^i*i^{2^m}*i=i^2*i^{(i+2^m)}$ possible initial \MPK-models.
-Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{2+2*2^m}$ steps in the worst case. Therefore, the time and space complexity are $O(2^{m*2^m})$.
+Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case. 
+
+Let $k=m-n$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, \ie $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
+\begin{align*}
+ & N(i)=(k+(\dots + (k + 2ik)*(2i))\dots *(2i))\\
+ & = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
+ & = \frac{(2i)^i -1}{2i-1} k.
+\end{align*}
+In the worst case, \ie there is $i=2^m$ initial \MPK-models with $2^m$ nodes, we will spent $2^m*N(i)$ space to store the result of forgetting.
+
+It is obvious that computing the charazation number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
+Therefore, the time and space complexity are $O(2^{(m*2^m)})$.
 \end{proof}
 
 
