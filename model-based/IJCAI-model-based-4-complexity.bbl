@@ -44,11 +44,6 @@ Edsger~W Dijkstra.
 \newblock Guarded commands, nondeterminacy, and formal derivation of programs.
 \newblock In {\em Programming Methodology}, pages 166--175. Springer, 1978.
 
-\bibitem[\protect\citeauthoryear{Ding and Zhang}{2006}]{ding2006ctl}
-Yulin Ding and Yan Zhang.
-\newblock Ctl model update: Semantics, computations and implementation.
-\newblock In {\em ECAI}, pages 362--366, 2006.
-
 \bibitem[\protect\citeauthoryear{Eiter and
   Kern-Isberner}{2019}]{eiter2019brief}
 Thomas Eiter and Gabriele Kern-Isberner.
@@ -77,13 +72,6 @@ Jerome Lang and Pierre Marquis.
 \newblock {\em Reasoning under inconsistency: a forgetting-based approach}.
 \newblock Elsevier Science Publishers Ltd, 2010.
 
-\bibitem[\protect\citeauthoryear{Lang \bgroup \em et al.\egroup
-  }{2003}]{DBLP:journals/jair/LangLM03}
-J{\'{e}}r{\^{o}}me Lang, Paolo Liberatore, and Pierre Marquis.
-\newblock Propositional independence: Formula-variable independence and
-  forgetting.
-\newblock {\em J. Artif. Intell. Res.}, 18:391--443, 2003.
-
 \bibitem[\protect\citeauthoryear{Lin and Reiter}{1994}]{lin1994forget}
 Fangzhen Lin and Ray Reiter.
 \newblock Forget it.
@@ -101,11 +89,6 @@ Fangzhen Lin.
   systems.
 \newblock {\em Journal of Artificial Intelligence Research}, 19:279--314, 2003.
 
-\bibitem[\protect\citeauthoryear{Lin}{2018}]{DBLP:journals/aim/Lin18}
-Fangzhen Lin.
-\newblock Machine theorem discovery.
-\newblock {\em {AI} Magazine}, 39(2):53--59, 2018.
-
 \bibitem[\protect\citeauthoryear{Liu and Wen}{2011}]{Yongmei:IJCAI:2011}
 Yongmei Liu and Ximing Wen.
 \newblock On the progression of knowledge in the situation calculus.
@@ -121,39 +104,11 @@ Carsten Lutz and Frank Wolter.
   Conference on Artificial Intelligence}, pages 989--995, Barcelona, Catalonia,
   Spain, 2011. IJCAI/AAAI.
 
-\bibitem[\protect\citeauthoryear{Martinez-Araiza and
-  L{\'o}pez-Mellado}{2016}]{martinez2016ctl}
-Ulises Martinez-Araiza and Ernesto L{\'o}pez-Mellado.
-\newblock Ctl model repair for inter-organizational business processes modelled
-  as owfn.
-\newblock {\em IFAC-PapersOnLine}, 49(2):6--11, 2016.
-
-\bibitem[\protect\citeauthoryear{Meier \bgroup \em et al.\egroup
-  }{2015}]{DBLP:journals/ijfcs/MeierTVM15}
-Arne Meier, Michael Thomas, Heribert Vollmer, and Martin Mundhenk.
-\newblock Erratum: The complexity of satisfiability for fragments of {CTL} and
-  ctl\({}^{\mbox{{\(\star\)}}}\).
-\newblock {\em Int. J. Found. Comput. Sci.}, 26(8):1189, 2015.
-
-\bibitem[\protect\citeauthoryear{Ramdani \bgroup \em et al.\egroup
-  }{2019}]{ramdani2019r}
-Mohamed Ramdani, Laid Kahloul, Mohamed Khalgui, and Yousra Hafidi.
-\newblock R-tnces rebuilding: A new method of ctl model update for
-  reconfigurable systems.
-\newblock In {\em Proceedings of the 14th International Conference on
-  Evaluation of Novel Approaches to Software Engineering}, pages 159--168.
-  SCITEPRESS-Science and Technology Publications, Lda, 2019.
-
 \bibitem[\protect\citeauthoryear{Su \bgroup \em et al.\egroup
   }{2009}]{Kaile:JAIR:2009}
 Kaile Su, Abdul Sattar, Guanfeng Lv, and Yan Zhang.
 \newblock Variable forgetting in reasoning about knowledge.
 \newblock {\em Journal of Artificial Intelligence Research}, 35:677--716, 2009.
-
-\bibitem[\protect\citeauthoryear{Tremblay}{1996}]{tremblay1996logic}
-Jean-Paul Tremblay.
-\newblock {\em Logic and Discrete Mathematics: a Computer Science Perspective}.
-\newblock Upper Saddle River, NJ: Prentice Hall, 1996.
 
 \bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
   }{2010}]{Wang:AMAI:2010}
@@ -194,13 +149,6 @@ Jim~CP Woodcock and Carroll Morgan.
 Yan Zhang and Norman~Y. Foo.
 \newblock Solving logic program conflict through strong and weak forgettings.
 \newblock {\em Artificial Intelligence}, 170(8-9):739--778, 2006.
-
-\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2008}]{Zhang2008Properties}
-Yan Zhang and Yi~Zhou.
-\newblock Properties of knowledge forgetting.
-\newblock In Maurice Pagnucco and Michael Thielscher, editors, {\em Proceedings
-  of the Twelfth International Workshop on Non-Monotonic Reasoning}, pages
-  68--75, Sydney, Australia, 2008.
 
 \bibitem[\protect\citeauthoryear{Zhang and Zhou}{2009}]{Yan:AIJ:2009}
 Yan Zhang and Yi~Zhou.
