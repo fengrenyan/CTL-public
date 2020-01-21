@@ -221,18 +221,24 @@
 %one of the central formalisms in formal verification.  As a specification language, it is used to express a property that the system at hand is expected to satisfy. From both the verification and the system design points of view, some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties such that a further abstraction might be more desirable.  In such regard,  the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given specification are very informative; hence, might be of crucial importance.  In such scenario, how to subtract such piece of information without altering the relevant system behaviour or violating the existing specifications rises as a natural question.  To address such scenario in a principled way, we develop a formal framework based on the notion of \emph{forgetting} (a line of research in knowledge representation) for \CTL, and investigate its theoretical properties. In particular,  we show that our framework satisfies essential postulates of forgetting, and can be used to compute SNC and WSC of a \CTL\ specification under a given model. Furthermore, we outline the computational complexity of our work, including various results for the relevant fragment $\CTL_{\ALL\FUTURE}$.
 
 Computation Tree Logic  (\CTL) is
-one of the central formalisms in formal verification.  As a specification language, it is used to express a property that the system at hand is expected to satisfy. From both the verification and the system design points of view, some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties. Then, the problems arises on how to subtract such piece of information without altering the relevant system behaviour or violating the existing specifications.  Moreover, in such a scenario, two crucial notions are informative: the \emph{strongest necessary condition} (SNC)  and the \emph{weakest sufficient condition}  (WSC)   of a given property.
+one of the central formalisms in formal verification.  As a specification language, it is used to express a property that the system at hand is expected to satisfy. From both the verification and the system design points of view, some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties. Then, the problems arises on how to subtract such piece of information without altering the relevant system behaviour or violating the existing specifications.  
 
 To address such a scenario in a principled way,  we introduce a \emph{forgetting}-based approach in \CTL\ and show that it can be used to compute SNC and WSC of a property under a given model.  We study its theoretical properties and also show that our notion of forgetting satisfies existing essential postulates. Furthermore, we analyse the computational complexity of basic tasks, including various results for the relevant fragment $\CTL_{\ALL\FUTURE}$.
 
 \end{abstract}
 
 \section{Introduction}
-\
 
 
-\emph{Weakest precondition}, we also call \emph{weakest sufficient condition} (WSC), is introduced by Dijkstra in~\cite{dijkstra1978guarded}.
-\emph{Strongest postcondition} (we also call \emph{strongest necessary condition} (SNC)), a dual concept, was introduced subsequently.
+Consider a car-manufacturing company which produces two types of automobiles: a sedan car (basically a four-doored classical passenger car) and a sports car.  No matter a sedan or a sports car, both production lines are subject to a single standard criterion which is indispensable: safety restrictions.  Complementing such a shard feature, there are also differences aligned with these types in general. That is, a sedan car is produced with a small engine, while a sport car is produced with a large one. Moreover, due to its large amount of production, the sedan car is subject to some very restrictive low-carbon emission regulations, while a sports car is not. In the verge of shifting to an upcoming new engine technology, the company aims to adapt the sedan production to electrical engines. Such major shift in production also comes with one in regulations; Electric sedans are not subject to low-carbon emission restrictions any more. In fact, due to the difference in its underlying technology, a sedan car drastically emit much less carbon, hence such standard is obsolete, and can be dropped. Yet, dropping some restrictions in a large and complex production system (like the one in automative industry) without affecting the working system components or violating dependent specifications  is a non-trivial task. 
+
+
+Similar situations arise in many different domains such as business-process modelling, financial systems, software development, concurrent systems and more~\cite{Baier:PMC:2008}.  In general,  some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time like in the above example, or perhaps  becomes infeasible due to practical difficulties. Then, the problem arises on how to subtract such piece of information without altering the behaviour of the relevant system components or violating the existing specifications. Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{dijkstra1978guarded} are very informative: the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given specification. These correspond to \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
+
+
+To address such a scenario in a principled way, we employ a  method based on formal verification which is useful for abstracting away the domain-specific problems, and rather focusing on conceptual issues. In particular, we introduce a \emph{forgetting} based approach in Computation Tree Logic \CTL a central formalism in formal verification, and show that it can be.
+%\emph{Weakest precondition}, we also call \emph{weakest sufficient condition} (WSC)
+%\emph{Strongest postcondition} (we also call \emph{strongest necessary condition} (SNC)), a dual concept, was introduced subsequently.
 WSC was widely used in program \emph{verification}, especially in generating counterexamples~\cite{dailler2018instrumenting} and refinement of  system~\cite{woodcock1990refinement}.
 %In program correctness methods, SNC and WSC meet their toughest challenge when
 %they deal with iterative constructs~\cite{mraihi2011computing}.
@@ -265,8 +271,10 @@ It can be shown by the following example.
 %\end{example}
 
 
+
 Computation Tree Logic  (\CTL)~\cite{clarke1981design}  is
-one of the central formalisms in formal verification.  As a specification language, it is used to express a property that the system at hand is expected to satisfy. From both the verification and the system design points of view, some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties.  Then, the problems arises on how to subtract such piece of information without altering the relevant system behaviour or violating the existing specifications.  Moreover, in such a scenario, two crucial notions are informative: the \emph{strongest necessary condition} (SNC)  and the \emph{weakest sufficient condition}  (WSC)   of a given property.
+one of the central formalisms in formal verification.  As a specification language, it is used to express a property that the system at hand is expected to satisfy. From both the verification and the system design points of view, some information content of such property might become irrelevant due to various reasons e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties.   
+
 
 To address such a scenario in a principled way,  we introduce a \emph{forgetting}-based approach in \CTL\ and show that it can be used to compute SNC and WSC of a property under a given model.  We study its theoretical properties and also show that our notion of forgetting satisfies existing essential postulates. Furthermore, we analyse the computational complexity of basic tasks, including various results for the relevant fragment $\CTL_{\ALL\FUTURE}$.
 
@@ -339,7 +347,7 @@ Finally, we conclude this paper.
 
  \section{Preliminaries}
  We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
-\subsection{Model structure in \CTL}
+\subsection{Model structure in $\CTL$}
 In general, a transition system
 %\footnote{According to \cite{Baier:PMC:2008},
 %a {\em transition system} TS is a tuple $(S, Act,\rto,I, AP, L)$ where

@@ -1,3 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: IJCAI-model-based-4-complexity.aux
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: IJCAI-model-based-4-complexity.aux
 The style file: named.bst
 Database file #1: ijcai20.bib
+You've used 35 entries,
+            2439 wiz_defined-function locations,
+            792 strings with 10854 characters,
+and the built_in function-call counts, 14953 in all, are:
+= -- 1601
+> -- 511
+< -- 13
++ -- 166
+- -- 164
+* -- 1143
+:= -- 2298
+add.period$ -- 114
+call.type$ -- 35
+change.case$ -- 216
+chr.to.int$ -- 35
+cite$ -- 35
+duplicate$ -- 649
+empty$ -- 1172
+format.name$ -- 215
+if$ -- 3219
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 38
+newline$ -- 178
+num.names$ -- 107
+pop$ -- 202
+preamble$ -- 1
+purify$ -- 256
+quote$ -- 0
+skip$ -- 544
+stack$ -- 0
+substring$ -- 931
+swap$ -- 194
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 264
+warning$ -- 0
+while$ -- 132
+width$ -- 39
+write$ -- 467
