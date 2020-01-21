@@ -245,21 +245,35 @@ However, in the case of model checking, it concerns properties about execution r
 %(\CTL\ in short)~\cite{clarke1981design} formula), we should decide whether $(\Hm, s_0) \models \varphi$. It is a good thing if $(\Hm, s_0) \models \varphi$ indeed. However, if $(\Hm, s_0) \nvDash \varphi$, how can we find the WSC $\psi$ under a given set of atoms such that $(\Hm, s_0) \models \psi \supset \varphi$.
 It can be shown by the following example.
 
+%\begin{example}\label{exmp:1}
+% We give a simplified variant of an example from~\cite{Baier:PMC:2008}. A Beverage Vending Machine %, which has been established as standard in the field of process calculi,
+% can be described as a Kripke structure $\Hm=(S, R, L, s_0)$ in Figure~\ref{BVM} on $V_a=\{select, pay, beer, soda\}$.
+% % with $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2,s_0)\}$, $L(s_0)=\{select\}$, $L(s_1)=\{pay, soda\}$, $L(s_2)=\{pay, beer\}$ and $s_0$ is an initial state.
+%This means that  if we are in $s_0$, (s)elect (so)da and pay for it then we are in $s_1$, else if we (s)elect (b)eer and (p)ay for it then we  are in $s_2$, after taking out the drink we are back to $s_0$ again.
+%For convenience, we use $s$ for $select$, $p$ for $pay$, $b$ for $beer$, $so$ for $soda$ and $r$ for orange juice.
+%%It follows that $s_0$ is an initial state.
+%Let $\varphi=\ALL\GLOBAL \ALL \FUTURE(p\wedge r)$, which means $p\wedge r$ will be satisfied infinite times in the structure, be a \CTL\ formula.
+%\begin{figure}
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=5cm]{BVM.png}\\
+%  \caption{A Beverage Vending Machine}\label{BVM}
+%\end{figure}
+%\end{example}
+
+
 \begin{example}\label{exmp:1}
- We give a simplified variant of an example from~\cite{Baier:PMC:2008}. A Beverage Vending Machine %, which has been established as standard in the field of process calculi,
- can be described as a Kripke structure $\Hm=(S, R, L, s_0)$ in Figure~\ref{BVM} on $V_a=\{select, pay, beer, soda\}$.
- % with $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2,s_0)\}$, $L(s_0)=\{select\}$, $L(s_1)=\{pay, soda\}$, $L(s_2)=\{pay, beer\}$ and $s_0$ is an initial state.
-This means that  if we are in $s_0$, (s)elect (so)da and pay for it then we are in $s_1$, else if we (s)elect (b)eer and (p)ay for it then we  are in $s_2$, after taking out the drink we are back to $s_0$ again.
-For convenience, we use $s$ for $select$, $p$ for $pay$, $b$ for $beer$, $so$ for $soda$ and $r$ for orange juice.
-%It follows that $s_0$ is an initial state.
-Let $\varphi=\ALL\GLOBAL \ALL \FUTURE(p\wedge r)$, which means $p\wedge r$ will be satisfied infinite times in the structure, be a \CTL\ formula.
+The scenario we mentioned concerning car-engine manufacturing can be represented by the following Kripke structure $\Hm=(S, R, L, s_0)$ in Figure~\ref{BVM} on $V=\{ sl, sr, se, le, lc\}$ whose elements correspond to  \emph{select},  \emph{safety restrictions}, \emph{small engine},  \emph{large engine} and \emph{low-carbon emission requirements}, respectively. Moreover, $s_0$ is the initial state where we select either choose producing an engine for \emph{sedan} which corresponds to the state $s_1$ or a \emph{sports car} which corresponds to the state $s_2$.
+Since only a single-type of production is possible at a time, after each production state ($s_1$ or $s_2$), we turn back to the initial state ($s_0$) to start over.
+Let $\varphi=\ALL\GLOBAL \ALL \FUTURE(sr)$, which means $sr$ will be satisfied infinitely many times in the structure, be a \CTL\ formula.
 \begin{figure}
   \centering
   % Requires \usepackage{graphicx}
   \includegraphics[width=5cm]{BVM.png}\\
-  \caption{A Beverage Vending Machine}\label{BVM}
+  \caption{Car Engine Manufacturing Scenario }\label{BVM}
 \end{figure}
 \end{example}
+
 
 We can decide $(\Hm, s_0)\nvDash \varphi$ easily due to this structure do not contain the atom $r$.
 In order for $(\Hm, s_0)$ satisfy $\varphi$, we should find a condition $\psi$ such that $(\Hm, s_0) \models \psi \supset \varphi$.
@@ -1691,7 +1705,7 @@ The (v) can be proved as (iv).
 
 
 \textbf{Proposition}~\ref{pro:ctl:forget:2}
-Let $V\subseteq\cal A$ and $\phi \in \CTL$.% and $Q\in \{\EXIST, \ALL\}$.
+Let $V\subseteq\cal A$ and $\phi \in \CTL$% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
     \item $\CTLforget(\ALL\NEXT\phi,V)\equiv \ALL\NEXT \CTLforget(\phi,V)$.
     \item $\CTLforget(\EXIST\NEXT\phi,V)\equiv\EXIST\NEXT \CTLforget(\phi,V)$.
@@ -1892,7 +1906,7 @@ Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m
 %Therefore, in the worst case is $i=2^m$, that is we need $(2^m + 2^{2m}+m*2^m+1)$ memory to store the initial \MPK-model.
 
 For each $1\leq i \leq 2^m$, there is at most $i*i^i*i^{2^m}*i=i^2*i^{(i+2^m)}$ possible initial \MPK-models.
-Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case. 
+Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case.
 
 Let $k=m-n$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, \ie $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
 \begin{align*}
@@ -1900,9 +1914,9 @@ Let $k=m-n$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$
  & = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
  & = \frac{(2i)^i -1}{2i-1} k.
 \end{align*}
-In the worst case, \ie there is $i=2^m$ initial \MPK-models with $2^m$ nodes, we will spent $2^m*N(i)$ space to store the result of forgetting.
+In the worst case, \ie there is $i=2^m$ initial \MPK-structure with $2^m$ nodes, we will spent $2^m*N(i)$ space to store the result of forgetting.
 
-It is obvious that computing the charazation number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
+It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
 Therefore, the time and space complexity are $O(2^{(m*2^m)})$.
 \end{proof}
 
