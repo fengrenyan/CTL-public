@@ -237,8 +237,8 @@ WSC was widely used in program \emph{verification}, especially in generating cou
 This paper explore a method to compute the WSC of a property (a \CTL\ formula) under a given model system that may be modified for guiding \CTL\ Model modification.
 %It is known that the computing of WSC for code fragment $S$ with respect to assertion $Q$  requires $S$  must terminate~\cite{tremblay1996logic}.
 %test
-It is known that the computing of WSC for code fragment $S$ with respect to assertion $Q$  requires $S$  must terminate~\cite{tremblay1996logic} since to it just concerns relation among input values and output values.
-However, in the case of model checking, it concerns properties about execution runs, which may not terminate.
+It is known that the computing of WSC for code fragment $S$ with respect to assertion $Q$  requires $S$  must terminate~\cite{tremblay1996logic} due to it just concerns relation among input values and output values.
+However, in the case of model checking, it concerns properties about execution runs, which may not be terminate.
 %For example, the concurrent system with there is at least one successor state for each state $s$ in this system, the termination of this system is impossible.
 %However, in \emph{model checking} of concurrent system with there is at least one successor state for each state $s$ in this system, the termination of this system is impossible.
 %Informally, given a transition system $\Hm$ with $s_0$ as an initial state and a specification $\varphi$ (in this article we suppose it is a {\em Computation Tree Logic}
@@ -275,20 +275,20 @@ Let $\varphi=\ALL\GLOBAL \ALL \FUTURE(sr)$, which means $sr$ will be satisfied i
 \end{example}
 
 
-We can decide $(\Hm, s_0)\nvDash \varphi$ easily since this structure does not contain the atom $r$.
-In order for $(\Hm, s_0)$ to satisfy $\varphi$, we should find a condition $\psi$ such that $(\Hm, s_0) \models \psi \supset \varphi$.
- As we know that if this condition exists, there are also many other conditions that satisfy the need.
-In this is the case, we can analyze in advance the set of possible atomic propositions that make up the condition. Then we can find this condition in the set only. And the smaller the set, the easier to find out the condition.
+We can decide $(\Hm, s_0)\nvDash \varphi$ easily due to this structure do not contain the atom $r$.
+In order for $(\Hm, s_0)$ satisfy $\varphi$, we should find a condition $\psi$ such that $(\Hm, s_0) \models \psi \supset \varphi$.
+ As we know that if this condition exists, there are many conditions that satisfy the need.
+In this case, if we are clever enough to judge in advance the set of possible atomic propositions that make up the condition, then we can find this condition in the set only, and the smaller the set, the easier it is to work out the condition.
 In this paper, we always assume that the condition is a property defined on the specified atomic proposition set $V$, for our example $V=\{p,r\}$, and find the weakest property (that is, the weakest sufficient condition) satisfying the condition on the set. Finding this property is called discovering theorem by Lin in~\cite{DBLP:journals/aim/Lin18}.
 Inspired by the forgetting-based method to compute SNC (WSC)~\cite{DBLP:journals/ai/Lin01}, in this paper, we tackle this problem by proposing a semantic forgetting for \CTL.
 
-However, since $\Hm$ is a Kripke structure, it needs to be converted into a logical formula (theory), that is the characterizing formula, which is in \CTL\  proposed in~\cite{DBLP:journals/tcs/BrowneCG88}.
-We find the WSC in a set $V$ of atoms, hence a set-based bisimulation between two \MPK-structures (a Kripke structure with a state in it), $V$-bisimulation, and characterizing formula on $V$ will be proposed in this paper.
+However, as we have said that $\Hm$ is a Kripke structure, which needs to be converted into a logical formula (theory), that is the characteristic formula, which is a \CTL\ formula proposed in~\cite{DBLP:journals/tcs/BrowneCG88}.
+Thanks to we find the WSC in a set $V$ of atoms, hence a set-based bisimulation between two \MPK-structures (a Kripke structure with a state in it), $V$-bisimulation, and characteristic formula on $V$ will be proposed in this paper.
 %Although the relation of bisimulation between transition systems has been wildly researched during the past several decades, it is different from our concept.
-Our $V$-bisimulation is a more general bisimulation than others.
+Our $V$-bisimulation is a more general bisimulation relation than others.
 On the one hand, the above set-based bisimulation is an extension of the
 bisimulation-equivalence of Definition~7.1 in \cite{Baier:PMC:2008} in the
-sense that, if $V=\cal A$, then our bisimulation is almost same to the
+sense that if $V=\cal A$ then our bisimulation is almost same to the
 latter.
 %\footnote{The latter has a given set of initial states,
 %while there is only one initial state in our case.}.
@@ -296,7 +296,7 @@ On the other hand, the above set-based bisimulation notion is similar to
 the state equivalence in \cite{DBLP:journals/tcs/BrowneCG88}. But it is
 different in the sense that ours is defined on \MPK-structures,
 while it is defined on states in \cite{DBLP:journals/tcs/BrowneCG88}.
-Moreover, the set-based bisimulation notion is also different
+What's more, the set-based bisimulation notion is also different
 from  the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008},
 which is defined for states of a given \MPK-structure.
 
@@ -304,7 +304,7 @@ which is defined for states of a given \MPK-structure.
 
 
 As a logical notion, \emph{forgetting} was first formally defined
-in propositional and first order logics by Lin and Reiter~\cite{lin1994forget}.
+in propostional and first order logics by Lin and Reiter~\cite{lin1994forget}.
 Over the last twenty years, researchers have developed forgetting notions and theories not only in classical logic but also in other non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. In application, forgetting has been used in planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
 %knowledge compilation \cite{Zhang2009Knowledge,Bienvenu2010Knowledge},
 createing restricted views of ontologies~\cite{zhao2017role},
@@ -312,24 +312,26 @@ createing restricted views of ontologies~\cite{zhao2017role},
 strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and so on.
 
 
-Although forgetting has been extensively investigated from various aspects of different logical systems, the existing forgetting techniques are not directly applicable in \CTL.
+Though forgetting has been extensively investigated from various aspects of different logical systems.
+However, the existing forgetting method in propositional
+logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
 For instance, in propositional forgetting theory, forgetting atom $q$ from $\varphi$ is equivalent to a formula $\varphi[q/\top] \vee \varphi[q/\perp]$, where $\varphi[q/X]$ is a formula obtained from $\varphi$ by replacing each $q$ with $X$ ($X\in \{\top, \perp\}$).
-This method cannot be extended to a \CTL\ formula. Consider a \CTL\ formula $\psi=\ALL\GLOBAL p \wedge \neg \ALL\GLOBAL q \wedge \neg \ALL\GLOBAL \neg q$. If we want to forget
-atom $q$ from $\psi$ by using the above method, we would have $\psi[q/\top] \vee \psi[q/\perp] \equiv \perp$. This is obviously not correct since after forgetting $q$ this specification should
+However, this method cannot be extended to a \CTL\ formula. Consider a \CTL\ formula $\psi=\ALL\GLOBAL p \wedge \neg \ALL\GLOBAL q \wedge \neg \ALL\GLOBAL \neg q$. If we want to forget
+atom $q$ from $\psi$ by using the above method, we would have $\psi[q/\top] \vee \psi[q/\perp] \equiv \perp$. This is obviously not correct because after forgetting $q$ this specification should
 not become inconsistent.
-Similar to~\cite{Yan:AIJ:2009}, we research forgetting in \CTL\ from the semantic forgetting point of view.
-And it is shown that our definition of forgetting satisfies those four postulates of forgetting presented in~\cite{Yan:AIJ:2009}.
+Similar with that in~\cite{Yan:AIJ:2009}, we research forgetting in \CTL\ from the semantic forgetting point of view.
+And it is shown that our definition of forgetting satisfies those four postulates of forgetting.
 
-The rest of the paper is organised as follows. Section 2 introduces the related notions for forgetting in \CTL, including the syntax and semantics of \CTL.
+The rest of the paper is organised as follows. Section 2 introduces the related notions for forgetting in \CTL, including the syntax and semantics of \CTL, the language we aimed for.
 A formal definition of concept forgetting and its properties for \CTL\ follows in Section 3.
-Section 4 explores the relation between forgetting and SNC (WSC), along with a computational complexity analysis.
-From the point of view of model, we propose an algorithm for computing forgetting on \CTL\ in Section 5 and study its complexity.
+Section 4 explores the relation between forgetting and SNC (WSC).
+From the point of view of model, we propose an algorithm for computing forgetting on \CTL\ in Section 5.
 Finally, we conclude this paper.
 
 
 
  \section{Preliminaries}
- We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. 
+ We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. In this part, we will introduce the structure we will use for \CTL\ and syntax and semantic of \CTL.
 \subsection{Model structure in \CTL}
 In general, a transition system
 %\footnote{According to \cite{Baier:PMC:2008},
