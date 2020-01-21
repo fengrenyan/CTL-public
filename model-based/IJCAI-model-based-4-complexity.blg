@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: IJCAI-model-based-4-complexity.aux
 The style file: named.bst
 Database file #1: ijcai20.bib
-You've used 27 entries,
+You've used 30 entries,
             2439 wiz_defined-function locations,
-            740 strings with 9291 characters,
-and the built_in function-call counts, 11569 in all, are:
-= -- 1245
-> -- 386
-< -- 10
-+ -- 126
-- -- 124
-* -- 881
-:= -- 1775
-add.period$ -- 89
-call.type$ -- 27
-change.case$ -- 166
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 502
-empty$ -- 908
-format.name$ -- 164
-if$ -- 2497
+            763 strings with 10010 characters,
+and the built_in function-call counts, 12901 in all, are:
+= -- 1381
+> -- 448
+< -- 11
++ -- 146
+- -- 144
+* -- 992
+:= -- 1989
+add.period$ -- 98
+call.type$ -- 30
+change.case$ -- 187
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 554
+empty$ -- 1004
+format.name$ -- 188
+if$ -- 2776
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 29
-newline$ -- 138
-num.names$ -- 81
-pop$ -- 154
+missing$ -- 32
+newline$ -- 153
+num.names$ -- 92
+pop$ -- 171
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 221
 quote$ -- 0
-skip$ -- 421
+skip$ -- 464
 stack$ -- 0
-substring$ -- 735
-swap$ -- 151
-text.length$ -- 10
+substring$ -- 807
+swap$ -- 164
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 204
+type$ -- 228
 warning$ -- 0
-while$ -- 100
-width$ -- 31
-write$ -- 362
+while$ -- 112
+width$ -- 34
+write$ -- 402

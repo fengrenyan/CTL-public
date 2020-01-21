@@ -72,6 +72,13 @@ Jerome Lang and Pierre Marquis.
 \newblock {\em Reasoning under inconsistency: a forgetting-based approach}.
 \newblock Elsevier Science Publishers Ltd, 2010.
 
+\bibitem[\protect\citeauthoryear{Lang \bgroup \em et al.\egroup
+  }{2003}]{DBLP:journals/jair/LangLM03}
+J{\'{e}}r{\^{o}}me Lang, Paolo Liberatore, and Pierre Marquis.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting.
+\newblock {\em J. Artif. Intell. Res.}, 18:391--443, 2003.
+
 \bibitem[\protect\citeauthoryear{Lin and Reiter}{1994}]{lin1994forget}
 Fangzhen Lin and Ray Reiter.
 \newblock Forget it.
@@ -103,6 +110,13 @@ Carsten Lutz and Frank Wolter.
 \newblock In {\em IJCAI 2011, Proceedings of the 22nd International Joint
   Conference on Artificial Intelligence}, pages 989--995, Barcelona, Catalonia,
   Spain, 2011. IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Meier \bgroup \em et al.\egroup
+  }{2015}]{DBLP:journals/ijfcs/MeierTVM15}
+Arne Meier, Michael Thomas, Heribert Vollmer, and Martin Mundhenk.
+\newblock Erratum: The complexity of satisfiability for fragments of {CTL} and
+  ctl\({}^{\mbox{{\(\star\)}}}\).
+\newblock {\em Int. J. Found. Comput. Sci.}, 26(8):1189, 2015.
 
 \bibitem[\protect\citeauthoryear{Su \bgroup \em et al.\egroup
   }{2009}]{Kaile:JAIR:2009}
@@ -149,6 +163,13 @@ Jim~CP Woodcock and Carroll Morgan.
 Yan Zhang and Norman~Y. Foo.
 \newblock Solving logic program conflict through strong and weak forgettings.
 \newblock {\em Artificial Intelligence}, 170(8-9):739--778, 2006.
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2008}]{Zhang2008Properties}
+Yan Zhang and Yi~Zhou.
+\newblock Properties of knowledge forgetting.
+\newblock In Maurice Pagnucco and Michael Thielscher, editors, {\em Proceedings
+  of the Twelfth International Workshop on Non-Monotonic Reasoning}, pages
+  68--75, Sydney, Australia, 2008.
 
 \bibitem[\protect\citeauthoryear{Zhang and Zhou}{2009}]{Yan:AIJ:2009}
 Yan Zhang and Yi~Zhou.
