@@ -264,7 +264,7 @@ It can be shown by the following example.
 
 \begin{example}\label{exmp:1}
 The scenario we mentioned concerning car-engine manufacturing can be represented by the following Kripke structure $\Hm=(S, R, L, s_0)$ in Figure~\ref{BVM} on $V=\{ sl, sr, se, le, lc\}$ whose elements correspond to  \emph{select},  \emph{safety restrictions}, \emph{small engine},  \emph{large engine} and \emph{low-carbon emission requirements}, respectively. Moreover, $s_0$ is the initial state where we select either choose producing an engine for \emph{sedan} which corresponds to the state $s_1$ or a \emph{sports car} which corresponds to the state $s_2$.
-Since only a single-type of production is possible at a time, after each production state ($s_1$ or $s_2$), we turn back to the initial state ($s_0$) to start over. 
+Since only a single-type of production is possible at a time, after each production state ($s_1$ or $s_2$), we turn back to the initial state ($s_0$) to start over.
 Let $\varphi=\ALL\GLOBAL \ALL \FUTURE(sr)$, which means $sr$ will be satisfied infinitely many times in the structure, be a \CTL\ formula.
 \begin{figure}
   \centering
@@ -329,7 +329,7 @@ Finally, we conclude this paper.
 
 
  \section{Preliminaries}
- We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. 
+ We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
 \subsection{Model structure in \CTL}
 In general, a transition system
 %\footnote{According to \cite{Baier:PMC:2008},
@@ -583,8 +583,8 @@ This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto
 \end{proposition}
 In this case the  model structure ${\cal M}$ is called $V$-{\em distinguishable} (by
 states $s$ and $s'$ at the least depth $k$), which is denoted by $\dis_V({\cal M},s,s',k)$.
-It is evident that
-$\dis_V({\cal M},s,s',k)$ implies $\dis_V({\cal M},s,s',k')$ whenever $k'\ge k$.
+%It is evident that
+%$\dis_V({\cal M},s,s',k)$ implies $\dis_V({\cal M},s,s',k')$ whenever $k'\ge k$.
 The $V$-{\em characterization number}
 of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 \[ch({\cal M},V)=
@@ -1110,12 +1110,13 @@ Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space c
 \end{proposition}
 
 \section{Concluding Remark}
-Based on the proposed $V$-bisimulation between \MPK-structures,  forgetting in \CTL\ and characteristic formula on $V$ on an initial \MPK-structure $\cal K$,
-a method compute the WSC (SNC) of a property $\varphi$ (a \CTL\ formula) on $\cal K$ and $V$ has been introduced by computing forgetting in \CTL.
-Besides, we have shown that the \CTL\ system is close under
-our definition of forgetting, and this definition satisfies those four postulates of forgetting.
-As we have said the complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is $O(2^{m*2^m})$ (very inefficient), a future
-work is to find an efficient algorithm to compute forgetting in \CTL\ and then WSC (SNC).
+\paragraph{Summary}
+This paper generalized the notion of bisimulation from model structures of Computation Tree Logic to model structures with initial states over a given signature $V$, named $V$-{\em bisimulation}.
+Based on this new bisimulation, we presented the notion of forgetting for the logic \CTL. It enables to compute weakest sufficient conditions and strongest necessary conditions of specifications in \CTL. Other properties and complexity issues in this context were also explored.
+
+
+\paragraph{Future work}
+Note that, when a transition system $\cal M$ does not satifies a specification $\phi$, one can evaluate the weakest sufficient condition  $\psi$ over a signature $V$ under which ${\cal M}$ satisfies $\phi$, viz., ${\cal M}\models\psi\supset \phi$ and $\psi$ mentions only atoms from $V$. It is worthwhile to explore how the condition $\psi$ can guide the design of a new transition system ${\cal M}'$ satisfying $\psi$.
 
 
 
@@ -1575,7 +1576,7 @@ Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{
 
 
 \textbf{Theorem}~\ref{thm:close}
-(Representation theorem).
+\textbf{(Representation theorem)}
 Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\ formulas and $V \subseteq \Ha$.
 Then the following statements are equivalent:
 \begin{enumerate}[(i)]
@@ -1702,8 +1703,8 @@ The (v) can be proved as (iv).
 
 
 
-\textbf{Proposition}~\ref{pro:ctl:forget:2}
-Let $V\subseteq\cal A$ and $\phi \in \CTL$.% and $Q\in \{\EXIST, \ALL\}$.
+\textbf{Proposition}~\ref{pro:ctl:forget:2} \textbf{(Homogeneity)}
+Let $V\subseteq\cal A$ and $\phi \in \CTL$,% and $Q\in \{\EXIST, \ALL\}$.
   \begin{enumerate}[(i)]
     \item $\CTLforget(\ALL\NEXT\phi,V)\equiv \ALL\NEXT \CTLforget(\phi,V)$.
     \item $\CTLforget(\EXIST\NEXT\phi,V)\equiv\EXIST\NEXT \CTLforget(\phi,V)$.
@@ -1757,7 +1758,7 @@ $\Rto$ $(\Hm, s) \models \EXIST \NEXT \phi$ and then $(\Hm_3, s_3) \models \CTLf
 
 
 
-\textbf{Proposition}\ref{modelChecking} Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $V$ a set of atoms. Deciding whether $(\Hm,s_0)$ is a model of $\forget(\varphi, V )$ is NP-complete.\\
+\textbf{Proposition}\ref{modelChecking}  \textbf{(Model Checking on Forgetting)} Let $(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $V$ a set of atoms. Deciding whether $(\Hm,s_0)$ is a model of $\forget(\varphi, V )$ is NP-complete.\\
 \begin{proof}
 The problem can be determined by the following two things: (1) guessing
 an initial \MPK-structure $(\Hm',s_0')$ satisfying $\varphi$; and
@@ -1767,8 +1768,8 @@ The hardness follows that the model checking for propositional variable
 forgetting is NP-hard~\cite{Zhang2008Properties}.
 \end{proof}
 
-\textbf{Theorem}~\ref{thm:comF}
-Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ (a fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective) formulas and $V$ a set of atoms. Then we have the
+\textbf{Theorem}~\ref{thm:comF} \textbf{(Entailment on Forgetting)}
+Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$  formulas and $V$ a set of atoms. Then,
 results:
 \begin{enumerate}[(i)]
   \item deciding  $\forget(\varphi, V ) \models^? \psi$ is co-NP-complete,
@@ -1800,7 +1801,7 @@ Hardness. It follows from (2) due to the fact that $\forget(\varphi, V) \models 
 
 
 
-\textbf{Proposition}~\ref{dual} Let $V,q,\varphi$ and $\psi$ are the ones in Definition~\ref{def:NC:SC}.
+\textbf{Proposition}~\ref{dual} \textbf{(dual)} Let $V,q,\varphi$ and $\psi$ are the ones in Definition~\ref{def:NC:SC}.
  The $\psi$ is a SNC (WSC) of $q$ on $V$ under $\varphi$ iff $\neg \psi$ is a WSC (SNC)
     of $\neg q$ on $V$ under $\varphi$.\\
 \begin{proof}
@@ -1904,7 +1905,7 @@ Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m
 %Therefore, in the worst case is $i=2^m$, that is we need $(2^m + 2^{2m}+m*2^m+1)$ memory to store the initial \MPK-model.
 
 For each $1\leq i \leq 2^m$, there is at most $i*i^i*i^{2^m}*i=i^2*i^{(i+2^m)}$ possible initial \MPK-models.
-Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case. 
+Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case.
 
 Let $k=m-n$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, \ie $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
 \begin{align*}
