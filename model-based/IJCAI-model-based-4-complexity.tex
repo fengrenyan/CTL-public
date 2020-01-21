@@ -683,7 +683,7 @@ The following example show how to compute characterizing formula:
 \begin{example}
 %Let ${\cal K} = (\Hm, s_0)$ with $\Hm=(S, R, L,s_0)$ be a initial \MPK-structure, % (in Fig.~\ref{Kripke_1}),
 % in which $S=\{s_0, s_1, s_2\}$, $R=\{(s_0, s_1), (s_0, s_2), (s_1, s_0), (s_2, s_0)\}$, $L(s_0)= \{a\}$, $L(s_1) =\{a,c\}$ and $L(s_2) = \{b,c\}$. Let $V=\{a, b\}$, compute the characterizing formula of ${\cal K}$ on $V$.
-Let ${\cal K} = (\Hm, s_0)$ in Figure~\ref{Kripke_1} be an initial \MPK-structure and $V=\{a, b\}$. It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ because $L(s_0) - \overline V = L(s_1) - \overline V$, and $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ since there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ since there is $L(s_2)- \overline V \neq L(s') - \overline V$ (as there is only one immediate successor $s'=s_0$). Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S \text{ and } \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
+Let ${\cal K} = (\Hm, s_0)$ in Figure~\ref{Kripke_1} be an initial \MPK-structure  and $V=\{a, b\}$. It is apparent that $\Tr_0(s_0) \lrto_{\overline V} \Tr_0(s_1)$ because $L(s_0) - \overline V = L(s_1) - \overline V$, and $\Tr_1(s_0) \not\lrto_{\overline V} \Tr_1(s_1)$ since there is $(s_0, s_2)\in R$ such that for any $(s_1, s') \in R$ since there is $L(s_2)- \overline V \neq L(s') - \overline V$ (as there is only one immediate successor $s'=s_0$). Hence, we have that $\Hm$ is $\overline V$-distinguished by state $s_0$ and $s_1$ at the least depth 1, \ie $\dis_{\overline V}(\Hm, s_0, s_1, 1)$. Similarly, we have $\dis_{\overline V}(\Hm, s_0, s_2, 0)$ and $\dis_{\overline V}(\Hm, s_1, s_2, 0)$. Therefore, $ch(\Hm, \overline V) =  \max\{k\mid s,s'\in S \text{ and } \dis_{\overline V}({\cal M},s,s',k)\} = 1$.
 %It is apparent that $\Hb_0=\{(s_0, s_1)\}$ and $\Hb_1={\O}$, then $ch(\Hm, s_0) = 1$.
 Then we have:
 \begin{align*}
@@ -701,7 +701,8 @@ Then we have:
 %        \wedge
 %        \ALL \NEXT \bigvee_{(s,s')\in R}{\cal F}_V(\Tr_1(s'))
 %  \right)
-\end{align*} Then it is easy to obtain ${\cal F}_V(\Hm, s_0)$ which is the characterizing formula of ${\cal K}$ on $V$.
+\end{align*}
+ Then it is easy to obtain ${\cal F}_V(\Hm, s_0)$ which is the characterizing formula of ${\cal K}$ on $V$.
 
 
 \begin{figure}
@@ -710,6 +711,31 @@ Then we have:
   \includegraphics[width=5cm]{k1.png}\\
   \caption{A simple Kripke structure}\label{Kripke_1}
 \end{figure}
+\end{example}
+
+\begin{example}
+(1) Let $V=\{sr\}$ and $\overline V=\{sl,se,lc,le\}$ ($\Ha = V\cup \{sr\}$). We have $\Tr_0(s_0) \not \lrto_{\overline V} \Tr_0(s_1)$ and $\Tr_0(s_0) \not \lrto_{\overline V} \Tr_0(s_2)$, then $\dis_{\overline V}(\Hm, s_0, s_1, 0)$ and $\dis_{\overline V}(\Hm, s_0, s_2, 0)$.
+Besides, it is easy checking that $s_1 \lrto_{\overline V} s_2$ since they have the same direct successor $s_0$.
+Hence, $ch(\Hm, \overline V) = 0$.
+Therefore, we have:
+\begin{align*}
+& {\cal F}_V(\Tr_0(s_0))= \neg sr \\
+& {\cal F}_V(\Tr_0(s_1)) = {\cal F}_V(\Tr_0(s_2)) = sr, \text{ and then }\\
+%\end{align*}
+%Then we have,
+%\begin{align*}
+& {\cal F}_V (\Hm, s_0)= \neg sr \wedge \ALL\GLOBAL(\neg sr \rto  \ALL \NEXT sr)\wedge \ALL\GLOBAL(sr \rto  \ALL \NEXT \neg sr)
+\end{align*}
+
+(2) Let $V=\{sl,se,lc,le\}$ and $\overline V=\{sr\}$. It is evident $\Tr_0(s_0) \not \lrto_{\overline V} \Tr_0(s_1)$ due to $L(s_0) -\overline V \neq L(s_1) -\overline V$, $\Tr_0(s_0) \not \lrto_{\overline V} \Tr_0(s_2)$ and $\Tr_0(s_1) \not \lrto_{\overline V} \Tr_0(s_2)$.
+And then we have $\dis_{\overline V}(\Hm,s_0,s_1,0)$, $\dis_{\overline V}(\Hm,s_0,s_2,0)$, $\dis_{\overline V}(\Hm,s_1,s_2,0)$ and $ch(\Hm, \overline V) = 0$.
+Therefore, we have:
+\begin{align*}
+&{\cal F}_V(\Tr_0(s_0)) = ls\wedge \neg se \wedge \neg lc \wedge \neg le\\
+&{\cal F}_V(\Tr_0(s_1)) = se \wedge lc \wedge \neg sl \wedge \neg le\\
+&{\cal F}_V(\Tr_0(s_2)) = le \wedge \neg sl \wedge \neg se \wedge \neg lc.
+\end{align*}
+Then it is easy to obtain ${\cal F}_V(\Hm, s_0)$ as above.
 \end{example}
 
 By the following theorem, we also have that given  $V\subseteq \Ha$, the characterizing formula of an initial \MPK-structure is unique (up to semantic equivalence) which describes this initial \MPK-structure on $V$.
@@ -974,27 +1000,28 @@ In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can
   It turns out that the previous notion of SNC and WSC for an atomic proposition can be lifted to any formula, or conversely the SNC and WSC of any formula can be reduced to that of a proposition.
 \begin{proposition}\label{formulaNS_to_p}
      Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
- Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.   \end{proposition}
+ Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.   
+ \end{proposition}
 
-The following result establishes the bridge between these two notions which are central to the paper; basically  SNC (WSC)  and the forgetting in which the former is obtained through the latter.   
+The following result establishes the bridge between these two notions which are central to the paper; basically  SNC (WSC)  and the forgetting in which the former is obtained through the latter.
 
 
 
-%In particular, it shows  how SNC  (WSC) of a property $q$ is obtained through the operation of forgetting. 
+%In particular, it shows  how SNC  (WSC) of a property $q$ is obtained through the operation of forgetting.
 
 \begin{theorem}\label{thm:SNC:WSC:forget}
  Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)- V$.
  \begin{enumerate}[(i)]
-   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\}) \setminus V)$
+   \item $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\}) - V)$
    is a SNC of $q$ on $V$ under $\varphi$.
-   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\}) \setminus V)$
+   \item  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\}) - V)$
    is a WSC of $q$ on $V$ under $\varphi$.
  \end{enumerate}
  \end{theorem}
 
 As aforementioned, since any initial $\MPK$-structure can be characterized by a \CTL\ formula, we can obtain the SNC (and its dual WSC) of a target property (a formula) under an initial $\MPK$-structure by forgetting.
 \begin{theorem}\label{thm:inK:SNC}
-Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V' = \Ha \setminus V$. Then:
+Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V' = \Ha - V$. Then:
  \begin{enumerate}[(i)]
    \item the SNC of $q$ on $V$ under ${\cal K}$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$.
    \item the WSC of $q$ on $V$ under ${\cal K}$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$.
@@ -1025,7 +1052,7 @@ Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on 
 %\end{proof}
 
 \begin{example}
-For the Example~\ref{exmp:1}, the WSC of $\varphi$ on $V$ under ${\cal K} =(\Hm, s_0)$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge (q \lrto \varphi) \wedge \neg q, \Ha \setminus V)$.
+For the Example~\ref{exmp:1}, the WSC of $\varphi$ on $V$ under ${\cal K} =(\Hm, s_0)$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge (q \lrto \varphi) \wedge \neg q, \Ha - V)$.
 \end{example}
 
 
@@ -1114,13 +1141,13 @@ Let $\Hm_1=(\{\{p,r\}\}, \{(\{p,r\}, \{p,r\})\}, \{p,r\})$ and $\Hm_2=(\{\emptys
 %\Hm_3=(\{\emptyset,\{p\}$, $\{p,r\}\}$, $\{(\emptyset$, $\{p\})$, $(\{p\}$, $\{p, r\})$, $(\{p, r\}$, $\emptyset)\}$, $\emptyset)$,
 The set of models of $\varphi$ is $\Mod(\varphi)=\{(\Hm_1, \{p\})$, $(\Hm_2$, $\emptyset), \dots\}$.
 
-Let $\Hm_1'=(\{\{p\}\}, \{(\{p\}, \{p\})\}, \{p\})$ and $\Hm_2'=(\{\emptyset,\{p\}\}, \{(\emptyset, \{p\})$, $(\{p\}$, $\{p\})\}, \emptyset)$
-  Then we can obtain all the possible initial \MPK-structure that is a model of $\CTLforget(\varphi, V)$, i.e., $\Mod(\CTLforget(\varphi, V)) =\{{\cal K}_1=(\Hm_1', \{p\}), {\cal K}_2=(\Hm_2', \emptyset), \dots\}$.
+%Let $\Hm_1'=(\{\{p\}\}, \{(\{p\}, \{p\})\}, \{p\})$ and $\Hm_2'=(\{\emptyset,\{p\}\}, \{(\emptyset, \{p\})$, $(\{p\}$, $\{p\})\}, \emptyset)$
+%  Then we can obtain all the possible initial \MPK-structure that is a model of $\CTLforget(\varphi, V)$, i.e., $\Mod(\CTLforget(\varphi, V)) =\{{\cal K}_1=(\Hm_1', \{p\}), {\cal K}_2=(\Hm_2', \emptyset), \dots\}$.
 
-Let $V'=\{p\}$, then
- ${\cal F}_{V'}({\cal K}_1)= p \wedge \ALL\GLOBAL (p\supset \EXIST \NEXT p \wedge \ALL \NEXT p)$,
+Let $V'=\{p\}$, ${\cal K}_1=(\Hm_1, \{p,r\})$ and ${\cal K}_2=(\Hm_2, \emptyset)$, then
+ ${\cal F}_{V'}({\cal K}_1)= p \wedge \ALL\GLOBAL (p\supset  \ALL \NEXT p)$,
  and
- ${\cal F}_{V'}({\cal K}_2)=\neg p\wedge \ALL\GLOBAL (p\supset \EXIST \NEXT \neg p \wedge \ALL \NEXT \neg p) \wedge \ALL\GLOBAL (\neg p\supset \EXIST \NEXT p \wedge \ALL \NEXT p)$. Similarly, we can obtain the characteristic formula of other models and then the $\CTLforget(\varphi, V)$.% is the disjunction of all the characteristic formulae of those models.
+ ${\cal F}_{V'}({\cal K}_2)=\neg p\wedge \ALL\GLOBAL (p\supset  \ALL \NEXT \neg p) \wedge \ALL\GLOBAL (\neg p\supset  \ALL \NEXT p)$. Similarly, we can obtain the characteristic formula of other models and then the $\CTLforget(\varphi, V)$.% is the disjunction of all the characteristic formulae of those models.
 \end{example}
 
 \begin{proposition}\label{pro:time:alg1}
@@ -1656,7 +1683,7 @@ Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}
 \end{proof}
 
 
-\textbf{Proposition}~\ref{disTF} Let $\varphi$ be a formula, $V$ a set of atoms and $p$ an atom such that $p \notin V$. Then:
+\textbf{Proposition}~\ref{disTF} Given a formula $\varphi \in \CTL$, $V$ a set of atoms and $p$ an atom such that $p \notin V$. Then,
 \[
 \CTLforget(\varphi, \{p\} \cup V) \equiv \CTLforget(\CTLforget(\varphi, p), V).
 \]
@@ -1822,7 +1849,7 @@ Hardness. It follows from (2) due to the fact that $\forget(\varphi, V) \models 
 
 
 
-\textbf{Proposition}~\ref{dual} \textbf{(dual)} Let $V,q,\varphi$ and $\psi$ are the ones in Definition~\ref{def:NC:SC}.
+\textbf{Proposition}~\ref{dual} \textbf{(dual)} Let $V,q,\varphi$ and $\psi$ are like in Definition~\ref{def:NC:SC}.
  The $\psi$ is a SNC (WSC) of $q$ on $V$ under $\varphi$ iff $\neg \psi$ is a WSC (SNC)
     of $\neg q$ on $V$ under $\varphi$.\\
 \begin{proof}
@@ -1837,7 +1864,8 @@ The proof of the other part of the proposition is similar.
 
 
 
-\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$. Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \equiv \alpha\}$.
+\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
+ Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.
 
 \begin{proof}
     We prove this for SNC. The case for WSC is similar.
@@ -1882,7 +1910,7 @@ The proof of the other part of the proposition is similar.
 
 
 
-\textbf{Theorem}~\ref{thm:inK:SNC} Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the finite set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V'$ ($V' = \Ha - V$). Then:
+\textbf{Theorem}~\ref{thm:inK:SNC} Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on the set $\Ha$ of atoms, $V \subseteq \Ha$ and $q\in V' = \Ha - V$. Then:
  \begin{enumerate}[(i)]
    \item the SNC of $q$ on $V$ under ${\cal K}$ is $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$.
    \item the WSC of $q$ on $V$ under ${\cal K}$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$.
