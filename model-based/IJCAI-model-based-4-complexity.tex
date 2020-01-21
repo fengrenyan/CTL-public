@@ -329,7 +329,7 @@ Finally, we conclude this paper.
 
 
  \section{Preliminaries}
- We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. 
+ We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
 \subsection{Model structure in \CTL}
 In general, a transition system
 %\footnote{According to \cite{Baier:PMC:2008},
@@ -583,8 +583,8 @@ This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto
 \end{proposition}
 In this case the  model structure ${\cal M}$ is called $V$-{\em distinguishable} (by
 states $s$ and $s'$ at the least depth $k$), which is denoted by $\dis_V({\cal M},s,s',k)$.
-It is evident that
-$\dis_V({\cal M},s,s',k)$ implies $\dis_V({\cal M},s,s',k')$ whenever $k'\ge k$.
+%It is evident that
+%$\dis_V({\cal M},s,s',k)$ implies $\dis_V({\cal M},s,s',k')$ whenever $k'\ge k$.
 The $V$-{\em characterization number}
 of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 \[ch({\cal M},V)=
@@ -1110,12 +1110,13 @@ Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space c
 \end{proposition}
 
 \section{Concluding Remark}
-Based on the proposed $V$-bisimulation between \MPK-structures,  forgetting in \CTL\ and characteristic formula on $V$ on an initial \MPK-structure $\cal K$,
-a method compute the WSC (SNC) of a property $\varphi$ (a \CTL\ formula) on $\cal K$ and $V$ has been introduced by computing forgetting in \CTL.
-Besides, we have shown that the \CTL\ system is close under
-our definition of forgetting, and this definition satisfies those four postulates of forgetting.
-As we have said the complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is $O(2^{m*2^m})$ (very inefficient), a future
-work is to find an efficient algorithm to compute forgetting in \CTL\ and then WSC (SNC).
+\paragraph{Summary}
+This paper generalized the notion of bisimulation from model structures of Computation Tree Logic to model structures with initial states over a given signature $V$, named $V$-{\em bisimulation}.
+Based on this new bisimulation, we presented the notion of forgetting for the logic \CTL. It enables to compute weakest sufficient conditions and strongest necessary conditions of specifications in \CTL. Other properties and complexity issues in this context were also explored.
+
+
+\paragraph{Future work}
+Note that, when a transition system $\cal M$ does not satifies a specification $\phi$, one can evaluate the weakest sufficient condition  $\psi$ over a signature $V$ under which ${\cal M}$ satisfies $\phi$, viz., ${\cal M}\models\psi\supset \phi$ and $\psi$ mentions only atoms from $V$. It is worthwhile to explore how the condition $\psi$ can guide the design of a new transition system ${\cal M}'$ satisfying $\psi$.
 
 
 
