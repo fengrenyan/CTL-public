@@ -248,7 +248,7 @@ the relevant fragment $\CTL_{\ALL\FUTURE}$.
 \section{Introduction}
 
 
-Consider a car-manufacturing company which produces two types of automobiles: a sedan car (basically a four-doored classical passenger car) and a sports car.  No matter a sedan or a sports car, both production lines are subject to a single standard criterion which is indispensable: safety restrictions.  This shared feature is also complemented several major differences aligned with these types in general. That is, a sedan car is produced with a small engine, while a sport car is produced with a large one. Moreover, due to its large amount of production, the sedan car is subject to some very restrictive low-carbon emission regulations, while a sports car is not. On the verge of shifting to an upcoming new engine technology, the company aims to adapt the sedan production to electrical engines. Such major shift in production also comes with one in regulations; electric sedans are not subject to low-carbon emission restrictions any more. In fact, due to the difference in its underlying technology, a sedan car drastically emit much less carbon, hence such standard is obsolete, and can be dropped. Yet dropping some restrictions in a large and complex production system in automative industry, without affecting the working system components or violating dependent specifications  is a non-trivial task. 
+Consider a car-manufacturing company which produces two types of automobiles: a sedan car (basically a four-doored classical passenger car) and a sports car.  No matter a sedan or a sports car, both production lines are subject to a single standard criterion which is indispensable: safety restrictions.  This shared feature is also complemented several major differences aligned with these types in general. That is, a sedan car is produced with a small engine, while a sports car is produced with a large one. Moreover, due to its large amount of production, the sedan car is subject to some very restrictive low-carbon emission regulations, while a sports car is not. On the verge of shifting to an upcoming new engine technology, the company aims to adapt the sedan production to electrical engines. Such major shift in production also comes with one in regulations; electric sedans are not subject to low-carbon emission restrictions any more. In fact, due to the difference in its underlying technology, a sedan car drastically emits much less carbon, hence such standard is obsolete, and can be dropped. Yet dropping some restrictions in a large and complex production system in automative industry, without affecting the working system components or violating dependent specifications  is a non-trivial task.
 
 
 Similar scenarios may arise in many different domains such as business-process modelling, software development, concurrent systems and more~\cite{Baier:PMC:2008}.  In general,  some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time like in the above example, or perhaps  becomes infeasible due to practical difficulties. Then, the problem arises on how to subtract such piece of information without altering the behaviour of the relevant system components or violating the existing specifications. Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{dijkstra1978guarded} are very informative: the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given specification. These correspond to \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
@@ -260,8 +260,8 @@ Similar scenarios may arise in many different domains such as business-process m
 
 
 
-To address such a scenario in a principled way, we employ a  method based on formal verification.\footnote{ This is  especially useful for abstracting away the domain-dependent problems, and focusing on conceptual ones.} In particular, 
-we introduce a \emph{forgetting}-based approach in Computation Tree Logic (\CTL)~\cite{clarke1981design}  
+To address such a scenario in a principled way, we employ a  method based on formal verification.\footnote{ This is  especially useful for abstracting away the domain-dependent problems, and focusing on conceptual ones.} In particular,
+we introduce a \emph{forgetting}-based approach in Computation Tree Logic (\CTL)~\cite{clarke1981design}
 a central formalism in formal verification, and show that it can
 be used to compute SNC and WSC, in the same spirit of~\cite{DBLP:journals/ai/Lin01}.
 %\begin{example}\label{exmp:1}
@@ -285,7 +285,7 @@ Since only a single-type of production is possible at a time, after each product
 
 %In program correctness methods, SNC and WSC meet their toughest challenge when
 %they deal with iterative constructs~\cite{mraihi2011computing}.
-%{\em Computation Tree Logic} (\CTL)~\cite{clarke1981design} 
+%{\em Computation Tree Logic} (\CTL)~\cite{clarke1981design}
 
 
 %Model modification, which has been developed in~\cite{ramdani2019r,martinez2016ctl,ding2006ctl}, is an extension of refinement of system.
@@ -355,11 +355,11 @@ And it is shown that our definition of forgetting satisfies those four postulate
 %Moreover, the set-based bisimulation notion is also different
 %from  the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008},
 %which is defined for states of a given \MPK-structure.
-The rest of the paper is organised as follows. Section 2 introduces the notation and technical preliminaries. As key contributions, Section 3, introduces the notion of forgetting in \CTL, via developing the notion of $V$-bisimulation. Such bisimulation is constructed through a set-based bisimulation and more general than the classical bisimulation. Moreover,  it provides a CTL characterization for model structures (with the initial state), and studies the semantic properties of forgetting. In addition, a complexity analysis, including a relevant fragment  $\CTL_{\ALL\FUTURE}$, is carried out. 
+The rest of the paper is organised as follows. Section 2 introduces the notation and technical preliminaries. As key contributions, Section 3, introduces the notion of forgetting in \CTL, via developing the notion of $V$-bisimulation. Such bisimulation is constructed through a set-based bisimulation and more general than the classical bisimulation. Moreover,  it provides a CTL characterization for model structures (with the initial state), and studies the semantic properties of forgetting. In addition, a complexity analysis, including a relevant fragment  $\CTL_{\ALL\FUTURE}$, is carried out.
 Section 4 explores the relation between forgetting and SNC (WSC). Section 5 gives a model-based algorithm for computing forgetting in \CTL\ and outline its complexity. Conclusion closes the paper.
 
 
-Due to space restrictions and to avoid hindering the flow of content, all the proofs are put to the supplementary material.   
+Due to space restrictions and to avoid hindering the flow of content, all the proofs are put to the supplementary material.
 
 
 
@@ -383,11 +383,12 @@ In general, a transition system
   is $s'\in S$ such that $(s,s')\in R$,
   \item $L$ is a labeling function $S\rto 2^{\cal A}$.
 \end{itemize}
-We call a model structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, \ie, the labelling function $L$ map every state to $V$ (not the $\Ha$).  A \emph{path} $\pi_{s_i}$ start from $s_i$ of $\Hm$ is an infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
+%We call a model structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, i.e., the labelling function $L$ map every state to $V$ (not the $\Ha$).  
+Given a model structure $\Hm=(S,R,L)$, a \emph{path} $\pi_{s_i}$ starting from $s_i$ of $\Hm$ is an infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
 A state $s\in S$ is {\em initial} if for any state $s'\in S$, there is a path $\pi_s$ s.t $s'\in \pi_s$.
-We denote this model structure as $(S,R,L,s_0)$, where $s_0$ is initial.
+If $s_0$ is an initial state of $\Hm$, then we denote this model structure $\Hm$ as $(S,R,L,s_0)$.
 
-For a given model structure $(S,R,L,s_0)$ and $s\in S$,
+For a given model structure $\Hm=(S,R,L,s_0)$ and $s\in S$,
 the {\em computation tree}
 $\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n$ and is rooted at $s$, is recursively defined as~\cite{DBLP:journals/tcs/BrowneCG88}, for $n\ge 0$,
 \begin{itemize}
@@ -397,7 +398,7 @@ $\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n$ and i
  % \footnote{Though
 %  some nodes of the tree may have the same label, they are different nodes in the tree.}.
 \end{itemize}
-By $s_n$ we mean a $n$th level node of tree $\Tr_m(s)$ $(m \geq n)$.
+%By $s_n$ we mean a $n$th level node of tree $\Tr_m(s)$ $(m \geq n)$.
 
 A {\em \MPK-structure} (or {\em \MPK-interpretation}) is a model structure
 ${\cal M}=(S, R, L, s_0)$ associating
@@ -961,7 +962,7 @@ Let $\varphi$ and $\psi$ be two $\CTL_{\ALL \FUTURE}$ formulas and $V$ a set of 
 \end{corollary}
 
 \section{Strongest Necessary and Weakest Sufficient Conditions}
-In this section, we will give the definition of strongest necessary and weakest sufficient conditions (SNC and WSC, respectively) of a specification in \CTL\ and show that they can be obtained by forgetting under a given initial \MPK-structure and set $V$ of atoms.
+In this section, we will give the definitions of strongest necessary and weakest sufficient conditions (SNC and WSC, respectively) of a specification in \CTL\ and show that they can be obtained by forgetting under a given initial \MPK-structure and set $V$ of atoms.
 We first start with defining these notions of an atomic proposition.
 \begin{definition}[sufficient and necessary condition]\label{def:NC:SC}
 Let $\phi$ be a formula (or an initial \MPK-structure), $\psi$ be a formula, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)- V$
@@ -1012,7 +1013,7 @@ In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can
     It turns out that the previous notion of SNC and WSC for an atomic proposition can be lifted to any formula, or conversely the SNC and WSC of any formula can be reduced to that of a proposition.
 \begin{proposition}\label{formulaNS_to_p}
      Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
- Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.   
+ Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.
  \end{proposition}
 
 The following result establishes the bridge between these two notions which are central to the paper; basically  SNC (WSC)  and the forgetting in which the former is obtained through the latter.
@@ -1173,7 +1174,7 @@ Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space c
 \section{Concluding Remarks}
 \paragraph{Summary}
 In this article, we generalized the notion of bisimulation from model structures of Computation Tree Logic (CTL) to model structures with initial states over a given signature $V$, named $V$-{\em bisimulation}.
-Based on this new bisimulation, we presented the notion of forgetting for \CTL, which enables computing weakest sufficient and strongest necessary conditions of specifications. Further properties and complexity issues in this context were also explored. In particular, we have shown that our notion of forgetting satisfies the existing postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic and modal logic S5 to CTL. On the complexity theory side, we investigated the model checking of forgetting, which turned out to be NP-Complete, and the relevant fragment of $\CTL_{\ALL\FUTURE}$ which ranged from co-NP to $\Pi_2^p$-completeness.  And finally, we proposed a model-based algorithm which computes the forgetting of a given formula and a set of variables, and outlined its complexity.  
+Based on this new bisimulation, we presented the notion of forgetting for \CTL, which enables computing weakest sufficient and strongest necessary conditions of specifications. Further properties and complexity issues in this context were also explored. In particular, we have shown that our notion of forgetting satisfies the existing postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic and modal logic S5 to CTL. On the complexity theory side, we investigated the model checking of forgetting, which turned out to be NP-complete, and the relevant fragment of $\CTL_{\ALL\FUTURE}$ which ranged from co-NP to $\Pi_2^p$-completeness.  And finally, we proposed a model-based algorithm which computes the forgetting of a given formula and a set of variables, and outlined its complexity.
 
 
 
@@ -1185,6 +1186,12 @@ Note that, when a transition system $\cal M$ does not satisfy a specification $\
 
 Moreover, a further study regarding the the computational complexity for other general fragments is required and part of the future research agenda. Such investigation can be coupled with fine-grained parameterized analysis.
 
+
+
+
+\newpage
+\bibliographystyle{named}
+\bibliography{ijcai20}
 
 \clearpage
 \appendix
@@ -1987,9 +1994,5 @@ In the worst case, i.e., there is $i=2^m$ initial \MPK-structure with $2^m$ node
 It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
 Therefore, the time and space complexity are $O(2^{(m*2^m)})$.
 \end{proof}
-
-\newpage
-\bibliographystyle{named}
-\bibliography{ijcai20}
 
 \end{document}
