@@ -248,7 +248,7 @@ the relevant fragment $\CTL_{\ALL\FUTURE}$.
 \section{Introduction}
 
 
-Consider a car-manufacturing company which produces two types of automobiles: a sedan car (basically a four-doored classical passenger car) and a sports car.  No matter a sedan or a sports car, both production lines are subject to a single standard criterion which is indispensable: safety restrictions.  This shared feature is also complemented by several major differences aligned with these types in general. That is, a sedan car is produced with a small engine, while a sport car is produced with a large one. Moreover, due to its large amount of production, the sedan car is subject to some very restrictive low-carbon emission regulations, while a sports car is not. On the verge of shifting to an upcoming new engine technology, the company aims to adapt the sedan production to electrical engines. Such major shift in production also comes with one in regulations; electric sedans are not subject to low-carbon emission restrictions any more. In fact, due to the difference in its underlying technology, a sedan car drastically emit much less carbon, hence such standard is obsolete, and can be dropped. Yet dropping some restrictions in a large and complex production system in automative industry, without affecting the working system components or violating dependent specifications  is a non-trivial task. 
+Consider a car-manufacturing company which produces two types of automobiles: a sedan car (basically a four-doored classical passenger car) and a sports car.  No matter a sedan or a sports car, both production lines are subject to a single standard criterion which is indispensable: safety restrictions.  This shared feature is also complemented by several major differences aligned with these types in general. That is, a sedan car is produced with a small engine, while a sports car is produced with a large one. Moreover, due to its large amount of production, the sedan car is subject to some very restrictive low-carbon emission regulations, while a sports car is not. On the verge of shifting to an upcoming new engine technology, the company aims to adapt the sedan production to electrical engines. Such major shift in production also comes with one in regulations; electric sedans are not subject to low-carbon emission restrictions any more. In fact, due to the difference in its underlying technology, a sedan car drastically emit much less carbon, hence such standard is obsolete, and can be dropped. Yet dropping some restrictions in a large and complex production system in automative industry, without affecting the working system components or violating dependent specifications  is a non-trivial task. 
 
 
 Similar scenarios may arise in many different domains such as business-process modelling, software development, concurrent systems and more~\cite{Baier:PMC:2008}.  In general,  some information content of such property might become irrelevant for the system due to various reasons e.g., it might become obsolete by time like in the above example, or perhaps  becomes infeasible due to practical difficulties. Then, the problem arises on how to subtract such piece of information without altering the behaviour of the relevant system components or violating the existing specifications. Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{dijkstra1978guarded} are very informative: the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given specification. These correspond to \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
@@ -383,11 +383,12 @@ In general, a transition system
   is $s'\in S$ such that $(s,s')\in R$,
   \item $L$ is a labeling function $S\rto 2^{\cal A}$.
 \end{itemize}
-We call a model structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, \ie, the labelling function $L$ map every state to $V$ (not the $\Ha$).  A \emph{path} $\pi_{s_i}$ start from $s_i$ of $\Hm$ is an infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
-A state $s\in S$ is {\em initial} if for any state $s'\in S$, there is a path $\pi_s$ s.t $s'\in \pi_s$.
-We denote this model structure as $(S,R,L,s_0)$, where $s_0$ is initial.
 
-For a given model structure $(S,R,L,s_0)$ and $s\in S$,
+Given a model structure $\Hm=(S,R,L)$, a \emph{path} $\pi_{s_i}$ starting from $s_i$ of $\Hm$ is an infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
+A state $s\in S$ is {\em initial} if for any state $s'\in S$, there is a path $\pi_s$ s.t $s'\in \pi_s$.
+If $s_0$ is an initial state of $\Hm$, then we denote this model structure $\Hm$ as $(S,R,L,s_0)$.
+
+For a given model structure $\Hm=(S,R,L,s_0)$ and $s\in S$,
 the {\em computation tree}
 $\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n$ and is rooted at $s$, is recursively defined as~\cite{DBLP:journals/tcs/BrowneCG88}, for $n\ge 0$,
 \begin{itemize}
@@ -574,7 +575,7 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
 
 
 
-Intuitively, if two \MPK-structures are $V$-bisimilar, then they satisfy the same formula $\varphi$ that dose not contain any atoms in $V$, \ie $\IR(\varphi, V)$.
+Intuitively, if two \MPK-structures are $V$-bisimilar, then they satisfy the same formula $\varphi$ that dose not contain any atoms in $V$, i.e., $\IR(\varphi, V)$.
 \begin{theorem}\label{thm:V-bisimulation:EQ}
   Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
   ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
@@ -1173,7 +1174,7 @@ Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space c
 \section{Concluding Remarks}
 \paragraph{Summary}
 In this article, we generalized the notion of bisimulation from model structures of Computation Tree Logic (CTL) to model structures with initial states over a given signature $V$, named $V$-{\em bisimulation}.
-Based on this new bisimulation, we presented the notion of forgetting for \CTL, which enables computing weakest sufficient and strongest necessary conditions of specifications. Further properties and complexity issues in this context were also explored. In particular, we have shown that our notion of forgetting satisfies the existing postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic and modal logic S5 to CTL. On the complexity theory side, we investigated the model checking of forgetting, which turned out to be NP-Complete, and the relevant fragment of $\CTL_{\ALL\FUTURE}$ which ranged from co-NP to $\Pi_2^p$-completeness.  And finally, we proposed a model-based algorithm which computes the forgetting of a given formula and a set of variables, and outlined its complexity.  
+Based on this new bisimulation, we presented the notion of forgetting for \CTL, which enables computing weakest sufficient and strongest necessary conditions of specifications. Further properties and complexity issues in this context were also explored. In particular, we have shown that our notion of forgetting satisfies the existing postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic and modal logic S5 to CTL. On the complexity theory side, we investigated the model checking of forgetting, which turned out to be NP-complete, and the relevant fragment of $\CTL_{\ALL\FUTURE}$ which ranged from co-NP to $\Pi_2^p$-completeness.  And finally, we proposed a model-based algorithm which computes the forgetting of a given formula and a set of variables, and outlined its complexity.  
 
 
 
