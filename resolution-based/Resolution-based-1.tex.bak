@@ -1,0 +1,635 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\usepackage{soul}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\urlstyle{same}
+
+
+
+\usepackage{setspace}
+\usepackage{times}  %Required
+\usepackage{helvet}  %Required
+\usepackage{courier}  %Required
+\usepackage{url}  %Required
+%\usepackage{graphicx}  %Required
+
+\usepackage{enumerate}
+
+
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+
+\usepackage{amssymb}
+\usepackage{enumerate}
+
+\usepackage{subfigure}
+
+\usepackage[linesnumbered,boxed,ruled,commentsnumbered]{algorithm2e}
+
+
+
+\newcommand{\tuple}[1]{{\langle{#1}\rangle}}
+\newcommand{\Mod}{\textit{Mod}}
+\newcommand\ie{{\it i.e. }}
+\newcommand\eg{{\it e.g.}}
+%\newcommand\st{{\it s.t. }}
+%\newtheorem{definition}{Definition}
+%\newtheorem{examp}{Example}
+%\newenvironment{example}{\begin{examp}\rm}{\end{examp}}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}\\ }
+\newcommand{\rto}{\rightarrow}
+\newcommand{\lto}{\leftarrow}
+\newcommand{\lrto}{\leftrightarrow}
+\newcommand{\Rto}{\Rightarrow}
+\newcommand{\Lto}{\Leftarrow}
+\newcommand{\LRto}{\Leftrightarrow}
+\newcommand{\Var}{\textit{Var}}
+\newcommand{\Forget}{\textit{Forget}}
+\newcommand{\KForget}{\textit{KForget}}
+\newcommand{\TForget}{\textit{TForget}}
+%\newcommand{\forget}{\textit{forget}}
+\newcommand{\Fst}{\textit{Fst}}
+\newcommand{\dep}{\textit{dep}}
+\newcommand{\term}{\textit{term}}
+\newcommand{\literal}{\textit{literal}}
+
+\newcommand{\Atom}{\mathcal{A}}
+\newcommand{\SFive}{\textbf{S5}}
+\newcommand{\MPK}{\textsc{k}}
+\newcommand{\MPB}{\textsc{b}}
+\newcommand{\MPT}{\textsc{t}}
+\newcommand{\MPA}{\forall}
+\newcommand{\MPE}{\exists}
+
+\newcommand{\DNF}{\textit{DNF}}
+\newcommand{\CNF}{\textit{CNF}}
+
+\newcommand{\degree}{\textit{degree}}
+\newcommand{\sunfold}{\textit{sunfold}}
+
+\newcommand{\Pos}{\textit{Pos}}
+\newcommand{\Neg}{\textit{Neg}}
+\newcommand\wrt{{\it w.r.t.}}
+\newcommand{\Hm} {{\cal M}}
+\newcommand{\Hw} {{\cal W}}
+\newcommand{\Hr} {{\cal R}}
+\newcommand{\Hb} {{\cal B}}
+\newcommand{\Ha} {{\cal A}}
+
+\newcommand{\Dsj}{\triangledown}
+
+\newcommand{\wnext}{\widetilde{\bigcirc}}
+\newcommand{\nex}{\bigcirc}
+\newcommand{\ness}{\square}
+\newcommand{\qness}{\boxminus}
+\newcommand{\wqnext}{\widetilde{\circleddash}}
+\newcommand{\qnext}{\circleddash}
+\newcommand{\may}{\lozenge}
+\newcommand{\qmay}{\blacklozenge}
+\newcommand{\unt} {{\cal U}}
+\newcommand{\since} {{\cal S}}
+\newcommand{\SNF} {\textit{SNF$_C$}}
+\newcommand{\start}{\textbf{start}}
+\newcommand{\Elm}{\textit{Elm}}
+\newcommand{\simp}{\textbf{simp}}
+\newcommand{\nnf}{\textbf{nnf}}
+
+\newcommand{\CTL}{\textrm{CTL}}
+\newcommand{\Ind}{\textrm{Ind}}
+\newcommand{\Tran}{\textrm{Tran}}
+\newcommand{\Sub}{\textrm{Sub}}
+\newcommand{\NI}{\textrm{NI}}
+\newcommand{\forget}{{\textsc{f}_\CTL}}
+\newcommand{\ALL}{\textsc{a}}
+\newcommand{\EXIST}{\textsc{e}}
+\newcommand{\NEXT}{\textsc{x}}
+\newcommand{\FUTURE}{\textsc{f}}
+\newcommand{\UNTIL}{\textsc{u}}
+\newcommand{\GLOBAL}{\textsc{g}}
+\newcommand{\UNLESS}{\textsc{w}}
+\newcommand{\Def}{\textrm{def}}
+\newcommand{\IR}{\textrm{IR}}
+\newcommand{\Tr}{\textrm{Tr}}
+\newcommand{\dis}{\textrm{dis}}
+\def\PP{\ensuremath{\textbf{PP}}}
+\def\NgP{\ensuremath{\textbf{NP}}}
+\def\W{\ensuremath{\textbf{W}}}
+\newcommand{\Pre}{\textrm{Pre}}
+\newcommand{\Post}{\textrm{Post}}
+
+
+\newcommand{\CTLsnf}{{\textsc{SNF}_{\textsc{ctl}}^g}}
+\newcommand{\ResC}{{\textsc{R}_{\textsc{ctl}}^{\succ, S}}}
+\newcommand{\CTLforget}{{\textsc{F}_{\textsc{ctl}}}}
+\newcommand{\Refine}{\textsc{Refine}}
+\newcommand{\cf}{\textrm{cf.}}
+\newcommand{\NEXP}{\textmd{\rm NEXP}}
+\newcommand{\EXP}{\textmd{\rm EXP}}
+\newcommand{\coNEXP}{\textmd{\rm co-NEXP}}
+\newcommand{\NP}{\textmd{\rm NP}}
+\newcommand{\coNP}{\textmd{\rm co-NP}}
+\newcommand{\Pol}{\textmd{\rm P}}
+\newcommand{\BH}[1]{\textmd{\rm BH}_{#1}}
+\newcommand{\coBH}[1]{\textmd{\rm co-BH}_{#1}}
+\newcommand{\Empty}{\varnothing}
+\newcommand{\NLOG}{\textmd{\rm NLOG}}
+\newcommand{\DeltaP}[1]{\Delta_{#1}^{p}}
+\newcommand{\PIP}[1]{\Pi_{#1}^{p}}
+\newcommand{\SigmaP}[1]{\Sigma_{#1}^{p}}
+
+\begin{document}
+
+
+
+%
+\title{Contribution Title\thanks{Supported by organization x.}}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Renyan Feng\inst{1}\orcidID{0000-1111-2222-3333} \and
+Erman Acar\inst{3}\orcidID{2222--3333-4444-5555} \and
+Stefan Schlobach\inst{3}\orcidID{2222--3333-4444-5555} \and
+Yisong Wang\inst{2,3}\orcidID{1111-2222-3333-4444}}
+%
+\authorrunning{F. Author et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Princeton University, Princeton NJ 08544, USA \and
+Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+\email{lncs@springer.com}\\
+\url{http://www.springer.com/gp/computer-science/lncs} \and
+ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+\email{\{abc,lncs\}@uni-heidelberg.de}}
+%
+
+
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+This paper proved a method to computing the forgetting in \CTL\, which has been submitted to IJCAI, from the resolution proposed by Zhang at all by extending the resolution rules.
+
+\keywords{Forgetting  \and CTL \and Model checking.}
+\end{abstract}
+
+\section{Introduction}
+As a logical notion, \emph{forgetting} was first formally defined
+in propostional and first order logics by Lin and Reiter~\cite{lin1994forget}.
+Over the last twenty years, researchers have developed forgetting notions and theories not only in classical logic but also in other non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. In application, forgetting has been used in planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
+%knowledge compilation \cite{Zhang2009Knowledge,Bienvenu2010Knowledge},
+createing restricted views of ontologies~\cite{zhao2017role},
+%{ZhaoSchmidt18a},
+strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and so on.
+
+
+Though forgetting has been extensively investigated from various aspects of different logical systems.
+However, the existing forgetting method in propositional
+logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
+Similar with that in~\cite{Yan:AIJ:2009}, we research forgetting in \CTL\ from the semantic forgetting point of view.
+And it is shown that our definition of forgetting satisfies those four postulates of forgetting.
+%
+%
+\section{Preliminaries}
+We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. In the following several parts, we will introduce the structure we use for \CTL, syntactic and semantic of \CTL\ and the normal form $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) of \CTL~\cite{zhang2009refined}.
+\subsection{Model structure in \CTL}
+ In general, a transition system~\footnote{According to \cite{Baier:PMC:2008},
+a {\em transition system} TS is a tuple $(S, Act,\rto,I, AP, L)$ where
+(1) $S$ is a set of states,
+(2) $\textrm{Act}$ is a set of actions,
+(3) $\rto\subseteq S\times \textrm{Act}\times S$ is a transition relation,
+(4) $I\subseteq S$ is a set of initial states,
+(5) $\textrm{AP}$ is a set of atomic propositions, and
+(6) $L:S\rto 2^{\textrm{AP}}$ is a labeling function.} is described as a \emph{model\ structure} (or \emph{Kripke \ structure})(in this article, we treat transition system and model structure as the same thing), and a model structure is a triple $\Hm=(S,R,L)$~\cite{emerson1990temporal}, where
+\begin{itemize}
+  \item $S$ is a set of states,
+  \item $R\subseteq S\times S$ is a total binary relation over $S$, \ie, for each state $s\in S$ there is a state $s'\in S$ such that $(s,s')\in R$, and
+  \item $L$ is an interpretation function $S\rto 2^{\cal A}$ mapping every state to the set of atoms true at that state.
+\end{itemize}
+In this article, the same as~\cite{DBLP:journals/tcs/BrowneCG88}, all of our results apply only to finite Kripke structures.
+Besides, we restrict ourselves to model structure $\Hm=(S,R,L,s_0)$ (similar with that in~\cite{zhang2009refined}) such that
+\begin{itemize}
+  \item there exists a state $s_0$, called the \emph{initial\ state}, such that for every state $s\in S$ there is a path $\pi_{s_0}$ s.t. $s\in \pi_{s_0}$.
+\end{itemize}
+We call a model structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, \ie, the labeling function $L$ map every state to $V$ (not the $\Ha$).  A \emph{path} $\pi_{s_i}$ start from $s_i$ of $\Hm$ is a infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state in the path $\pi_{s_i}$.
+
+For a given model structure $(S,R,L,s_0)$ and $s\in S$,
+the {\em computation tree}
+$\Tr_n^{\cal M}(s)$ of $\cal M$(or simply $\Tr_n(s)$), that has depth $n$ and is rooted at $s$, is recursively defined as~\cite{DBLP:journals/tcs/BrowneCG88}, for $n\ge 0$,
+\begin{itemize}
+  \item $\Tr_0(s)$ consists of a single node $s$ with label $s$.
+  \item $\Tr_{n+1}(s)$ has as its root a node $m$ with label  $s$, and
+  if $(s,s')\in R$ then the node $m$ has a subtree $\Tr_n(s')$\footnote{Though
+  some nodes of the tree may have the same label, they are different nodes in the tree.}.
+\end{itemize}
+By $s_n$ we mean the node at the $n$th level in tree $\Tr_m(s)$ $(m \geq n)$.
+
+A {\em \MPK-structure} (or {\em \MPK-interpretation}) is a model structure
+${\cal M}=(S, R, L, s_0)$ associating
+with a state $s\in S$, which is written as $({\cal M},s)$ for convenience in the following.
+In the case $s$ is an initial state of $\cal M$, the \MPK-structure is {\em initial}.
+
+
+\subsection{Syntactic and semantic of \CTL}
+In the following we briefly review the basic syntax and semantics
+of the {\em Computation Tree Logic}
+(\CTL\ in short)~\cite{DBLP:journals/toplas/ClarkeES86}. %Huth:BOOK:1999}.
+%In  $\cal L$, the model of time is a tree-like structure in which the future is not
+%determined; there are different paths in the future, any one of which might
+%be the `actual' path that is realized.
+%
+The {\em signature} of $\cal L$ includes:
+\begin{itemize}
+  \item a finite set of Boolean variables, called {\em atoms} of $\cal L$: $\cal A$;
+  \item the classical connectives: $\bot,\lor$ and $\neg$;
+  \item the path quantifiers: $\ALL$ and $\EXIST$;
+  \item the temporal operators: \NEXT, \FUTURE, \GLOBAL\, \UNTIL\ and \UNLESS, that
+  means `neXt state', `some Future state', `all future states (Globally)', `Until' and `Unless', respectively;
+  \item parentheses: ( and ).
+\end{itemize}
+
+The {\em (existential normal form or ENF in short) formulas} of
+$\cal L$ are inductively defined via a Backus Naur form:
+\begin{equation}\label{def:CTL:formulas}
+  \phi ::= \bot\mid p \mid\neg\phi \mid \phi\lor\phi \mid
+    \EXIST \NEXT \phi \mid
+    %\EXIST \FUTURE \phi \mid
+    \EXIST \GLOBAL \phi \mid
+    \EXIST [\phi\ \UNTIL\ \phi]%.% \mid
+    %\ALL \NEXT \phi \mid
+%    \ALL \FUTURE \phi \mid
+%    \ALL \GLOBAL \phi \mid
+%    \ALL [\phi\ \UNTIL\ \phi]
+\end{equation}
+where $p\in\cal A$. The formulas $\phi\land\psi$ and $\phi\rto\psi$
+are defined in a standard manner of propositional logic.
+%Intuitively,
+%the formula $\EXIST\NEXT\phi$ means that $\phi$ holds in some immediate successor
+%of the current program state; the formula $\EXIST\GLOBAL\phi$ means
+%that for some computation path $\phi$ holds at every state along the path; and the
+%formula $\EXIST[\phi\UNTIL\psi]$ means that
+%for some computation path there is an initial prefix of the path such
+%that $\psi$ holds at the last state of the prefix  and $\phi$ holds at all other
+%states along the prefix.
+The other form formulas of $\cal L$ are abbreviated
+using the forms of (\ref{def:CTL:formulas}).
+%\begin{align*}
+%  & \top =_{\Def} \neg\bot,\\
+%  & \ALL [\phi\ \UNTIL\ \psi] =_{\Def}
+%    \neg(\EXIST[\neg\psi\UNTIL \left(\neg \phi\land\neg\psi)]\lor\EXIST\GLOBAL\neg\psi\right),\\
+%  & \ALL\FUTURE\phi=_{\Def}   \ALL [\top \UNTIL\ \phi],\\
+%  & \EXIST\FUTURE\phi=_{\Def}\EXIST[\top\UNTIL\phi],\\
+%  & \ALL\GLOBAL\phi =_{\Def} \neg\EXIST\FUTURE\neg\phi,\\
+%  & \ALL\NEXT\phi =_{\Def} \neg\EXIST\NEXT\neg\phi,\\
+%  & \ALL(\varphi \UNLESS \psi) =_{\Def} \neg \EXIST(\neg \psi \UNTIL (\neg \varphi \wedge \neg \psi)),\\
+%  & \EXIST (\varphi \UNLESS \psi) =_{\Def} \neg \ALL(\neg \psi \UNTIL (\neg \varphi \wedge \neg \psi)).
+%\end{align*}
+Notice that, according to the
+above definition for formulas of \CTL,
+each of the \CTL\ {\em temporal connectives} has the form $XY$
+where $X\in \{\ALL,\EXIST\}$ and  $Y\in\{\NEXT, \FUTURE, \GLOBAL, \UNTIL, \UNLESS\}$.
+ %
+The priorities for the \CTL\ connectives are assumed to be (from the highest to the lowest):
+\begin{equation*}
+  \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL
+  \prec \land \prec \lor \prec \EXIST\UNTIL, \ALL\UNTIL, \EXIST \UNLESS, \ALL \UNLESS, \rto.
+\end{equation*}
+
+We are now in the position to define the semantics of $\cal L$.
+Let ${\cal M}=(S,R,L,s_0)$ be an model structure, $s\in S$ and $\phi$ a formula of $\cal L$.
+The {\em satisfiability} relationship between ${\cal M},s$ and $\phi$,
+written $({\cal M},s)\models\phi$, is inductively defined on the structure of $\phi$ as follows:
+\begin{itemize}
+  \item $({\cal M},s)\not\models\bot$;
+  \item $({\cal M},s)\models p$ iff $p\in L(s)$;
+  \item $({\cal M},s)\models \phi_1\lor\phi_2$ iff
+    $({\cal M},s)\models \phi_1$ or $({\cal M},s)\models \phi_2$;
+  \item $({\cal M},s)\models \neg\phi$ iff  $({\cal M},s)\not\models\phi$;
+  \item $({\cal M},s)\models \EXIST\NEXT\phi$ iff
+    $({\cal M},s_1)\models\phi$ for some $s_1\in S$ and $(s,s_1)\in R$;
+  \item $({\cal M},s)\models \EXIST\GLOBAL\phi$ iff
+    $\cal M$ has a path $(s_1=s,s_2,\ldots)$ such that
+    $({\cal M},s_i)\models\phi$ for each $i\ge 1$;
+  \item $({\cal M},s)\models \EXIST[\phi_1\UNTIL\phi_2]$ iff
+    $\cal M$ has a path $(s_1=s,s_2,\ldots)$ such that, for some $i\ge 1$,
+    $({\cal M},s_i)\models\phi_2$ and
+    $({\cal M},s_j)\models\phi_1$ for each $j<i$.
+\end{itemize}
+
+Similar to the work in \cite{DBLP:journals/tcs/BrowneCG88,Bolotov:1999:JETAI},
+only initial \MPK-structures are considered to be candidate models
+in the following, unless explicitly stated. Formally,
+an initial \MPK-structure $\cal K$ is a {\em model} of a formula $\phi$
+whenever ${\cal K}\models\phi$.
+Let $\Pi$ be a set of formulae, ${\cal K} \models \Pi$ if for each $\phi\in \Pi$ there is $\cal K \models \phi$.
+We denote $\Mod(\phi)$  ($\Mod(\Pi)$) the set of models of $\phi$ ($\Pi$).
+The formula $\phi$ (set $\Pi$ of formulae) is {\em satisfiable}
+if $\Mod(\phi)\neq\emptyset$ ($\Mod(\Pi)\neq\emptyset$).
+Since both the underlying states in model structure and signatures are finite, $\Mod(\phi)$ ($\Mod(\Pi)$)
+is finite for any formula $\phi$ (set $\Pi$ of formulae).
+
+Let $\phi_1$ and $\phi_2$ be two formulas or set of formulas.
+By $\phi_1\models\phi_2$ we denote $\Mod(\phi_1)\subseteq\Mod(\phi_2)$.
+By $\phi_1\equiv\phi_2$ we mean $\phi_1\models\phi_2$ and $\phi_2\models\phi_1$.
+In this case $\phi_1$ is {\em equivalent} to $\phi_2$.
+
+Let $\phi$ be a formula or set of formulas. By $\Var(\phi)$ we mean the set of atoms occurring in $\phi$.
+Let $V\subseteq\cal A$.
+The formula $\phi$ is $V$-{\em irrelevant}, written $\IR(\phi,V)$,
+if there is a formula $\psi$ with
+$\Var(\psi)\cap V=\emptyset$ such that $\phi\equiv\psi$.
+
+
+\subsection{The normal form of \CTL}
+It has proved that any \CTL\ formula $\varphi$ can be transformed into a set $T_\varphi$ of $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) clauses in polynomial time such that $\varphi$ is satisfiable iff $T_\varphi$ is satisfiable~\cite{zhang2008first}.
+An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ is an extension of the syntax of \CTL\ to use indices. These indices can be used to preserve a particular path context. The language of $\CTLsnf$ clauses is defined over an extension of \CTL. That is the language is based on: (1) the language of CTL; (2) a propositional constant $\start$; (3) a countably infinite index set $\Ind$; and (4) temporal operators: $\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$,$\EXIST_{\tuple{ind}} \UNTIL$ and $\EXIST_{\tuple{ind}} \UNLESS$.
+
+The priorities for the $\CTLsnf$\ connectives are assumed to be (from the highest to the lowest):
+\begin{align*}
+  &\neg, (\EXIST\NEXT,\EXIST_{\tuple{ind}}\NEXT), (\EXIST\FUTURE ,\EXIST_{\tuple{ind}}\FUTURE), (\EXIST\GLOBAL,\EXIST_{\tuple{ind}} \GLOBAL), \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL \\
+  &\prec \land \prec \lor \prec (\EXIST\UNTIL,\EXIST_{\tuple{ind}} \UNTIL), \ALL\UNTIL, (\EXIST \UNLESS, ,\EXIST_{\tuple{ind}}\UNLESS), \ALL \UNLESS, \rto.
+\end{align*}
+Where the operators in the same brackets have the same priority.
+
+%The $\CTLsnf$ clauses consists of formulae of the following forms: $\ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j)$ (initial clause), $\ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j)$ (global clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \NEXT \bigvee_{j=1}^k m_j)$ (\ALL-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^k m_j)$ (\EXIST-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l)$ (\ALL-sometime clause) and $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l)$ (\EXIST-sometime clause),
+Before talked about the sematic of this language, we introduce the $\CTLsnf$ clauses at first. The $\CTLsnf$ clauses consists of formulae of the following forms.
+\begin{align*}
+& \ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j) && (initial\ clause) \\
+& \ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j) && (global\ clause) \\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \NEXT \bigvee_{j=1}^k m_j) && (\ALL-step\ clause)\\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^k m_j) && (\EXIST-step\ clause)\\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l) && (\ALL-sometime\ clause)\\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l) && (\EXIST-sometime\ clause).
+\end{align*}
+where $k \ge 0$, $n > 0$, $\start$ is a propositional constant, $l_i$ ($1 \le i \le n$), $m_j$ ($1 \le j \le k$) and $l$ are literals, that is atomic propositions or their negation and ind is an element of Ind (Ind is a countably infinite index set). By clause we mean the classical clause or the $\CTLsnf$ clause unless explicitly stated.
+ %A set $T$ of $\CTLsnf$ clauses is satisfiable if there is a model $\Hm=(S, R, L, [\_], s_0)$ \st\ for all clause $C\in T$, $(\Hm, s_0) \models C$.
+
+Formulae of $\CTLsnf$ over $\Ha$ are interpreted in \Ind-model structure $\Hm=(S,R,L, [\_], s_0)$, where $S$, $R$, $L$ and $s_0$ is the same as our model structure talked in 2.1 and $[\_]: \Ind \rto 2^{(S*S)}$ maps every index $ind \in \Ind$ to a successor function $[ind]$ which is a functional relation on $S$ and a subset of the binary accessibility relation $R$, such that for every $s\in S$ there exists exactly a state $s'\in S$ such that $(s,s')\in [ind]$ and $(s,s')\in R$.
+%In this paper we do not need a strict tree model structure as in~\cite{zhang2009refined}, that is we do not those restrictions on $s_0$ due to that only for simplifying the proof but do not impact the satisfiability of a formula~\cite{zhang2009refined}.
+An infinite path $\pi_{s_i}^{\tuple{ind}}$ is an infinite sequence of states $s_i, s_{i+1}, s_{i+2},\dots$ such that for every $j\geq i$, $(s_j, s_{j+1})\in [ind]$.
+%Let $\pi$ be a path in \Ind-model structure $\Hm$, by $s\in \pi$ we mean that $s$ is a state in the path $\pi$.
+
+Similarly, an {\em \Ind-structure} (or {\em \Ind-interpretation}) is a \Ind-model structure
+${\cal M}=(S, R, L, [\_], s_0)$ associating
+with a state $s\in S$, which is written as $({\cal M},s)$ for convenience in the following.
+In the case $s$ is an initial state of $\cal M$, the \Ind-structure is {\em initial}.
+
+The semantics of $\CTLsnf$ is an extension of the semantics of \CTL\ defined in Section 2.2 except using the \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$ replace model structure, $({\cal M},s_i) \models \start$ iff $s_i=s_0$ and for all $\EXIST_{\tuple{ind}} \Gamma$ are explained in the path $\pi_{s_i}^{\tuple{ind}}$, where $\Gamma\in \{\NEXT, \GLOBAL, \UNTIL,\UNLESS\}$.
+The semantics of $\CTLsnf$ is then
+defined as shown next as an extension of the semantics of CTL defined in Section 2.2. Let $\varphi$ and $\psi$ be two $\CTLsnf$ formulae and $\Hm=(S,R,L,[\_],s_0)$ be an \Ind-model structure, the relation ``$\models$" between $\CTLsnf$ formulae and $\Hm$ is defined recursively as follows:
+\begin{itemize}
+  \item $({\cal M},s_i) \models \start$ iff $s_i=s_0$;
+  \item $({\cal M},s_i)\models \EXIST_{\tuple{ind}} \NEXT \psi$ iff for the path $\pi_{s_i}^{\tuple{ind}}$, $(\Hm, s_{i+1})\models \psi$;
+  \item $({\cal M},s_i)\models \EXIST_{\tuple{ind}}\GLOBAL\psi$ iff
+    for every $s_j \in \pi_{s_i}^{\tuple{ind}}$,
+    $(\Hm,s_j) \models \psi$;
+  \item $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNTIL\psi]$ iff
+      there exists $s_j\in \pi_{s_i}^{\tuple{ind}}$ such that $(\Hm,s_j) \models \psi$ and for every $s_k \in \pi_{s_i}^{\tuple{ind}}$, if $i\leq k < j$, then $(\Hm,s_k) \models \varphi$;
+  \item $(\Hm,s_i) \models \EXIST_{\tuple{ind}} \FUTURE \psi$ iff $(\Hm,s_i) \models \EXIST_{\tuple{ind}}[\top \UNTIL\psi]$;
+  \item $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNLESS\psi]$ iff $(\Hm,s_i) \models \EXIST_{\tuple{ind}}\GLOBAL \varphi$ or $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNTIL\psi]$.
+\end{itemize}
+The semantics of the remaining operators is analogous to that given previously but in the
+extended \Ind-model structure ${\cal M}=(S, R, L, [\_],s_0)$.
+A $\CTLsnf$ formula $\varphi$ is satisfiable, iff for some \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$, $(\Hm,s_0)\models \varphi$, and unsatisfiable otherwise. And if $(\Hm,s_0)\models \varphi$ then $(\Hm,s_0)$ is called a \Ind-model of $\varphi$, and we say that $(\Hm,s_0)$ satisfies $\varphi$.
+By $T \wedge \varphi$ we mean $\bigwedge_{\psi\in T} \psi \wedge \varphi$, where $T$ is a set of formulae.
+Other terminologies are similar with those in section 2.2.
+
+
+
+
+\section{Problem Definition}
+In order to define our problem, \ie forgetting in \CTL, we review our definition of $V$-bisimulation (read ?? for more detials).
+\begin{definition}\label{def:Vbi}
+Let $V\subseteq\cal A$
+%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures (Ind-structures).
+Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+  \begin{enumerate}[(i)]
+    \item $L_1(s_1)- V = L_2(s_2)-V$,
+    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+%    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+   \end{enumerate}
+ where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+\end{definition}
+
+\begin{proposition}\label{div}
+Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$, $s_i'$s be two states and
+  $\pi_i'$s be two pathes,
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2,3)$ be \MPK-structures (Ind-structures)
+ such that
+${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
+ Then:
+ \begin{enumerate}[(i)]
+   \item $s_1'\lrto_{V_i}s_2'~(i=1,2)$ implies $s_1'\lrto_{V_1\cup V_2}s_2'$;
+   \item $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ implies $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$;
+   \item for each path $\pi_{s_1}$ of $\Hm_1$ there is a path $\pi_{s_2}$  of $\Hm_2$ such that $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$, and vice versa;
+   \item ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$;
+   \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
+ \end{enumerate}
+\end{proposition}
+
+Now we give the formal definition of forgetting in \CTL\ from the semantic forgetting point view.
+\begin{definition}[Forgetting]\label{def:V:forgetting}
+  Let $V\subseteq\cal A$ and $\phi$ a \CTL\ formula.
+A \CTL\ formula $\psi$ with $\Var(\psi)\cap V=\emptyset$
+is a {\em result of forgetting $V$ from} $\phi$, if
+\begin{equation}
+  \Mod(\psi)=\{{\cal K}\mbox{ is initial}\mid \exists {\cal K}'\in\Mod(\phi)\ \&\ {\cal K}'\lrto_V{\cal K}\}.
+\end{equation}
+Where $\cal K$ and ${\cal K}'$ are $\MPK$-structures.
+\end{definition}
+Note that if both $\psi$ and $\psi'$ are results of forgetting $V$ from $\phi$ then
+$\Mod(\psi)=\Mod(\psi')$, \ie, $\psi$ and $\psi'$ have the same models. In the sense
+of equivalence the forgetting result is unique (up to equivalence).
+
+
+Similar with the $V$-bisimulation between \MPK-structures, we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
+\begin{definition}\label{def:VInd:bisimulation}
+\textbf{($\tuple{V,I}$-bisimulation)}
+Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation $\beta_{\tuple{V,I}}$ between initial \Ind-structures is a set that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \notin I$ there is
+\begin{enumerate}[(i)]
+  \item $\forall (s, s_1)\in [j]_1$ there is $(s',s_1')\in [j]_2$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$, and
+  \item $\forall (s', s_1')\in [j]_2$ there is $(s,s_1)\in [j]_1$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$.
+\end{enumerate}
+%$\forall j \notin I$ there is $[j]_1 = [j]_2$.
+\end{definition}
+Apparently, this definition is similar with our concept $V$-bisimulation except that this $\tuple{V,I}$-bisimulation has introduced the index.
+%Besides, it is not difficult to prove $\tuple{V,I}$-bisimulation possess those properties (talked-above) possessed by $V$-bisimulation.
+
+\begin{proposition}\label{pro:VI:div}
+Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$, $I_1, I_2 \subseteq Ind$
+and ${\cal K}_i=({\cal M}_i,s_0^i)~(i=1,2,3)$ be Ind-structures
+ such that
+${\cal K}_1\lrto_{\tuple{V_1, I_1}}{\cal K}_2$ and ${\cal K}_2\lrto_{\tuple{V_2,I_2}}{\cal K}_3$.
+ Then:
+ \begin{enumerate}[(i)]
+  % \item $s_1'\lrto_{V_i}s_2'~(i=1,2)$ implies $s_1'\lrto_{V_1\cup V_2}s_2'$;
+%   \item $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ implies $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$;
+%   \item for each path $\pi_{s_1}$ of $\Hm_1$ there is a path $\pi_{s_2}$  of $\Hm_2$ such that $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$, and vice versa;
+   \item ${\cal K}_1\lrto_{\tuple{V_1\cup V_2, I_1 \cup I_2}}{\cal K}_3$;
+   \item If $V_1 \subseteq V_2$ and $I_1 \subseteq I_2$ then ${\cal K}_1 \lrto_{\tuple{V_2, I_2}} {\cal K}_2$.
+ \end{enumerate}
+\end{proposition}
+\begin{proof}
+%This can be proved similarly with Proposition~\ref{div}.
+(i) By Proposition~\ref{div} we have ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$. For (i) of Definition~\ref{def:VInd:bisimulation} we can prove it as follows:
+$\forall (s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_{V_1} s'$ and $s_1 \lrto_{V_1} s_1'$ and there is a $(s'', s_1'') \in [j]_3$ such that $s'\lrto_{V_2} s''$ and $s_1' \lrto_{V_2} s_1''$, and then we have $\forall (s,s_1) \in [j]_1$ there is a $(s'', s_1'') \in [j]_3$ such that $s  \lrto_{V_1\cup V_2} s''$ and $s_1 \lrto_{V_1\cup V_2} s_1''$. The (ii) of Definition~\ref{def:VInd:bisimulation} can be proved similarly.
+
+(ii) This can be proved from (i).
+\end{proof}
+
+
+
+\section{The Calculus}
+\emph{Resolution} in \CTL\ is a method to decide the satisfiability of a \CTL\ formula.
+In this paper, we will explore a resolution-based method to compute forgetting in \CTL.
+In this part we use the transformation rules Trans(1) to Trans(12) and resolution rules (SRES1), \dots, (SRES8), RW1, RW2, (ERES1), (ERES2) in~\cite{zhang2009refined}.
+
+The key problems of this method include (1) How to fill the gap between \CTL\ and $\CTLsnf$; and (2) How to eliminate the irrelevant atoms in the formula.
+We will resolve these two problems by $\tuple{V,I}$-bisimulation and \emph{substitution} operator.
+For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms ($I$ be the set of index) introduced in the transformation process, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clause obtained from $\varphi$ by using transformation rules  and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly stated.
+ Let $T$, $T'$ be two set of formulae, $I$ a set of indexes and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
+
+
+We have the following facts:
+\begin{enumerate}[(i)]
+  \item $P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_1 \wedge \dots \wedge P\supset \EXIST_{\tuple{ind}}\NEXT \varphi_n  \lrto_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i\in \{0,\dots, n\}}\varphi_i$,
+  \item $P_1\supset \EXIST_{\tuple{ind}} \NEXT \varphi_1 \wedge \dots \wedge P_n\supset \EXIST_{\tuple{ind}}\NEXT \varphi_n \in T \lrto_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
+  \item $P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_1 \wedge \dots \wedge P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_n \in T \lrto_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
+  \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \wedge P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \lrto_{\tuple{\emptyset, \{ind\}}} P \supset ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$
+\end{enumerate}
+
+
+
+\begin{algorithm}[!h]
+\caption{Computing forgetting - A resolution-based method}% ??????
+\label{alg:compute:forgetting:by:Resolution}
+%\LinesNumbered %?????????
+\KwIn{A CTL formula $\varphi$ and a set $V$ of atoms}% ????????
+\KwOut{$\CTLforget(\varphi, V)$}% ????
+$T={\O}$ // the initial set of $\CTLsnf$ clauses of $\varphi$ \;
+$T' = {\O}$ // the set of $\CTLsnf$ clauses without index\;
+$V'={\O}$ // the set of atoms introduced in the process of transforming $\varphi$ into $\CTLsnf$ clauses\;
+
+
+$OldT=\{\start \supset z, z \supset \varphi\}$\;
+$V'=\{z\}$\;
+\While {$OldT\neq T$} {
+    $OldT=T$\;
+    $R={\O}$\;
+    $X={\O}$\;
+    \If {Chose a formula $\psi\in OldT$ that dose not a $\CTLsnf$ clause}{
+    Using a match rule $Rl$ to transform $\psi$ into a set $R$ of $\CTLsnf$ clauses\;
+    $X$ is the set of atoms introduced by using $Rl$\;
+    $V' =V' \cup X$\;
+    $T=OldT\setminus \{\psi\} \cup R$\;
+    }
+}
+
+$S=\{C | C\in T$ and $\Var(C) \cap V= {\O}\}$\;
+$\Pi=T\setminus S$ \;
+\For {($p\in V\cup V')$} {
+    $\Pi'=\{C \in \Pi| p\in \Var(C)\}$ \;
+    $\Sigma = \Pi \setminus \Pi'$\;
+    \For {($C\in \Pi'$ s.t. $p$ appearing in  $C$ positively)} {
+        \For {($C'\in\Pi'$ s.t. $p$ appearing in  $C'$ negatively and $C$, $C'$ are resolvable)}{
+            $\Sigma = \Sigma \cup \{res(C,C')\}$\;
+            $\Pi' = \Pi' \cup \{C''=res(C,C') | p\in \Var(C'')\}$\;
+        }
+    }
+    $\Pi= \Sigma$\;
+}
+$Res=\Pi \cup S$\;
+$\Gamma = \Sub(Res, V')$\;
+%$\Gamma_1 = \Elm(\Gamma, \Gamma)$\;
+%Using distribution law by viewing each $\CTLsnf$ as an atom to change $\Gamma_1$ into a set $L$ of sets of $\CTLsnf$; // from $(a \vee b) \wedge c$ to $(a \wedge c) \vee (b \wedge c)$\;
+%$L'=R(\NI(L)_{\CTL})$\;
+%\Return $\bigwedge_{\psi \in L'} \psi$.
+Let $\Omega$, which obtained from $\Elm(\EXIST\FUTURE(\Gamma), \Gamma)$ by using distribution law by viewing each $\CTLsnf$ clause as an atom, be a set of sets of $\CTLsnf$ clauses.\;
+$\Gamma_1\lto \NI(\Omega)$\;
+Transform $\Gamma_1$ into a formula~\footnote{$X$ is a set of formulas, in this paper set $X$ and $\bigwedge X$ are expressing the conjunction of elements in $X$.}:
+ \[\Gamma_2=\bigwedge X \wedge \bigwedge_{p\in (V'\setminus \Gamma)\cup V^F} (p\supset \varphi_1 \vee \dots \vee p\supset \varphi_n)\]
+
+\Return $\bigwedge_{\psi \in R(\Gamma_2)_{\CTL}} \psi$.
+\end{algorithm}
+
+
+\begin{algorithm}[!h]
+\caption{Computing forgetting - A resolution-based method}% ??????
+\label{alg:compute:forgetting:by:Resolution}
+%\LinesNumbered %?????????
+\KwIn{A CTL formula $\varphi$ and a set $V$ of atoms}% ????????
+\KwOut{A set $T$ of $\CTLsnf$ clauses and a set $V'$ of atoms}% ????
+$T={\O}$ // the initial set of $\CTLsnf$ clauses of $\varphi$ \;
+$OldT=\{\start \supset z, z \supset \varphi\}$\;
+$V'=\{z\}$\;
+\While {$OldT\neq T$} {
+    $OldT=T$\;
+    $R={\O}$\;
+    $X={\O}$\;
+    \If {Chose a formula $\psi\in OldT$ that dose not a $\CTLsnf$ clause}{
+    Using a match rule $Rl$ to transform $\psi$ into a set $R$ of $\CTLsnf$ clauses\;
+    $X$ is the set of atoms introduced by using $Rl$\;
+    $V' =V' \cup X$\;
+    $T=OldT\setminus \{\psi\} \cup R$\;
+    }
+}
+
+\end{algorithm}
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+ \bibliographystyle{splncs04}
+ \bibliography{ijcai20}
+%
+\begin{thebibliography}{8}
+\bibitem{ref_article1}
+Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+
+\bibitem{ref_lncs1}
+Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+\bibitem{ref_book1}
+Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+Location (1999)
+
+\bibitem{ref_proc1}
+Author, A.-B.: Contribution title. In: 9th International Proceedings
+on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+\bibitem{ref_url1}
+LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
+Oct 2017
+\end{thebibliography}
+\end{document}
