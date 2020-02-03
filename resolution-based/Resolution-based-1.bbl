@@ -11,6 +11,10 @@ Bolotov, A.: A clausal resolution method for ctl branching-time temporal logic.
   Journal of Experimental \& Theoretical Artificial Intelligence
   \textbf{11}(1),  77--93 (1999). \doi{10.1080/095281399146625}
 
+\bibitem{bolotov2000clausal}
+Bolotov, A.: Clausal resolution for branching-time temporal logic. Ph.D.
+  thesis, Manchester Metropolitan University (2000)
+
 \bibitem{DBLP:journals/tcs/BrowneCG88}
 Browne, M.C., Clarke, E.M., Grumberg, O.: Characterizing finite kripke
   structures in propositional temporal logic. Theor. Comput. Sci.  \textbf{59},
