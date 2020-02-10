@@ -516,10 +516,6 @@ For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \s
  Let $T$, $T'$ be two set of formulae, $I$ a set of indexes and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
 
 
-
-
-
-The following proposition is important for our algorithm since ... .
 \begin{proposition}\label{pro:In2NI}
 Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 \begin{enumerate}[(i)]
@@ -533,15 +529,8 @@ Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 It is easy to check.
 \end{proof}
 
-The algorithm of computing the forgetting in \CTL\ is as Algorithm~\ref{alg:compute:forgetting:by:Resolution} and the block diagram is as Figure~\ref{Fig:lct}.
+The algorithm of computing the forgetting in \CTL\ is as Algorithm~\ref{alg:compute:forgetting:by:Resolution}.
 The main idea of this algorithm is to change the \CTL\ formula into a set of $\CTLsnf$ clauses at first (the Tran process), and then compute all the possible resolutions on the specified set of atoms (the Res process), eliminate all the irrelevant atoms which dose not be removed by the resolution. We will describe this process in detail below (the Sub, EF, Elm and R processes).
-To describe our algorithm cleanly, we illustrate it with the following example.
-\begin{example}\label{main:examp}
-Let $\varphi=\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$ and $V=\{p\}$.
-\end{example}
-In the following context we will show how to compute the $\CTLforget(\varphi, V)$ step by step using our algorithm.
-
-
 \begin{algorithm}[!h]
 \caption{Computing forgetting - A resolution-based method}% ??????
 \label{alg:compute:forgetting:by:Resolution}
@@ -558,23 +547,20 @@ $T, V' \lto Tran(\varphi, V)$\;
 $Res \lto Res(T, V')$\;
 
 $\Gamma \lto \Sub(Res, V')$\;
+%$\Gamma_1 = \Elm(\Gamma, \Gamma)$\;
+%Using distribution law by viewing each $\CTLsnf$ as an atom to change $\Gamma_1$ into a set $L$ of sets of $\CTLsnf$; // from $(a \vee b) \wedge c$ to $(a \wedge c) \vee (b \wedge c)$\;
+%$L'=R(\NI(L)_{\CTL})$\;
+%\Return $\bigwedge_{\psi \in L'} \psi$.
+%Let $\Omega$, which obtained from $\Elm(\EXIST\FUTURE(\Gamma), \Gamma)$ by using distribution law by viewing each $\CTLsnf$ clause as an atom, be a set of sets of $\CTLsnf$ clauses.\;
+
 $\Omega\lto \Elm(\EXIST\FUTURE(\Gamma), \Gamma)$\;
 $\Gamma_1\lto \NI(\Omega)$\;
-
+%Transform $\Gamma_1$ into a formula~\footnote{$X$ is a set of formulas, in this paper set $X$ and $\bigwedge X$ are expressing the conjunction of elements in $X$.}:
+% \[\Gamma_2=\bigwedge X \wedge \bigwedge_{p\in (V'\setminus \Gamma)\cup V^F} (p\supset \varphi_1 \vee \dots \vee p\supset \varphi_n)\]
 
 \Return $\bigwedge_{\psi \in R(\Gamma_1)_{\CTL}} \psi$.
 \end{algorithm}
 
-\begin{figure}
-  \centering
-  % Requires \usepackage{graphicx}
-  \includegraphics[width=7cm]{lct.png}\\
-  \caption{The block diagram of the algorithm}\label{Fig:lct}
-\end{figure}
-
-
-
-\subsection{The Tran process}
 The Tran process is to transform the \CTL\ formula into a set of $\CTLsnf$ clauses by using the rules  Trans(1) to Trans(12).
 The transformation of an arbitrary CTL formula into the set $T_{\varphi}$ is a sequence $T_0, T_1,\dots, T_n=T_{\varphi}$ of formulae with $T_0=\{\ALL \GLOBAL(\start \supset p), \ALL \GLOBAL(p \supset \simp(\nnf(\varphi)))\}$ such that for every $i$ ($0 \leq i< n$), $T_{i+1} = (T_i \setminus \{\psi\}) \cup R_i$~\cite{zhang2009refined}, where $\psi$ is a formula in $T_i$ not in $\CTLsnf$ clause and $R_i$ is the result set of applying a matching transformation rule to $\psi$. Note that throughout the transformation formulae are kept in negation normal form (NNF).
 \begin{proposition}\label{pro:TranE}
@@ -657,21 +643,7 @@ $V'=\{z\}$\;
 
 \end{algorithm}
 
-\begin{example}\label{examp:Tran}
-By the Tran process, the result $T_{\varphi}$ of the Example~\ref{main:examp} can be listed as follows:
-\begin{align*}
-& 1. \start\supset z && 2. \top \supset \neg z \vee r && 3.\top \supset \neg x\vee f \vee m\\
-& 4. \top \supset \neg z \vee x \vee y && 5.\top \supset \neg y \vee p && 6.\top \supset \neg y \vee q\\
-& 7. z \supset \ALL \FUTURE x && 8. y \supset \ALL \NEXT(x\vee y).
-\end{align*}
-Besides, the set of new atoms introduced in the Tran process is $V'=\{x, y,x\}$.
-\end{example}
-
-
-
-
-\subsection{The Resolution process}
-The Resolution (Res in short) process is to compute all the possible resolutions of $T_{\varphi}$ on $V'$.
+The Res process is to compute all the possible resolutions of $T_{\varphi}$ on $V'$.
 A \emph{derivation} on a set $V\cup V'$ of atoms and $T_{\varphi}$ is a sequence $T_0, T_1, T_2$, $\dots$, $T_n=T_{\varphi}^{r,V \cup V'}$ of sets of $\CTLsnf$ clauses such that $T_0 = T_{\varphi}$ and $T_{i+1} = T_i \cup R_i$ where $R_i$ is a set of clauses obtained as the conclusion of the application of a resolution rule to premises in $T_i$.
 Note that all the $T_i$ ($0 \leq i \leq n$) are set of $\CTLsnf$ clauses.
 Besides, if there is a $T_i$ containing $\start\supset \perp$ or $\top\supset \perp$, then we have $\CTLforget(\varphi, V)=\perp$.
@@ -727,31 +699,6 @@ $Res=\Pi \cup S$\;
 
 \end{algorithm}
 
-
-\begin{example}\label{examp:Res}
-The resolution of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cup V'$ is as follows:
-\begin{align*}
-&(1) \start \supset r && (1,2,SRES 5)\\
-&(2) \start \supset x \vee y && (1,4,SRES 5)\\
-&(3) \top \supset \neg z \vee y \vee f \vee m && (3, 4, SRES 8)\\
-&(4) y \supset \ALL\NEXT(f\vee m\vee y) && (3,8, SRES 6)\\
-&(5) \top \neg z \vee x \vee p && (4,5, SRES 8)\\
-&(6) \top \neg z \vee x \vee q && (4,6, SRES 8)\\
-&(7) y \supset \ALL\NEXT(x\vee p) && (5, 7, SRES 6)\\
-&(8) y \supset \ALL\NEXT(x\vee q) && (5, 8, SRES 6)\\
-&(9) \start \supset f\vee m \vee y && (3,(2), SRES 5) \\
-&(10) \start \supset x \vee p && (5,(2),SRES 5) \\
-&(11) \start \supset x \vee q && (6,(2), SRES 5) \\
-&(12) \top \supset p \vee \neg z \vee f \vee m && (5,(3), SRES 8)\\
-&(13) \top \supset q \vee \neg z \vee f \vee m && (6,(3), SRES 8)\\
-&(14) y \supset \ALL\NEXT(p \vee f\vee m) && (5, (4), SRES 6) \\
-&(15) y \supset \ALL\NEXT(q \vee f\vee m) && (6, (4), SRES 6) \\
-&(16) \start \supset f\vee m \vee p && (5, (9), SRES 5) \\
-&(17) \start \supset f\vee m \vee q && (6, (9), SRES 5)
-\end{align*}
-\end{example}
-
-\subsection{The Elimination process}
 For resolving problem (2), we should pay attention to the fact that by the transformation and resolution rules, we have the following several important properties:
 \begin{itemize}
   \item \textbf{(GNA)} for all atom $p$ in $\Var(\varphi)$, $p$ do not positively appear in the left hand of the $\CTLsnf$ clause;
@@ -760,10 +707,10 @@ For resolving problem (2), we should pay attention to the fact that by the trans
 \end{itemize}
 
 
-\subsubsection{The Instantiation process}
+
 An \emph{instantiate formula} $\psi$ of set $V''$ of atoms is a formula such that $\Var(\psi) \cap V'' ={\O}$. A key point to compute forgetting is eliminate those irrelevant atoms, for this purpose, we define the follow substitution to find out those atoms that do irrelevant.
 \begin{definition}\label{def:subst}
-[instantiation] Let $V''=V'$ and $\Gamma=T_{\varphi}^{r,V \cup V'}$, then the process of instantiation is as follows:
+[substitution] Let $V''=V'$ and $\Gamma=T_{\varphi}^{r,V \cup V'}$, then the process of substitution is as follows:
 \begin{enumerate}[(i)]
   \item for each global clause $C= \top \supset D \vee \neg p \in \Gamma$, if there is one and on one atom $p \in V''\cap \Var(C)$  and $\Var(D) \cap V = {\O}$ then let $C = p \supset D$ and $V'':=V''\setminus \{p\}$;
   \item find out all the possible instantiate formulae $\varphi_1, ..., \varphi_m$ of $V \cup V''$ in the $p\supset \varphi_i \in \Gamma$ ($1\leq i\leq m$);
@@ -819,69 +766,59 @@ Let $\Gamma_2 := \Gamma$\;
 \end{algorithm}
 
 \begin{example}\label{exa:until:sub}
-By using the Sub process on result of Example~\ref{examp:Res}, we obtain that $y$ is instantiated by $q \wedge \ALL\NEXT(p \vee f\vee m)$, $x$ is instantiated by $f\vee m$ and $z$ is instantiated by $r$. That is $\Sub(T_{\varphi}^{r,V \cup V'}, V') = V$, which means all the introduced atoms are instantiated.
-%Let $\varphi=\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$ and $V=\{p\}$. Then we can compute $\Sub(T_{\varphi}^{r,V \cup V'}, V)$ as follows:
-%
-%At first, we transform $\varphi$ into a set of $\CTLsnf$ with $V'=\{x,y,z\}$, which is listed as:
-%\begin{align*}
-%& 1. \start\supset z && 2. \top \supset \neg z \vee r && 3.\top \supset \neg x\vee f \vee m\\
-%& 4. \top \supset \neg z \vee x \vee y && 5.\top \supset \neg y \vee p && 6.\top \supset \neg y \vee q\\
-%& 7. z \supset \ALL \FUTURE x && 8. y \supset \ALL \NEXT(x\vee y).
-%\end{align*}
-%
-%In the second, we compute all the possible resolutions on $V\cup V'$ and is listed as:
-%\begin{align*}
-%&(1) \start \supset r && (2) \start \supset x \vee y &&(3) \top \supset \neg z \vee y \vee f \vee m \\
-%& (4) y \supset \ALL\NEXT(f\vee m\vee y) &&(5) \top \neg z \vee x \vee p && (6) \top \neg z \vee x \vee q\\
-%&(7) y \supset \ALL\NEXT(x\vee p) && (8) y \supset \ALL\NEXT(x\vee q) &&(9) \start \supset f\vee m \vee y \\
-%& (10) \start \supset x \vee p &&(11) \start \supset x \vee q && (12) \top \supset p \vee \neg z \vee f \vee m \\
-%&(13) \top \supset q \vee \neg z \vee f \vee m && (14) y \supset \ALL\NEXT(p \vee f\vee m) &&(15) y \supset \ALL\NEXT(q \vee f\vee m) \\
-%& (16) \start \supset f\vee m \vee p &&(17) \start \supset f\vee m \vee q.
-%\end{align*}
+Let $\varphi=\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$ and $V=\{p\}$. Then we can compute $\Sub(T_{\varphi}^{r,V \cup V'}, V)$ as follows:
 
-%By the process of instantiation we obtain that $y$ is instantiated by $q \wedge \ALL\NEXT(p \vee f\vee m)$, $x$ is instantiated by $f\vee m$ and $z$ is instantiated by $r$. That is $\Sub(T_{\varphi}^{r,V \cup V'}, V') = V$, which means all the introduced atoms are instantiated.
+At first, we transform $\varphi$ into a set of $\CTLsnf$ with $V'=\{x,y,z\}$, which is listed as:
+\begin{align*}
+& 1. \start\supset z && 2. \top \supset \neg z \vee r && 3.\top \supset \neg x\vee f \vee m\\
+& 4. \top \supset \neg z \vee x \vee y && 5.\top \supset \neg y \vee p && 6.\top \supset \neg y \vee q\\
+& 7. z \supset \ALL \FUTURE x && 8. y \supset \ALL \NEXT(x\vee y).
+\end{align*}
+
+In the second, we compute all the possible resolutions on $V\cup V'$ and is listed as:
+\begin{align*}
+&(1) \start \supset r && (2) \start \supset x \vee y &&(3) \top \supset \neg z \vee y \vee f \vee m \\
+& (4) y \supset \ALL\NEXT(f\vee m\vee y) &&(5) \top \neg z \vee x \vee p && (6) \top \neg z \vee x \vee q\\
+&(7) y \supset \ALL\NEXT(x\vee p) && (8) y \supset \ALL\NEXT(x\vee q) &&(9) \start \supset f\vee m \vee y \\
+& (10) \start \supset x \vee p &&(11) \start \supset x \vee q && (12) \top \supset p \vee \neg z \vee f \vee m \\
+&(13) \top \supset q \vee \neg z \vee f \vee m && (14) y \supset \ALL\NEXT(p \vee f\vee m) &&(15) y \supset \ALL\NEXT(q \vee f\vee m) \\
+& (16) \start \supset f\vee m \vee p &&(17) \start \supset f\vee m \vee q.
+\end{align*}
+
+By the process of substitution we obtain that $y$ is instantiated by $q \wedge \ALL\NEXT(p \vee f\vee m)$, $x$ is instantiated by $f\vee m$ and $z$ is instantiated by $r$. That is $\Sub(T_{\varphi}^{r,V \cup V'}, V') = V$, which means all the introduced atoms are instantiated.
 \end{example}
 
 By $\Sub$ operator, we guarantee those atoms in $V\cup V''$ are really irrelevant atoms.
 
-
-\subsubsection{The $\EXIST\FUTURE$ process}
-In order to show the necessity of this process, we see the following example at first.
-\begin{example}
-Let $\psi=\ALL\FUTURE(p \wedge q) \wedge \EXIST \NEXT \neg p$ and $V=\{p\}$.
-By the processes Tran and Res, we can obtain the following set of $\CTLsnf$ clauses.
-\begin{align*}
-& \start \supset z && z \supset \ALL\FUTURE f && z \supset  \EXIST_{\tuple{ind}} \NEXT \neg p \\
-& \top \supset \neg f \vee p && \top \supset \neg f \vee q && z \supset \EXIST_{\tuple{ind}} \NEXT \neg f
-\end{align*}
-\end{example}
-
 Let $P$ be a conjunction of literals, $l$, $l_1$ be literals, in which $\Var(C_1)\cap V \cup V' = {\O}$, and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
  %Besides, by $l \supset \neg C_1 \vee C_2$ we mean the set $\{l \supset \neg C_{1,1} \vee C_2, \dots, l \supset \neg C_{1,x} \vee C_2$, where $C_{1,i}$ is a literal appearing in $C_1$.
-%As we can see that those exist resolution rules cannot deduct all the possible result, so we add following new rules:
-Let $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it $\EXIST \FUTURE$ imply.
+As we can see that those exist resolution rules cannot deduct all the possible result, et so we add following new rules:
 \begin{align*}
 & \textbf{(EF1)} \{P\supset \ALL\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),
 % P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4),
-  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\} \rto \alpha \\
-%&  \qquad \rto\{P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
+  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\} \\
+&  \qquad \rto\{P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
+\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
 & \textbf{(EF2)} \{P\supset \ALL\FUTURE l, P\supset \ALL \NEXT (l_1 \vee C_4),
  %P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4),
- l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\} \rto \beta \\
-%& \qquad \rto \{ P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\}\\
+ l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}  \\
+& \qquad \rto \{ P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset
+ \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\}\\
 & \textbf{(EF3)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),
 % P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4),
-  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\} \rto \alpha  \\
-%& \qquad \rto \{P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
+  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}  \\
+& \qquad \rto \{P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset
+ \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
 & \textbf{(EF4)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \ALL\NEXT (l_1 \vee C_4),
  %P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4),
- l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\} \rto \alpha \\
-%& \qquad \rto \{P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\}
+ l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}  \\
+& \qquad \rto \{P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset
+\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\}
 \end{align*}
 
 
 
-By $\EXIST\FUTURE(\Sub(T_{\varphi}^{r,V \cup V'}, V'))$ we mean using (EF1) to (EF4) on $T_{\varphi}^{r,V \cup V'}$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$ and $\Var(l_1) \in V\cup V'$.
+By $\EXIST\FUTURE(\Sub(T_{\varphi}^{r,V \cup V'}, V'))$ we mean using \textbf{(EF1)} to \textbf{(EF4)} on $T_{\varphi}^{r,V \cup V'}$ and replace $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \bigwedge W$  when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$ and $\Var(l_1) \in V\cup V'$.
 %This is similar with the resolution process except by those rules it will not product new resolution due to the new formulae obtained from those rules are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$.
 This process can be described as Algorithm~\ref{alg:EF}.
 \begin{algorithm}[!h]
@@ -891,25 +828,25 @@ This process can be described as Algorithm~\ref{alg:EF}.
 \KwIn{A set $\Gamma$ of $\CTLsnf$ clauses, a set of $\ALL$-step clauses and a set of $\EXIST$-step clauses}% ????????
 \KwOut{A set of formulae}% ????
 
-% $C_1 :=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
-%\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
-%$C_1' := P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\ALL\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
-%\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
+ $C_1 :=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
+\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
+$C_1' := P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\ALL\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
+\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
 \For {($C \in A$)} {
     Let $C == P \supset \ALL \FUTURE l$\;
-    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
-        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$\;
+    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are initial formulae)} {
+        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee C_1$\;
     }
-    \If {$( P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
-        Replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$\;
+    \If {$( P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are initial formulae)} {
+        Replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee C_1'$\;
     }
 }
 
 
 \For {($C \in E$)} {
     Let $C == P \supset \EXIST_{\tuple{ind}} \FUTURE l$\;
-    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma \hbox{ or } P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
-        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$\;
+    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma \hbox{ or } P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are initial formulae)} {
+        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee C_1$\;
     }
 }
 
@@ -940,7 +877,7 @@ Then $(\Hm,s_1) \models \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2)$.
 \end{proof}
 
 
-\subsubsection{The Elimination process}
+
 For eliminate those irrelevant atoms, we can do the following elimination operator.
 \begin{definition}\label{def:Elm}
 \textbf{(Elimination)}
@@ -992,8 +929,6 @@ And then $\Gamma_1 \equiv_{\tuple{V \cup V', I}} \varphi$ follows.
 \end{proof}
 
 
-
-\subsection{Remove the Index and \start}
 The $\NI(\Gamma)$ process is to change the set $\Gamma$ of $\CTLsnf$ into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
 
 \begin{lemma}\label{lem:No:Ind}
@@ -1008,7 +943,7 @@ It is easy checking that from the definition of $\NI$.
 \end{proof}
 
 
-%\subsection{Remove the \start}
+
 Similarly, let $T$ be a set of $\CTLsnf$ clauses, then we define the following operator:
 \begin{align*}
 &T_{\CTL} = \{C|C'\in T\ \mbox{and}\ C = D \ \mbox{if}\ C' \mbox{is the form}\ \ALL\GLOBAL(\start\supset D), \mbox{else}\ C= C'\}.
@@ -1036,7 +971,7 @@ Therefore, $\varphi \equiv_{\tuple{V\cup V',{I}}} \NI(R(\Gamma_2))_{CTL}$ by Pro
 
 
 
-\subsection{The Correction and Complexity of the Algorithm}
+
 In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure. Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
 
 

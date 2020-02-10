@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  3 FEB 2020 21:46
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  10 FEB 2020 21:20
 entering extended mode
 **D:/Git/CTL-public/resolution-based/Resolution-based-1.tex
 (D:/Git/CTL-public/resolution-based/Resolution-based-1.tex
@@ -849,7 +849,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 LaTeX Warning: Command \O invalid in math mode on input line 515.
 
 [6]
-Overfull \hbox (11.68637pt too wide) in paragraph at lines 523--524
+Overfull \hbox (11.68637pt too wide) in paragraph at lines 527--528
 []$\OML/cmm/m/it/10 P[] \OMS/cmsy/m/n/10  [][][]\OML/cmm/m/it/10 '[] \OMS/cmsy
 /m/n/10 ^ [] ^ \OML/cmm/m/it/10 P[] \OMS/cmsy/m/n/10  [][][]\OML/cmm/m/it/10 '
 [] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 T \OMS/cmsy/m/n/10 [] [][]\OT1/cmr/m/n/
@@ -857,82 +857,89 @@ Overfull \hbox (11.68637pt too wide) in paragraph at lines 523--524
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 540.
+LaTeX Warning: Command \O invalid in math mode on input line 551.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 541.
+LaTeX Warning: Command \O invalid in math mode on input line 552.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 542.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 629.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 642.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 642.
+LaTeX Warning: Command \O invalid in math mode on input line 553.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7]
-Underfull \vbox (badness 5681) has occurred while \output is active []
+<lct.png, id=177, 490.83376pt x 415.5525pt>
+File: lct.png Graphic file (type png)
+ <use lct.png>
+Package pdftex.def Info: lct.png used on input line 571.
+(pdftex.def)             Requested size: 199.16928pt x 168.62122pt.
+ [7]
 
- [8]
-
-LaTeX Warning: Command \O invalid in math mode on input line 654.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 684.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 711.
+LaTeX Warning: Command \O invalid in math mode on input line 643.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 715.
+LaTeX Warning: Command \O invalid in math mode on input line 656.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 656.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <D:/Git/CTL-public/resolution-based/lct.png>]
+
+LaTeX Warning: Command \O invalid in math mode on input line 682.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 712.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+
+LaTeX Warning: Command \O invalid in math mode on input line 764.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 768.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 849.
 
-LaTeX Warning: Command \O invalid in math mode on input line 793.
-
-
-Underfull \vbox (badness 1448) has occurred while \output is active []
-
- [10]
-Overfull \vbox (22.52075pt too high) has occurred while \output is active []
-
+LaTeX Warning: Command \O invalid in math mode on input line 859.
 
 [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Command \O invalid in math mode on input line 858.
+ [12]
 
-
-LaTeX Warning: Command \O invalid in math mode on input line 866.
-
-[12]
-
-LaTeX Warning: Command \O invalid in math mode on input line 887.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 899.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 926.
+LaTeX Warning: Command \O invalid in math mode on input line 921.
 
 [13]
 
-LaTeX Warning: Command \O invalid in math mode on input line 937.
+LaTeX Warning: Command \O invalid in math mode on input line 929.
 
 
-Overfull \hbox (0.91884pt too wide) in paragraph at lines 957--958
+LaTeX Warning: Command \O invalid in math mode on input line 950.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 962.
+
+[14]
+
+LaTeX Warning: Command \O invalid in math mode on input line 989.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1002.
+
+
+Overfull \hbox (0.91884pt too wide) in paragraph at lines 1022--1023
 []\OT1/ptm/m/n/10 replacing $\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10  \OML/cmm/m/i
 t/10 '[] \OMS/cmsy/m/n/10 ^ [] ^ \OML/cmm/m/it/10 p \OMS/cmsy/m/n/10  \OML/cmm
 /m/it/10 '[]$\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 '[]$ \OT1/ptm/m/n/10 are in-st
@@ -942,16 +949,16 @@ an-ti-ate for-mu-lae of $\OML/cmm/m/it/10  $ $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 963.
+LaTeX Warning: Command \O invalid in math mode on input line 1028.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 967.
+LaTeX Warning: Command \O invalid in math mode on input line 1032.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 967.
+LaTeX Warning: Command \O invalid in math mode on input line 1032.
 
 
-Overfull \hbox (15.5597pt too wide) in paragraph at lines 966--968
+Overfull \hbox (15.5597pt too wide) in paragraph at lines 1031--1033
 []\OT1/ptm/m/n/10 For each $\OML/cmm/m/it/10 p$ \OT1/ptm/m/n/10 talked above is
  a name of the for-mu-la $\OML/cmm/m/it/10  $\OT1/ptm/m/n/10 , \OT1/ptm/m/it/10
  i.e. $\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 $ \OML/cmm/m/it/10  $\OT1/ptm/m/n/10
@@ -959,7 +966,21 @@ Overfull \hbox (15.5597pt too wide) in paragraph at lines 966--968
  []
 
 
-Overfull \hbox (14.6207pt too wide) in paragraph at lines 979--980
+Overfull \hbox (8.34927pt too wide) in paragraph at lines 1040--1041
+\OT1/ptm/m/n/10 In the case that for-mu-la dose not in-clude in-dex, we use mod
+-el struc-ture $\OMS/cmsy/m/n/10 M \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 S; R; L;
+ s[]\OT1/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (14.28783pt too wide) in paragraph at lines 1040--1041
+\OT1/ptm/m/n/10 to in-ter-pret for-mu-la in-stead of In-d-model struc-ture. The
+re-fore it is ap-par-en-t that $\OMS/cmsy/m/n/10 8\OT1/cmr/m/n/10 (\OMS/cmsy/m/
+n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2$
+ []
+
+[15]
+Overfull \hbox (14.6207pt too wide) in paragraph at lines 1044--1045
 []\OT1/ptm/m/it/10 Let $\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10
  V \OMS/cmsy/m/n/10 [ \OML/cmm/m/it/10 V[]$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10
    \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 T[]; V[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/
@@ -969,7 +990,7 @@ r/m/n/10 )))[]$\OT1/ptm/m/it/10 ,
  []
 
 
-Overfull \hbox (22.86714pt too wide) in paragraph at lines 985--990
+Overfull \hbox (22.86714pt too wide) in paragraph at lines 1050--1055
 $\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
 \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = []([]((\OML/cmm/m/it/10
  T[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 
@@ -978,8 +999,8 @@ $\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
 t/10 ; V\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ; V \OMS/cmsy/m/n/10 [$
  []
 
-[14]
-Overfull \hbox (5.91536pt too wide) in paragraph at lines 998--1000
+
+Overfull \hbox (5.91536pt too wide) in paragraph at lines 1063--1065
 []\OT1/ptm/b/it/10 (Resolution-based CTL-forgetting) \OT1/ptm/m/it/10 Let $\OML
 /cmm/m/it/10 V[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 V \OMS/cmsy/m/n/10 [ \OML/c
 mm/m/it/10 V[]$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 = [](\OML
@@ -987,11 +1008,11 @@ mm/m/it/10 V[]$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 = [](\OML
  []
 
 
-LaTeX Warning: Reference `pro:IR_V:forget' on page 15 undefined on input line 1
-005.
+LaTeX Warning: Reference `pro:IR_V:forget' on page 16 undefined on input line 1
+070.
 
 
-LaTeX Warning: Reference `disTF' on page 15 undefined on input line 1005.
+LaTeX Warning: Reference `disTF' on page 16 undefined on input line 1070.
 
 (D:\Git\CTL-public\resolution-based\Resolution-based-1.bbl
 Underfull \hbox (badness 1199) in paragraph at lines 10--13
@@ -999,7 +1020,7 @@ Underfull \hbox (badness 1199) in paragraph at lines 10--13
 i-gence \OT1/ptm/b/n/9 11\OT1/ptm/m/n/9 (1), 77--93 (1999). []http-
  []
 
-
+[16]
 Underfull \hbox (badness 6047) in paragraph at lines 19--23
 []\OT1/ptm/m/n/9 Browne, M.C., Clarke, E.M., Grum-berg, O.: Char-ac-ter-iz-ing 
 fi-nite krip-ke struc-
@@ -1017,18 +1038,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--23
  doi . org / 10 . 1016 / 0304-[]3975(88 )$
  []
 
-[15]) [16]
-Underfull \hbox (badness 1102) in paragraph at lines 1039--1042
+[17])
+Underfull \hbox (badness 1102) in paragraph at lines 1104--1107
 []\OT1/ptm/m/n/9 Author, F., Au-thor, S.: Ti-tle of a pro-ceed-ings pa-per. In:
  Ed-i-tor, F., Ed-i-tor, S. (ed-s.)
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1055.
-[17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1055.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1120.
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1120.
  (D:\Git\CTL-public\resolution-based\Resolution-based-1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1055.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1055.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1120.
 
 Package rerunfilecheck Info: File `Resolution-based-1.out' has not changed.
 (rerunfilecheck)             Checksum: 7B4904A740E6295212DC3D46FE37258C;54.
@@ -1038,11 +1059,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9321 strings out of 495354
- 130204 string characters out of 3183858
- 264858 words of memory out of 3000000
- 12123 multiletter control sequences out of 15000+200000
- 43555 words of font info for 91 fonts, out of 3000000 for 9000
+ 9353 strings out of 495354
+ 130578 string characters out of 3183858
+ 262224 words of memory out of 3000000
+ 12139 multiletter control sequences out of 15000+200000
+ 46639 words of font info for 95 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  36i,20n,38p,772b,633s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
@@ -1068,9 +1089,9 @@ cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
 /times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/Mi
 KTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on Resolution-based-1.pdf (17 pages, 348239 bytes).
+Output written on Resolution-based-1.pdf (18 pages, 366312 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 533 PDF objects out of 1000 (max. 8388607)
+ 222 named destinations out of 1000 (max. 500000)
+ 14 words of extra memory for PDF output out of 10000 (max. 10000000)
 
