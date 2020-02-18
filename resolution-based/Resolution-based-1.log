@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  16 FEB 2020 12:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  16 FEB 2020 13:19
 entering extended mode
 **D:/Git/CTL-public/resolution-based/Resolution-based-1.tex
 (D:/Git/CTL-public/resolution-based/Resolution-based-1.tex
@@ -1037,13 +1037,6 @@ mm/m/it/10 V[]$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 = [](\OML
 /cmm/m/it/10 T[]; V[]\OT1/cmr/m/n/10 )$
  []
 
-
-LaTeX Warning: Reference `pro:IR_V:forget' on page 19 undefined on input line 1
-210.
-
-
-LaTeX Warning: Reference `disTF' on page 19 undefined on input line 1210.
-
 [19] (D:\Git\CTL-public\resolution-based\Resolution-based-1.bbl
 Underfull \hbox (badness 1199) in paragraph at lines 10--13
 \OT1/ptm/m/n/9 nal of Ex-per-i-men-tal & The-o-ret-i-cal Ar-ti-fi-cial In-tel-l
@@ -1083,16 +1076,12 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1260.
 
 Package rerunfilecheck Info: File `Resolution-based-1.out' has not changed.
 (rerunfilecheck)             Checksum: 7B4904A740E6295212DC3D46FE37258C;54.
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 9363 strings out of 495354
- 130674 string characters out of 3183858
+ 9361 strings out of 495354
+ 130650 string characters out of 3183858
  257434 words of memory out of 3000000
- 12143 multiletter control sequences out of 15000+200000
+ 12141 multiletter control sequences out of 15000+200000
  42419 words of font info for 90 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  36i,20n,38p,897b,633s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1119,7 +1108,7 @@ cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
 /times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/Mi
 KTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on Resolution-based-1.pdf (21 pages, 389921 bytes).
+Output written on Resolution-based-1.pdf (21 pages, 389867 bytes).
 PDF statistics:
  564 PDF objects out of 1000 (max. 8388607)
  231 named destinations out of 1000 (max. 500000)
