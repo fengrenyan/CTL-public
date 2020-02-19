@@ -488,7 +488,7 @@ $\Var(\psi)\cap V=\emptyset$ such that $\phi_1\equiv\psi$.
 
 \subsection{The normal form of \CTL}
 It has proved that any \CTL\ formula $\varphi$ can be transformed into a set $T_\varphi$ of $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) clauses in polynomial time such that $\varphi$ is satisfiable iff $T_\varphi$ is satisfiable~\cite{zhang2008first}.
-An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ is an extension of the syntax of \CTL\ to use indices. These indices can be used to preserve a particular path context. The language of $\CTLsnf$ clauses is defined over an extension of \CTL. That is the language is based on: (1) the language of CTL; (2) a propositional constant $\start$; (3) a countably infinite index set $\Ind$; and (4) temporal operators: $\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$,$\EXIST_{\tuple{ind}} \UNTIL$ and $\EXIST_{\tuple{ind}} \UNLESS$.
+An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ is an extension of the syntax of \CTL\ to use indices. These indices can be used to preserve a particular path context. The language of $\CTLsnf$ clauses is defined over an extension of \CTL. That is the language is based on: (1) the language of CTL; (2) a propositional constant $\start$; (3) a countably infinite index set $\Ind$; and (4) temporal operators: $\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$, $\EXIST_{\tuple{ind}} \UNTIL$ and $\EXIST_{\tuple{ind}} \UNLESS$.
 
 %The priorities for the $\CTLsnf$\ connectives are assumed to be (from the highest to the lowest):
 %\begin{align*}
@@ -498,7 +498,7 @@ An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ i
 %Where the operators in the same brackets have the same priority.
 
 %The $\CTLsnf$ clauses consists of formulae of the following forms: $\ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j)$ (initial clause), $\ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j)$ (global clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \NEXT \bigvee_{j=1}^k m_j)$ (\ALL-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^k m_j)$ (\EXIST-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l)$ (\ALL-sometime clause) and $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l)$ (\EXIST-sometime clause),
-Before talked about the sematic of this language, we introduce the $\CTLsnf$ clauses at first. The $\CTLsnf$ clauses consists of formulae of the following forms.
+Before talked about the sematic of this language, we introduce the $\CTLsnf$ clauses at first. A $\CTLsnf$ clauses is a formula with one of following forms:
 \begin{align*}
 & \ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j) && (initial\ clause) \\
 & \ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j) && (global\ clause) \\
@@ -515,12 +515,12 @@ Formulae of $\CTLsnf$ over $\Ha$ are interpreted in \Ind-model structure $\Hm=(S
 An infinite path $\pi_{s_i}^{\tuple{ind}}$ is an infinite sequence of states $s_i, s_{i+1}, s_{i+2},\dots$ such that for every $j\geq i$, $(s_j, s_{j+1})\in [ind]$.
 %Let $\pi$ be a path in \Ind-model structure $\Hm$, by $s\in \pi$ we mean that $s$ is a state in the path $\pi$.
 
-Similarly, an {\em \Ind-structure} (or {\em \Ind-interpretation}) is a \Ind-model structure
+Similarly, an {\em \Ind-structure} is an \Ind-model structure
 ${\cal M}=(S, R, L, [\_], s_0)$ associating
 with a state $s\in S$, which is written as $({\cal M},s)$ for convenience in the following.
 In the case $s$ is an initial state of $\cal M$, the \Ind-structure is {\em initial}.
 
-The semantics of $\CTLsnf$ is an extension of the semantics of \CTL\ except using the \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$ replace model structure, $({\cal M},s_i) \models \start$ iff $s_i=s_0$ and for all $\EXIST_{\tuple{ind}} \Gamma$ are explained in the path $\pi_{s_i}^{\tuple{ind}}$, where $\Gamma\in \{\NEXT, \GLOBAL, \UNTIL,\UNLESS\}$.
+    %The semantics of $\CTLsnf$ is an extension of the semantics of \CTL\ except using the \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$ replace model structure, $({\cal M},s_i) \models \start$ iff $s_i=s_0$ and for all $\EXIST_{\tuple{ind}} \Gamma$ are explained in the path $\pi_{s_i}^{\tuple{ind}}$, where $\Gamma\in \{\NEXT, \GLOBAL, \UNTIL,\UNLESS\}$.
 The semantics of $\CTLsnf$ is then
 defined as shown next as an extension of the semantics of CTL.
  Let $\varphi$ and $\psi$ be two $\CTLsnf$ formulae and $\Hm=(S,R,L,[\_],s_0)$ be an \Ind-model structure, the relation ``$\models$" between $\CTLsnf$ formulae and $\Hm$ is defined recursively as follows:
@@ -535,11 +535,13 @@ defined as shown next as an extension of the semantics of CTL.
   \item $(\Hm,s_i) \models \EXIST_{\tuple{ind}} \FUTURE \psi$ iff $(\Hm,s_i) \models \EXIST_{\tuple{ind}}[\top \UNTIL\psi]$;
   \item $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNLESS\psi]$ iff $(\Hm,s_i) \models \EXIST_{\tuple{ind}}\GLOBAL \varphi$ or $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNTIL\psi]$.
 \end{itemize}
+
 The semantics of the remaining operators is analogous to that given previously but in the
 extended \Ind-model structure ${\cal M}=(S, R, L, [\_],s_0)$.
-A $\CTLsnf$ formula $\varphi$ is satisfiable, iff for some \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$, $(\Hm,s_0)\models \varphi$, and unsatisfiable otherwise. And if $(\Hm,s_0)\models \varphi$ then $(\Hm,s_0)$ is called a \Ind-model of $\varphi$, and we say that $(\Hm,s_0)$ satisfies $\varphi$.
+
+A $\CTLsnf$ formula $\varphi$ is satisfiable, iff for some \Ind-model structure $\Hm$ there is $(\Hm,s_0)\models \varphi$, and unsatisfiable otherwise. And if $(\Hm,s_0)\models \varphi$ then $(\Hm,s_0)$ is called an \Ind-model of $\varphi$, and we say that $(\Hm,s_0)$ satisfies $\varphi$.
 By $T \wedge \varphi$ we mean $\bigwedge_{\psi\in T} \psi \wedge \varphi$, where $T$ is a set of formulae.
-Other terminologies are similar with those in section of \CTL.
+Other terminologies are similar with those in subsection of \CTL.
 
 
 
@@ -686,14 +688,14 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 Similar with the $V$-bisimulation between \MPK-structures, we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
 \begin{definition}\label{def:VInd:bisimulation}
 \textbf{($\tuple{V,I}$-bisimulation)}
-Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation $\beta_{\tuple{V,I}}$ between initial \Ind-structures is a set that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \notin I$ there is
+Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation between initial \Ind-structures is a set $\beta_{\tuple{V,I}}$ that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \notin I$ there is
 \begin{enumerate}[(i)]
   \item $\forall (s, s_1)\in [j]_1$ there is $(s',s_1')\in [j]_2$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$, and
   \item $\forall (s', s_1')\in [j]_2$ there is $(s,s_1)\in [j]_1$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$.
 \end{enumerate}
 %$\forall j \notin I$ there is $[j]_1 = [j]_2$.
 \end{definition}
-Apparently, this definition is similar with our concept $V$-bisimulation except that this $\tuple{V,I}$-bisimulation has introduced the index.
+Apparently, this definition is similar with our concept $V$-bisimulation. Similar with the Proposition~\ref{div}, we have:
 %Besides, it is not difficult to prove $\tuple{V,I}$-bisimulation possess those properties (talked-above) possessed by $V$-bisimulation.
 
 \begin{proposition}\label{pro:VI:div}
@@ -1163,7 +1165,7 @@ We use the transformation rules Trans(1) to Trans(12) and resolution rules (SRES
 
 The key problems of this method include (1) How to fill the gap between \CTL\ and $\CTLsnf$ since there is index for existential quantifier in $\CTLsnf$; and (2) How to eliminate the irrelevant atoms, which we want to forget, in the formula.
 We will resolve these two problems by $\tuple{V,I}$-bisimulation and \emph{eliminate} operator respectively.
-For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation process, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clause obtained from $\varphi$ by using transformation rules  and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly stated.
+For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation process below, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clause obtained from $\varphi$ by using transformation rules  and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly stated.
  Let $T$, $T'$ be two sets of formulae, $I$ a set of indexes and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
 
 
@@ -1358,7 +1360,7 @@ The resolution of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cup
 & \start \supset x \vee q && \top \supset p \vee \neg z \vee f \vee m \\
 & \top \supset q \vee \neg z \vee f \vee m &&  y \supset \ALL\NEXT(p \vee f\vee m) \\
 & y \supset \ALL\NEXT(q \vee f\vee m) &&  \start \supset f\vee m \vee p\\
-& \start \supset f\vee m \vee q 
+& \start \supset f\vee m \vee q
 \end{align*}
 \end{example}
 
@@ -1530,14 +1532,14 @@ After removing the clauses that include atoms in $V=\{p\}$, the following clause
 
 
 \subsection{Remove the Index and \start}
-The $\emph{Removing\_index}(\Gamma)$ process is to change the set $\Gamma$ of $\CTLsnf$ into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
+The $\emph{Removing\_index}(\emph{RemA})$ process is to change the set $\emph{RemA}$ obtained above into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
 %The following proposition is important for our algorithm since ... .
 \begin{proposition}\label{pro:In2NI}
 Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 \begin{enumerate}[(i)]
-  \item $P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_1 \wedge \dots \wedge P\supset \EXIST_{\tuple{ind}}\NEXT \varphi_n  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i\in \{0,\dots, n\}}\varphi_i$,
-  \item $P_1\supset \EXIST_{\tuple{ind}} \NEXT \varphi_1 \wedge \dots \wedge P_n\supset \EXIST_{\tuple{ind}}\NEXT \varphi_n \in T \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
-  \item $P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_1 \wedge \dots \wedge P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_n \in T \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
+  \item $\bigwedge_{i=1}^n P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i   \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
+  \item $\bigwedge_{i=1}^n P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
+  \item $\bigwedge_{i=1}^n P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
   \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \wedge P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$,
   \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \vee P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset (C \vee \EXIST \NEXT (\varphi_1 \vee \varphi_2))$.
 \end{enumerate}
@@ -1548,10 +1550,11 @@ Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 
 \begin{lemma}\label{lem:No:Ind}
 \textbf{(NI-BRemain)}
-Let $T'=\emph{Removing\_index}(T_{\varphi})$.
-If $T_{\varphi}$ is satisfiable, then we have $T_{\varphi} \equiv_{\tuple{{\O}, I}} T'$,
+%Let $T'=\emph{Removing\_index}(\emph{RemA})$.
+Let $I$ is the set of indexes in $\emph{RemA}$,
+we have $\emph{RemA}\equiv_{\tuple{{\O}, I}} \emph{Removing\_index}(\emph{RemA})$.
 %Then $\forall (\Hm,s_0) \in \Mod(T)$ there is a $(\Hm',s_0') \in \Mod(T')$ such that $(\Hm,s_0) \lrto_{\tuple{{\O}, I}} (\Hm',s_0')$ and vice versa.
-where $I$ is the set of indexes in $T$.
+%where $I$ is the set of indexes in $\emph{RemA}$.
 \end{lemma}
 %\begin{proof}
 %It is easy checking that from the definition of $\emph{Removing\_index}$.
@@ -1594,14 +1597,16 @@ By using the \emph{Replacing\_atoms} process on result of Example~\ref{examp:rem
 
 
 \subsection{The Correction and Complexity of the Algorithm}
-In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure. Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
+In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure. 
+%Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
 
 
-\begin{theorem}\label{thm:Res_based:V_CTLforget}
+\begin{theorem}[Resolution-based CTL-forgetting]\label{thm:Res_based:V_CTLforget}
 Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi,V)$, then %R(\NI(\Elm(\EXIST\FUTURE(\Gamma),\Gamma)))_{\CTL}$, then
-\[
-\CTLforget(\varphi, V' \cup V) \equiv \Gamma_1.
-\]
+\begin{enumerate}[(i)]
+\item $\CTLforget(\varphi, V'') \equiv \Gamma_1$;
+\item $\CTLforget(\varphi, V) \equiv \bigwedge_{\psi \in \Gamma_1} \psi$.
+\end{enumerate}
 \end{theorem}
 %\begin{proof}
 % ($\Rto$) $\forall (\Hm,s_0) \in \Mod(\CTLforget(\varphi, V' \cup V))$\\
@@ -1615,16 +1620,16 @@ Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi,V)$, then %R(\NI(\Elm(\EXI
 % $\Rto$ $(\Hm_1, s_1) \models \CTLforget(\varphi, V' \cup V)$ \hfill ($\IR(\CTLforget(\varphi, V' \cup V), V \cup V')$ and $\varphi \models \CTLforget(\varphi, V' \cup V)$)
 %\end{proof}
 
-Then we have the following result:
-\begin{theorem}\label{thm:Res_based:CTLforget}
-\textbf{(Resolution-based CTL-forgetting)}
-Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi, V)$, then
-\[
-\CTLforget(\varphi, V) \equiv \bigwedge_{\psi \in \Gamma_1} \psi.
-\]
-\end{theorem}
-
-We can obtain that $\CTLforget(\varphi, V) \equiv \CTLforget(\varphi, V' \cup V)$ by Theorem~\ref{thm:Res_based:V_CTLforget}. Therefore, the Theorem~\ref{thm:Res_based:CTLforget} is proved.
+%Then we have the following result:
+%\begin{theorem}\label{thm:Res_based:CTLforget}
+%\textbf{(Resolution-based CTL-forgetting)}
+%Let $\Gamma_1=\emph{ERes}(\varphi, V)$, then
+%\[
+%\CTLforget(\varphi, V) \equiv \bigwedge_{\psi \in \Gamma_1} \psi.
+%\]
+%\end{theorem}
+%
+%We can obtain that $\CTLforget(\varphi, V) \equiv \CTLforget(\varphi, V' \cup V)$ by Theorem~\ref{thm:Res_based:V_CTLforget} since $\varphi$ is irrelevant with $V'$. Therefore, the Theorem~\ref{thm:Res_based:CTLforget} is proved.
 
 Then we can obtain the result of forgetting of Example~\ref{exa:until:sub}:
 \begin{align*}
