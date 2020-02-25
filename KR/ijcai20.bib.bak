@@ -1,14 +1,5 @@
 
 
-@inproceedings{giunchiglia1999planning,
-  title={Planning as model checking},
-  author={Giunchiglia, Fausto and Traverso, Paolo},
-  booktitle={European Conference on Planning},
-  pages={1--20},
-  year={1999},
-  organization={Springer}
-}
-
 
 @inproceedings{ding2006ctl,
   title={CTL model update: Semantics, computations and implementation},
