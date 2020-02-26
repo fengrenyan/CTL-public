@@ -1131,9 +1131,9 @@ By the processes Transform and Resolution, we can obtain $V'=\{f,z\}$ and the fo
 & \top \supset \neg f \vee p && \top \supset \neg f \vee q && z \supset \EXIST_{\tuple{ind}} \NEXT \neg f
 \end{align*}
 
-On the one hand, according to our Algorithm~\ref{alg:compute:forgetting:by:Resolution}, we have $\emph{Instantiate}(Res,V')=V$ since $f$ can be instantiated by $q$ and $z$ can be instantiated by $\ALL\FUTURE f$. 
+On the one hand, according to our Algorithm~\ref{alg:compute:forgetting:by:Resolution}, we have $\emph{Instantiate}(Res,V')=V$ since $f$ can be instantiated by $q$ and $z$ can be instantiated by $\ALL\FUTURE f$.
 
-In the \emph{Connect} process, by using \textbf{EF1} rule on the $Res$ we have $\alpha=z \supset (\neg q \supset  (\EXIST_{\tuple{ind}}\NEXT (q \supset \ALL\NEXT \ALL\FUTURE q )))$ and replace $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \in Res$ with $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha$ since $l_1$, $C_2$, $C_3$ and $C_4$ are instantiate formulae.
+In the \emph{Connect} process, by using \textbf{EF1} rule on the $Res$ we have $\alpha=z \supset (\neg q \supset  (\EXIST_{\tuple{ind}}\NEXT (q \supset \ALL\NEXT \ALL\FUTURE q )))$ and replace $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \in Res$ with $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha$ since $l$, $C_2$, $C_3$ and $C_4$ are instantiate formulae.
 Apparently, $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha \equiv z \supset q \vee \EXIST_{\tuple{ind}} \NEXT(\neg f \vee \neg q \vee \ALL\NEXT \ALL\FUTURE q)$.
 
 After the \emph{Removing\_atoms} process, we have the following set \emph{RemA} of formulae:
@@ -1148,12 +1148,12 @@ Removing the indexes appearing in the \emph{RemA}, we obtain the following set $
 && z \supset q \vee \EXIST \NEXT(\neg f \vee \neg q \vee \ALL\NEXT \ALL\FUTURE q)
 \end{align*}
 
-Replacing the atoms in $V'$ that have been instantiated, we have 
+Replacing the atoms in $V'$ that have been instantiated, we have
 \[
 \emph{Rp}= \{\start \supset  \ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q \vee \ALL\NEXT \ALL\FUTURE q))\}.
 \]
 
-As all the formulas $\cal F$ in the $T_{\varphi}$ are the form $\ALL\GLOBAL \cal F$, hence we have: 
+As all the formulas $\cal F$ in the $T_{\varphi}$ are the form $\ALL\GLOBAL \cal F$, hence we have:
 \[
 \emph{Rp}_{\CTL} = \{\ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q \vee \ALL\NEXT \ALL\FUTURE q))\}.
 \]
@@ -1161,13 +1161,18 @@ i.e. $\emph{ERes}(\varphi, V) = \ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q
 In this case, we can easily check that $\emph{ERes}(\varphi, V) \equiv_{\tuple{V, \emptyset}} \varphi$.
 
 
-On the other hand, if we do not using the \emph{Connect} process, we can easily obtain the result of $\emph{ERes}$, i.e. $\emph{ERes}(\varphi, V) = \ALL\FUTURE q \wedge  \EXIST \NEXT(\neg q)$. 
-It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \varphi$. This can proved by two models as in Figure.
-
+On the other hand, if we do not using the \emph{Connect} process, we can easily obtain the result of $\emph{ERes}$, i.e. $\emph{ERes}(\varphi, V) = \ALL\FUTURE q \wedge  \EXIST \NEXT(\neg q)$.
+It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \varphi$. This can proved by model $\Hm$ as in Fig.~\ref{Fig:models} since $(\Hm, s_0) \models \varphi$ and $(\Hm, s_0) \not \models \emph{ERes}(\varphi, V)$.
+\begin{figure}
+  \centering
+   %Requires \usepackage{graphicx}
+  \includegraphics[width=5cm]{models.png}\\
+  \caption{A model of $\varphi$}\label{Fig:models}
+\end{figure}
 \end{example}
 
 This example show that why we introduce the \textbf{EF} imply rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is more stronger than our method, because by the \emph{Removing\_atoms} process, we have removing some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$ but after removing $C$ we only obtain that $f \supset q$. In this case, if the $Res$ satisfy the precondition, then there is a clauses $z \supset \EXIST \NEXT \neg f$, after replacing $f$ with $q$, then we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not removing $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker that $z \supset \EXIST \NEXT \neg q$.
-However, the $\varphi$ shows that there is not necessary $\neg q$ for some next state and if there is $q$ for all next states, then there must be a next state $s$ s.t. for all next state of $s$ there is $\ALL\FUTURE q$.
+However, the $\varphi$ shows that there is not necessary $\neg q$ for some next state and if there is $q$ for all next states, then there must be a next state $s$ s.t. for all next state of $s$ there is $\ALL\FUTURE q$ (see Fig.~\ref{Fig:models}).
 
 
 
@@ -1202,7 +1207,7 @@ Let $V''=V \cup V'$, $\Gamma=\emph{Instantiate}(T_{\varphi}^{r, V''}, V')$ and $
 \]
 \end{theorem}
 
-We can obtain that $\CTLforget(\varphi, V) \equiv \CTLforget(\varphi, V' \cup V)$ by Theorem~\ref{thm:Res_based:V_CTLforget}, Proposition~\ref{pro:IR_V:forget} and Proposition~\ref{disTF}. Therefore, the Theorem~\ref{thm:Res_based:CTLforget} is proved.
+We can obtain that $\CTLforget(\varphi, V) \equiv \CTLforget(\varphi, V' \cup V)$ by Theorem~\ref{thm:Res_based:V_CTLforget}. Therefore, the Theorem~\ref{thm:Res_based:CTLforget} is proved.
 
 Then we can obtain the result of forgetting of Example~\ref{exa:until:sub}:
 \begin{align*}
