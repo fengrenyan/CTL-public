@@ -881,6 +881,30 @@ Then the following statements are equivalent:
   \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
 \end{enumerate}
 \end{theorem}
+\begin{proof}
+$(i) \LRto (ii)$. To prove this, we will show that:
+\begin{align*}
+ & \Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi | \varphi \models \phi, \IR(\phi, V)\})\\
+ & = \Mod(\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)).
+\end{align*}
+Firstly, suppose that $(\Hm', s_0')$ is a model of $\CTLforget(\varphi, V)$. Then there exists an  an initial \MPK-structure $(\Hm, s_0)$ such that $(\Hm, s_0)$ is a model of $\varphi$ and $(\Hm, s_0) \lrto_V (\Hm', s_0')$. By Theorem~\ref{thm:V-bisimulation:EQ}, we have $(\Hm', s_0') \models \phi$ for all $\phi$ that $\varphi\models \phi$ and $\IR(\phi, V)$. Thus, $(\Hm', s_0')$ is a model of $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
+
+Secondly, suppose that $(\Hm', s_0')$ is a models of $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Thus, $(\Hm', s_0')$ $\models$ $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$ due to $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$ is irrelevant to $V$.
+
+Finally, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$. Then there exists $(\Hm, s_0) \in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha- V}(\Hm, s_0)$. Hence, $(\Hm, s_0)$ $\lrto_V$ $(\Hm', s_0')$ by Theorem~\ref{CF}. Thus $(\Hm', s_0')$ is also a model of $\CTLforget(\varphi,V)$.
+
+
+$(ii)\Rto (iii)$. It is not difficult to prove it.
+
+$(iii)\Rto (ii)$. Suppose that all postulates hold. By Positive Persistence, we have $\varphi' \models \{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Now
+we show that $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$. Otherwise, there exists formula $\phi'$ such that $\varphi' \models \phi'$ but $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \nvDash \phi'$. There are three cases:
+\begin{itemize}
+  \item $\phi'$ is relevant to $V$. Thus, $\varphi'$ is also relevant to $V$, a contradiction to Irrelevance.
+  \item $\phi'$ is irrelevant to $V$ and $\varphi \models \phi'$. This contradicts to our assumption.
+  \item $\phi'$ is irrelevant to $V$ and $\varphi \nvDash \phi'$. By Negative Persistence, $\varphi' \nvDash \phi'$, a contradiction.
+\end{itemize}
+Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
+\end{proof}
 The above theorem says that, the notion of forgetting  we defined, satisfies (and entailed by) the  four postulates of forgetting. Moreover, \CTL\ is closed under our definition of forgetting, i.e.,  for any CTL formula the result of forgetting is also a CTL formula.
 
 \begin{lemma}\label{lem:KF:eq}
@@ -1102,10 +1126,113 @@ Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on 
 %For the Example~\ref{exmp:1}, the WSC of $\varphi$ on $V$ under ${\cal K} =(\Hm, s_0)$ is $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge (q \lrto \varphi) \wedge \neg q, \Ha - V)$.
 %\end{example}
 
+\section{An Algorithm to Compute Forgetting}
+To compute the forgetting in \CTL, we propose a model-based method.
+Intuitively, the model-based method means that we can compute the forgetting applied to a formula  simply by considering all the possible models of that formula.
+%By the definition of forgetting in \CTL, the set of models of the result of forgetting is also a finite set of initial \MPK-structures.
+%To compute the forgetting in \CTL, we propose a model-based method in this part.
+%Literally speaking, the model-based method means that we can obtain the result of forgetting in \CTL\ by obtain all the possible finite models of this result.
+%% How can we obtain all the \MPK-models is what we will solved in this part.
+%%The resolution-based method obtain the result of forgetting by obtaining all the possible resolutions which can be implied by the original formula.
+
+%As we have said that the set of models of any formula $\varphi$ is finite, hence if we can obtain all the models of $\varphi$ then we can express this formula by the disjunction of those characteristic formulas of those models.
+%By the definition of forgetting in \CTL, the set of models of the result of forgetting is also a finite set of initial \MPK-structures.
+%Then the model-based method is generated for forgetting in \CTL.
+%
+%Though the set of models of the result of forgetting is finite, while how many models is there?
+%%That's right we should given the bound of the number of the models.
+%As it is said in Theorem~\ref{thm:VBChFEQ} that if two initial \MPK-structures are $V$-bisimulation, then their characteristic formulas is equal.
+
+%Then let $\varphi$ be a CTL formula, the $|\Var(\varphi)|=m$ is a positive integer, we have the following theorem:
+%\begin{theorem}
+%Let $\varphi$ be a CTL formula, $V=\Var(\varphi)$, $|V|=m$, and ${\cal K}=(\Hm, s_0)$ with $\Hm=(S, R,L,s_0)$ be a initial \MPK-structure. If $(\Hm, s_0) \models \varphi$, then there is an initial \MPK-structure ${\cal K}'=(\Hm', s_0')$ with $\Hm'=(S', R',L',s_0')$ that satisfy:
+%\begin{enumerate}[(i)]
+%  \item $|S'|$ is at most $2^m$,
+%  \item $|R'|$ is at most $2^m * 2^m$,
+%  \item $|L'|$ is at most $2^m * 2^m$,
+%  \item ${\cal K} \lrto_{\Ha - V} {\cal K}'$ and $(\Hm', s_0') \models \varphi$.
+%\end{enumerate}
+%\end{theorem}
+%\begin{proof}
+%If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
+%\end{proof}
+
+%By this theorem, we can see that any initial \MPK-structures ${\cal K}$ that satisfy $\varphi$ can be transformed to an initial \MPK-structure ${\cal K}'$ such that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ and ${\cal K} \models \varphi$ iff ${\cal K}' \models \varphi$ due to $\IR(\varphi, \Ha- V)$, in which $V= \Var(\varphi)$. Therefore, the size of the model of $\varphi$ is at most $2^m$ by Theorem~\ref{thm:VBChFEQ}(we only consider the number of states of this model).
+
+Next, we give the model-based algorithm i.e., Algorithm~\ref{alg:compute:forgetting:by:VB} to compute the forgetting in CTL.
+The correctness of this algorithm follows from Lemma~\ref{lem:models:formula} and Theorem~\ref{CF}.
+
+
+\begin{algorithm}[tb]
+\caption{A Model-based Forgetting Procedure}
+\label{alg:compute:forgetting:by:VB}
+\KwIn{A CTL formula $\varphi$ and a set $V$ of atoms}
+\KwOut{$\CTLforget(\varphi, V)$}% ????
+$T={\O}$ // the set of models of $\varphi$ \;
+$T' = {\O}$ // the set of possible initial \MPK-structures \;
+%$m=|\Var(\varphi)|$\;
+$n=|\Ha|$\;
+
+\For {$i=1, ..., 2^n$}{
+       % Enumerating all possible initial \MPK-structures $(\Hm, s_0)$ with $\Hm=(S, R, L,s_0)$ and $|S|=i$\;
+        \For {$s_j\in \{s_1, \dots, s_i\}$}{
+            Let $s_j$ be an initial state, construct $\Hm=(S, R, L,s_j)$ by the definition of model structure with $S=\{s_1, \dots, s_i\}$\;
+            \For {$\cal K\in T'$} {
+             \If {$(\Hm, s_j) \nleftrightarrow_{\overline {\Var(\varphi)}} \cal K$}{
+                 Let $T' \leftarrow T' \cup \{(\Hm, s_j)\}$\;
+             }
+             }
+        }
+        \For {$(\Hm, s_0) \in T'$ }{
+            \If {$(\Hm,s_0) \models \varphi$}{
+                $T \leftarrow T \cup \{(\Hm,s_0)\}$\;
+            }
+        }
+       % For all initial \MPK-structures $(\Hm, s_0)$ \If {$(\Hm,s_0) \models \varphi$}{
+%            $T= T \cup \{(\Hm,s_0)\}$\;
+%        }
+}
+%\For {${\cal K} =(\Hm, s_0) \in T$} {
+%    Let $T' = T' \cup \{{\cal K}_{|V} \}$\;
+%}
+%
+%\For {i=1, ..., $2^{m-n}$}{
+%        Enumerating all possible initial \MPK-structures $(\Hm', s_0')$ with $\Hm'=(S', R', L',s_0')$ and $|S'|=i$\;
+%        For all initial \MPK-structures $(\Hm', s_0')$ \If {$\exists (\Hm,s_0)\in T$ s.t. $(\Hm,s_0) \lrto_V (\Hm', s_0')$}{
+%            $T'= T' \cup \{(\Hm',s_0')\}$\;
+%        }
+%}
+\Return $\bigvee_{(\Hm', s_0')\in T} {\cal F}_{\overline V}(\Hm', s_0')$.
+\end{algorithm}
+
+\begin{example}
+Consider the model given in Figure 1. Assume that we are given a property $\alpha = \ALL\GLOBAL\EXIST\FUTURE(lc \wedge sr)$ and $\{ lc\}$. Then, it is easy to check that $\CTLforget(\alpha,\{ lc\}) \equiv \ALL\GLOBAL\EXIST\FUTURE sr$.
+\end{example}
+%\begin{example}
+%Let $\varphi=\ALL\GLOBAL \ALL\FUTURE (p \wedge r)$, $\Ha=\{p,r\}$ and $V=\{r\}$. For convenience, we use the label of a state to express the state and then remove the label function in a model structure.
+%Let $\Hm_1=(\{\{p,r\}\}, \{(\{p,r\}, \{p,r\})\}, \{p,r\})$ and $\Hm_2=(\{\emptyset,\{p,r\}\}, \{(\emptyset, \{p,r\})$, $(\{p,r\}$, $\{p,r\})\}, \emptyset)$.
+%\Hm_3=(\{\emptyset,\{p\}$, $\{p,r\}\}$, $\{(\emptyset$, $\{p\})$, $(\{p\}$, $\{p, r\})$, $(\{p, r\}$, $\emptyset)\}$, $\emptyset)$,
+%The set of models of $\varphi$ is $\Mod(\varphi)=\{(\Hm_1, \{p\})$, $(\Hm_2$, $\emptyset), \dots\}$.
+
+%Let $\Hm_1'=(\{\{p\}\}, \{(\{p\}, \{p\})\}, \{p\})$ and $\Hm_2'=(\{\emptyset,\{p\}\}, \{(\emptyset, \{p\})$, $(\{p\}$, $\{p\})\}, \emptyset)$
+%  Then we can obtain all the possible initial \MPK-structure that is a model of $\CTLforget(\varphi, V)$, i.e., $\Mod(\CTLforget(\varphi, V)) =\{{\cal K}_1=(\Hm_1', \{p\}), {\cal K}_2=(\Hm_2', \emptyset), \dots\}$.
+
+%Let $V'=\{p\}$, ${\cal K}_1=(\Hm_1, \{p,r\})$ and ${\cal K}_2=(\Hm_2, \emptyset)$, then
+ %${\cal F}_{V'}({\cal K}_1)= p \wedge \ALL\GLOBAL (p\supset  \ALL \NEXT p)$,
+ %and
+% ${\cal F}_{V'}({\cal K}_2)=\neg p\wedge \ALL\GLOBAL (p\supset  \ALL \NEXT \neg p) \wedge \ALL\GLOBAL (\neg p\supset  \ALL \NEXT p)$. Similarly, we can obtain the characteristic formula of other models and then the $\CTLforget(\varphi, V)$.% is the disjunction of all the characteristic formulae of those models.
+%\end{example}
+
+\begin{proposition}\label{pro:time:alg1}
+ Let $\varphi$ be a CTL formula and $V\subseteq \Ha$ with $|\Ha|=m$ and $|V|=n$. The time and space complexity of
+Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space complexity is $O(2^{2m})$, where $|\Ha| = m$.
+\end{proposition}
+
 
 
 \section{Forgetting in planning}
-Planning via the model checking is based on generating plans by determining whether formula are true in model~\cite{giunchiglia1999planning}. The fundamental ingredients include \emph{planning domain}, \emph{planning problem} and \emph{plan generation}.
+Planning via the model checking is based on generating plans by determining whether formula are true in model~\cite{giunchiglia1999planning}. 
+The fundamental ingredients include \emph{planning domain}, \emph{planning problem} and \emph{plan generation}.
 
 A \emph{planning domain} ${\cal D}$ is a 4-tuple $\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ where
 \begin{enumerate}[(i)]
@@ -1132,7 +1259,7 @@ Plans specify actions to be executed in certain states.
  Precisely, a planning problem corresponding to a Kripke structure
  $\Hm = \tuple{S, R, L}$ with initial state $s_0$ on a set $\cal A$ of atoms is $\cal P = \tuple{\cal D, \cal I, \cal G}$, where
  \begin{enumerate}[(i)]
-   \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W = \cal S$, $\Lambda =\{u\}$ and ${\cal T} = \{(s, u, s') : (s, s') \in R\}$
+   \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W =  S$, $\Lambda =\{u\}$ and ${\cal T} = \{(s, u, s') : (s, s') \in R\}$
    \item $I = \{s_0\}$.
  \end{enumerate}
 
@@ -1140,13 +1267,29 @@ Plans specify actions to be executed in certain states.
 
 
  \begin{example}
- The following model depicted in Figure can be translated into a planning domain ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with
-\begin{enumerate}
-  \item ${\cal F} = \{p, q\}$,
-  \item ${\cal W} = \{\{p, q\}, \{p\}, \{q\}\}$, for convenience we use $s_0$ to represent $\{p, q\}$, $s_1$ to $\{p\}$ and $s_2$ to $\{q\}$, 
-  \item $\Lambda = \{lock, unlock, load, unload, wait\}$,
-  \item ${\cal T}=\{(s_0, wait, s_0), (s_0, lock, s_1), (s_0, unlock, s_2), (s_1, wait, s_1), (s_1, load, s_2),(s_2, wait, s_2), (s_2, unload, s_1)\}$.
+Given a Kripke structure  $\Hm = \tuple{S, R, L}$ (Figure~\ref{PB_Kripke}) with initial state $s_0$ on ${\cal A}=\{p,q\}$, where $S = \{\{p, q\}, \{p\}, \{q\}\}$, for convenience we use $s_0$ to represent $\{p, q\}$, $s_1$ to $\{p\}$ and $s_2$ to $\{q\}$, $R=\{(s_0, s_0), (s_0, s_1), (s_0, s_2)$, $(s_1, s_1)$, $(s_1, s_2),(s_2, s_2), (s_2, s_1)\}$ and $L:S \mapsto 2^{\cal A}$.
+
+
+\begin{figure}[ht]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=4cm]{PB_Kripke.png}\\
+  \caption{An Kripke structure of a Planning problem}\label{PB_Kripke}
+\end{figure}
+
+A  planning problem corresponding  to $\Hm$ is $\cal P= \tuple{\cal D, \cal I, \cal G}$, where 
+\begin{enumerate}[.]
+  \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W = S$, $\Lambda = \{u\}$ and ${\cal T}=\{(s_0, u, s_0), (s_0, u, s_1), (s_0, u, s_2)$, $(s_1, u, s_1), (s_1, u, s_2),(s_2, u, s_2), (s_2, u, s_1)\}$. This planning domain can be depicted in Figure~\ref{PD} from~\cite{akintunde2017planning}, in which ${\cal T}=\{(s_0, wait, s_0), (s_0, lock, s_1), (s_0, unlock, s_2), (s_1, wait, s_1)$, $(s_1, load, s_2),(s_2, wait, s_2), (s_2, unload, s_1)\}$.
+  \item ${\cal I}=\{s_0\}$.
 \end{enumerate}
+
+ %The following model depicted in Figure~\ref{PD} from~\cite{akintunde2017planning} can be translated into a planning domain ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with
+%\begin{enumerate}
+%  \item ${\cal F} = \{p, q\}$,
+%  \item ${\cal W} = \{\{p, q\}, \{p\}, \{q\}\}$, for convenience we use $s_0$ to represent $\{p, q\}$, $s_1$ to $\{p\}$ and $s_2$ to $\{q\}$,
+%  \item $\Lambda = \{lock, unlock, load, unload, wait\}$,
+%  \item ${\cal T}=\{(s_0, wait, s_0), (s_0, lock, s_1), (s_0, unlock, s_2)$, $(s_1, wait, s_1)$, $(s_1, load, s_2),(s_2, wait, s_2), (s_2, unload, s_1)\}$.
+%\end{enumerate}
 
  \begin{figure}[ht]
   \centering
@@ -1155,9 +1298,24 @@ Plans specify actions to be executed in certain states.
   \caption{An example Planning Domain}\label{PD}
 \end{figure}
 
+For this planning problem $\cal P$, if the goal is ${\cal G} = \{s_1\}$, this means that in this planning problem we should find a plan $\pi$ to take an an agent (or system state) from the initial state to the goal. This goal can be specified as $\varphi = p \wedge \neg q$.
+Therefore, the planning problem can be solved by model checking, that is $\Hm, s_0 \models \EXIST \FUTURE \varphi$ iff there exists a plan satisfying the planning problem $\cal P$.
+
+It is easy to check that $\Hm, s_0 \models \EXIST \FUTURE \varphi$ and obtain that $\pi=\{\tuple{s_0, lock}\}$ is a plan of this problem by the definition of plan.
 
  \end{example}
 
+Besides, we can also use \CTL\ formula expressing the condition that gaol is reached within $n$ steps, which can be expressed in the following way:
+\[
+   \underbrace{\EXIST\NEXT(\EXIST\NEXT(\dots(goal)\dots))}_{n\ \EXIST\NEXT's}.
+\]
+The property ``Eventually reach the goal and permanently in a certain sate that satisfy some property $\varphi$ (a \CTL\ formula)" can be expressed in \CTL\ as:
+\[
+\EXIST \FUTURE(goal) \wedge \EXIST\GLOBAL \varphi.
+\]
+(For more information of using \CTL\ for goal specification, please see~\cite{akintunde2017planning}).
+
+This show that we can use our method talked in this paper to solve similar problems in planning problem, such as subtracting the obsolete information and computing the WSC when there is no plan to satisfy the planning problem.
 
 
 

@@ -565,6 +565,52 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
    \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
  \end{enumerate}
 \end{proposition}
+\begin{proof}
+We give proofs of (iii) and (iv) here. Proofs of other propositions can be found in the appendix.
+
+(iii)
+%It is clear from Proposition~\ref{Vbi:Equ}.
+%\begin{proposition}\label{Vbi:Equ}
+The following property show our result directly.
+Let $V\subseteq\cal A$
+%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+  \begin{enumerate}[(a)]
+    \item $L_1(s_1)- V = L_2(s_2)- V$,
+    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+   \end{enumerate}
+ where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+
+ We prove it from the following two aspects:
+
+ $(\Rto)$
+(a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
+(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')- V = L_2(s_2')- V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+ This is similar with (b).
+
+$(\Lto)$ (a) $L_1(s_1)- V = L_2(s_2)- V$ implies that $(s_1, s_2) \in \Hb_0$;
+(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
+(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
+%\end{proposition}
+
+
+(iv) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+\begin{enumerate}[(a)]
+  \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
+  \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
+  \item if $(w_3, u_3) \in \Hr_3$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_2, u_3) \in \Hb_2$; and then $\exists u_1 \in S_1$ such that $(w_1, u_1) \in \Hr_1$ and $(u_1, u_2) \in \Hb$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
+\end{enumerate}
+\end{proof}
 
 
 
@@ -629,34 +675,6 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 \]
 
 
-
-Similar with the $V$-bisimulation between \MPK-structures, we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
-\begin{definition}\label{def:VInd:bisimulation}
-\textbf{($\tuple{V,I}$-bisimulation)}
-Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation between initial \Ind-structures is a set $\beta_{\tuple{V,I}}$ that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \notin I$ there is
-\begin{enumerate}[(i)]
-  \item $\forall (s, s_1)\in [j]_1$ there is $(s',s_1')\in [j]_2$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$, and
-  \item $\forall (s', s_1')\in [j]_2$ there is $(s,s_1)\in [j]_1$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$.
-\end{enumerate}
-%$\forall j \notin I$ there is $[j]_1 = [j]_2$.
-\end{definition}
-Apparently, this definition is similar with our concept $V$-bisimulation. Similar with the Proposition~\ref{div}, we have:
-%Besides, it is not difficult to prove $\tuple{V,I}$-bisimulation possess those properties (talked-above) possessed by $V$-bisimulation.
-
-\begin{proposition}\label{pro:VI:div}
-Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$, $I_1, I_2 \subseteq Ind$
-and ${\cal K}_i=({\cal M}_i,s_0^i)~(i=1,2,3)$ be Ind-structures
- such that
-${\cal K}_1\lrto_{\tuple{V_1, I_1}}{\cal K}_2$ and ${\cal K}_2\lrto_{\tuple{V_2,I_2}}{\cal K}_3$.
- Then:
- \begin{enumerate}[(i)]
-  % \item $s_1'\lrto_{V_i}s_2'~(i=1,2)$ implies $s_1'\lrto_{V_1\cup V_2}s_2'$;
-%   \item $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ implies $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$;
-%   \item for each path $\pi_{s_1}$ of $\Hm_1$ there is a path $\pi_{s_2}$  of $\Hm_2$ such that $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$, and vice versa;
-   \item ${\cal K}_1\lrto_{\tuple{V_1\cup V_2, I_1 \cup I_2}}{\cal K}_3$;
-   \item If $V_1 \subseteq V_2$ and $I_1 \subseteq I_2$ then ${\cal K}_1 \lrto_{\tuple{V_2, I_2}} {\cal K}_2$.
- \end{enumerate}
-\end{proposition}
 %\begin{proof}
 %%This can be proved similarly with Proposition~\ref{div}.
 %(i) By Proposition~\ref{div} we have ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$. For (i) of Definition~\ref{def:VInd:bisimulation} we can prove it as follows:
@@ -801,6 +819,67 @@ Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be tw
 
 \end{theorem}
 
+In order to prove Theorem~\ref{CF}, we prove the following two lemmas at first.
+
+\begin{lemma}\label{Bn:to:Tn}
+Let $V\subseteq \Ha$, $\Hm=(S, R, L,s_0)$ and $\Hm'=(S', R', L',s_0')$ be two model structures,
+$s\in S$, $s'\in S'$ and $n\ge 0$.
+\begin{enumerate}[(i)]
+  \item $({\cal M},s)\models{\cal F}_V(\Tr_n(s))$.
+  \item If $({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$ then
+  $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) It is apparent from the definition of ${\cal F}_V(\Tr_n(s))$.
+Base. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$.\\
+Step. For $k \geq 0$, supposing the result talked in (i) is correct in $k - 1$, we will show that $({\cal M},s)\models {\cal F}_V(\Tr_{k+1}(s))$, i.e.,:
+\begin{equation*}
+\resizebox{.91\linewidth}{!}{$
+    \displaystyle
+ %\[
+ ({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
+    \EXIST \NEXT T(s')\right)
+    \wedge \ALL \NEXT\left(\bigvee_{(s,s')\in R}
+    T(s')\right)
+    \wedge {\cal F}_V(\Tr_0(s)).%\]
+ $}
+\end{equation*}
+Where $T(s') ={\cal F}_V(\Tr_k(s'))$. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$ by Base. It is apparent that for any $(s,s') \in R$, there is $({\cal M}, s') \models {\cal F}_V(\Tr_k(s'))$ by inductive assumption. Then we have $({\cal M},s)\models \EXIST \NEXT {\cal F}_V(\Tr_k(s')$, and then $({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
+    \EXIST \NEXT {\cal F}_V(\Tr_k(s'))\right)$. Similarly, we have that for any $(s,s') \in R$, there is $({\cal M}, s') \models \bigvee_{(s,s'')\in R}
+    {\cal F}_V(\Tr_k(s'') )$. Therefore, $({\cal M},s)\models \ALL \NEXT\left(\bigvee_{(s,s'')\in R}
+    {\cal F}_V(\Tr_k(s'') )\right)$.
+
+(ii)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) - \overline V = L'(s') - \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
+    \textbf{Step}. Supposing $n>0$ and the result talked in (ii) is correct in $n-1$.\\
+   (a) It is easy to see that $L(s) - \overline V = L'(s') - \overline V$.\\
+   (b) We will show that for each $(s, s_1) \in R$, there is a $(s', s_1') \in R'$ such that $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$.
+      Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models \ALL \NEXT\left(\bigvee_{(s',s_1')\in R}{\cal F}_V(\Tr_{n-1}(s_1') )\right)$.
+      Therefore, for each $(s, s_1) \in R$ there is a $(s', s_1') \in R'$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1') )$. Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.\\
+   (c) We will show that for each $(s',s_1')\in R'$ there is a $(s,s_1)\in R$ such that $\Tr_{n-1}(s_1') \lrto_{\overline V} \Tr_{n-1}(s_1)$.
+      Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models  \bigwedge_{(s',s_1')\in R'} \EXIST \NEXT {\cal F}_V(\Tr_{n-1}(s_1'))$.
+      Therefore, for each $(s',s_1')\in R'$ there is a $(s,s_1)\in R$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1')$.
+      Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.
+\end{proof}
+
+
+A consequence of the previous lemma is:
+
+\begin{lemma}\label{div_s}
+Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure, $k={ch({\cal M},V)}$ and $s\in S$.
+%There is a formula $\phi$ such that
+\begin{itemize}
+  \item $(\Hm, s)\models {\cal F}_V(\Tr_k(s))$, and
+  \item for each $s'\in S$, $({\cal M},s) \lrto_{\overline V} ({\cal M},s')$
+  if and only if $({\cal M},s')\models{\cal F}_V(\Tr_k(s))$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha - V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
+\end{proof}
+
+
+
 Moreover, we know that any initial \MPK-structure can be described as a \CTL\ formula from the definition of characterizing formula. Then,
 \begin{lemma}\label{lem:models:formula}
   Let $\varphi$ be a formula. We have
@@ -881,6 +960,30 @@ Then the following statements are equivalent:
   \item Postulates (\W), (\PP), (\NgP) and (\textbf{IR}) hold.
 \end{enumerate}
 \end{theorem}
+\begin{proof}
+$(i) \LRto (ii)$. To prove this, we will show that:
+\begin{align*}
+ & \Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi | \varphi \models \phi, \IR(\phi, V)\})\\
+ & = \Mod(\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)).
+\end{align*}
+Firstly, suppose that $(\Hm', s_0')$ is a model of $\CTLforget(\varphi, V)$. Then there exists an  an initial \MPK-structure $(\Hm, s_0)$ such that $(\Hm, s_0)$ is a model of $\varphi$ and $(\Hm, s_0) \lrto_V (\Hm', s_0')$. By Theorem~\ref{thm:V-bisimulation:EQ}, we have $(\Hm', s_0') \models \phi$ for all $\phi$ that $\varphi\models \phi$ and $\IR(\phi, V)$. Thus, $(\Hm', s_0')$ is a model of $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
+
+Secondly, suppose that $(\Hm', s_0')$ is a models of $\{\phi | \varphi \models \phi$, $\IR(\phi, V)\}$. Thus, $(\Hm', s_0')$ $\models$ $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$ due to $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$ is irrelevant to $V$.
+
+Finally, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{\Hm, s_0\in \Mod(\varphi)} {\cal F}_{\Ha- V}(\Hm, s_0)$. Then there exists $(\Hm, s_0) \in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha- V}(\Hm, s_0)$. Hence, $(\Hm, s_0)$ $\lrto_V$ $(\Hm', s_0')$ by Theorem~\ref{CF}. Thus $(\Hm', s_0')$ is also a model of $\CTLforget(\varphi,V)$.
+
+
+$(ii)\Rto (iii)$. It is not difficult to prove it.
+
+$(iii)\Rto (ii)$. Suppose that all postulates hold. By Positive Persistence, we have $\varphi' \models \{\phi | \varphi \models \phi, \IR(\phi, V)\}$. Now
+we show that $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$. Otherwise, there exists formula $\phi'$ such that $\varphi' \models \phi'$ but $\{\phi | \varphi \models \phi, \IR(\phi, V)\} \nvDash \phi'$. There are three cases:
+\begin{itemize}
+  \item $\phi'$ is relevant to $V$. Thus, $\varphi'$ is also relevant to $V$, a contradiction to Irrelevance.
+  \item $\phi'$ is irrelevant to $V$ and $\varphi \models \phi'$. This contradicts to our assumption.
+  \item $\phi'$ is irrelevant to $V$ and $\varphi \nvDash \phi'$. By Negative Persistence, $\varphi' \nvDash \phi'$, a contradiction.
+\end{itemize}
+Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}$.
+\end{proof}
 The above theorem says that, the notion of forgetting  we defined, satisfies (and entailed by) the  four postulates of forgetting. Moreover, \CTL\ is closed under our definition of forgetting, i.e.,  for any CTL formula the result of forgetting is also a CTL formula.
 
 \begin{lemma}\label{lem:KF:eq}
@@ -940,14 +1043,14 @@ In the following, we outline the computational complexity of the various tasks r
 \begin{proposition}[Model Checking on Forgetting]\label{modelChecking}
 Let~$(\Hm,s_0)$ be an initial \MPK-structure, $\varphi$ be a \CTL\ formula and $V$ a set of atoms. Deciding whether $(\Hm,s_0)$ is a model of $\forget(\varphi, V )$ is NP-complete.
 \end{proposition}
-%\begin{proof}
-%The problem can be determined by the following two things: (1) guessing
-%an I-structure $\Hm',s_0'$ satisfying $\varphi$; and
-%(2) checking if  $(\Hm, s_0) \leftrightarrow_V (\Hm', s_0')$. Both two steps can be done in polynomial time.
-% Hence, the problem is in NP.
-%The hardness follows that the model checking for propositional variable
-%forgetting is NP-hard.
-%\end{proof}
+\begin{proof}
+The problem can be determined by the following two things: (1) guessing
+an initial \MPK-structure $(\Hm',s_0')$ satisfying $\varphi$; and
+(2) checking if  $(\Hm, s_0) \leftrightarrow_V (\Hm', s_0')$. Both two steps can be done in polynomial time.
+ Hence, the problem is in NP.
+The hardness follows that the model checking for propositional variable
+forgetting is NP-hard~\cite{Zhang2008Properties}.
+\end{proof}
 
 The fragment of \CTL, in which each formula contains only $\ALL \FUTURE$ temporal connective correspond to specifications that are desired to hold in all branches eventually. Such properties are of special interest in concurrent systems e.g., mutual exclusion and  waiting events~\cite{Baier:PMC:2008}.
 In the following, we report various complexity results concerning forgetting and the logical entailment in this fragment.
@@ -962,28 +1065,27 @@ results:
 \end{enumerate}
 %Where $X\in\{\ALL, \EXIST\}$.
 \end{theorem}
-%\begin{proof}
-%(1) It is proved that deciding whether $\psi$ is satisfiable is NP-Complete~\cite{DBLP:journals/ijfcs/MeierTVM15}. The hardness is easy to see by setting $\forget(\varphi, \Var(\varphi))$, i.e., deciding whether $\psi$ is valid.
-%For membership, from Theorem
-%3, we have $\forget(\varphi, V ) \models \psi$ iff $\varphi \models \psi$ and $IR(\psi, V )$.
-%Clearly, in CTL($\ALL \FUTURE$), deciding $\varphi\models \psi$ is in co-NP. We show that deciding whether $IR(\psi, V )$ is also
-%in co-NP. Without loss of generality, we assume that $\psi$ is satisfiable.
-% %Then $\psi$ has a model in the polynomial size of $\psi$.
-% We consider the complement of the problem: deciding whether $\psi$ is not irrelevant to $V$. It is easy to see that $\psi$ is
-%not irrelevant to $V$ iff there exist a model $\Hm, s_0$ of $\psi$ and an
-%initial \MPK-structure $\Hm',s_0'$  such that
-%$\Hm, s_0 \leftrightarrow_V \Hm',s_0'$ and $\Hm',s_0'\nvDash \psi$. So checking whether $\psi$ is not irrelevant to $V$ can be achieved in the following steps: (1) guess two initial \MPK-structures $\Hm,s_0$ and $\Hm',s_0'$, (2) check if $\Hm,s_0 \models \psi$ and $\Hm',s_0'\nvDash \psi$, and (3) check
-%$\Hm, s_0 \leftrightarrow_V \Hm',s_0'$. Obviously (1) can be done in polynomial time
-%with a non-deterministic Turing machine while (2) and (3) can be done in polynomial time.
-%
-%(2) Membership. We consider the complement of the
-%problem. We may guess an initial \MPK-structure $\Hm, s_0$ and check whether $\Hm,s_0 \models \psi$ and $\Hm,s_0$ $\nvDash \forget($ $\varphi$, $V)$. From Proposition~\ref{modelChecking}, we know that this is in $\Sigma_2^P$. So the original problem is in $\Pi_2^P$. Hardness. Let $\psi \equiv \top$. Then the problem is reduced to decide $\forget(\varphi, V )$'s validity. Since a propositional variable forgetting is a special case temporal forgetting, the hardness is directly followed from the proof of Proposition 24 in~\cite{DBLP:journals/jair/LangLM03}.
-%
-%(3) Membership. If $\forget(\varphi, V) \nvDash \forget(\psi, V)$ then there exist an initial \MPK-structure $\Hm, s$ such that $\Hm, s\models \forget(\varphi, V)$ but $\Hm, s \nvDash \forget(\psi, V)$, i.e.,, there is $\Hm_1, s_1 \lrto_V \Hm, s$ with $\Hm_1, s_1 \models \varphi$ but $\Hm_2, s_2 \nvDash \psi$ for every $\Hm_2, s_2$ with $\Hm, s \lrto_V \Hm_2, s_2$. It is evident that guessing such $\Hm, s$, $\Hm_1, s_1$ with $\Hm_1, s_1 \lrto_V \Hm, s$ and checking $\Hm_1, s_1\models \varphi$ are feasible while checking $\Hm_2, s_2 \nvDash \psi$ for every $\Hm, s \lrto_V \Hm_2, s_2$ can be done in polynomial time by call a nondeterministic Turing machine. Thus the problem is in $\Pi_2^P$.
-%
-%Hardness. It follows from (2) due to the fact that $\forget(\varphi, V) \models \forget(\psi, V)$ iff $\varphi \models \forget(\psi, V)$ thanks to $IR(\forget(\psi, V), V)$.
-%
-%\end{proof}
+\begin{proof}
+(1) It is proved that deciding whether $\psi$ is satisfiable is NP-Complete~\cite{DBLP:journals/ijfcs/MeierTVM15}. The hardness is easy to see by setting $\forget(\varphi, \Var(\varphi))\equiv \top$, i.e., deciding whether $\psi$ is valid.
+For membership, from Theorem
+3, we have $\forget(\varphi, V ) \models \psi$ iff $\varphi \models \psi$ and $IR(\psi, V )$.
+Clearly, in $\CTL_{\ALL \FUTURE}$, deciding $\varphi\models \psi$ is in co-NP. We show that deciding whether $IR(\psi, V )$ is also
+in co-NP. Without loss of generality, we assume that $\psi$ is satisfiable.
+ %Then $\psi$ has a model in the polynomial size of $\psi$.
+ We consider the complement of the problem: deciding whether $\psi$ is not irrelevant to $V$. It is easy to see that $\psi$ is
+not irrelevant to $V$ iff there exist a model $(\Hm, s_0)$ of $\psi$ and an
+initial \MPK-structure $(\Hm',s_0')$  such that
+$(\Hm, s_0) \leftrightarrow_V (\Hm',s_0')$ and $(\Hm',s_0')\nvDash \psi$. So checking whether $\psi$ is not irrelevant to $V$ can be achieved in the following steps: (1) guess two initial \MPK-structures $(\Hm,s_0)$ and $(\Hm',s_0')$, (2) check if $(\Hm,s_0) \models \psi$ and $(\Hm',s_0')\nvDash \psi$, and (3) check
+$(\Hm, s_0) \leftrightarrow_V (\Hm',s_0')$. Obviously (1) can be done in polynomial time and also (2) and (3) can be done in polynomial time.
+
+(2) Membership. We consider the complement of the
+problem. We may guess an initial \MPK-structure $(\Hm, s_0)$ and check whether $(\Hm,s_0) \models \psi$ and $(\Hm,s_0)$ $\nvDash \forget($ $\varphi$, $V)$. From Proposition~\ref{modelChecking}, we know that this is in $\Sigma_2^P$. So the original problem is in $\Pi_2^P$. Hardness. Let $\psi \equiv \top$. Then the problem is reduced to decide $\forget(\varphi, V )$'s validity. Since a propositional variable forgetting is a special case temporal forgetting, the hardness is directly followed from the proof of Proposition 24 in~\cite{DBLP:journals/jair/LangLM03}.
+
+(3) Membership. If $\forget(\varphi, V) \nvDash \forget(\psi, V)$ then there exist an initial \MPK-structure $(\Hm, s)$ such that $(\Hm, s)\models \forget(\varphi, V)$ but $(\Hm, s) \nvDash \forget(\psi, V)$, i.e.,, there is $(\Hm_1, s_1) \lrto_V (\Hm, s)$ with $(\Hm_1, s_1) \models \varphi$ but $(\Hm_2, s_2) \nvDash \psi$ for every $(\Hm_2, s_2)$ with $(\Hm, s) \lrto_V (\Hm_2, s_2)$. It is evident that guessing such $(\Hm, s)$, $(\Hm_1, s_1)$ with $(\Hm_1, s_1) \lrto_V (\Hm, s)$ and checking $(\Hm_1, s_1)\models \varphi$ are feasible while checking $(\Hm_2, s_2) \nvDash \psi$ for every $(\Hm, s) \lrto_V (\Hm_2, s_2)$ can be done in polynomial time. Thus the problem is in $\Pi_2^P$.
+
+Hardness. It follows from (2) due to the fact that $\forget(\varphi, V) \models \forget(\psi, V)$ iff $\varphi \models \forget(\psi, V)$ thanks to $IR(\forget(\psi, V), V)$.
+
+\end{proof}
 
 The following results follow from Theorem~\ref{thm:comF} and extends them to semantic equivalence.
 \begin{corollary}
@@ -1065,6 +1167,7 @@ The following result establishes the bridge between these two notions which are 
    is a WSC of $q$ on $V$ under $\varphi$.
  \end{enumerate}
  \end{theorem}
+
 
 As aforementioned, since any initial $\MPK$-structure can be characterized by a \CTL\ formula, we can obtain the SNC (and its dual WSC) of a target property (a formula) under an initial $\MPK$-structure by forgetting.
 \begin{theorem}\label{thm:inK:SNC}
@@ -1207,7 +1310,8 @@ Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.%and the space c
 
 
 \section{Forgetting in planning}
-Planning via the model checking is based on generating plans by determining whether formula are true in model~\cite{giunchiglia1999planning}. The fundamental ingredients include \emph{planning domain}, \emph{planning problem} and \emph{plan generation}.
+Planning via the model checking is based on generating plans by determining whether formula are true in model~\cite{giunchiglia1999planning}.
+The fundamental ingredients include \emph{planning domain}, \emph{planning problem} and \emph{plan generation}.
 
 A \emph{planning domain} ${\cal D}$ is a 4-tuple $\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ where
 \begin{enumerate}[(i)]
@@ -1252,7 +1356,7 @@ Given a Kripke structure  $\Hm = \tuple{S, R, L}$ (Figure~\ref{PB_Kripke}) with 
   \caption{An Kripke structure of a Planning problem}\label{PB_Kripke}
 \end{figure}
 
-A  planning problem corresponding  to $\Hm$ is $\cal P= \tuple{\cal D, \cal I, \cal G}$, where 
+A  planning problem corresponding  to $\Hm$ is $\cal P= \tuple{\cal D, \cal I, \cal G}$, where
 \begin{enumerate}[.]
   \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W = S$, $\Lambda = \{u\}$ and ${\cal T}=\{(s_0, u, s_0), (s_0, u, s_1), (s_0, u, s_2)$, $(s_1, u, s_1), (s_1, u, s_2),(s_2, u, s_2), (s_2, u, s_1)\}$. This planning domain can be depicted in Figure~\ref{PD} from~\cite{akintunde2017planning}, in which ${\cal T}=\{(s_0, wait, s_0), (s_0, lock, s_1), (s_0, unlock, s_2), (s_1, wait, s_1)$, $(s_1, load, s_2),(s_2, wait, s_2), (s_2, unload, s_1)\}$.
   \item ${\cal I}=\{s_0\}$.
@@ -1280,7 +1384,17 @@ It is easy to check that $\Hm, s_0 \models \EXIST \FUTURE \varphi$ and obtain th
 
  \end{example}
 
-This show that we can use our method talked in this paper to solve similar problems in planning problem, such as  subtracting the out-of-date information and computing the WSC when there is no plan to satisfy the planning problem.
+Besides, we can also use \CTL\ formula expressing the condition that gaol is reached within $n$ steps, which can be expressed in the following way:
+\[
+   \underbrace{\EXIST\NEXT(\EXIST\NEXT(\dots(goal)\dots))}_{n\ \EXIST\NEXT's}.
+\]
+The property ``Eventually reach the goal and permanently in a certain sate that satisfy some property $\varphi$ (a \CTL\ formula)" can be expressed in \CTL\ as:
+\[
+\EXIST \FUTURE(goal) \wedge \EXIST\GLOBAL \varphi.
+\]
+(For more information of using \CTL\ for goal specification, please see~\cite{akintunde2017planning}).
+
+This show that we can use our method talked in this paper to solve similar problems in planning problem, such as subtracting the obsolete information and computing the WSC when there is no plan to satisfy the planning problem.
 
 
 
