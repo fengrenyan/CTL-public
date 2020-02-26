@@ -1107,7 +1107,7 @@ Let ${\cal K}= (\Hm, s)$ be an initial \MPK-structure with $\Hm=(S,R,L,s_0)$ on 
 \section{Forgetting in planning}
 Planning via the model checking is based on generating plans by determining whether formula are true in model~\cite{giunchiglia1999planning}. The fundamental ingredients include \emph{planning domain}, \emph{planning problem} and \emph{plan generation}.
 
-A \emph{planning domain} ${\cal D}$ is a 4-tuple $\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ where 
+A \emph{planning domain} ${\cal D}$ is a 4-tuple $\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ where
 \begin{enumerate}[(i)]
   \item $\cal F$ is a finite set of fluents,
   \item $W \subseteq 2^{\cal F}$ is a finite set of states,
@@ -1117,32 +1117,53 @@ A \emph{planning domain} ${\cal D}$ is a 4-tuple $\tuple{{\cal F}, {\cal W}, \La
 
 In this part we restrict that $\forall s \in \cal W$ there is a action $a \in \Lambda$ and $s'\in \cal W$ such that ${\cal T}(s, a) = s'$.
 
-A \emph{planning problem} $\cal P$ for a planning domain ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ is a 3-tuple $\tuple{\cal D, \cal I, \cal G}$, where ${\cal I} = {s_0} \subseteq \cal W$ is the initial state, and $\cal G \subseteq W$ is the set of goal states. 
+A \emph{planning problem} $\cal P$ for a planning domain ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ is a 3-tuple $\tuple{\cal D, \cal I, \cal G}$, where ${\cal I} = {s_0} \subseteq \cal W$ is the initial state, and $\cal G \subseteq W$ is the set of goal states.
 
-Plans specify actions to be executed in certain states. 
+Plans specify actions to be executed in certain states.
 \begin{definition}[Plan]\label{pro:plan}
  A \emph{plan} $\pi$ for a planning problem $\cal P = \tuple{\cal D, \cal I, \cal G}$ with planning domain ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ is defined as:
  \[
     \pi=\{\tuple{s,a}:s \in {\cal W}, a\in \Lambda\}.
  \]
  \end{definition}
- 
+
  %We can see from~\cite{giunchiglia1999planning} that the problem of planning can be reduced to model checking $\EXIST\FUTURE \varphi$ with $\varphi$ being a propositional \CTL\ formula if we base our planning domain on a Kripke structure.
- As it has said in~\cite{giunchiglia1999planning} that there is close relationship between Kripke structure and planning problem. 
+ As it has said in~\cite{giunchiglia1999planning} that there is close relationship between Kripke structure and planning problem.
  Precisely, a planning problem corresponding to a Kripke structure
  $\Hm = \tuple{S, R, L}$ with initial state $s_0$ on a set $\cal A$ of atoms is $\cal P = \tuple{\cal D, \cal I, \cal G}$, where
  \begin{enumerate}[(i)]
-   \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W = \cal S$, $\Lambda =\{u\}$ and ${\cal T} = \{(s, u, s') : (s, s') \in R\}$
+   \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W =  S$, $\Lambda =\{u\}$ and ${\cal T} = \{(s, u, s') : (s, s') \in R\}$
    \item $I = \{s_0\}$.
  \end{enumerate}
-    
-    Let $\varphi$ be a propositional \CTL\ formula such that $\Hm, w \models \varphi$ for all $w \in \cal G$ and $\Hm, w \not \models \varphi$ for all $w \not \in \cal G$. Then, $\Hm, s_0 \models \EXIST \FUTURE \varphi$ iff there exists a plan satisfying the planning problem $\cal P$ corresponding to $\Hm$.
- 
- 
- \begin{example}
- The following model depicted in Figure can be translated into a planning domain as follows:
 
- 
+    Let $\varphi$ be a propositional \CTL\ formula such that $\Hm, w \models \varphi$ for all $w \in \cal G$ and $\Hm, w \not \models \varphi$ for all $w \not \in \cal G$. Then, $\Hm, s_0 \models \EXIST \FUTURE \varphi$ iff there exists a plan satisfying the planning problem $\cal P$ corresponding to $\Hm$.
+
+
+ \begin{example}
+Given a Kripke structure  $\Hm = \tuple{S, R, L}$ (Figure~\ref{PB_Kripke}) with initial state $s_0$ on ${\cal A}=\{p,q\}$, where $S = \{\{p, q\}, \{p\}, \{q\}\}$, for convenience we use $s_0$ to represent $\{p, q\}$, $s_1$ to $\{p\}$ and $s_2$ to $\{q\}$, $R=\{(s_0, s_0), (s_0, s_1), (s_0, s_2)$, $(s_1, s_1)$, $(s_1, s_2),(s_2, s_2), (s_2, s_1)\}$ and $L:S \mapsto 2^{\cal A}$.
+
+
+\begin{figure}[ht]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=4cm]{PB_Kripke.png}\\
+  \caption{An Kripke structure of a Planning problem}\label{PB_Kripke}
+\end{figure}
+
+A  planning problem corresponding  to $\Hm$ is $\cal P= \tuple{\cal D, \cal I, \cal G}$, where 
+\begin{enumerate}[.]
+  \item ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with $\cal F = \cal A$, $\cal W = S$, $\Lambda = \{u\}$ and ${\cal T}=\{(s_0, u, s_0), (s_0, u, s_1), (s_0, u, s_2)$, $(s_1, u, s_1), (s_1, u, s_2),(s_2, u, s_2), (s_2, u, s_1)\}$. This planning domain can be depicted in Figure~\ref{PD} from~\cite{akintunde2017planning}, in which ${\cal T}=\{(s_0, wait, s_0), (s_0, lock, s_1), (s_0, unlock, s_2), (s_1, wait, s_1)$, $(s_1, load, s_2),(s_2, wait, s_2), (s_2, unload, s_1)\}$.
+  \item ${\cal I}=\{s_0\}$.
+\end{enumerate}
+
+ %The following model depicted in Figure~\ref{PD} from~\cite{akintunde2017planning} can be translated into a planning domain ${\cal D} =\tuple{{\cal F}, {\cal W}, \Lambda, \cal T}$ with
+%\begin{enumerate}
+%  \item ${\cal F} = \{p, q\}$,
+%  \item ${\cal W} = \{\{p, q\}, \{p\}, \{q\}\}$, for convenience we use $s_0$ to represent $\{p, q\}$, $s_1$ to $\{p\}$ and $s_2$ to $\{q\}$,
+%  \item $\Lambda = \{lock, unlock, load, unload, wait\}$,
+%  \item ${\cal T}=\{(s_0, wait, s_0), (s_0, lock, s_1), (s_0, unlock, s_2)$, $(s_1, wait, s_1)$, $(s_1, load, s_2),(s_2, wait, s_2), (s_2, unload, s_1)\}$.
+%\end{enumerate}
+
  \begin{figure}[ht]
   \centering
   % Requires \usepackage{graphicx}
@@ -1150,10 +1171,15 @@ Plans specify actions to be executed in certain states.
   \caption{An example Planning Domain}\label{PD}
 \end{figure}
 
+For this planning problem $\cal P$, if the goal is ${\cal G} = \{s_1\}$, this means that in this planning problem we should find a plan $\pi$ to take an an agent (or system state) from the initial state to the goal. This goal can be specified as $\varphi = p \wedge \neg q$.
+Therefore, the planning problem can be solved by model checking, that is $\Hm, s_0 \models \EXIST \FUTURE \varphi$ iff there exists a plan satisfying the planning problem $\cal P$.
+
+It is easy to check that $\Hm, s_0 \models \EXIST \FUTURE \varphi$ and obtain that $\pi=\{\tuple{s_0, lock}\}$ is a plan of this problem by the definition of plan.
 
  \end{example}
- 
- 
+
+This show that we can use our method talked in this paper to solve planning problem.
+
 
 
 \section{Concluding Remarks}
