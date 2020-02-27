@@ -1124,17 +1124,17 @@ In this case, we can easily check that $\emph{ERes}(\varphi, V) \equiv_{\tuple{V
 
 
 On the other hand, if we do not using the \emph{Connect} process, we can easily obtain the result of $\emph{ERes}$, i.e. $\emph{ERes}(\varphi, V) = \ALL\FUTURE q \wedge  \EXIST \NEXT(\neg q)$.
-It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \varphi$. This can proved by model $\Hm$ as in Fig.~\ref{Fig:models} since $(\Hm, s_0) \models \varphi$ and $(\Hm, s_0) \not \models \emph{ERes}(\varphi, V)$.
+It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \varphi$. This can proved by model $(\Hm,s_0)$ as in Figure~\ref{Fig:models} since $(\Hm, s_0) \models \varphi$ and $(\Hm, s_0) \not \models \emph{ERes}(\varphi, V)$.
 \begin{figure}
   \centering
    %Requires \usepackage{graphicx}
   \includegraphics[width=5cm]{models.png}\\
-  \caption{A model of $\varphi$}\label{Fig:models}
+  \caption{A model $(\Hm, s_0)$ of $\varphi$}\label{Fig:models}
 \end{figure}
 \end{example}
 
-This example show that why we introduce the \textbf{EF} imply rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is more stronger than our method, because by the \emph{Removing\_atoms} process, we have removing some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$ but after removing $C$ we only obtain that $f \supset q$. In this case, if the $Res$ satisfy the precondition, then there is a clauses $z \supset \EXIST \NEXT \neg f$, after replacing $f$ with $q$, then we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not removing $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker that $z \supset \EXIST \NEXT \neg q$.
-However, the $\varphi$ shows that there is not necessary $\neg q$ for some next state and if there is $q$ for all next states, then there must be a next state $s$ s.t. for all next state of $s$ there is $\ALL\FUTURE q$ (see Fig.~\ref{Fig:models}).
+This example shows that why we introduce the \textbf{EF} imply rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is more stronger than our method, because by the \emph{Removing\_atoms} process, we have removing some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$, but after removing $C$ we only obtain that $f \supset q$. In this example, there is a clauses $z \supset \EXIST \NEXT \neg f \in Res$, after replacing $f$ with $q$, we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not removing $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker than $z \supset \EXIST \NEXT \neg q$.
+In fact, for any model $(\Hm, s_0)$ of $\varphi$ there is not necessary $q\not \in L(s)$ for some next state $s$ and if there is $q$ for all next states, then there must be a next state $s$ with $p \not \in L(s)$ s.t. for all next state $s'$ of $s$ there is $(\Hm, s')\models \ALL\FUTURE q$ (see Fig.~\ref{Fig:models}).
 
 
 
