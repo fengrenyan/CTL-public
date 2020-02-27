@@ -1137,26 +1137,6 @@ $\Mod(\psi)=\Mod(\psi')$, i.e., $\psi$ and $\psi'$ have the same models. In the 
 of equivalence the SNC (WSC) is unique (up to equivalence).
 
 \begin{example}\label{examp:WSC}
-Let $\psi = sl \supset (\ALL\NEXT sr \vee \EXIST \NEXT le \vee \EXIST \NEXT(se \vee lc))$, $\varphi = sl \supset \ALL\NEXT sr$, $\Ha =\{sl, sr, se, lc, le\}$ and $V = \{sl, sr\}$, then we can check as follows that the WSC of $\psi$ on $V$ under our initial  \MPK-structure $(\Hm, s_0)$ in Figure~\ref{BVM} is $\varphi$.
-
-We check this result from the following two steps:
-\begin{enumerate}[(i)]
-  \item It is apparent that $\varphi \models \psi$ and $\Var(\varphi) \subseteq V$. Besides, $(\Hm, s_0) \models \varphi \wedge \psi$, hence $(\Hm, s_0) \models \varphi \supset \psi$, which means $\varphi$ is a SC of $\psi$ on $V$ under $(\Hm, s_0)$,
-  \item We will show that for any SC $\varphi'$ of $\psi$ on $V$ under $(\Hm, s_0)$, there is $(\Hm, s_0) \models \varphi' \supset \varphi$. Following Figure~\ref{carVB}, we can see that $(\Hm', s_0) \lrto_{\Ha \setminus V} (\Hm, s_0)$. By Theorem~\ref{CF} we can easily obtain the characterizing formula of $(\Hm', s_0)$, \ie ${\cal F}_V(\Hm', s_0) = sl \wedge \neg sr \wedge \ALL\GLOBAL ((sl \wedge \neg sr) \supset \ALL \NEXT (\neg sl \wedge sr)) \wedge \ALL \GLOBAL((\neg sl \wedge sr) \supset \ALL\NEXT (sl \wedge \neg sr))$, due to $ch(\Hm, \Ha \setminus V) =0$.
-      
-      If ${\cal F}_V(\Hm', s_0) \not \models \varphi'$ or $\varphi \models \neg sl$ then we have ${\cal F}_V(\Hm', s_0) \models \varphi' \supset \varphi$ i.e. $(\Hm, s_0) \models \varphi' \supset \varphi$. Therefore, we suppose ${\cal F}_V(\Hm', s_0) \models \varphi'$. In this case we can construct $\varphi'$ as follows: (1) $sl$ is a sub-formula of $\varphi'$ due to ${\cal F}_V(\Hm', s_0) \models \varphi'$; (2) $sl \supset \ALL\NEXT sr$ is also a sub-formula by (1) and we need $(\Hm, s_0) \models \varphi' \supset \psi$ and $\Var(\varphi') \subseteq V$. This means that each SC $\varphi'$ should be as one of the following form with $\beta$ be any other \CTL\ formula of $V$
-      \[
-      sl \wedge (sl \supset \ALL\NEXT sr) \wedge \beta;\ \  sl \wedge (sl \supset \ALL\NEXT sr) \vee \beta.
-      \]
-    In this case, we have $(\Hm, s_0) \models \varphi' \supset \varphi$ for all SC $\varphi'$ of $\psi$ on $V$ under $(\Hm, s_0)$ since $\forall \alpha$ with $\Var(\alpha) \subseteq V$ $(\Hm, s_0) \models \alpha$ iff $(\Hm', s_0) \models \alpha$ by Theorem~\ref{thm:V-bisimulation:EQ}.
-\end{enumerate}
-
-\begin{figure}[ht]
-  \centering
-  % Requires \usepackage{graphicx}
-  \includegraphics[width=3cm]{carVB.png}\\
-  \caption{A model structure $\Hm'$ with initial state $s_0$}\label{carVB}
-\end{figure}
 
 \end{example}
 
