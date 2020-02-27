@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  27 FEB 2020 13:25
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  27 FEB 2020 13:30
 entering extended mode
-**D:/Git/CTL-public/KR/KR-planning.tex
-(D:/Git/CTL-public/KR/KR-planning.tex
+**D:/Git/CTL-public/KR/KR-explain-proof.tex
+(D:/Git/CTL-public/KR/KR-explain-proof.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (C:\CTEX\MiKTeX\tex\latex\base\article.cls
@@ -191,7 +191,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count103
 \algocf@algoframe=\box33
 \algocf@algobox=\box34
-) (D:\Git\CTL-public\KR\KR-planning.aux
+) (D:\Git\CTL-public\KR\KR-explain-proof.aux
 
 LaTeX Warning: Label `Bn:to:Tn' multiply defined.
 
@@ -1143,20 +1143,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 2146--2149
 
  []
 
-(D:\Git\CTL-public\KR\KR-planning.bbl [15]) [16]
-(D:\Git\CTL-public\KR\KR-planning.aux)
+(D:\Git\CTL-public\KR\KR-explain-proof.bbl [15]) [16]
+(D:\Git\CTL-public\KR\KR-explain-proof.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3631 strings out of 495354
- 44288 string characters out of 3183858
- 133988 words of memory out of 3000000
- 6739 multiletter control sequences out of 15000+200000
+ 3629 strings out of 495354
+ 44300 string characters out of 3183858
+ 133933 words of memory out of 3000000
+ 6737 multiletter control sequences out of 15000+200000
  46480 words of font info for 97 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,20n,33p,1356b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,20n,33p,1361b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
 i10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/MiKTe
@@ -1171,7 +1171,7 @@ b><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTe
 X/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8
 a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on KR-planning.pdf (16 pages, 329142 bytes).
+Output written on KR-explain-proof.pdf (16 pages, 328622 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

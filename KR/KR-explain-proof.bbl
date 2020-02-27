@@ -1,11 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{Akintunde}{2017}]{akintunde2017planning}
-Akintunde, M.~E.
-\newblock 2017.
-\newblock Planning for ctl*-specified temporally extended goals via model
-  checking.
-
 \bibitem[\protect\citeauthoryear{Baier and Katoen}{2008}]{Baier:PMC:2008}
 Baier, C., and Katoen, J.
 \newblock 2008.
@@ -79,14 +73,6 @@ Fang, L.; Liu, Y.; and Van~Ditmarsch, H.
 \newblock 2019.
 \newblock Forgetting in multi-agent modal logics.
 \newblock {\em Artificial Intelligence} 266:51--80.
-
-\bibitem[\protect\citeauthoryear{Giunchiglia and
-  Traverso}{1999}]{giunchiglia1999planning}
-Giunchiglia, F., and Traverso, P.
-\newblock 1999.
-\newblock Planning as model checking.
-\newblock In {\em European Conference on Planning},  1--20.
-\newblock Springer.
 
 \bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
 Lang, J., and Marquis, P.
