@@ -897,6 +897,9 @@ Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supse
 By $\emph{Connect}(\emph{Instantiate}(T_{\varphi}^{r,V \cup V'}, V'))$ we mean using (EF1) to (EF4) on $T_{\varphi}^{r,V \cup V'}$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$ and $\Var(l_1) \in V\cup V'$.
 %This is similar with the resolution process except by those rules it will not product new resolution due to the new formulae obtained from those rules are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$.
 This process can be described as Algorithm~\ref{alg:EF}.
+The reason why we specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$ in this process will be explained later.
+
+
 \begin{algorithm}[!h]
 \caption{Computing $\emph{Connect}(\Gamma, V)$}% ??????
 \label{alg:EF}
@@ -1017,6 +1020,7 @@ After removing the clauses that include atoms in $V=\{p\}$, the following clause
 \end{align*}
 \end{example}
 
+In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$, it is easy check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
 
 \subsection{Remove the Index and \start}
 The $\emph{Removing\_index}(\Gamma)$ process is to change the set $\Gamma$ of $\CTLsnf$ into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
@@ -1135,11 +1139,12 @@ It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \
 
 This example shows that why we introduce the \textbf{EF} imply rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is more stronger than our method, because by the \emph{Removing\_atoms} process, we have removing some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$, but after removing $C$ we only obtain that $f \supset q$. In this example, there is a clauses $z \supset \EXIST \NEXT \neg f \in Res$, after replacing $f$ with $q$, we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not removing $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker than $z \supset \EXIST \NEXT \neg q$.
 In fact, for any model $(\Hm, s_0)$ of $\varphi$ there is not necessary $q\not \in L(s)$ for some next state $s$ and if there is $q$ for all next states, then there must be a next state $s$ with $p \not \in L(s)$ s.t. for all next state $s'$ of $s$ there is $(\Hm, s')\models \ALL\FUTURE q$ (see Fig.~\ref{Fig:models}).
+This is what the meanning of the \emph{Connect} process.
 
 
 
 \subsection{The Correction and Complexity of the Algorithm}
-In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure. 
+In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure.
 %Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
 
 
@@ -1160,7 +1165,7 @@ Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi,V)$, then %R(\NI(\Elm(\EXI
  ($\Lto$)$\forall (\Hm_1, s_1) \in \Mod(\Gamma_1)$\\
  $\Rto$ $\exists (\Hm',s_0') \in \Mod(\varphi)$ s.t. $(\Hm_1,s_1) \lrto_{V''} (\Hm', s_0')$ \\
  $\Rto$ $(\Hm_1, s_1) \models \CTLforget(\varphi, V'')$ \hfill ($\IR(\CTLforget(\varphi, V''), V'')$ and $\varphi \models \CTLforget(\varphi, V'')$)
- 
+
  (ii) It is obtained from (i) since $\IR(\varphi, V')$.
 \end{proof}
 

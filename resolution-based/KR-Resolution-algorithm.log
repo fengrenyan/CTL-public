@@ -1,7 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  27 FEB 2020 21:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  28 FEB 2020 17:13
 entering extended mode
-**D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
-(D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
+**E:/（博士）我的资料/Git/CTL-public/resolution-based/KR-Resolution-alg
+orithm.tex
+
+(E:/（博士）我的资料/Git/CTL-public/resolution-based/KR-Resolution-algo
+rithm.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (C:\CTEX\MiKTeX\tex\latex\base\article.cls
@@ -21,7 +24,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(D:\Git\CTL-public\resolution-based\aaai20.sty
+(E:\（博士）我的资料\Git\CTL-public\resolution-based\aaai20.sty
 Conference Style for AAAI for LaTeX 2e -- version for the AAAI-20 conference
 \titlebox=\skip43
 ) (C:\CTEX\MiKTeX\tex\latex\psnfss\times.sty
@@ -192,7 +195,9 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count103
 \algocf@algoframe=\box33
 \algocf@algobox=\box34
-) (D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.aux)
+)
+(E:\（博士）我的资料\Git\CTL-public\resolution-based\KR-Resolution-algo
+rithm.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
 LaTeX Font Info:    ... okay on input line 103.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
@@ -207,8 +212,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
 LaTeX Font Info:    ... okay on input line 103.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 103.
 
-
-(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+ (C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
@@ -334,7 +338,7 @@ File: lct.png Graphic file (type png)
  <use lct.png>
 Package pdftex.def Info: lct.png used on input line 594.
 (pdftex.def)             Requested size: 199.16928pt x 168.62122pt.
- [4 <D:/Git/CTL-public/resolution-based/lct.png>]
+ [4 <E:/（博士）我的资料/Git/CTL-public/resolution-based/lct.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 658--659
 
  []
@@ -374,172 +378,172 @@ LaTeX Warning: Command \O invalid in math mode on input line 881.
 
 [6]
 
-LaTeX Warning: Command \O invalid in math mode on input line 934.
+LaTeX Warning: Command \O invalid in math mode on input line 937.
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 934--935
+Underfull \hbox (badness 2951) in paragraph at lines 937--938
 []\OT1/ptm/m/it/10 Let $\OT1/cmr/m/n/10   = \OML/cmm/m/it/10 Res$\OT1/ptm/m/it/
 10 , we have $\OT1/cmr/m/n/10   \OMS/cmsy/m/n/10 []$
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 942.
+LaTeX Warning: Command \O invalid in math mode on input line 945.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 953--954
+Underfull \hbox (badness 10000) in paragraph at lines 956--957
 
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 963.
+LaTeX Warning: Command \O invalid in math mode on input line 966.
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 969--970
+Underfull \hbox (badness 2012) in paragraph at lines 972--973
 \OT1/ptm/m/n/10 For con-ve-nience, for any set $\OML/cmm/m/it/10 T$ \OT1/ptm/m/
 n/10 of for-mu-la we have
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 974.
+LaTeX Warning: Command \O invalid in math mode on input line 977.
 
 
-Underfull \hbox (badness 5504) in paragraph at lines 974--975
+Underfull \hbox (badness 5504) in paragraph at lines 977--978
 \OT1/ptm/m/it/10 and $\OT1/cmr/m/n/10  [] = []$ $([]( )\OML/cmm/m/it/10 ; \OT1/
 cmr/m/n/10  )$\OT1/ptm/m/it/10 , then
  []
 
 [7]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1001.
+LaTeX Warning: Command \O invalid in math mode on input line 1004.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1003--1005
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1008
 
  []
 
 
-Overfull \hbox (23.08946pt too wide) in paragraph at lines 1017--1017
+Overfull \hbox (23.08946pt too wide) in paragraph at lines 1020--1020
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1031
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1035
 []$[][] \OML/cmm/m/it/10 P[] \OMS/cmsy/m/n/10  [][][]\OML/cmm/m/it/10 '[] \OMS
 /cmsy/m/n/10 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1039
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1043
 
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1043.
+LaTeX Warning: Command \O invalid in math mode on input line 1047.
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 1045--1048
+Underfull \hbox (badness 1082) in paragraph at lines 1049--1052
 \OT1/ptm/b/n/10 Proof: \OT1/ptm/m/n/10 It is easy check-ing that from the def-i
 -ni-tion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1045--1048
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1052
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1061--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1065--1066
 \OT1/ptm/m/n/10 and $\OT1/cmr/m/n/10  [] = []([]( ))$\OT1/ptm/m/n/10 , then
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 1061--1062
+Underfull \hbox (badness 1924) in paragraph at lines 1065--1066
 $[]\OT1/cmr/m/n/10 ([]( []))$ \OT1/ptm/m/n/10 is ob-tained from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
 []\OT1/ptm/m/it/10 Let $\OT1/cmr/m/n/10  [] = [](\OML/cmm/m/it/10 Res; V[]\OT1/
 cmr/m/n/10 )$\OT1/ptm/m/it/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
 $\OT1/cmr/m/n/10  [] = []$ $([]( [])\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10  [])$ \O
 T1/ptm/m/it/10 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
 $\OT1/cmr/m/n/10  [] = []([]( []))$\OT1/ptm/m/it/10 , then
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1074.
+LaTeX Warning: Command \O invalid in math mode on input line 1078.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1076.
+LaTeX Warning: Command \O invalid in math mode on input line 1080.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1078
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1082
 
  []
 
 [8] <models.png, id=50, 294.09875pt x 198.7425pt>
 File: models.png Graphic file (type png)
  <use models.png>
-Package pdftex.def Info: models.png used on input line 1131.
+Package pdftex.def Info: models.png used on input line 1135.
 (pdftex.def)             Requested size: 142.26378pt x 96.13829pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1147--1148
+Underfull \hbox (badness 10000) in paragraph at lines 1152--1153
 []\OT1/ptm/m/it/10 Let
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1164--1166
+Underfull \hbox (badness 10000) in paragraph at lines 1169--1171
 
  []
 
 
-Overfull \hbox (0.66203pt too wide) in paragraph at lines 1172--1172
+Overfull \hbox (0.66203pt too wide) in paragraph at lines 1177--1177
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1179--1183
+Underfull \hbox (badness 10000) in paragraph at lines 1184--1188
 
  []
 
-(D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.bbl [9 <D:/Git/CTL-
-public/resolution-based/models.png>]) [10
 
-]
-(D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.aux) ) 
+(E:\（博士）我的资料\Git\CTL-public\resolution-based\KR-Resolution-algo
+rithm.bbl [9 <E:/（博士）我的资料/Git/CTL-public/resolution-based/model
+s.png>]) [10]
+(E:\（博士）我的资料\Git\CTL-public\resolution-based\KR-Resolution-algo
+rithm.aux) ) 
 Here is how much of TeX's memory you used:
  3615 strings out of 495354
- 44307 string characters out of 3183858
- 135778 words of memory out of 3000000
+ 44582 string characters out of 3183859
+ 134778 words of memory out of 3000000
  6725 multiletter control sequences out of 15000+200000
  41903 words of font info for 87 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,20n,33p,866b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/CTEX/MiKT
-eX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/CTE
-X/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/CT
-EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/CTEX/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/typ
-e1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/C
-TEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on KR-Resolution-algorithm.pdf (10 pages, 313946 bytes).
+ 34i,20n,33p,891b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/
+CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/CTEX/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/CTEX/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb>
+<C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/u
+rw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on KR-Resolution-algorithm.pdf (10 pages, 314792 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
