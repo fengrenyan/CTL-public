@@ -789,8 +789,8 @@ This \emph{Elimination} process include three sub-processes: \emph{Instantiate},
 An \emph{instantiate formula} $\psi$ of set $V''$ of atoms is a formula such that $\Var(\psi) \cap V'' ={\O}$.
 Given a formula of the form $p \supset \psi$ with $p$ is an atom not in $V'' \cup \Var(\psi)$, if $\psi$ is an  instantiate formula of set $V''$ then we call $p$ is instantiated by $\psi$.
 A key point to compute forgetting is eliminate those irrelevant atoms, for this purpose we define the follow instantiation process.
-\begin{definition}\label{def:subst}
-[instantiation] Let $V''=V'$ and $\Gamma=Res$, then the process of instantiation is as follows:
+\begin{definition}[instantiation]\label{def:subst}
+ Let $V''=V'$ and $\Gamma=Res$, then the process of instantiation is as follows:
 \begin{enumerate}[(i)]
   \item for each global clause $C= \top \supset D \vee \neg p \in \Gamma$, if there is one and on one atom $p \in V''\cap \Var(C)$  and $\Var(D) \cap (V \cup V'')= {\O}$ then let $C = p \supset D$ and $V'':=V''\setminus \{p\}$;
   \item find out all the possible instantiate formulae $\varphi_1, ..., \varphi_m$ of $V \cup V''$ in the $p\supset \varphi_i \in \Gamma$ ($1\leq i\leq m$);
@@ -800,6 +800,7 @@ A key point to compute forgetting is eliminate those irrelevant atoms, for this 
 Where $p, p_i$ ($1 \leq i\leq m$) are atoms and $\alpha$ is a conjunction of literals or $\start$.
 \end{definition}
 
+Intuitively, this process iteratively removes the atoms in $V'$ that can be represented by the formula of $\Var(\varphi) \setminus (V'' \cup V)$.
 We denote this process as $\emph{Instantiate}(\Gamma, V')$, which can be described as the following Algorithm~\ref{alg:subn}.
  After this process we obtain a set of atoms that do not has been instantiated by any instantiate formula of $V\cup V''$ in this process.
 
@@ -851,7 +852,7 @@ By using the instantiation process on result of Example~\ref{examp:Res}, we obta
 
 Similarly, due to $\top \supset \neg y \vee q \in T_{\varphi}$ and $y \supset \ALL\NEXT(q \vee f\vee m)\in T_{\varphi}$, then $y$ can be instantiated by $q \wedge \ALL\NEXT(q \vee f\vee m)$. And $z$ can be instantiated by $r$. Therefore $V''=\emptyset$
 %$r\wedge (f\vee m \vee q) \wedge q\wedge \ALL\NEXT(f\vee m\vee q) \wedge  (f\vee m \vee (q\wedge \ALL\NEXT(f\vee m\vee q))) \wedge \ALL\FUTURE(f \vee m)$.
-That is $\emph{Instantiate}(T_{\varphi}^{r,V \cup V'}, V') = V$, which means all the introduced atoms are instantiated.
+That is $\emph{Instantiate}(Res, V') = V$, which means all the introduced atoms are instantiated.
 %Let $\varphi=\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$ and $V=\{p\}$. Then we can compute $\Sub(T_{\varphi}^{r,V \cup V'}, V)$ as follows:
 %
 %At first, we transform $\varphi$ into a set of $\CTLsnf$ with $V'=\{x,y,z\}$, which is listed as:
@@ -894,10 +895,10 @@ Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supse
 
 
 
-By $\emph{Connect}(\emph{Instantiate}(T_{\varphi}^{r,V \cup V'}, V'))$ we mean using (EF1) to (EF4) on $T_{\varphi}^{r,V \cup V'}$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$ and $\Var(l_1) \in V\cup V'$.
+By $\emph{Connect}(\emph{Instantiate}(Res, V'))$ we mean using (EF1) to (EF4) on $Res$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ and $\Var(l_1) \in V\cup V'$.
 %This is similar with the resolution process except by those rules it will not product new resolution due to the new formulae obtained from those rules are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$.
 This process can be described as Algorithm~\ref{alg:EF}.
-The reason why we specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$ in this process will be explained later.
+The reason why we specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ in this process will be explained later.
 
 
 \begin{algorithm}[!h]
@@ -974,7 +975,7 @@ For convenience, for any set $T$ of formula we have $\emph{Removing\_atoms}(T, V
 
 
 \begin{proposition}\label{pro:elm}
-Let $V''=V \cup V'$, $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma), \Gamma)$, then  $\Gamma_1\equiv_{\tuple{V\cup V', {\O}}} Res$ and $\Gamma_1 \equiv_{\tuple{V \cup V', I}} \varphi$.
+Let $V''=V \cup V'$, $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma), \Gamma)$, then  $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$ and $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$.
 \end{proposition}
 \begin{proof}
 Note the fact that for each clause $C = T \supset H$ in $\emph{Connect}(\Gamma)$, if $\Gamma \cap \Var(C) \neq \emptyset$ then there must be an atom $p\in \Gamma \cap \Var(H)$. It is apparent that $\emph{Connect}(\Gamma) \models \Gamma_1$, we will show $\forall (\Hm, s_0) \in \Mod(\Gamma_1)$ there is a $(\Hm', s_0)$ such that $(\Hm', s_0) \models \emph{Connect}(\Gamma)$ and $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$.
@@ -1001,9 +1002,9 @@ It is apparent that $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$, 
 
   \item (iii) can be proved as (ii) due to the fact we point at the beginning.
 \end{enumerate}
-Therefore, we have $\Gamma_1\equiv_{\tuple{V\cup V', {\O}}} Res$  by Proposition~\ref{pro:VI:div} and Proposition~\ref{pro:EF}.
+Therefore, we have $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$  by Proposition~\ref{pro:VI:div} and Proposition~\ref{pro:EF}.
 
-And then $\Gamma_1 \equiv_{\tuple{V \cup V', I}} \varphi$ follows.
+And then $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$ follows.
 \end{proof}
 
 
@@ -1020,7 +1021,7 @@ After removing the clauses that include atoms in $V=\{p\}$, the following clause
 \end{align*}
 \end{example}
 
-In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$, it is easy check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
+In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$, it is easy check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
 
 \subsection{Remove the Index and \start}
 The $\emph{Removing\_index}(\Gamma)$ process is to change the set $\Gamma$ of $\CTLsnf$ into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
@@ -1062,19 +1063,19 @@ Let $T$ be a set of $\CTLsnf$ clauses, then we define the following operator:
 Then $T \equiv T_{\CTL}$ by $\varphi \equiv \ALL \GLOBAL (\start \supset \varphi)$~\cite{bolotov2000clausal}.
 
 
-The last step of our algorithm is to eliminate all the atoms in $V'$ which has been introduced in the \emph{Transform} process. Let $V''=V \cup V'$, $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms} (\emph{Connect}(\Gamma))$, then $\emph{Replacing\_atoms}(\emph{Removing\_index}(\Gamma_1))$ is obtained from $\emph{Removing\_index}(\Gamma_1)$ by doing the following two steps for each $p\in (V'\setminus \Gamma)$:
+The last step of our algorithm is to eliminate all the atoms in $V'$ which has been introduced in the \emph{Transform} process. Let $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms} (\emph{Connect}(\Gamma))$, then $\emph{Replacing\_atoms}(\emph{Removing\_index}(\Gamma_1))$ is obtained from $\emph{Removing\_index}(\Gamma_1)$ by doing the following two steps for each $p\in (V'\setminus \Gamma)$:
 \begin{itemize}
   \item replacing each $p\supset \varphi_1\vee \dots \vee p \supset \varphi_n$ with $p \supset \bigvee_{i=1}^n \varphi_i$;
-  \item replacing $p\supset \varphi_{1}\wedge \dots \wedge p \supset \varphi_{m}$ with $\varphi_j$ are instantiate formulae of  $\Gamma$ $(j \in \{1,\dots, m\})$ with $p \lrto \psi$, where $\psi=\bigwedge_{j=1}^{m} \varphi_{j}$ and $p$ do not appear in $\varphi_j$, .
-  \item For other formula $C\in \Gamma_1$, replacing every $p$ in $C$ with $\psi$.
+  \item replacing $p\supset \varphi_{1}\wedge \dots \wedge p \supset \varphi_{m}$ with $\varphi_j$ are instantiate formulae of  $\Gamma$ $(j \in \{1,\dots, m\})$ with $p \supset \psi$, where $\psi=\bigwedge_{j=1}^{m} \varphi_{j}$ and $p$ do not appear in $\varphi_j$, .
+  \item For any formula $C\in \Gamma_1$, replacing every $p$ in $C$ with $\psi$.
 \end{itemize}
 %Where $\NI(S)$ means do $\NI(e)$ for each $e\in S$ with $S$ is a set of sets of $\CTLsnf$ clause.
-Apparently, this process is just a process of replacing each atom with an equivalent formula. Then we have:
+Recall that any atom in $V'$ introduced in the Transform process is a name of the sub-formula of $\varphi$~\cite{bolotov2000clausal}. Apparently, this process is just a process of replacing each atom with an equivalent formula. Then we have:
 \begin{proposition}\label{pro:replaceA}
 Let $\Gamma_1=\emph{Instantiate}(Res, V')$, $\Gamma_2 =\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma_1), \Gamma_1)$ and $\Gamma_3 = \emph{Replacing\_atoms}(\emph{Removing\_index}(\Gamma_2))$, then $\Gamma_2  \equiv_{\tuple{V'\setminus \Gamma_1, I}} \Gamma_3$ and $\varphi \equiv_{\tuple{V\cup V', \emptyset}}$ $(\Gamma_3)_{CTL}$.
 \end{proposition}
 \begin{proof}
-For each $p$ talked above is a name of the formula $\psi$, \ie $p \lrto \psi$.
+For each $p$ talked above is a name of the formula $\psi$. %, \ie $p \lrto \psi$.
 Then $\Gamma_2  \equiv_{\tuple{(V'\setminus \Gamma_1), {\O}}} \Gamma_3$, and then $\Gamma_2 \equiv_{\tuple{V\cup V', I}} \Gamma_3$  by (V) of Proposition~\ref{div}.
 
 Therefore, $\varphi \equiv_{\tuple{V\cup V',{\O}}} (\Gamma_3)_{CTL}$ by Proposition~\ref{pro:elm} and the definitions of $\emph{Removing\_index}$ and $T_{\CTL}$.
