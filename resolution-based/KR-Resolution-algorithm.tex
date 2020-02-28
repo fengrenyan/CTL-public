@@ -86,7 +86,7 @@
 %
 \setlength\titlebox{2.5in} % If your paper contains an overfull \vbox too high warning at the beginning of the document, use this
 % command to correct it. You may not alter the value below 2.5 in
-\title{Forgetting in CTL to Compute Necessary and Sufficient Conditions }
+\title{Forgetting in CTL Using an Resolution Approach}
 %Your title must be in mixed case, not sentence case.
 % That means all verbs (including short verbs like be, is, using,and go),
 % nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
@@ -223,9 +223,11 @@ publications20@aaai.org % email address must be in roman text type, not monospac
 \maketitle
 
 \begin{abstract}
-This paper proved a method to computing the forgetting in \CTL\, which has been submitted to IJCAI, from
-the resolution proposed by Zhang at all by extending the resolution rules.
-
+This paper present a resolution-based method for computing the forgetting in \CTL\, which has been proposed in another paper for KR this year.
+The method is an extension of the resolution used to decide the satisfiability of \CTL\ formula.
+An important feature inherited from the satisfiability of resolution-based method is guided by transforming a \CTL\ formula into the normal form, i.e. the set of $\CTLsnf$ clauses. The $\CTLsnf$ language extend \CTL\ with \emph{index} for Existential quantifier. 
+We are useing binary bisimulation relation to relate \CTL\ and $\CTLsnf$, this show that how transform the \CTL\ formula into $\CTLsnf$ clauses and then return to \CTL\ formula after finish the computing process.
+Besides, we extend the original resolution rules by adding EF imply rules.
 %\keywords{Forgetting  \and CTL \and Model checking.}
 \end{abstract}
 
