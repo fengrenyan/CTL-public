@@ -575,15 +575,15 @@ $T_{\varphi}={\O}$ // the initial set of $\CTLsnf$ clauses of $\varphi$ \;
 $V'={\O}$ // the set of atoms introduced in the process of transforming $\varphi$ into $\CTLsnf$ clauses\;
 
 
-$T_{\varphi}, V' \lto \emph{Transform}(\varphi, V)$ // Tran\;
+$T_{\varphi}, V' \lto \emph{Transform}(\varphi, V)$\;
 
-$Res \lto \emph{Resolution}(T_{\varphi}, V')$ //Res \;
+$Res \lto \emph{Resolution}(T_{\varphi}, V')$ \;
 
-$\Inst_{V'} \lto \emph{Instantiate}(Res, V')$ //\Sub\;
-$\Com_{\EXIST\FUTURE} \lto \emph{Connect}(\Inst_{V'})$  // $\EXIST\FUTURE$\;
-$\emph{RemA} \lto \emph{Removing\_atoms}(\Com_{\EXIST\FUTURE}, \Inst_{V'})$ // $\Elm$\;
-$\NI \lto \emph{Removing\_index}(\emph{RemA})$ // $\NI$\;
-$\Rp \lto \emph{Replacing\_atoms}(\NI)$// R\;
+$\Inst_{V'} \lto \emph{Instantiate}(Res, V')$ \;
+$\Com_{\EXIST\FUTURE} \lto \emph{Connect}(\Inst_{V'})$  \;
+$\emph{RemA} \lto \emph{Removing\_atoms}(\Com_{\EXIST\FUTURE}, \Inst_{V'})$ \;
+$\NI \lto \emph{Removing\_index}(\emph{RemA})$ \;
+$\Rp \lto \emph{Replacing\_atoms}(\NI)$\;
 
 \Return $\bigwedge_{\psi \in \Rp_{\CTL}} \psi$.
 \end{algorithm}
@@ -1181,6 +1181,13 @@ It follows from that the lines 19-31 of the algorithm, which is to compute all t
 The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$.
 \end{proof}
 
+\section{Related work}
+\subsection{Resolution-based satisfiability of \CTL}
+the paper Form 2000 to 2009, include LTL and CTL.
+\subsection{Using Resolution Computing forgetting}
+ in Propositional Logic, In Model Logic.
+
+\section{Conclusion and Future Work}
 
 
 \bibliographystyle{aaai}

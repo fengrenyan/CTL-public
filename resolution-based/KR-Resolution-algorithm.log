@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  27 FEB 2020 21:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  27 FEB 2020 22:16
 entering extended mode
 **D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
 (D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
@@ -511,9 +511,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1179--1183
  []
 
 (D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.bbl [9 <D:/Git/CTL-
-public/resolution-based/models.png>]) [10
-
-]
+public/resolution-based/models.png>]) [10]
 (D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.aux) ) 
 Here is how much of TeX's memory you used:
  3615 strings out of 495354
@@ -539,7 +537,7 @@ msfonts/cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/typ
 e1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/C
 TEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on KR-Resolution-algorithm.pdf (10 pages, 313946 bytes).
+Output written on KR-Resolution-algorithm.pdf (10 pages, 314374 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
