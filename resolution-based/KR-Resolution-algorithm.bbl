@@ -145,6 +145,12 @@ Wang, Y.; Wang, K.; and Zhang, M.
   Conference on Artificial Intelligence},  1162--1168.
 \newblock Beijing, China: IJCAI/AAAI.
 
+\bibitem[\protect\citeauthoryear{Wang}{2015}]{Yisong:2015:arx}
+Wang, Y.
+\newblock 2015.
+\newblock On forgetting in tractable propositional fragments.
+\newblock http://arxiv.org/abs/1502.02799.
+
 \bibitem[\protect\citeauthoryear{Wong}{2009}]{Wong:PhD:Thesis}
 Wong, K.-S.
 \newblock 2009.
@@ -186,13 +192,29 @@ Zhang, L.; Hustadt, U.; and Dixon, C.
 \newblock In {\em International Conference on Automated Deduction},  245--260.
 \newblock Springer.
 
-\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017}]{zhao2017role}
+\bibitem[\protect\citeauthoryear{Zhang, Hustadt, and
+  Dixon}{2014}]{zhang2014resolution}
+Zhang, L.; Hustadt, U.; and Dixon, C.
+\newblock 2014.
+\newblock A resolution calculus for the branching-time temporal logic ctl.
+\newblock {\em ACM Transactions on Computational Logic (TOCL)} 15(1):1--38.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017a}]{zhao2017role}
 Zhao, Y., and Schmidt, R.~A.
-\newblock 2017.
+\newblock 2017a.
 \newblock Role forgetting for alcoqh ($\delta$)-ontologies using an
   ackermann-based approach.
 \newblock In {\em Proceedings of the 26th International Joint Conference on
   Artificial Intelligence},  1354--1361.
+\newblock AAAI Press.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017b}]{Zhao:2017:IJCAI}
+Zhao, Y., and Schmidt, R.~A.
+\newblock 2017b.
+\newblock Role forgetting for alcoqh({$\Delta$})-ontologies using an
+  ackermann-based approach.
+\newblock In {\em Proceedings of the 26th International Joint Conference on
+  Artificial Intelligence}, IJCAI'17,  1354--1361.
 \newblock AAAI Press.
 
 \end{thebibliography}
