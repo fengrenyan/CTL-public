@@ -63,6 +63,27 @@ Fang, L.; Liu, Y.; and Van~Ditmarsch, H.
 \newblock Forgetting in multi-agent modal logics.
 \newblock {\em Artificial Intelligence} 266:51--80.
 
+\bibitem[\protect\citeauthoryear{Fisher, Dixon, and
+  Peim}{2001}]{fisher2001clausal}
+Fisher, M.; Dixon, C.; and Peim, M.
+\newblock 2001.
+\newblock Clausal temporal resolution.
+\newblock {\em ACM Transactions on Computational Logic (TOCL)} 2(1):12--56.
+
+\bibitem[\protect\citeauthoryear{Fisher}{1991}]{fisher1991resolution}
+Fisher, M.
+\newblock 1991.
+\newblock A resolution method for temporal logic.
+\newblock In {\em Ijcai}, volume~91,  99--104.
+\newblock Citeseer.
+
+\bibitem[\protect\citeauthoryear{Fisher}{1997}]{fisher1997normal}
+Fisher, M.
+\newblock 1997.
+\newblock A normal form for temporal logics and its applications in
+  theorem-proving and execution.
+\newblock {\em Journal of Logic and Computation} 7(4):429--456.
+
 \bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
 Lang, J., and Marquis, P.
 \newblock 2008.

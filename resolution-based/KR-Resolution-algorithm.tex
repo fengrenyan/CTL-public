@@ -226,7 +226,7 @@ publications20@aaai.org % email address must be in roman text type, not monospac
 This paper presents a resolution-based method for computing the forgetting in \CTL\, which has been proposed in another paper for KR this year.
 The method is an extension of the resolution used to decide the satisfiability of \CTL\ formula.
 An important feature inherited from the satisfiability of resolution-based method is guided by transforming a \CTL\ formula into the normal form, i.e. the set of $\CTLsnf$ clauses. The $\CTLsnf$ language extend \CTL\ with \emph{index} for Existential quantifier.
-We are using binary bisimulation relation to relate \CTL\ and $\CTLsnf$, this show that how transform the \CTL\ formula into $\CTLsnf$ clauses and then return to \CTL\ formula after finish the computing process.
+We are using binary bisimulation relation to relate \CTL\ and $\CTLsnf$, this show that how to transform the \CTL\ formula into $\CTLsnf$ clauses and then return to \CTL\ formula after finishing the computing process.
 Besides, we extend the original resolution rules by adding EF imply rules. This connects the \emph{next\ state} and \emph{future\ state}.
 %\keywords{Forgetting  \and CTL \and Model checking.}
 \end{abstract}
@@ -255,13 +255,13 @@ atom $q$ from $\psi$ by using the above method, we would have $\psi[q/\top] \vee
 not become inconsistent.
 
 For another, as far as I know the existing methods to compute forgetting include the classical talked above and resolution-based approachs in propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach (second-order elimination) in description logic~\cite{Zhao:2017:IJCAI}. However, the resolution and Ackermann-based methods need the normal form of the formula, it is hard to obtain such normal form in \CTL.
-Although any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, but it do introduce the \emph{index} and new atoms. Both the two problems are we should solved.
+Although any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, but it do introduce the \emph{index} and new atoms. Both the two problems are we should solve.
 
-In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} to eliminate the atoms in the transformation process and combine the \CTL\ with $\CTLsnf$ by using the binary bisimulation relation (one is the set of atoms and another one is the set of indexes). 
+In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} to eliminate the atoms in the transformation process and combine the \CTL\ with $\CTLsnf$ by using the binary bisimulation relation (one is the set of atoms and another one is the set of indexes).
 Such a bisimulation relation is an extension of the set-based bisimulation talked in ``the theory paper" by takeing \emph{index} into account.
 
 The paper is structured as follows:  Section 2
-introduces the notation and technical preliminaries. 
+introduces the notation and technical preliminaries.
 In section 3 we give a more precise definition of the problem.
  As key contributions, Section 4, introduces the resolution-based approach.
   Conclusion closes the paper.
@@ -1210,11 +1210,29 @@ The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $
 
 \section{Related work}
 \subsection{Resolution-based satisfiability of \CTL}
-the paper Form 2000 to 2009, include LTL and CTL.
+Deciding the satisfiability in Propositional Linear Temporal Logic (PLTL) was firstly introduced in~\cite{fisher1991resolution} and further discussed in~\cite{fisher1997normal,fisher2001clausal}. The main idea is that transforming any PLTL formula into the normal form, called Separated Normal Form (SNF) by introducing a new connective \start\ that holds only at the beginning of time.
+ 
+After that the Resolution-based satisfiability in \CTL\ was proposed by Bolotov in~\cite{bolotov2000clausal} at first and then be refined by Zhang in~\cite{zhang2009refined,zhang2014resolution}. 
+In their papers, the main idea is also to transform any \CTL\ formula into the normal form $\CTLsnf$.
+But the \CTL\ is a kind of branch time temporal logic, they introduced the ``index" besides \start\ for that purpose.
+
+All in all, a complete set of transform and resolution rules had been proposed for both PLTL and \CTL. And it shows that the transformation is satisfiability preserving and also for the result obtained from using the resolution rules on the normal form.
 \subsection{Using Resolution Computing forgetting}
- in Propositional Logic, In Model Logic.
+Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting in different logic~\cite{Yisong:2015:arx}. In those case, the formula is required to be a paradigm with a particular form.
+ 
+ As have said above that the normal form used to resolution is an extension of \CTL\ by introducing the \start\ and ``index". 
+ In this article, we propose the $\tuple{V,I}$-bisimulation to solve the ``index" problem.
+ Besides, in order to eliminate those atoms introduced in the transformation, we proposed the four EF imply rules.
 
 \section{Conclusion and Future Work}
+This article proposed a resolution-based algorithm to compute the forgetting in \CTL.
+Our method extend the resolution calculus in~\cite{zhang2014resolution} by adding removing those irrelevant atoms and transforming the result into \CTL\ formula. 
+For this purpose, a kind of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined and four EF imply rules have been proposed.
+More important, our algorithm is correct and the time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$.
+Besides, examples show how to compute forgetting using our algorithm.
+
+In the future we will implement this algorithm (part of it has been implement actually).
+%Besides, an application  will be explored 
 
 
 \bibliographystyle{aaai}

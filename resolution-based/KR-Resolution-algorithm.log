@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  28 FEB 2020 20:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  29 FEB 2020 10:27
 entering extended mode
 **D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
 (D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
@@ -535,15 +535,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1206--1210
 
  []
 
-(D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.bbl [10]) [11
-
-]
+(D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.bbl [10]) [11]
 (D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.aux) ) 
 Here is how much of TeX's memory you used:
- 3622 strings out of 495354
- 44402 string characters out of 3183858
- 141839 words of memory out of 3000000
- 6730 multiletter control sequences out of 15000+200000
+ 3625 strings out of 495354
+ 44461 string characters out of 3183858
+ 142907 words of memory out of 3000000
+ 6733 multiletter control sequences out of 15000+200000
  45351 words of font info for 91 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,20n,33p,866b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -564,7 +562,7 @@ C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/f
 onts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.p
 fb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on KR-Resolution-algorithm.pdf (11 pages, 325560 bytes).
+Output written on KR-Resolution-algorithm.pdf (11 pages, 327734 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

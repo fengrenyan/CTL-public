@@ -242,12 +242,12 @@ strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journa
 
 
 Though forgetting has been extensively investigated from various aspects of different logical systems.
-However, the existing forgetting method in propositional
+The existing forgetting methods in propositional
 logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
-Similar with that in~\cite{Yan:AIJ:2009}, we research forgetting in \CTL\ from the semantic forgetting point of view.
+Similar with that in~\cite{Yan:AIJ:2009}, we have studied the forgetting in \CTL\ from the semantic forgetting point of view in ``the theory paper".
 And it is shown that our definition of forgetting satisfies those four postulates of forgetting.
 
-Although we have proposed an model-based to compute forgetting in \CTL, but both time and space complexity are 2-exponential. It is urgent to find an efficient algorithm.
+Although we have proposed an model-based to compute forgetting in \CTL\ in ``the theory paper", but both time and space complexity are 2-exponential. It is urgent to find an efficient algorithm.
 
 For one thing, the existing algorithm of computing forgetting in different logics, including  propositional logic, answer set programming, description logic and modal logic, are not directly applicable in \CTL. For instance, in propositional forgetting theory, forgetting atom $q$ from $\varphi$ is equivalent to a formula $\varphi[q/\top] \vee \varphi[q/\perp]$, where $\varphi[q/X]$ is a formula obtained from $\varphi$ by replacing each $q$ with $X$ ($X\in \{\top, \perp\}$).
 This method cannot be extended to a \CTL\ formula. Consider a \CTL\ formula $\psi=\ALL\GLOBAL p \wedge \neg \ALL\GLOBAL q \wedge \neg \ALL\GLOBAL \neg q$. If we want to forget
@@ -257,9 +257,14 @@ not become inconsistent.
 For another, as far as I know the existing methods to compute forgetting include the classical talked above and resolution-based approachs in propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach (second-order elimination) in description logic~\cite{Zhao:2017:IJCAI}. However, the resolution and Ackermann-based methods need the normal form of the formula, it is hard to obtain such normal form in \CTL.
 Although any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, but it do introduce the \emph{index} and new atoms. Both the two problems are we should solved.
 
-In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} to eliminate the atoms in the transformation process and combine the \CTL\ with $\CTLsnf$ by using the binary bisimulation relation (one is the set of atoms and another one is the set of indexes). 
+In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} to eliminate the atoms in the transformation process and combine the \CTL\ with $\CTLsnf$ by using the binary bisimulation relation (one is the set of atoms and another one is the set of indexes).
+Such a bisimulation relation is an extension of the set-based bisimulation talked in ``the theory paper" by takeing \emph{index} into account.
 
-
+The paper is structured as follows:  Section 2
+introduces the notation and technical preliminaries.
+In section 3 we give a more precise definition of the problem.
+ As key contributions, Section 4, introduces the resolution-based approach.
+  Conclusion closes the paper.
 %
 %
 \section{Preliminaries}
@@ -1206,6 +1211,9 @@ The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $
 \section{Related work}
 \subsection{Resolution-based satisfiability of \CTL}
 the paper Form 2000 to 2009, include LTL and CTL.
+
+Deciding the satisfiability in Temporal Logic was firstly introduced in~\cite{fisher1991resolution} and further discussed in.
+After that the Resolution-based satisfiability in \CTL\ was 
 \subsection{Using Resolution Computing forgetting}
  in Propositional Logic, In Model Logic.
 
