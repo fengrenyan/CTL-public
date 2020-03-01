@@ -552,6 +552,16 @@ What's more, the set-based bisimulation notion is also different
 from  the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008},
 which is defined for states of a given \MPK-structure.
 
+\begin{example}
+Let $K_1$, $K_2$ be two initial \MPK-structures described as Figure~\ref{yBisim}, it easy check $K_1 \lrto_{\{y\}} K_2$.
+\begin{figure}[ht]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=8cm]{yBisim.png}\\
+  \caption{Two $\{y\}$-bisimulation initial \MPK-structures}\label{yBisim}
+\end{figure}
+\end{example}
+
 It is  apparent that $\lrto_V$ is a binary relation.
  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
  by $s_1 \lrto_V s_2 $
@@ -646,6 +656,9 @@ For the case $\phi = \psi_1 \vee \psi_2$, the induction hypothesis is ${\cal K}_
 Other cases can be proved similarly.
 \end{proof}
 
+\begin{example}
+Let $\varphi_1= \neg p \wedge \ALL \NEXT q \wedge \EXIST \NEXT(x \supset \EXIST \NEXT x)$ and $\varphi_2 = q \wedge \ALL \NEXT q$ be two \CTL\ formulae that irrelevant with $\{y\}$. We can check that both $K_1$ and $K_2$ in Figure~\ref{yBisim} satisfy $\varphi_1$ and do not satisfy $\varphi_2$.
+\end{example}
 
 Let $V\subseteq\cal A$, ${\cal M}_i~(i=1,2)$ be  model structures.
 A computation tree $\Tr_n(s_1)$ of ${\cal M}_1$ is $V$-{\em bisimilar}
@@ -1171,7 +1184,7 @@ We check this result from the following two steps:
 
       If ${\cal F}_V(\Hm', s_0) \not \models \varphi'$ or $\varphi \models \neg sl$ then we have ${\cal F}_V(\Hm', s_0) \models \varphi' \supset \varphi$ i.e. $(\Hm, s_0) \models \varphi' \supset \varphi$. Therefore, we suppose ${\cal F}_V(\Hm', s_0) \models \varphi'$. In this case we can construct $\varphi'$ as follows: (1) $sl$ is a sub-formula of $\varphi'$ due to ${\cal F}_V(\Hm', s_0) \models \varphi'$; (2) $sl \supset \ALL\NEXT sr$ is also a sub-formula by (1) and we need $(\Hm, s_0) \models \varphi' \supset \psi$ and $\Var(\varphi') \subseteq V$. This means that each SC $\varphi'$ should be as one of the following form with $\beta$ be any other \CTL\ formula of $V$
       \[
-      sl \wedge (sl \supset \ALL\NEXT sr) \wedge \beta;\ \  sl \wedge (sl \supset \ALL\NEXT sr) \vee \beta.
+      (sl \wedge (sl \supset \ALL\NEXT sr)) \wedge \beta;\ \  (sl \wedge (sl \supset \ALL\NEXT sr)) \vee \beta.
       \]
     In this case, we have $(\Hm, s_0) \models \varphi' \supset \varphi$ for all SC $\varphi'$ of $\psi$ on $V$ under $(\Hm, s_0)$ since $\forall \alpha$ with $\Var(\alpha) \subseteq V$ $(\Hm, s_0) \models \alpha$ iff $(\Hm', s_0) \models \alpha$ by Theorem~\ref{thm:V-bisimulation:EQ}.
 \end{enumerate}
