@@ -223,11 +223,13 @@ publications20@aaai.org % email address must be in roman text type, not monospac
 \maketitle
 
 \begin{abstract}
+Computation Tree Logic (CTL) is one of the central formalisms in formal verification.
 This paper presents a resolution-based method for computing the forgetting in \CTL\, which has been proposed in another paper for KR this year.
 The method is an extension of the resolution calculus used to decide the satisfiability of \CTL\ formula.
 An important feature inherited from the satisfiability of resolution-based method is guided by transforming a \CTL\ formula into the normal form, i.e. the set of $\CTLsnf$ clauses. The $\CTLsnf$ language extend \CTL\ with \emph{index} for Existential quantifier.
 We use binary bisimulation relation to relate \CTL\ and $\CTLsnf$, this shows that how to transform the \CTL\ formula into $\CTLsnf$ clauses and then return to \CTL\ formula after finishing the computing process.
-Besides, we extend the original resolution rules by adding EF imply rules. This connects the \emph{next\ state} and \emph{future\ state}.
+Besides, we extend the original resolution rules by adding EF imply rules, which connects the \emph{next\ state} and \emph{future\ state}.
+Furthermore, it is shown that our algorithm is correct and the time and space complexity of our algorithm are $O((m+1)2^{4(n+n')}$.
 %\keywords{Forgetting  \and CTL \and Model checking.}
 \end{abstract}
 
@@ -241,6 +243,8 @@ createing restricted views of ontologies~\cite{zhao2017role},
 strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and so on.
 
 
+ Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the main logical formalisms for
+program specification and verification. 
 Though forgetting has been extensively investigated from various aspects of different logical systems.
 The existing forgetting methods in propositional
 logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
@@ -450,7 +454,7 @@ Other terminologies are similar with those in \CTL\ sub-section.
 
 
 \section{Problem Definition}
-In order to define our problem, \ie forgetting in \CTL, we review our definition of $V$-bisimulation (read ?? for more detials).
+In order to define our problem, \ie forgetting in \CTL, we review our definition of $V$-bisimulation. %(read ?? for more detials).
 \begin{definition}\label{def:Vbi}
 Let $V\subseteq\cal A$
 %${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
@@ -697,7 +701,7 @@ The \emph{Resolution} process is to compute all the possible resolutions of $T_{
 A \emph{derivation} on a set $V\cup V'$ of atoms and $T_{\varphi}$ is a sequence $T_0, T_1, T_2$, $\dots$, $T_n=Res$ of sets of $\CTLsnf$ clauses such that $T_0 = T_{\varphi}$ and $T_{i+1} = T_i \cup R_i$ where $R_i$ is a set of clauses obtained as the conclusion of the application of a resolution rule to premises in $T_i$.
 Note that all the $T_i$ ($0 \leq i \leq n$) are set of $\CTLsnf$ clauses.
 Besides, if there is a $T_i$ containing $\start\supset \perp$ or $\top\supset \perp$, then we have $\CTLforget(\varphi, V)=\perp$.
-Given two clauses $C$ and $C'$, we call $C$ and $C'$ are resolvable, the result denote as $res(C,C')$, if there is a resolution rule using $C$ and $C'$ as the premises on some given atom.
+Given two clauses $C$ and $C'$, we call $C$ and $C'$ are resolvable, the result denoted as $res(C,C')$, if there is a resolution rule using $C$ and $C'$ as the premises on some given atom.
 And the pseudocode of algorithm \emph{Resolution} is as Algorithm~\ref{alg:compute:Res}.
 
 \begin{proposition}\label{pro:ResE}
@@ -751,7 +755,7 @@ $Res=\Pi \cup S$\;
 
 
 \begin{example}\label{examp:Res}
-The resolution of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cup V'$ is as follows:
+The resolutions of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cup V'$ are listed as follows:
 \begin{align*}
 &(1) \start \supset r && (1,2,SRES 5)\\
 &(2) \start \supset x \vee y && (1,4,SRES 5)\\
@@ -785,18 +789,18 @@ For resolving problem (2), we should pay attention to the following properties t
   \item \textbf{(PI)} for each atom $p\in V'$, if $p$ appearing in the left hand of a $\CTLsnf$ clause, then $p$ appear positively.
 \end{itemize}
 
-This \emph{Elimination} process include three sub-processes: \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms}. We will described those sub-processes carefully now.
+This \emph{Elimination} process include three sub-processes: \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms}. We will describe those sub-processes carefully blow.
 \subsubsection{The Instantiation process}
 An \emph{instantiate formula} $\psi$ of set $V''$ of atoms is a formula such that $\Var(\psi) \cap V'' ={\O}$.
 Given a formula of the form $p \supset \psi$ with $p$ is an atom not in $V'' \cup \Var(\psi)$, if $\psi$ is an  instantiate formula of set $V''$ then we call $p$ is instantiated by $\psi$.
-A key point to compute forgetting is eliminate those irrelevant atoms, for this purpose we define the follow instantiation process.
+A key point to compute forgetting is eliminateing those irrelevant atoms, for this purpose we define the follow instantiation process.
 \begin{definition}[instantiation]\label{def:subst}
  Let $V''=V'$ and $\Gamma=Res$, then the process of instantiation is as follows:
 \begin{enumerate}[(i)]
   \item for each global clause $C= \top \supset D \vee \neg p \in \Gamma$, if there is one and on one atom $p \in V''\cap \Var(C)$  and $\Var(D) \cap (V \cup V'')= {\O}$ then let $C = p \supset D$ and $V'':=V''\setminus \{p\}$;
-  \item find out all the possible instantiate formulae $\varphi_1, ..., \varphi_m$ of $V \cup V''$ in the $p\supset \varphi_i \in \Gamma$ ($1\leq i\leq m$);
-  \item if there is $p\supset \varphi_i$ for some $i\in \{1,\dots, m\}$, then let $V'':=V''\setminus \{p\}$, which means $p$ is a instantiate formula;
-  \item for $\bigwedge_{j=1}^m p_j \supset \varphi_i \in \Gamma$ ($i\in \{1,\dots, m\}$), if there is $\alpha \supset p_1,\dots, \alpha \supset p_m \in \Gamma$ then let $\Gamma_1 := \Gamma \cup \{\alpha \supset \varphi\}$. if $\Gamma_1\neq \Gamma$ then let $\Gamma:=\Gamma_1$ go to step (i), else return $V \cup V''$.
+  \item find out all the possible instantiate formulae $\varphi_1, ..., \varphi_m$ of $V \cup V''$ with $p\supset \varphi_i \in \Gamma$ ($1\leq i\leq m$);
+  \item if there is $p\supset \varphi_i$ for some $i\in \{1,\dots, m\}$, then let $V'':=V''\setminus \{p\}$; %, which means $p$ is a instantiate formula;
+  \item for $\bigwedge_{j=1}^m p_j \supset \varphi \in \Gamma$ ($i\in \{1,\dots, n\}$), if there is $\alpha \supset p_1,\dots, \alpha \supset p_n \in \Gamma$ and $\varphi$ is an instantiate formula of $V \cup V''$, then let $\Gamma_1 := \Gamma \cup \{\alpha \supset \varphi\}$. if $\Gamma_1\neq \Gamma$ then let $\Gamma:=\Gamma_1$ go to step (i), else return $V \cup V''$.
 \end{enumerate}
 Where $p, p_i$ ($1 \leq i\leq m$) are atoms and $\alpha$ is a conjunction of literals or $\start$.
 \end{definition}
@@ -880,23 +884,25 @@ By instantiation operator, we guarantee those atoms in $V\cup V''$ are really ir
 
 
 \subsubsection{The Connect process}
-Let $P$ be a conjunction of literals, $l$, $l_1$ be literals, in which $\Var(C_1)\cap V \cup V' = {\O}$, and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
+Let $P$ be a conjunction of literals, $l$, $l_1$ be literals, 
+in which $\Var(l_1)\in V \cup V'$, 
+and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
  %Besides, by $l \supset \neg C_1 \vee C_2$ we mean the set $\{l \supset \neg C_{1,1} \vee C_2, \dots, l \supset \neg C_{1,x} \vee C_2$, where $C_{1,i}$ is a literal appearing in $C_1$.
 %As we can see that those exist resolution rules cannot deduct all the possible result, so we add following new rules:
-Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
+Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$, $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\gamma = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
 \begin{align*}
 & \textbf{(EF1)} \{P\supset \ALL\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha \\
 %&  \qquad \rto\{P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
 & \textbf{(EF2)} \{P\supset \ALL\FUTURE l, P\supset \ALL \NEXT (l_1 \vee C_4)\}\cup A \rto \beta \\
 %& \qquad \rto \{ P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\}\\
-& \textbf{(EF3)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha  \\
+& \textbf{(EF3)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \gamma  \\
 %& \qquad \rto \{P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
-& \textbf{(EF4)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \ALL\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha
+& \textbf{(EF4)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \ALL\NEXT (l_1 \vee C_4)\}\cup A \rto \gamma.
 \end{align*}
 
 
 
-By $\emph{Connect}(\emph{Instantiate}(Res, V'))$ we mean using (EF1) to (EF4) on $Res$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ and $\Var(l_1) \in V\cup V'$.
+By $\emph{Connect}(\emph{Instantiate}(Res, V'))$ we mean using (EF1) to (EF4) on $Res$ and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for rule (EF1), replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \gamma$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ and $\Var(l_1) \in V\cup V'$.
 %This is similar with the resolution process except by those rules it will not product new resolution due to the new formulae obtained from those rules are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$.
 %This process can be described as Algorithm~\ref{alg:EF}.
 The reason why we specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ in this process will be explained later.
@@ -1032,9 +1038,9 @@ The $\emph{Removing\_index}(\emph{RemA})$ process is to change the set $\emph{Re
 \begin{proposition}\label{pro:In2NI}
 Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 \begin{enumerate}[(i)]
-  \item $\bigwedge_{i=1}^n P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i   \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
-  \item $\bigwedge_{i=1}^n P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
-  \item $\bigwedge_{i=1}^n P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
+  \item $\bigwedge_{i=1}^n (P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i) \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
   \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \wedge P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$,
   \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \vee P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset (C \vee \EXIST \NEXT (\varphi_1 \vee \varphi_2))$.
 \end{enumerate}
@@ -1050,7 +1056,7 @@ Let $I$ be the set of indexes appearing in $\emph{RemA}$,
 we have $\emph{RemA}\equiv_{\tuple{{\O}, I}} \emph{Removing\_index}(\emph{RemA})$.
 \end{lemma}
 \begin{proof}
-It is easy checking that from the definition of $\emph{Removing\_index}$.
+It is easy checking that from the definition of $\emph{Removing\_index}$ by Proposition~\ref{pro:In2NI}.
 \end{proof}
 
 
@@ -1182,10 +1188,10 @@ Then we can obtain the result of forgetting of Example~\ref{exa:until:sub}:
 
 \begin{proposition}
 Let $\varphi$ be a CTL formula and $V \subseteq \Ha$.
-The time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$. Where $|\Var(\varphi)|=n$, $|V'|=n'$ ($V'$ is set of atoms introduced in transformation) and $m$ is the number of the set $Ind$ of indices introduced during transformation.
+The time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$. Where $|\Var(\varphi)|=n$, $|V'|=n'$ ($V'$ is set of atoms introduced in transformation) and $m$ is the number of indices introduced during transformation.
 \end{proposition}
 \begin{proof}
-It follows from that the lines 19-31 of the algorithm, which is to compute all the possible resolution.
+It follows from the lines 19-31 of the algorithm~\ref{alg:compute:forgetting:by:Resolution}, which is to compute all the possible resolution.
 The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$.
 \end{proof}
 
