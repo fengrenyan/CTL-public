@@ -257,7 +257,7 @@ not become inconsistent.
 For another, as far as I know the existing methods to compute forgetting include the classical one talked above and resolution-based approachs in propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach (second-order elimination) in description logic~\cite{Zhao:2017:IJCAI}. However, the resolution and Ackermann-based methods need a specific normal form of the formula, it is hard to obtain such normal form in \CTL.
 Although any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, but it do introduce the \emph{index} and new atoms. Both the two problems are we should solve.
 
-In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} by eliminating the atoms introduced in the transformation process and combining the \CTL\ with $\CTLsnf$ by using the binary bisimulation relation (one is the set of atoms and another one is the set of indexes).
+In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} by eliminating the atoms introduced in the transformation process and combining the \CTL\ with $\CTLsnf$ by using the \emph{binary bisimulation relation} (one is the set of atoms and another one is the set of indexes).
 Such a bisimulation relation is an extension of the set-based bisimulation talked in ``the theory paper" by takeing \emph{index} into account.
 
 The paper is structured as follows:  Section 2
@@ -765,7 +765,7 @@ The resolution of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cup
 &(8) y \supset \ALL\NEXT(x\vee q) && (5, 8, SRES 6)\\
 &(9) \start \supset f\vee m \vee y && (3,(2), SRES 5) \\
 &(10) \start \supset x \vee p && (5,(2),SRES 5) \\
-&(11) \start \supset x \vee q && (6,(2), SRES 5) 
+&(11) \start \supset x \vee q && (6,(2), SRES 5)
 \end{align*}
 \begin{align*}
 &(12) \top \supset p \vee \neg z \vee f \vee m && (5,(3), SRES 8)\\
@@ -898,42 +898,42 @@ Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supse
 
 By $\emph{Connect}(\emph{Instantiate}(Res, V'))$ we mean using (EF1) to (EF4) on $Res$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ and $\Var(l_1) \in V\cup V'$.
 %This is similar with the resolution process except by those rules it will not product new resolution due to the new formulae obtained from those rules are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$.
-This process can be described as Algorithm~\ref{alg:EF}.
+%This process can be described as Algorithm~\ref{alg:EF}.
 The reason why we specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ in this process will be explained later.
 
 
-\begin{algorithm}[!h]
-\caption{Computing $\emph{Connect}(\Gamma, V)$}% ??????
-\label{alg:EF}
-%\LinesNumbered %?????????
-\KwIn{A set $\Gamma$ of $\CTLsnf$ clauses, a set $A$ of $\ALL$-step clauses and a set $E$ of $\EXIST$-step clauses}% ????????
-\KwOut{A set of formulae}% ????
-
-% $C_1 :=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
-%\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
-%$C_1' := P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\ALL\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
-%\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
-\For {($C \in A$)} {
-    Let $C == P \supset \ALL \FUTURE l$\;
-    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
-        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$\;
-    }
-    \If {$( P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
-        Replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$\;
-    }
-}
-
-
-\For {($C \in E$)} {
-    Let $C == P \supset \EXIST_{\tuple{ind}} \FUTURE l$\;
-    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma \hbox{ or } P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
-        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$\;
-    }
-}
-
-%Using distribution law two change $\Gamma$ into a sequence $\Gamma_1, \dots, \Gamma_m$ of sets of $\CTLsnf$ clauses\;
-\Return $\Gamma$.
-\end{algorithm}
+%\begin{algorithm}[!h]
+%\caption{Computing $\emph{Connect}(\Gamma, V)$}% ??????
+%\label{alg:EF}
+%%\LinesNumbered %?????????
+%\KwIn{A set $\Gamma$ of $\CTLsnf$ clauses, a set $A$ of $\ALL$-step clauses and a set $E$ of $\EXIST$-step clauses}% ????????
+%\KwOut{A set of formulae}% ????
+%
+%% $C_1 :=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
+%%\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
+%%$C_1' := P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\ALL\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset
+%%\ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$\;
+%\For {($C \in A$)} {
+%    Let $C == P \supset \ALL \FUTURE l$\;
+%    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
+%        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$\;
+%    }
+%    \If {$( P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
+%        Replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$\;
+%    }
+%}
+%
+%
+%\For {($C \in E$)} {
+%    Let $C == P \supset \EXIST_{\tuple{ind}} \FUTURE l$\;
+%    \If {$(P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4),  l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma \hbox{ or } P\supset \ALL \NEXT (l_1 \vee C_4), l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\in \Gamma$ and $l,C_2, C_3, C_4$ are  instantiate formulae)} {
+%        Replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$\;
+%    }
+%}
+%
+%%Using distribution law two change $\Gamma$ into a sequence $\Gamma_1, \dots, \Gamma_m$ of sets of $\CTLsnf$ clauses\;
+%\Return $\Gamma$.
+%\end{algorithm}
 
 \begin{proposition} \label{pro:EF}
 Let $\Gamma=Res$, we have $\Gamma \equiv_{\tuple{V', {\O}}}\emph{Connect}(\emph{Instantiate}(\Gamma, V'))$.
@@ -1076,12 +1076,12 @@ Recall that any atom in $V'$ introduced in the Transform process is a name of th
 \begin{proposition}\label{pro:replaceA}
 Let $\Gamma_1=\emph{Instantiate}(Res, V')$, $\Gamma_2 =\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma_1), \Gamma_1)$ and $\Gamma_3 = \emph{Replacing\_atoms}(\emph{Removing\_index}(\Gamma_2))$, then $\Gamma_2  \equiv_{\tuple{V'\setminus \Gamma_1, I}} \Gamma_3$ and $\varphi \equiv_{\tuple{V\cup V', \emptyset}}$ $(\Gamma_3)_{CTL}$.
 \end{proposition}
-\begin{proof}
-For each $p$ talked above is a name of the formula $\psi$. %, \ie $p \lrto \psi$.
-Then $\Gamma_2  \equiv_{\tuple{(V'\setminus \Gamma_1), {\O}}} \Gamma_3$, and then $\Gamma_2 \equiv_{\tuple{V\cup V', I}} \Gamma_3$  by (V) of Proposition~\ref{div}.
-
-Therefore, $\varphi \equiv_{\tuple{V\cup V',{\O}}} (\Gamma_3)_{CTL}$ by Proposition~\ref{pro:elm} and the definitions of $\emph{Removing\_index}$ and $T_{\CTL}$.
-\end{proof}
+%\begin{proof}
+%For each $p$ talked above is a name of the formula $\psi$. %, \ie $p \lrto \psi$.
+%Then $\Gamma_2  \equiv_{\tuple{(V'\setminus \Gamma_1), {\O}}} \Gamma_3$, and then $\Gamma_2 \equiv_{\tuple{V\cup V', I}} \Gamma_3$  by (V) of Proposition~\ref{div}.
+%
+%Therefore, $\varphi \equiv_{\tuple{V\cup V',{\O}}} (\Gamma_3)_{CTL}$ by Proposition~\ref{pro:elm} and the definitions of $\emph{Removing\_index}$ and $T_{\CTL}$.
+%\end{proof}
 
 
 \begin{example}\label{exa:replace:sub}
@@ -1192,16 +1192,16 @@ The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $
 \section{Related work}
 \subsection{Resolution-based satisfiability of \CTL}
 Deciding the satisfiability with resolution calculus in Propositional Linear Temporal Logic (PLTL) was firstly introduced in~\cite{fisher1991resolution} and further discussed in~\cite{fisher1997normal,fisher2001clausal}. The main idea is that transforming any PLTL formula into the normal form, called Separated Normal Form (SNF) by introducing a new connective \start\ that holds only at the beginning of time.
- 
-After that the Resolution-based satisfiability in \CTL\ was proposed by Bolotov in~\cite{bolotov2000clausal} at first and then be refined by Zhang in~\cite{zhang2009refined,zhang2014resolution}. 
+
+After that the Resolution-based satisfiability in \CTL\ was proposed by Bolotov in~\cite{bolotov2000clausal} at first and then be refined by Zhang in~\cite{zhang2009refined,zhang2014resolution}.
 In those papers, the main idea is also to transform any \CTL\ formula into the normal form $\CTLsnf$.
 But the \CTL\ is a kind of branch time temporal logic, they introduced the ``index" besides \start\ for that purpose.
 
 All in all, a complete set of transformation and resolution rules had been proposed for both PLTL and \CTL. And it shows that the transformation is satisfiability preserving and also for the result obtained from using the resolution rules on the normal form.
 \subsection{Using Resolution Computing forgetting}
 Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting in different logic~\cite{Yisong:2015:arx}. In those case, the formula is required to be a paradigm with a particular form.
- 
- As have said above that the normal form used to resolution is an extension of \CTL\ by introducing the \start\ and ``index". 
+
+ As have said above that the normal form used to resolution is an extension of \CTL\ by introducing the \start\ and ``index".
  In this article, we propose the $\tuple{V,I}$-bisimulation to solve the ``index" problem.
  Besides, in order to eliminate those atoms introduced in the transformation, we proposed the four EF imply rules.
 
@@ -1213,7 +1213,7 @@ More important, our algorithm is correct, i.e. return the result of forgetting s
 Besides, examples show how to compute forgetting using our algorithm.
 
 In the future we will implement this algorithm (part of it has been implement actually).
-%Besides, an application  will be explored 
+%Besides, an application  will be explored
 
 
 \bibliographystyle{aaai}

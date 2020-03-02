@@ -3,6 +3,10 @@
 \providecommand{\urlprefix}{URL }
 \providecommand{\doi}[1]{https://doi.org/#1}
 
+\bibitem{akintunde2017planning}
+Akintunde, M.E.: Planning for ctl*-specified temporally extended goals via
+  model checking  (2017)
+
 \bibitem{Baier:PMC:2008}
 Baier, C., Katoen, J.: Principles of Model Checking. The MIT Press (2008)
 
@@ -27,6 +31,11 @@ Clarke, E.M., Emerson, E.A., Sistla, A.P.: Automatic verification of
   Trans. Program. Lang. Syst.  \textbf{8}(2),  244--263 (1986).
   \doi{10.1145/5397.5399}, \url{https://doi.org/10.1145/5397.5399}
 
+\bibitem{eiter2019brief}
+Eiter, T., Kern-Isberner, G.: A brief survey on forgetting from a knowledge
+  representation and reasoning perspective. KI-K{\"u}nstliche Intelligenz
+  \textbf{33}(1),  9--33 (2019)
+
 \bibitem{Eiter2008Semantic}
 Eiter, T., Wang, K.: Semantic forgetting in answer set programming. Elsevier
   Science Publishers Ltd. (2008)
@@ -38,6 +47,10 @@ Emerson, E.A.: Temporal and modal logic. In: Formal Models and Semantics, pp.
 \bibitem{fang2019forgetting}
 Fang, L., Liu, Y., Van~Ditmarsch, H.: Forgetting in multi-agent modal logics.
   Artificial Intelligence  \textbf{266},  51--80 (2019)
+
+\bibitem{giunchiglia1999planning}
+Giunchiglia, F., Traverso, P.: Planning as model checking. In: European
+  Conference on Planning. pp. 1--20. Springer (1999)
 
 \bibitem{Lang2008On}
 Lang, J., Marquis, P.: On propositional definability. Artificial Intelligence

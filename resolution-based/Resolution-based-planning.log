@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  26 FEB 2020 13:25
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  2 MAR 2020 13:35
 entering extended mode
-**D:/Git/CTL-public/resolution-based/Resolution-based-1.tex
-(D:/Git/CTL-public/resolution-based/Resolution-based-1.tex
+**D:/Git/CTL-public/resolution-based/Resolution-based-planning.tex
+(D:/Git/CTL-public/resolution-based/Resolution-based-planning.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (D:\Git\CTL-public\resolution-based\llncs.cls
@@ -698,7 +698,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count151
 \algocf@algoframe=\box61
 \algocf@algobox=\box62
-) (D:\Git\CTL-public\resolution-based\Resolution-based-1.aux)
+) (D:\Git\CTL-public\resolution-based\Resolution-based-planning.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
 LaTeX Font Info:    ... okay on input line 165.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
@@ -747,8 +747,8 @@ LaTeX Info: Redefining \ref on input line 165.
 LaTeX Info: Redefining \pageref on input line 165.
 LaTeX Info: Redefining \nameref on input line 165.
 
-(D:\Git\CTL-public\resolution-based\Resolution-based-1.out)
-(D:\Git\CTL-public\resolution-based\Resolution-based-1.out)
+(D:\Git\CTL-public\resolution-based\Resolution-based-planning.out)
+(D:\Git\CTL-public\resolution-based\Resolution-based-planning.out)
 \@outlinefile=\write3
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
@@ -802,13 +802,8 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 202.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 205.
-
-
-LaTeX Warning: Citation `eiter2019brief' on page 1 undefined on input line 205.
-
-
-[1
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 221.
+ [1
 
 {C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}] [2]
 Overfull \hbox (3.17473pt too wide) in paragraph at lines 357--361
@@ -858,7 +853,7 @@ LaTeX Warning: Command \O invalid in math mode on input line 545.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<lct.png, id=177, 490.83376pt x 415.5525pt>
+<lct.png, id=180, 490.83376pt x 415.5525pt>
 File: lct.png Graphic file (type png)
  <use lct.png>
 Package pdftex.def Info: lct.png used on input line 564.
@@ -1010,11 +1005,11 @@ m/n/10 (\OML/cmm/m/it/10  []\OT1/cmr/m/n/10 )[]$ \OT1/ptm/m/n/10 by Propo-si-ti
 on []6[] and the def-i-ni-tion-s of $[]$
  []
 
-[17] <models.png, id=395, 295.1025pt x 235.88126pt>
+[17] <models.png, id=398, 294.09875pt x 198.7425pt>
 File: models.png Graphic file (type png)
  <use models.png>
 Package pdftex.def Info: models.png used on input line 1169.
-(pdftex.def)             Requested size: 142.26378pt x 113.71481pt.
+(pdftex.def)             Requested size: 142.26378pt x 96.13829pt.
  [18 <D:/Git/CTL-public/resolution-based/models.png>]
 Overfull \hbox (8.34927pt too wide) in paragraph at lines 1180--1181
 \OT1/ptm/m/n/10 In the case that for-mu-la dose not in-clude in-dex, we use mod
@@ -1037,16 +1032,7 @@ mm/m/it/10 V[]$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 = [](\OML
 /cmm/m/it/10 T[]; V[]\OT1/cmr/m/n/10 )$
  []
 
-[19]
-
-LaTeX Warning: Citation `giunchiglia1999planning' on page 20 undefined on input
- line 1233.
-
-
-LaTeX Warning: Citation `giunchiglia1999planning' on page 20 undefined on input
- line 1257.
-
-<PB_Kripke.png, id=417, 242.9075pt x 171.64125pt>
+[19] <PB_Kripke.png, id=424, 242.9075pt x 171.64125pt>
 File: PB_Kripke.png Graphic file (type png)
  <use PB_Kripke.png>
 Package pdftex.def Info: PB_Kripke.png used on input line 1275.
@@ -1055,10 +1041,6 @@ Package pdftex.def Info: PB_Kripke.png used on input line 1275.
 
 LaTeX Warning: The counter will not be printed.
              The label is: . on input line 1280.
-
-
-LaTeX Warning: Citation `akintunde2017planning' on page 20 undefined on input l
-ine 1281.
 
 
 Overfull \hbox (41.51048pt too wide) in paragraph at lines 1281--1282
@@ -1074,48 +1056,43 @@ mr/m/n/10 (\OML/cmm/m/it/10 s[]; u; s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ,
 
 
 Overfull \hbox (47.6159pt too wide) in paragraph at lines 1281--1282
-\OT1/ptm/m/n/10 in Fig-ure []4[] from [\OT1/ptm/b/n/10 ?\OT1/ptm/m/n/10 ], in w
-hich $\OMS/cmsy/m/n/10 T \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\
-OML/cmm/m/it/10 s[]; wait; s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/
-10 (\OML/cmm/m/it/10 s[]; lock; s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr
-/m/n/10 (\OML/cmm/m/it/10 s[]; unlock; s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \
-OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; wait; s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/1
-0 ,
+\OT1/ptm/m/n/10 in Fig-ure []4[] from [[]], in which $\OMS/cmsy/m/n/10 T \OT1/c
+mr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; wait; s[]\
+OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; lock;
+ s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; 
+unlock; s[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 s[]; wait; s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ,
  []
 
-[20] <PlanningDomain.png, id=433, 302.12875pt x 193.72375pt>
+[20] <PlanningDomain.png, id=443, 302.12875pt x 193.72375pt>
 File: PlanningDomain.png Graphic file (type png)
 
 <use PlanningDomain.png>
 Package pdftex.def Info: PlanningDomain.png used on input line 1296.
 (pdftex.def)             Requested size: 142.26378pt x 91.21866pt.
 
-
-LaTeX Warning: Citation `akintunde2017planning' on page 21 undefined on input l
-ine 1315.
-
-(D:\Git\CTL-public\resolution-based\Resolution-based-1.bbl [21 <D:/Git/CTL-publ
-ic/resolution-based/PB_Kripke.png> <D:/Git/CTL-public/resolution-based/Planning
-Domain.png>]
-Underfull \hbox (badness 1199) in paragraph at lines 10--13
+(D:\Git\CTL-public\resolution-based\Resolution-based-planning.bbl [21 <D:/Git/C
+TL-public/resolution-based/PB_Kripke.png> <D:/Git/CTL-public/resolution-based/P
+lanningDomain.png>]
+Underfull \hbox (badness 1199) in paragraph at lines 14--17
 \OT1/ptm/m/n/9 nal of Ex-per-i-men-tal & The-o-ret-i-cal Ar-ti-fi-cial In-tel-l
 i-gence \OT1/ptm/b/n/9 11\OT1/ptm/m/n/9 (1), 77--93 (1999). []http-
  []
 
 
-Underfull \hbox (badness 6047) in paragraph at lines 19--23
+Underfull \hbox (badness 6047) in paragraph at lines 23--27
 []\OT1/ptm/m/n/9 Browne, M.C., Clarke, E.M., Grum-berg, O.: Char-ac-ter-iz-ing 
 fi-nite krip-ke struc-
  []
 
 
-Underfull \hbox (badness 4181) in paragraph at lines 19--23
+Underfull \hbox (badness 4181) in paragraph at lines 23--27
 \OT1/ptm/m/n/9 tures in propo-si-tion-al tem-po-ral log-ic. The-o-r. Com-put. S
 -ci. \OT1/ptm/b/n/9 59\OT1/ptm/m/n/9 , 115--131 (1988).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--23
+Underfull \hbox (badness 10000) in paragraph at lines 23--27
 []\OT1/ptm/m/n/9 https://doi.org/10.1016/0304-3975(88)90098-9[], []$https : / /
  doi . org / 10 . 1016 / 0304-[]3975(88 )$
  []
@@ -1129,21 +1106,22 @@ Underfull \hbox (badness 1102) in paragraph at lines 1334--1337
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1350.
 [23]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1350.
- (D:\Git\CTL-public\resolution-based\Resolution-based-1.aux)
+ (D:\Git\CTL-public\resolution-based\Resolution-based-planning.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1350.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1350.
 
-Package rerunfilecheck Info: File `Resolution-based-1.out' has not changed.
+Package rerunfilecheck Info: File `Resolution-based-planning.out' has not chang
+ed.
 (rerunfilecheck)             Checksum: 7B4904A740E6295212DC3D46FE37258C;54.
  ) 
 Here is how much of TeX's memory you used:
- 9391 strings out of 495354
- 131052 string characters out of 3183858
- 257619 words of memory out of 3000000
- 12154 multiletter control sequences out of 15000+200000
+ 9395 strings out of 495354
+ 131245 string characters out of 3183858
+ 257746 words of memory out of 3000000
+ 12155 multiletter control sequences out of 15000+200000
  42419 words of font info for 90 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,20n,38p,897b,633s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,20n,38p,904b,633s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1167,9 +1145,9 @@ cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
 /times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/Mi
 KTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on Resolution-based-1.pdf (23 pages, 418840 bytes).
+Output written on Resolution-based-planning.pdf (23 pages, 423157 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 246 named destinations out of 1000 (max. 500000)
+ 607 PDF objects out of 1000 (max. 8388607)
+ 249 named destinations out of 1000 (max. 500000)
  29 words of extra memory for PDF output out of 10000 (max. 10000000)
 

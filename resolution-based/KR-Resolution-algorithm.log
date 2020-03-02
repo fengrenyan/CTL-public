@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  29 FEB 2020 20:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  2 MAR 2020 13:43
 entering extended mode
 **D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
 (D:/Git/CTL-public/resolution-based/KR-Resolution-algorithm.tex
@@ -353,9 +353,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Command \O invalid in math mode on input line 883.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 LaTeX Warning: Command \O invalid in math mode on input line 939.
 
 
@@ -404,9 +401,6 @@ Overfull \hbox (23.08946pt too wide) in paragraph at lines 1022--1022
  []
 
 
-Underfull \vbox (badness 5771) has occurred while \output is active []
-
- [7]
 Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
 []$[][] \OML/cmm/m/it/10 P[] \OMS/cmsy/m/n/10  [][][]\OML/cmm/m/it/10 '[] \OMS
 /cmsy/m/n/10 []$
@@ -442,7 +436,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1052--1055
 
  []
 
-
+[7]
 Underfull \hbox (badness 2326) in paragraph at lines 1068--1069
 []\OT1/ptm/m/n/10 The last step of our al-go-rith-m is to e-lim-i-nate al-
  []
@@ -486,18 +480,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1077--1078
 $\OT1/cmr/m/n/10  [] = []([]( []))$\OT1/ptm/m/it/10 , then
  []
 
-
-LaTeX Warning: Command \O invalid in math mode on input line 1081.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 1083.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1083--1085
-
- []
-
-[8] <models.png, id=46, 294.09875pt x 198.7425pt>
+<models.png, id=43, 294.09875pt x 198.7425pt>
 File: models.png Graphic file (type png)
  <use models.png>
 Package pdftex.def Info: models.png used on input line 1138.
@@ -507,7 +490,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1155--1156
 []\OT1/ptm/m/it/10 Let
  []
 
-
+[8 <D:/Git/CTL-public/resolution-based/models.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1172--1174
 
  []
@@ -522,16 +505,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1187--1191
 
  []
 
-[9 <D:/Git/CTL-public/resolution-based/models.png>]
-(D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.bbl [10]) [11
-
-]
+(D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.bbl [9]) [10]
 (D:\Git\CTL-public\resolution-based\KR-Resolution-algorithm.aux) ) 
 Here is how much of TeX's memory you used:
- 3619 strings out of 495354
- 44398 string characters out of 3183858
- 138899 words of memory out of 3000000
- 6728 multiletter control sequences out of 15000+200000
+ 3617 strings out of 495354
+ 44369 string characters out of 3183858
+ 134873 words of memory out of 3000000
+ 6726 multiletter control sequences out of 15000+200000
  45351 words of font info for 91 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,20n,33p,865b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -550,9 +530,9 @@ eX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C
 :/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw
 /times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on KR-Resolution-algorithm.pdf (11 pages, 291842 bytes).
+Output written on KR-Resolution-algorithm.pdf (10 pages, 289455 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
