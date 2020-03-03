@@ -244,7 +244,7 @@ strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journa
 
 
  Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the main logical formalisms for
-program specification and verification. 
+program specification and verification.
 Though forgetting has been extensively investigated from various aspects of different logical systems.
 The existing forgetting methods in propositional
 logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
@@ -884,25 +884,25 @@ By instantiation operator, we guarantee those atoms in $V\cup V''$ are really ir
 
 
 \subsubsection{The Connect process}
-Let $P$ be a conjunction of literals, $l$, $l_1$ be literals, 
-in which $\Var(l_1)\in V \cup V'$, 
+Let $P$ be a conjunction of literals, $l$, $l_1$ be literals,
+in which $\Var(l_1)\in V \cup V'$,
 and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
  %Besides, by $l \supset \neg C_1 \vee C_2$ we mean the set $\{l \supset \neg C_{1,1} \vee C_2, \dots, l \supset \neg C_{1,x} \vee C_2$, where $C_{1,i}$ is a literal appearing in $C_1$.
 %As we can see that those exist resolution rules cannot deduct all the possible result, so we add following new rules:
-Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
+Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$, $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\gamma = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
 \begin{align*}
 & \textbf{(EF1)} \{P\supset \ALL\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha \\
 %&  \qquad \rto\{P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
 & \textbf{(EF2)} \{P\supset \ALL\FUTURE l, P\supset \ALL \NEXT (l_1 \vee C_4)\}\cup A \rto \beta \\
 %& \qquad \rto \{ P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\}\\
-& \textbf{(EF3)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha  \\
+& \textbf{(EF3)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \gamma  \\
 %& \qquad \rto \{P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
-& \textbf{(EF4)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \ALL\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha
+& \textbf{(EF4)} \{P\supset \EXIST_{\tuple{ind}}\FUTURE l, P\supset \ALL\NEXT (l_1 \vee C_4)\}\cup A \rto \gamma.
 \end{align*}
 
 
 
-By $\emph{Connect}(\emph{Instantiate}(Res, V'))$ we mean using (EF1) to (EF4) on $Res$ and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ and $\Var(l_1) \in V\cup V'$.
+By $\emph{Connect}(\emph{Instantiate}(Res, V'))$ we mean using (EF1) to (EF4) on $Res$ and replacing $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4) \vee \alpha$ for rule (EF1), replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \beta$ for rule (EF2) and replacing $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4)$ with $P\supset \ALL\NEXT (\neg l \vee C_2 \vee C_4) \vee \gamma$ for other rules when $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ and $\Var(l_1) \in V\cup V'$.
 %This is similar with the resolution process except by those rules it will not product new resolution due to the new formulae obtained from those rules are instantiate formulae of  $\Sub(T_{\varphi}^{r,V \cup V'}, V')$.
 %This process can be described as Algorithm~\ref{alg:EF}.
 The reason why we specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$ in this process will be explained later.
@@ -977,6 +977,7 @@ C, && else.
 \right.
 $$
 \end{definition}
+Which means that if the 
 For convenience, for any set $T$ of formula we have $\emph{Removing\_atoms}(T, V) = \{\emph{Removing\_atoms}(r, V) | r \in T\}$.
 
 
@@ -1038,9 +1039,9 @@ The $\emph{Removing\_index}(\emph{RemA})$ process is to change the set $\emph{Re
 \begin{proposition}\label{pro:In2NI}
 Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 \begin{enumerate}[(i)]
-  \item $\bigwedge_{i=1}^n P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i   \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
-  \item $\bigwedge_{i=1}^n P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
-  \item $\bigwedge_{i=1}^n P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
+  \item $\bigwedge_{i=1}^n (P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i) \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
   \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \wedge P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$,
   \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \vee P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset (C \vee \EXIST \NEXT (\varphi_1 \vee \varphi_2))$.
 \end{enumerate}
@@ -1056,7 +1057,7 @@ Let $I$ be the set of indexes appearing in $\emph{RemA}$,
 we have $\emph{RemA}\equiv_{\tuple{{\O}, I}} \emph{Removing\_index}(\emph{RemA})$.
 \end{lemma}
 \begin{proof}
-It is easy checking that from the definition of $\emph{Removing\_index}$.
+It is easy checking that from the definition of $\emph{Removing\_index}$ by Proposition~\ref{pro:In2NI}.
 \end{proof}
 
 

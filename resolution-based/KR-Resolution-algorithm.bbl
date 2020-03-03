@@ -85,6 +85,14 @@ Fisher, M.
   theorem-proving and execution.
 \newblock {\em Journal of Logic and Computation} 7(4):429--456.
 
+\bibitem[\protect\citeauthoryear{Herzig and Mengin}{2008}]{herzig2008uniform}
+Herzig, A., and Mengin, J.
+\newblock 2008.
+\newblock Uniform interpolation by resolution in modal logic.
+\newblock In {\em European Workshop on Logics in Artificial Intelligence},
+  219--231.
+\newblock Springer.
+
 \bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
 Lang, J., and Marquis, P.
 \newblock 2008.

@@ -244,7 +244,7 @@ strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journa
 
 
  Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the main logical formalisms for
-program specification and verification. 
+program specification and verification.
 Though forgetting has been extensively investigated from various aspects of different logical systems.
 The existing forgetting methods in propositional
 logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
@@ -884,12 +884,12 @@ By instantiation operator, we guarantee those atoms in $V\cup V''$ are really ir
 
 
 \subsubsection{The Connect process}
-Let $P$ be a conjunction of literals, $l$, $l_1$ be literals, 
-in which $\Var(l_1)\in V \cup V'$, 
+Let $P$ be a conjunction of literals, $l$, $l_1$ be literals,
+in which $\Var(l_1)\in V \cup V'$,
 and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
  %Besides, by $l \supset \neg C_1 \vee C_2$ we mean the set $\{l \supset \neg C_{1,1} \vee C_2, \dots, l \supset \neg C_{1,x} \vee C_2$, where $C_{1,i}$ is a literal appearing in $C_1$.
 %As we can see that those exist resolution rules cannot deduct all the possible result, so we add following new rules:
-Let $A=\{l \supset \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$, $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\gamma = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
+Let $A=\{true \supset \neg l \vee \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$, $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\gamma = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
 \begin{align*}
 & \textbf{(EF1)} \{P\supset \ALL\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha \\
 %&  \qquad \rto\{P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
@@ -977,6 +977,7 @@ C, && else.
 \right.
 $$
 \end{definition}
+Which means that if the formula $C$ containing the atoms in $V$ then let $C$ is true, else itself.
 For convenience, for any set $T$ of formula we have $\emph{Removing\_atoms}(T, V) = \{\emph{Removing\_atoms}(r, V) | r \in T\}$.
 
 
@@ -1028,7 +1029,7 @@ After removing the clauses that include atoms in $V=\{p\}$, the following clause
 \end{align*}
 \end{example}
 
-In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$, it is easy check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
+In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$, it is easy to check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
 
 \subsection{Remove the Index and \start}
 %The $\emph{Removing\_index}(\Gamma)$ process is to change the set $\Gamma$ of formulas into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
@@ -1205,7 +1206,7 @@ But the \CTL\ is a kind of branch time temporal logic, they introduced the ``ind
 
 All in all, a complete set of transformation and resolution rules had been proposed for both PLTL and \CTL. And it shows that the transformation is satisfiability preserving and also for the result obtained from using the resolution rules on the normal form.
 \subsection{Using Resolution Computing forgetting}
-Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting in different logic~\cite{Yisong:2015:arx}. In those case, the formula is required to be a paradigm with a particular form.
+Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting or uniform interpretation in different propositional logic~\cite{Yisong:2015:arx} and Modal logic~\cite{herzig2008uniform}. In those case, the formula is required to be a paradigm with a particular form-``CNF" (the definition of CNF in Modal logic can be found in~\cite{herzig2008uniform}).
 
  As have said above that the normal form used to resolution is an extension of \CTL\ by introducing the \start\ and ``index".
  In this article, we propose the $\tuple{V,I}$-bisimulation to solve the ``index" problem.
