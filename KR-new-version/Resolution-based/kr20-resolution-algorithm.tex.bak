@@ -1,6 +1,6 @@
 %%%% kr-instructions.tex -- version 1.2 (27-Feb-2020)
 
-\typeout{Forgetting in CTL Using an Resolution Approach}
+\typeout{KR2020 Instructions for Authors}
 
 % These are the instructions for authors for KR-20.
 
@@ -28,6 +28,9 @@
 \usepackage[linesnumbered,boxed]{algorithm2e}
 \usepackage{amstext}
 \usepackage{amssymb}
+\usepackage{color}
+%\usepackage{ulem}
+
 \urlstyle{same}
 
 % the following package is optional:
@@ -60,7 +63,7 @@
 % page charge instructions.
 % Put where the files are available in the appropriate places.
 
-\title{Forgetting in CTL Using an Resolution Approach}
+\title{A Resolution Calculus for Forgetting in CTL}
 
 % Single author syntax
 \iffalse % (remove the multiple-author syntax below and \iffalse ... \fi here)
@@ -210,9 +213,12 @@ yswang@gzu.edu.cn
 \maketitle
 
 \begin{abstract}
-Computation Tree Logic (CTL) is one of the central logical formalisms in computer science with a wide-range of applications;  used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.  Orthogonal to this, forgetting is the field of study which concerns removing such a piece of information, deemed irrelevant or obsolete,  from a knowledge base (e.g., a set of such specifications) while guaranteeing certain properties.
 
-In this article, we aim for a proof-theoretic approach to perform \emph{forgetting} in \CTL. As we show, having such an approach let us perform forgetting while avoiding undesirable complications that arise from handling it on the semantic level. To this aim, we develop a resolution calculus which extends an earlier work (\CTL\ with \emph{index} i.e., $\CTLsnf$) with additional rules i.e., EF-implication which connects \emph{next\ state} and \emph{future\ state}.  Since tailoring a resolution calculus for forgetting is a challenging task, our technical contribution is manifolded: ($i$) we provide with a bisimulation between \CTL\ formula into $\CTLsnf$ clauses; ($ii$) we introduce techniques for eliminating undesired atoms resulting from such transformation. Moreover ($iii$) we show the soundness of our method and analyse its computational complexity.
+Computation Tree Logic (CTL) is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.  Orthogonal to this, forgetting is the field of study which concerns removing such a piece of information, deemed irrelevant or obsolete,  from a knowledge base (e.g., a set of such specifications) while guaranteeing certain properties.
+
+In this paper, we present a resolution-based approach to perform \emph{forgetting} in \CTL.
+%As we show, having such an approach let us perform forgetting while avoiding undesirable complications that arise from handling it on the semantic level.
+In particular, we develop a resolution calculus which extends an earlier work (\CTL\ with \emph{index} i.e., $\CTLsnf$) with additional rules i.e., EF-implication which connects \emph{next\ state} and \emph{future\ state}.  Since tailoring a resolution calculus for forgetting is a challenging task, our technical contribution is manifolded: ($i$) we provide with a bisimulation between \CTL\ formulae and $\CTLsnf$ clauses; ($ii$) we introduce techniques for eliminating undesired atoms resulting from such transformation. Moreover, we show the soundness of our approach and analyse its computational complexity.
 
 
 %Furthermore, it is shown that our algorithm is correct and the time and space complexity of our algorithm are $O((m+1)2^{4(n+n')}$.
@@ -269,7 +275,7 @@ In section 3 we give a more precise definition of the problem.
 %
 %
 \section{Preliminaries}
-We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. In the following several parts, we will introduce the structure we will use for \CTL, syntactic and semantic of \CTL\ and the normal form $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) of \CTL~\cite{zhang2009refined}.
+We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$. In the following several parts, we will introduce the structure we will use for \CTL, syntax and semantic of \CTL\ and the normal form $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) of \CTL~\cite{zhang2009refined}.
 \subsection{Model structure in \CTL}
  In general, a transition system
 %\footnote{According to \cite{Baier:PMC:2008},
@@ -414,7 +420,7 @@ Before talk about the sematic of this language, we introduce the $\CTLsnf$ claus
 & \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l) && (\ALL-sometime\ clause)\\
 & \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l) && (\EXIST-sometime\ clause).
 \end{align*}
-where $k \ge 0$, $n > 0$, $\start$ is a propositional constant, $l_i$ ($1 \le i \le n$), $m_j$ ($1 \le j \le k$) and $l$ are literals, that is atomic propositions or their negation and $ind$ is an element of Ind (Ind is a countably infinite index set). By clause we mean the classical clause or the $\CTLsnf$ clause unless explicitly stated.
+where $k \ge 0$, $n > 0$, $\start$ is a propositional constant, $l_i$ ($1 \le i \le n$), $m_j$ ($1 \le j \le k$) and $l$ are literals, that is atomic propositions or their negation, and $ind$ is an element of Ind (Ind is a countably infinite index set). By clause we mean the classical clause or the $\CTLsnf$ clause unless explicitly stated.
  %A set $T$ of $\CTLsnf$ clauses is satisfiable if there is a model $\Hm=(S, R, L, [\_], s_0)$ \st\ for all clause $C\in T$, $(\Hm, s_0) \models C$.
 
 Formulae of $\CTLsnf$ over $\Ha$ are interpreted in \Ind-model structure $\Hm=(S,R,L, [\_], s_0)$, where $S$, $R$, $L$ and $s_0$ is the same as our model structure talked above and $[\_]: \Ind \rto 2^{(S*S)}$ maps every index $ind \in \Ind$ to a successor function $[ind]$ which is a functional relation on $S$ and a subset of the binary accessibility relation $R$, such that for every $s\in S$ there exists exactly a state $s'\in S$ such that $(s,s')\in [ind]$ and $(s,s')\in R$.
@@ -429,7 +435,7 @@ In the case $s$ is an initial state of $\cal M$, the \Ind-structure is {\em init
 
 %The semantics of $\CTLsnf$ is an extension of the semantics of \CTL\ defined in Section 2.2 except using the \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$ replace model structure, $({\cal M},s_i) \models \start$ iff $s_i=s_0$ and for all $\EXIST_{\tuple{ind}} \Gamma$ are explained in the path $\pi_{s_i}^{\tuple{ind}}$, where $\Gamma\in \{\NEXT, \GLOBAL, \UNTIL,\UNLESS\}$.
 The semantics of $\CTLsnf$ is then
-defined as shown next as an extension of the semantics of CTL. Let $\varphi$ and $\psi$ be two $\CTLsnf$ formulae and $\Hm=(S,R,L,[\_],s_0)$ be an \Ind-model structure, the relation ``$\models$" between $\CTLsnf$ formulae and $\Hm$ is defined recursively as follows:
+defined as shown next as an extension of the semantics of \CTL. Let $\varphi$ and $\psi$ be two $\CTLsnf$ formulae and $\Hm=(S,R,L,[\_],s_0)$ be an \Ind-model structure, the relation ``$\models$" between $\CTLsnf$ formulae and $\Hm$ is defined recursively as follows:
 \begin{itemize}
   \item $({\cal M},s_i) \models \start$ iff $s_i=s_0$;
   \item $({\cal M},s_i)\models \EXIST_{\tuple{ind}} \NEXT \psi$ iff for the path $\pi_{s_i}^{\tuple{ind}}$, $(\Hm, s_{i+1})\models \psi$;
@@ -441,9 +447,9 @@ defined as shown next as an extension of the semantics of CTL. Let $\varphi$ and
   \item $(\Hm,s_i) \models \EXIST_{\tuple{ind}} \FUTURE \psi$ iff $(\Hm,s_i) \models \EXIST_{\tuple{ind}}[\top \UNTIL\psi]$.
   %\item $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNLESS\psi]$ iff $(\Hm,s_i) \models \EXIST_{\tuple{ind}}\GLOBAL \varphi$ or $({\cal M},s_i)\models \EXIST_{\tuple{ind}}[\varphi\UNTIL\psi]$.
 \end{itemize}
-The semantics of the remaining operators is analogous to that given previously but in the
+The semantics of the remaining operators is analogous to that of \CTL\ given previously but in the
 extended \Ind-model structure ${\cal M}=(S, R, L, [\_],s_0)$.
-A $\CTLsnf$ formula $\varphi$ is satisfiable, iff for some \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$, $(\Hm,s_0)\models \varphi$, and unsatisfiable otherwise. And if $(\Hm,s_0)\models \varphi$ then $(\Hm,s_0)$ is called a \Ind-model of $\varphi$, and we say that $(\Hm,s_0)$ satisfies $\varphi$.
+A $\CTLsnf$ formula $\varphi$ is satisfiable, iff for some \Ind-model structure $\Hm=(S,R,L,[\_],s_0)$, $(\Hm,s_0)\models \varphi$, and unsatisfiable otherwise. And if $(\Hm,s_0)\models \varphi$ then $(\Hm,s_0)$ is called an \Ind-model of $\varphi$, and we say that $(\Hm,s_0)$ satisfies $\varphi$.
 By $T \wedge \varphi$ we mean $\bigwedge_{\psi\in T} \psi \wedge \varphi$, where $T$ is a set of formulae.
 Other terminologies are similar with those in \CTL\ sub-section.
 
@@ -451,7 +457,7 @@ Other terminologies are similar with those in \CTL\ sub-section.
 
 
 \section{Problem Definition}
-In order to define our problem, \ie forgetting in \CTL, we review our definition of $V$-bisimulation. %(read ?? for more detials).
+In order to define our problem, \ie forgetting in \CTL, we give the definition of $V$-bisimulation at first. %(read ?? for more detials).
 \begin{definition}\label{def:Vbi}
 Let $V\subseteq\cal A$
 %${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
@@ -504,7 +510,7 @@ of equivalence the forgetting result is unique (up to equivalence).
 
 
 Similar with the $V$-bisimulation between \MPK-structures, we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
-\begin{definition}[ binary bisimulation relation] \label{def:VInd:bisimulation}
+\begin{definition}[binary bisimulation relation] \label{def:VInd:bisimulation}
 %\textbf{($\tuple{V,I}$-bisimulation)}
 Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation $\beta_{\tuple{V,I}}$ between initial \Ind-structures is a set that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \notin I$ there is
 \begin{enumerate}[(i)]
@@ -518,7 +524,7 @@ We call this relation as \emph{binary bisimulation relation}, denoted as $\tuple
 
 \begin{proposition}\label{pro:VI:div}
 Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$, $I_1, I_2 \subseteq Ind$
-and ${\cal K}_i=({\cal M}_i,s_0^i)~(i=1,2,3)$ be Ind-structures
+and ${\cal K}_i=({\cal M}_i,s_0^i)~(i=1,2,3)$ be initial Ind-structures
  such that
 ${\cal K}_1\lrto_{\tuple{V_1, I_1}}{\cal K}_2$ and ${\cal K}_2\lrto_{\tuple{V_2,I_2}}{\cal K}_3$.
  Then:
@@ -545,9 +551,9 @@ $\forall (s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_
 In this part, we will explore a resolution-based method to compute forgetting in \CTL.
 We use the transformation rules Trans(1) to Trans(12) and resolution rules (SRES1), \dots, (SRES8), RW1, RW2, (ERES1), (ERES2) in~\cite{zhang2009refined}.
 
-The key problems of this method include (1) How to fill the gap between \CTL\ and $\CTLsnf$ since there is index for existential quantifier in $\CTLsnf$; and (2) How to eliminate the irrelevant atoms, which we want to forget and introduced by the transformation rules, in the formula.
+The key problems of this method include: (1) How to fill the gap between \CTL\ and $\CTLsnf$ since there is index for existential quantifier in $\CTLsnf$; and (2) How to eliminate the irrelevant atoms, which we want to forget and introduced by the transformation rules, in the formula.
 We will resolve these two problems by $\tuple{V,I}$-bisimulation and \emph{eliminate} operator respectively.
-For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation process below, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clauses obtained from $\varphi$ by using transformation rules  and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly stated.
+For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation process below, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clauses obtained from $\varphi$ by using transformation rules on it and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly state.
  Let $T$, $T'$ be two sets of formulae, $I$ a set of indexes and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
 
 

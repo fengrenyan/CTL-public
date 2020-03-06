@@ -1,0 +1,225 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Baier and Katoen}{2008}]{Baier:PMC:2008}
+Baier, C., and Katoen, J.
+\newblock 2008.
+\newblock {\em Principles of Model Checking}.
+\newblock The MIT Press.
+
+\bibitem[\protect\citeauthoryear{Bolotov}{1999}]{Bolotov:1999:JETAI}
+Bolotov, A.
+\newblock 1999.
+\newblock A clausal resolution method for ctl branching-time temporal logic.
+\newblock {\em Journal of Experimental \& Theoretical Artificial Intelligence}
+  11(1):77--93.
+
+\bibitem[\protect\citeauthoryear{Browne, Clarke, and
+  Grumberg}{1988}]{DBLP:journals/tcs/BrowneCG88}
+Browne, M.~C.; Clarke, E.~M.; and Grumberg, O.
+\newblock 1988.
+\newblock Characterizing finite kripke structures in propositional temporal
+  logic.
+\newblock {\em Theor. Comput. Sci.} 59:115--131.
+
+\bibitem[\protect\citeauthoryear{Clarke and Emerson}{1981}]{clarke1981design}
+Clarke, E.~M., and Emerson, E.~A.
+\newblock 1981.
+\newblock Design and synthesis of synchronization skeletons using branching
+  time temporal logic.
+\newblock In {\em Workshop on Logic of Programs},  52--71.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Clarke, Emerson, and
+  Sistla}{1986}]{DBLP:journals/toplas/ClarkeES86}
+Clarke, E.~M.; Emerson, E.~A.; and Sistla, A.~P.
+\newblock 1986.
+\newblock Automatic verification of finite-state concurrent systems using
+  temporal logic specifications.
+\newblock {\em {ACM} Trans. Program. Lang. Syst.} 8(2):244--263.
+
+\bibitem[\protect\citeauthoryear{Dailler \bgroup et al\mbox.\egroup
+  }{2018}]{dailler2018instrumenting}
+Dailler, S.; Hauzar, D.; March{\'e}, C.; and Moy, Y.
+\newblock 2018.
+\newblock Instrumenting a weakest precondition calculus for counterexample
+  generation.
+\newblock {\em Journal of logical and algebraic methods in programming}
+  99:97--113.
+
+\bibitem[\protect\citeauthoryear{Dijkstra}{1978}]{dijkstra1978guarded}
+Dijkstra, E.~W.
+\newblock 1978.
+\newblock Guarded commands, nondeterminacy, and formal derivation of programs.
+\newblock In {\em Programming Methodology}. Springer.
+\newblock  166--175.
+
+\bibitem[\protect\citeauthoryear{Eiter and
+  Kern-Isberner}{2019}]{eiter2019brief}
+Eiter, T., and Kern-Isberner, G.
+\newblock 2019.
+\newblock A brief survey on forgetting from a knowledge representation and
+  reasoning perspective.
+\newblock {\em KI-K{\"u}nstliche Intelligenz} 33(1):9--33.
+
+\bibitem[\protect\citeauthoryear{Eiter and Wang}{2008}]{Eiter2008Semantic}
+Eiter, T., and Wang, K.
+\newblock 2008.
+\newblock {\em Semantic forgetting in answer set programming}.
+\newblock Elsevier Science Publishers Ltd.
+
+\bibitem[\protect\citeauthoryear{Fang, Liu, and
+  Van~Ditmarsch}{2019}]{fang2019forgetting}
+Fang, L.; Liu, Y.; and Van~Ditmarsch, H.
+\newblock 2019.
+\newblock Forgetting in multi-agent modal logics.
+\newblock {\em Artificial Intelligence} 266:51--80.
+
+\bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
+Lang, J., and Marquis, P.
+\newblock 2008.
+\newblock On propositional definability.
+\newblock {\em Artificial Intelligence} 172(8):991--1017.
+
+\bibitem[\protect\citeauthoryear{Lang and Marquis}{2010}]{Lang2010Reasoning}
+Lang, J., and Marquis, P.
+\newblock 2010.
+\newblock {\em Reasoning under inconsistency: a forgetting-based approach}.
+\newblock Elsevier Science Publishers Ltd.
+
+\bibitem[\protect\citeauthoryear{Lang, Liberatore, and
+  Marquis}{2003}]{DBLP:journals/jair/LangLM03}
+Lang, J.; Liberatore, P.; and Marquis, P.
+\newblock 2003.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting.
+\newblock {\em J. Artif. Intell. Res.} 18:391--443.
+
+\bibitem[\protect\citeauthoryear{Lin and Reiter}{1994}]{lin1994forget}
+Lin, F., and Reiter, R.
+\newblock 1994.
+\newblock Forget it.
+\newblock In {\em Working Notes of AAAI Fall Symposium on Relevance},
+  154--159.
+
+\bibitem[\protect\citeauthoryear{Lin}{2001}]{DBLP:journals/ai/Lin01}
+Lin, F.
+\newblock 2001.
+\newblock On strongest necessary and weakest sufficient conditions.
+\newblock {\em Artif. Intell.} 128(1-2):143--159.
+
+\bibitem[\protect\citeauthoryear{Lin}{2003}]{lin2003compiling}
+Lin, F.
+\newblock 2003.
+\newblock Compiling causal theories to successor state axioms and strips-like
+  systems.
+\newblock {\em Journal of Artificial Intelligence Research} 19:279--314.
+
+\bibitem[\protect\citeauthoryear{Liu and Wen}{2011}]{Yongmei:IJCAI:2011}
+Liu, Y., and Wen, X.
+\newblock 2011.
+\newblock On the progression of knowledge in the situation calculus.
+\newblock In {\em IJCAI 2011, Proceedings of the 22nd International Joint
+  Conference on Artificial Intelligence},  976--982.
+\newblock Barcelona, Catalonia, Spain: IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Lutz and Wolter}{2011}]{Lutz:IJCAI:2011}
+Lutz, C., and Wolter, F.
+\newblock 2011.
+\newblock Foundations for uniform interpolation and forgetting in expressive
+  description logics.
+\newblock In {\em IJCAI 2011, Proceedings of the 22nd International Joint
+  Conference on Artificial Intelligence},  989--995.
+\newblock Barcelona, Catalonia, Spain: IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Meier \bgroup et al\mbox.\egroup
+  }{2015}]{DBLP:journals/ijfcs/MeierTVM15}
+Meier, A.; Thomas, M.; Vollmer, H.; and Mundhenk, M.
+\newblock 2015.
+\newblock Erratum: The complexity of satisfiability for fragments of {CTL} and
+  ctl\({}^{\mbox{{\(\star\)}}}\).
+\newblock {\em Int. J. Found. Comput. Sci.} 26(8):1189.
+
+\bibitem[\protect\citeauthoryear{Su \bgroup et al\mbox.\egroup
+  }{2009}]{Kaile:JAIR:2009}
+Su, K.; Sattar, A.; Lv, G.; and Zhang, Y.
+\newblock 2009.
+\newblock Variable forgetting in reasoning about knowledge.
+\newblock {\em Journal of Artificial Intelligence Research} 35:677--716.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup et al\mbox.\egroup
+  }{2010}]{Wang:AMAI:2010}
+Wang, Z.; Wang, K.; Topor, R.~W.; and Pan, J.~Z.
+\newblock 2010.
+\newblock Forgetting for knowledge bases in \textrm{DL-Lite}.
+\newblock {\em Annuals of Mathematics and Artificial Intelligence}
+  58(1-2):117--151.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup et al\mbox.\egroup
+  }{2012}]{Yisong:KR:2012}
+Wang, Y.; Zhang, Y.; Zhou, Y.; and Zhang, M.
+\newblock 2012.
+\newblock Forgetting in logic programs under strong equivalence.
+\newblock In {\em Principles of Knowledge Representation and Reasoning:
+  Proceedings of the Thirteenth International Conference},  643--647.
+\newblock Rome, Italy: AAAI Press.
+
+\bibitem[\protect\citeauthoryear{Wang, Wang, and
+  Zhang}{2013}]{Yisong:IJCAI:2013}
+Wang, Y.; Wang, K.; and Zhang, M.
+\newblock 2013.
+\newblock Forgetting for answer set programs revisited.
+\newblock In {\em IJCAI 2013, Proceedings of the 23rd International Joint
+  Conference on Artificial Intelligence},  1162--1168.
+\newblock Beijing, China: IJCAI/AAAI.
+
+\bibitem[\protect\citeauthoryear{Wong}{2009}]{Wong:PhD:Thesis}
+Wong, K.-S.
+\newblock 2009.
+\newblock {\em Forgetting in Logic Programs}.
+\newblock Ph.D. Dissertation, The University of New South Wales.
+
+\bibitem[\protect\citeauthoryear{Woodcock and
+  Morgan}{1990}]{woodcock1990refinement}
+Woodcock, J.~C., and Morgan, C.
+\newblock 1990.
+\newblock Refinement of state-based concurrent systems.
+\newblock In {\em International Symposium of VDM Europe},  340--351.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Zhang and Foo}{2006}]{DBLP:Zhang:AIJ2006}
+Zhang, Y., and Foo, N.~Y.
+\newblock 2006.
+\newblock Solving logic program conflict through strong and weak forgettings.
+\newblock {\em Artificial Intelligence} 170(8-9):739--778.
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2008}]{Zhang2008Properties}
+Zhang, Y., and Zhou, Y.
+\newblock 2008.
+\newblock Properties of knowledge forgetting.
+\newblock In Pagnucco, M., and Thielscher, M., eds., {\em Proceedings of the
+  Twelfth International Workshop on Non-Monotonic Reasoning},  68--75.
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2009}]{Yan:AIJ:2009}
+Zhang, Y., and Zhou, Y.
+\newblock 2009.
+\newblock Knowledge forgetting: Properties and applications.
+\newblock {\em Artificial Intelligence} 173(16-17):1525--1537.
+
+\bibitem[\protect\citeauthoryear{Zhang, Foo, and Wang}{2005}]{Zhang2005Solving}
+Zhang, Y.; Foo, N.~Y.; and Wang, K.
+\newblock 2005.
+\newblock Solving logic program conflict through strong and weak forgettings.
+\newblock In {\em Ijcai-05, Proceedings of the Nineteenth International Joint
+  Conference on Artificial Intelligence, Edinburgh, Scotland, Uk, July
+  30-August},  627--634.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017}]{zhao2017role}
+Zhao, Y., and Schmidt, R.~A.
+\newblock 2017.
+\newblock Role forgetting for alcoqh ($\delta$)-ontologies using an
+  ackermann-based approach.
+\newblock In {\em Proceedings of the 26th International Joint Conference on
+  Artificial Intelligence},  1354--1361.
+\newblock AAAI Press.
+
+\end{thebibliography}
