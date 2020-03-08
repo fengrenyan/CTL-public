@@ -289,7 +289,7 @@ We start with some technical and notational preliminaries. Throughout this paper
 %(6) $L:S\rto 2^{\textrm{AP}}$ is a labeling function.}
  can be described by a \emph{model\ structure} (or \emph{Kripke \ structure}) (see~\cite{Baier:PMC:2008} for details). A model structure is a triple $\Hm=(S,R,L)$, where
 \begin{itemize}
-  \item $S$ is a finite nonempty set of states \footnote{Indeed, every state is identified by a configuration of atoms i.e., which holds in that state.},
+  \item $S$ is a finite nonempty set of states, % \footnote{Indeed, every state is identified by a configuration of atoms i.e., which holds in that state.},
   \item $R\subseteq S\times S$ and, for each $s\in S$, there
   is $s'\in S$ such that $(s,s')\in R$,
   \item $L$ is a labeling function $S\rto 2^{\cal A}$.
@@ -346,7 +346,7 @@ $\cal L$ are inductively defined via a Backus Naur form:
 %    \ALL \GLOBAL \phi \mid
 %    \ALL [\phi\ \UNTIL\ \phi]
 \end{equation}
-where $p\in\cal A$. The formulas $\phi\land\psi$ and $\phi\rto\psi$
+where $p\in\cal A$. The formulas $\phi\land\psi$ and $\phi\supset \psi$
 are defined in a standard manner of propositional logic.
 The other form formulas of $\cal L$ are abbreviated
 using the forms of (\ref{def:CTL:formulas}).
@@ -421,7 +421,9 @@ Before talk about the sematic of this language, we introduce the $\CTLsnf$ claus
 & \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l) && (\ALL-sometime\ clause)\\
 & \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l) && (\EXIST-sometime\ clause).
 \end{align*}
-where $k \ge 0$, $n > 0$, $\start$ is a propositional constant, $l_i$ ($1 \le i \le n$), $m_j$ ($1 \le j \le k$) and $l$ are literals, that is atomic propositions or their negation, and $ind$ is an element of Ind (Ind is a countably infinite index set). By clause we mean the classical clause or the $\CTLsnf$ clause unless explicitly stated.
+where $k \ge 0$, $n > 0$, $\start$ is a propositional constant, $l_i$ ($1 \le i \le n$), $m_j$ ($1 \le j \le k$) and $l$ are literals, that is atomic propositions or their negation, and $ind$ is an element of Ind (Ind is a countably infinite index set).
+By clause we mean the classical clause or the $\CTLsnf$ clause unless explicitly stated.
+As all clauses are of the form $\ALL \GLOBAL(P \supset D)$ , we often simply write $P \supset D$ instead.
  %A set $T$ of $\CTLsnf$ clauses is satisfiable if there is a model $\Hm=(S, R, L, [\_], s_0)$ \st\ for all clause $C\in T$, $(\Hm, s_0) \models C$.
 
 Formulae of $\CTLsnf$ over $\Ha$ are interpreted in \Ind-model structure $\Hm=(S,R,L, [\_], s_0)$, where $S$, $R$, $L$ and $s_0$ is the same as our model structure talked above and $[\_]: \Ind \rto 2^{(S*S)}$ maps every index $ind \in \Ind$ to a successor function $[ind]$ which is a functional relation on $S$ and a subset of the binary accessibility relation $R$, such that for every $s\in S$ there exists exactly a state $s'\in S$ such that $(s,s')\in [ind]$ and $(s,s')\in R$.
@@ -574,7 +576,7 @@ Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-stru
 \end{enumerate}
 %$\forall j \notin I$ there is $[j]_1 = [j]_2$.
 \end{definition}
-We call this relation as \emph{binary bisimulation relation}, denoted as $\tuple{V,I}$-bisimulation. Apparently, this definition is similar with our concept $V$-bisimulation except that this $\tuple{V,I}$-bisimulation has introduced the index.
+We call this relation as \emph{binary bisimulation relation}, also denoted as $\lrto_{\tuple{V,I}}$. Apparently, this definition is similar with our concept $V$-bisimulation except that this $\tuple{V,I}$-bisimulation has introduced the index.
 %Besides, it is not difficult to prove $\tuple{V,I}$-bisimulation possess those properties (talked-above) possessed by $V$-bisimulation.
 
 \begin{proposition}\label{pro:VI:div}
@@ -596,7 +598,7 @@ ${\cal K}_1\lrto_{\tuple{V_1, I_1}}{\cal K}_2$ and ${\cal K}_2\lrto_{\tuple{V_2,
 (i) By Proposition~\ref{div} we have ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$. For (i) of Definition~\ref{def:VInd:bisimulation} we can prove it as follows:
 $\forall (s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_{V_1} s'$ and $s_1 \lrto_{V_1} s_1'$ and there is a $(s'', s_1'') \in [j]_3$ such that $s'\lrto_{V_2} s''$ and $s_1' \lrto_{V_2} s_1''$, and then we have $\forall (s,s_1) \in [j]_1$ there is a $(s'', s_1'') \in [j]_3$ such that $s  \lrto_{V_1\cup V_2} s''$ and $s_1 \lrto_{V_1\cup V_2} s_1''$. The (ii) of Definition~\ref{def:VInd:bisimulation} can be proved similarly.
 
-(ii) This can be proved from (i).
+(ii) This can be proved from (ii) of Proposition~\ref{div}.
 \end{proof}
 
 
@@ -604,12 +606,12 @@ $\forall (s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_
 \section{The Calculus}
 \emph{Resolution} in \CTL\ is a method to decide the satisfiability of a \CTL\ formula.
 In this part, we will explore a resolution-based method to compute forgetting in \CTL.
-We use the transformation rules Trans(1) to Trans(12) and resolution rules (SRES1), \dots, (SRES8), RW1, RW2, (ERES1), (ERES2) in~\cite{zhang2009refined}.
+We use the transformation rules Trans(1) to Trans(12) and resolution rules (SRES1), \dots, (SRES8), RW1, RW2, (ERES1), (ERES2) in~\cite{zhang2009refined}. Due to space restrictions, these rules are not enumerated here.
 
 The key problems of this method include: (1) How to fill the gap between \CTL\ and $\CTLsnf$ since there is index for existential quantifier in $\CTLsnf$; and (2) How to eliminate the irrelevant atoms, which we want to forget and introduced by the transformation rules, in the formula.
 We will resolve these two problems by $\tuple{V,I}$-bisimulation and \emph{eliminate} operator respectively.
 For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation and resolution processes below, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clauses obtained from $\varphi$ by using transformation rules on it and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly state.
- Let $T$, $T'$ be two sets of formulae, $I$ a set of indexes and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
+ Let $T$, $T'$ be two sets of formulae, $I$ a set of indexes introduced in the transformation and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
 
 
 
@@ -618,9 +620,9 @@ For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \s
 
 
 The algorithm of computing the forgetting in \CTL\ is as Algorithm~\ref{alg:compute:forgetting:by:Resolution}.
-The main idea of this algorithm is to change the \CTL\ formula into a set of $\CTLsnf$ clauses at first (the Transform process), and then compute all the possible resolutions on the specified set of atoms (the Resolution process). Third, eliminating, which include \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms} sub-processes, all the irrelevant atoms which dose not be eliminated by the resolution.
+The main idea of this algorithm is to change the \CTL\ formula into a set of $\CTLsnf$ clauses at first (the Transform process), and then compute all the possible resolutions on the specified set of atoms (the Resolution process). Third, eliminating, which include \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms} sub-processes, all the irrelevant atoms. % which dose not be eliminated by the resolution.
 % We will describe this process, which include \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms} sub-processes, in detail below.
-Changing the result obtained before into a \CTL\ formula at last, this include three sub-processes: \emph{Removing\_index} (removing the index in the formula), \emph{Replacing\_atoms} (replacing the atoms in $V'$ with an formula) and $T_\CTL$ (removing the $\start$ in $T$).
+Changing the result obtained before into a \CTL\ formula at last, this include three sub-processes: \emph{Removing\_index} (removing the index in the formula), \emph{Replacing\_atoms} (replacing the atoms in $V'$ with a formula) and $T_\CTL$ (removing the $\start$ in $T$).
 To describe our algorithm clearly, we illustrate it with the following example.
 \begin{example}\label{main:examp}
 Let $\varphi=\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$ and $V=\{p\}$.
@@ -636,7 +638,7 @@ In the following context we will show how to compute the $\CTLforget(\varphi, V)
 \KwOut{$\emph{ERes}(\varphi, V)$}  %esult of forgetting $V$ from $\varphi$% ????
 $T_{\varphi}\lto {\O}$ // the initial set of $\CTLsnf$ clauses of $\varphi$ \;
 %$T_{\NI} \lto {\O}$ // the set of $\CTLsnf$ clauses without index\;
-$V'={\O}$ // the set of atoms introduced in the process of transforming $\varphi$ into $\CTLsnf$ clauses\;
+$V'\lto {\O}$ // the set of atoms introduced in Transform and Resolution processes\;
 
 
 $T_{\varphi}, V' \lto \emph{Transform}(\varphi)$\;
@@ -758,7 +760,7 @@ By the \emph{Transform} process, the result $T_{\varphi}$ of the Example~\ref{ma
 & 4. \top \supset \neg z \vee x \vee y && 5.\top \supset \neg y \vee p && 6.\top \supset \neg y \vee q\\
 & 7. z \supset \ALL \FUTURE x && 8. y \supset \ALL \NEXT(x\vee y).
 \end{align*}
-Besides, the set of new atoms introduced in this process is $\{x, y,x\}$.
+Besides, the set of new atoms introduced in this process is $V'=\{x, y,x\}$.
 \end{example}
 
 
@@ -780,7 +782,7 @@ And the pseudocode of \emph{Resolution} process is as Algorithm~\ref{alg:compute
 \end{proposition}
 \begin{proof}(sketch)
 This can be proved from $T_i$ to $T_{i+1}$ $(0\leq i < n)$ by using one resolution rule on $T_i$.
-For instance, if we can use resolution rule \textbf{(SRES1)} on $\psi\subseteq T_i$ and obtain the result $R$, then we can prove $T_i \equiv T_{i+1}$ with $T_{i+1} = T_i \cup R$ as follows.
+For instance, if we can use resolution rule (SRES1) on $\psi\subseteq T_i$ and obtain the result $R$, then we can prove $T_i \equiv T_{i+1}$ with $T_{i+1} = T_i \cup R$ as follows.
 
 On one hand, it is apparent that $\psi \models R$ and then $T_i \models T_{i+1}$. On the other hand, $T_i\subseteq T_{i+1}$ and then $T_{i+1} \models T_i$.
 
@@ -803,10 +805,10 @@ On one hand, it is apparent that $\psi \models R$ and then $T_i \models T_{i+1}$
 Proposition~\ref{pro:TranE} and Proposition~\ref{pro:ResE} mean that $\varphi \equiv_{\tuple{V \cup V', I}} Res$, this resolve part of the problem (1).
 
 \begin{algorithm}[!h]
-\caption{$\emph{Resolution}(T, V')$}% ??????
+\caption{$\emph{Resolution}(T,V \cup V')$}% ??????
 \label{alg:compute:Res}
 %\LinesNumbered %?????????
-\KwIn{A set $T_{\varphi}$ of $\CTLsnf$ clauses and a set $V'$ of atoms}% ????????
+\KwIn{A set $T_{\varphi}$ of $\CTLsnf$ clauses and a set $V\cup V'$ of atoms}% ????????
 \KwOut{A set $Res$ of $\CTLsnf$ clauses}% ????
 
 $S\lto \{C | C\in T_{\varphi}$ and $\Var(C) \cap (V\cup V')= {\O}\}$\;
@@ -963,7 +965,7 @@ in which $\Var(l_1)\in V \cup V'$,
 and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
  %Besides, by $l \supset \neg C_1 \vee C_2$ we mean the set $\{l \supset \neg C_{1,1} \vee C_2, \dots, l \supset \neg C_{1,x} \vee C_2$, where $C_{1,i}$ is a literal appearing in $C_1$.
 %As we can see that those exist resolution rules cannot deduct all the possible result, so we add following new rules:
-Let $A=\{true \supset \neg l \vee \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$, $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\gamma = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE(C_3 \vee C_2))))$,we add following new rules, we call it \textbf{EF} imply.
+Let $A=\{true \supset \neg l \vee \neg l_1 \vee C_2, l \supset C_3\vee C_2\}$, $\alpha=P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$, $\beta = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\ALL\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))$ and $\gamma = P \supset ((\neg C_3 \wedge \neg C_2) \supset (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge  \neg (C_2 \vee C_4) \supset \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE(C_3 \vee C_2))))$, we add following new rules, we call it \textbf{EF}-implication.
 \begin{align*}
 & \textbf{(EF1)} \{P\supset \ALL\FUTURE l, P\supset \EXIST_{\tuple{ind}}\NEXT (l_1 \vee C_4)\}\cup A \rto \alpha \\
 %&  \qquad \rto\{P \supset ((\neg C_3 \wedge \neg C_2) \supset  (\EXIST_{\tuple{ind}}\NEXT(C_3 \wedge \neg (C_2 \vee C_4) \supset \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2))))\},\\
@@ -1039,10 +1041,10 @@ Then $(\Hm,s_1) \models \ALL\NEXT \ALL\FUTURE(C_3 \vee C_2)$.
 
 
 \subsubsection{The Removing\_atoms process}
-For eliminating those irrelevant atoms, we define the following Removing operator.
+For eliminating those irrelevant atoms, we define the following \emph{Removing\_atoms} operator.
 \begin{definition}[Removing\_atoms]\label{def:Elm}
 %\textbf{(Elimination)}
-Let $T$ be a set of formulae, $C \in T$ and $V$ a set of atoms, then the elimination operator is defined as:
+Let $T$ be a set of formulae, $C \in T$ and $V$ a set of atoms, then the Removing\_atoms operator is defined as:
 $$ \emph{Removing\_atoms}(C, V)=\left\{
 \begin{aligned}
 \top, && if\ \Var(C) \cap V \neq {\O} \\
@@ -1051,7 +1053,7 @@ C, && else.
 \right.
 $$
 \end{definition}
-Which means that if the formula $C$ containing at least one of atoms in $V$ then let $C$ is true, else itself.
+Which means that if the formula $C$ containing at least one of atoms in $V$ then let $\emph{Removing\_atoms}(C, V)$ be true, else be $C$ itself.
 For convenience, for any set $T$ of formula we have $\emph{Removing\_atoms}(T, V) = \{\emph{Removing\_atoms}(r, V) | r \in T\}$.
 
 
@@ -1132,7 +1134,7 @@ For each $(\Hm, s_0) \in \Mod(P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i)
 
 (ii) Intuitively, from the left to the right: for any model $(\Hm,s_0)$ of the left side of the equation if there is $(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$ with $j_i \in \{1, \dots, n\}$ and $1\leq m \leq n$, then there is some next state $s_1$ of $s_0$ with $(s_0, s_1) \in [ind]$ such that $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$. By the definition of $[ind]$, we have $(s_0, s_1) \in R$ and then $(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \supset \EXIST \NEXT (\bigwedge_{i=1}^m P_{j_i} \varphi_{j_i})$. The other side can be similarly proved as (i).
 
-(iii) From the right to the left:  for any model $(\Hm,s_0)$ of the right side of the equation if there is $(\Hm,s_0) \models P$ then there is a path $\pi_{s_0}$ such that $\varphi_i \in \pi_{s_0}$ ($1\leq i \leq n$). Then we can construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except the for each $(s_i, s_{i+1})$ of $\pi_{s_0}$ there is $(s_i, s_{i+1}) \in [ind]$. It easy to check $(\Hm', s_0) \models \bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)$ and  $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.  The other side can be similarly proved as (ii).
+(iii) From the right to the left:  for any model $(\Hm,s_0)$ of the right side of the equation if there is $(\Hm,s_0) \models P$ then there is a path $\pi_{s_0}$ such that $\varphi_i \in \pi_{s_0}$ ($1\leq i \leq n$). Then we can construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except for each $(s_i, s_{i+1})$ of $\pi_{s_0}$ there is $(s_i, s_{i+1}) \in [ind]$. It is easy to check $(\Hm', s_0) \models \bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)$ and  $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.  The other side can be similarly proved as (ii).
 
 Other results can be proved similarly.
 \end{proof}
@@ -1185,7 +1187,7 @@ By using the \emph{Replacing\_atoms} process on result of Example~\ref{examp:rem
 
 
 \subsection{An example for Connect process}
-In order to show the necessity of the Connect process, we see the following example at first.
+In order to show the necessity of the Connect process, we give the following example at first.
 \begin{example}
 Let $\psi=\ALL\FUTURE(p \wedge q) \wedge \EXIST \NEXT \neg p$ and $V=\{p\}$.
 By the processes Transform and Resolution, we can obtain $V'=\{f,z\}$ and the following set $Res$ of $\CTLsnf$ clauses.
@@ -1234,7 +1236,7 @@ It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \
 \end{figure}
 \end{example}
 
-This example shows that why we introduce the \textbf{EF} imply rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is more stronger than our method, because by the \emph{Removing\_atoms} process, we have removing some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$, but after removing $C$ we only obtain that $f \supset q$. In this example, there is a clause $z \supset \EXIST \NEXT \neg f \in Res$, after replacing $f$ with $q$, we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not removing $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker than $z \supset \EXIST \NEXT \neg q$.
+This example shows that why we introduce the \textbf{EF}-implication rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is more stronger than our method, because by the \emph{Removing\_atoms} process, we have removing some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$, but after removing $C$ we only obtain that $f \supset q$. In this example, there is a clause $z \supset \EXIST \NEXT \neg f \in Res$, after replacing $f$ with $q$, we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not removing $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker than $z \supset \EXIST \NEXT \neg q$.
 In fact, for any model $(\Hm, s_0)$ of $\varphi$ there is not necessary $q\not \in L(s)$ for some next state $s$ of $s_0$ and if there is $q \in L(s)$ for all next states s, then there must be a next state $s$ of $s_0$ with $p \not \in L(s)$ s.t. for all next state $s'$ of $s$ there is $(\Hm, s')\models \ALL\FUTURE q$ (see Fig.~\ref{Fig:models}).
 This is what the meanning of the \emph{Connect} process.
 
@@ -1288,11 +1290,11 @@ But the \CTL\ is a kind of branch time temporal logic, they introduced the ``ind
 
 All in all, a complete set of transformation and resolution rules had been proposed for both PLTL and \CTL. And it shows that the transformation is satisfiability preserving and also for the result obtained from using the resolution rules on the normal form.
 \subsection{Using Resolution Computing forgetting}
-Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting or uniform interpretation in different propositional logic~\cite{Yisong:2015:arx} and Modal logic~\cite{herzig2008uniform}. In those case, the formula is required to be a paradigm with a particular form-``CNF" (the definition of CNF in Modal logic can be found in~\cite{herzig2008uniform}).
+Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting or uniform interpretation in propositional logic~\cite{Yisong:2015:arx} and Modal logic~\cite{herzig2008uniform}. In those case, the formula is required to be a paradigm with a particular form-``CNF" (the definition of CNF in Modal logic can be found in~\cite{herzig2008uniform}).
 
  As have said above that the normal form used to resolution is an extension of \CTL\ by introducing the \start\ and ``index".
  In this article, we propose the $\tuple{V,I}$-bisimulation to solve the ``index" problem.
- Besides, in order to eliminate those atoms introduced in the transformation, we proposed the four EF imply rules.
+ Besides, in order to eliminate those atoms introduced in the transformation, we proposed the four EF-implication rules.
 
 \section{Conclusion and Future Work}
 This article proposed a resolution-based algorithm to compute the forgetting in \CTL.

@@ -1388,7 +1388,7 @@ Its correctness is guaranteed by Lemma~\ref{lem:models:formula} and Theorem~\ref
 	\KwOut{$\CTLforget(\varphi, V)$}% ????
 	$\psi \lto \bot$\;
 	\ForEach{initial structure $\cal K$ (over $\cal A$ and $\cal S$)}{
-		\lIf{${\cal K}\not\models\varphi$}{{\bf continue}\;}
+		\lIf{${\cal K}\not\models\varphi$}{{\bf continue}} %\;
 		\ForEach{initial structure ${\cal K}'$ with ${\cal K}\lrto_{ V}{\cal K}'$}{
 			$\psi \lto \psi \lor {\cal F}_{\overline V}({\cal K}')$\;
 		}
@@ -1839,14 +1839,16 @@ A consequence of the previous lemma is:
 \begin{lemma}\label{div_s}
 Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure, $k={ch({\cal M},V)}$ and $s\in S$.
 %There is a formula $\phi$ such that
-\begin{itemize}
+\begin{enumerate}[(i)]
   \item $(\Hm, s)\models {\cal F}_V(\Tr_k(s))$, and
   \item for each $s'\in S$, $({\cal M},s) \lrto_{\overline V} ({\cal M},s')$
   if and only if $({\cal M},s')\models{\cal F}_V(\Tr_k(s))$.
-\end{itemize}
+\end{enumerate}
 \end{lemma}
 \begin{proof}
-Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha - V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
+(i) It is apparent from the (i) of Lemma~\ref{Bn:to:Tn}.
+
+(ii) Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha - V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
 \end{proof}
 
 

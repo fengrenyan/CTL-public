@@ -458,25 +458,67 @@ Other terminologies are similar with those in \CTL\ sub-section.
 
 
 \section{Problem Definition}
-In order to define our problem, \ie forgetting in \CTL, we give the definition of $V$-bisimulation at first. %(read ?? for more detials).
-\begin{definition}\label{def:Vbi}
-Let $V\subseteq\cal A$
-%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
-and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures (Ind-structures).
-Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
-  \begin{enumerate}[(i)]
-    \item $L_1(s_1)- V = L_2(s_2)-V$,
-    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
-    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
-    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
-%    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
-   \end{enumerate}
- where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+In this section, we present the notion of forgetting in \CTL.
+For convenience, in the following we denote $\Hm=(S, R, L, s_0)$,
+$\Hm'=(S',R',L',s_0')$, $\Hm_i=(S_i, R_i,L_i, s_0^i)$ (or $\Hm=(S, R, L, [\_], s_0)$,
+$\Hm'=(S',R',L', [\_],s_0')$, $\Hm_i=(S_i, R_i,L_i, [\_], s_0^i)$) and ${\cal K}_i=(\Hm_i, s_i)$ with $s_i \in S_i$
+and $i \in \mathbb{N}$.
+
+Let
+${\cal K}_i=({\cal M}_i,s_i)$ with $i\in\{1,2\}$,
+\begin{itemize}
+  \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$ if $L_1(s_1)- V=L_2(s_2)- V$;  % and ${\cal K}'=(\tuple{S', R',L'},s')$;
+  \item for $n\ge 0$, $({\cal K}_1,{\cal K}_2)\in\Hb_{n+1}$ if:
+  \begin{itemize}
+    \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$,
+    \item for every $(s_1,s_1')\in R_1$, there is a $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_n$, and
+    \item for every $(s_2,s_2')\in R_2$, there is a $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_n$,
+  \end{itemize}
+  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+\end{itemize}
+
+Now, we define the notion of $V$-bisimulation between \MPK-structures:
+\begin{definition}[$V$-bisimulation]
+  \label{def:V-bisimulation}
+   Let $V\subseteq\cal A$. Given   two \MPK-structures (or \Ind-structures) ${\cal K}_1$ and ${\cal K}_2$ are $V$-{\em bisimilar},  denoted ${\cal K}_1 \lrto_V {\cal K}_2$
+ if and only if $ ({\cal K}_1,{\cal K}_2)\in {\Hb_i}\mbox{ for all }i\ge 0.$ Moreover, two paths $\pi_i=(s_{i,1},s_{i,2},\ldots)$ of $\Hm_i$ with $i\in \{1,2\}$
+ are $V$-{\em bisimilar} if
+$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 1$ }$
+ where ${\cal K}_{i,j}=(\Hm_i,s_{i,j})$.
 \end{definition}
 
+It is  apparent that $\lrto_V$ is a binary relation.
  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
  by $s_1 \lrto_V s_2 $
  whenever the underlying model structures of states $s_1$ and $s_2$ are clear from the context.
+
+% In order to define our problem, \ie forgetting in \CTL, we give the definition of $V$-bisimulation at first. %(read ?? for more detials).
+% \begin{definition}\label{def:Vbi}
+% Let $V\subseteq\cal A$
+% %${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+% and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures (Ind-structures).
+% Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+%   \begin{enumerate}[(i)]
+%     \item $L_1(s_1)- V = L_2(s_2)-V$,
+%     \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+%     such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+%     \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+% %    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+%   \end{enumerate}
+%  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+% \end{definition}
+
+%  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
+%  by $s_1 \lrto_V s_2 $
+%  whenever the underlying model structures of states $s_1$ and $s_2$ are clear from the context.
+
+ \begin{lemma}\label{lem:equive}
+  The relation $\lrto_V$ is an equivalence relation.
+\end{lemma}
+
+Besides, we have the following properties:
 
 \begin{proposition}\label{div}
 Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$,
@@ -494,6 +536,18 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
    \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
  \end{enumerate}
 \end{proposition}
+
+Intuitively, if two \MPK-structures are $V$-bisimilar, then they satisfy the same formula $\varphi$ that dose not contain any atoms in $V$, \ie $\IR(\varphi, V)$.
+\begin{theorem}\label{thm:V-bisimulation:EQ}
+  Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
+  ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
+  ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.
+\end{theorem}
+\begin{proof}(sketch)
+This can be proved by induction on the structures of $\phi$. % and supposing $\Var(\phi) \cap V = \Empty$ due to $\IR(\phi,V)$.
+For instance, let $\phi = \psi_1 \vee \psi_2$, the induction hypothesis is ${\cal K}_1 \models \psi_i$ iff ${\cal K}_2 \models \psi_i$ with $i\in \{1,2\}$. Then we can see that ${\cal K}_1 \models \phi$ iff ${\cal K}_1 \models \psi_1$ or ${\cal K}_1 \models \psi_2$ iff ${\cal K}_2 \models \psi_1$ or ${\cal K}_2 \models \psi_2$ by induction hypothesis.
+%Other cases can be proved similarly.
+\end{proof}
 
 Now we give the formal definition of forgetting in \CTL\ from the semantic forgetting point view.
 \begin{definition}[Forgetting]\label{def:V:forgetting}
@@ -1005,34 +1059,36 @@ For convenience, for any set $T$ of formula we have $\emph{Removing\_atoms}(T, V
 \begin{proposition}\label{pro:elm}
 Let $V''=V \cup V'$, $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma), \Gamma)$, then  $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$ and $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$.
 \end{proposition}
-\begin{proof}
+\begin{proof}(stretch)
 Take note the fact that for each clause $C = T \supset H$ in $\emph{Connect}(\Gamma)$, if $\Gamma \cap \Var(C) \neq \emptyset$ then there must be an atom $p\in \Gamma \cap \Var(H)$. It is apparent that $\emph{Connect}(\Gamma) \models \Gamma_1$, we will show $\forall (\Hm, s_0) \in \Mod(\Gamma_1)$ there is a $(\Hm', s_0)$ such that $(\Hm', s_0) \models \emph{Connect}(\Gamma)$ and $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$.
 Let $C = T \supset H$ in $\emph{Connect}(\Gamma)$ with $\Gamma \cap \Var(C) \neq \emptyset$,
-$\forall (\Hm, s_0) \in \Mod(\Gamma_1)$ we construct $(\Hm', s_0)$ as $(\Hm, s_0)$ except
+$\forall (\Hm, s_0) \in \Mod(\Gamma_1)$ we construct $(\Hm', s_0)$ s.t. $(\Hm,s_0) \lrto_{\Gamma} (\Hm', s_0)$ and $(\Hm', s_0) \models C$ by adding or deleting some atoms in $\Gamma$ to the $L'(s')$ with $s'\in S'$.
+%as $(\Hm, s_0)$ except
 %We will proof this proposition from the following two points.
- for each $s\in S$, if $(\Hm, s) \nvDash T$ then $L'(s) = L(s)$, else:
-\begin{enumerate}[(i)]
-  \item if $(\Hm,s) \models H$, then $L'(s) = L(s)$;
-  \item else if $(\Hm, s) \models T$ with $p \in \Var(H)\cap V$, then if $p$ appearing in $H$ negatively, then if $C$ is a global (or an initial) clause then let $L'(s) = L(s) \setminus \{p\}$ else let $L'(s_1) = L(s_1) \setminus \{p\}$ for (each (if $C$ is an $\ALL$-step or $\ALL$-sometime clause)) $(s,s_1) \in R$, else if $C$ is a global (or an initial) clause then let $L'(s) = L(s) \cup \{p\}$ else let $L'(s_1) = L(s_1) \cup \{p\}$ for (each (if $C$ is a $\ALL$-step or $\ALL$-sometime clause)) $(s,s_1) \in R$.
-  \item for other clause $C=Q\supset H$ with $p\in \Var(H)\cap \Gamma$, we can do it as (ii).
-\end{enumerate}
+%  for each $s\in S$, if $(\Hm, s) \nvDash T$ then $L'(s) = L(s)$, else:
+% \begin{enumerate}[(i)]
+%   \item if $(\Hm,s) \models H$, then $L'(s) = L(s)$;
+%   \item else if $(\Hm, s) \models T$ with $p \in \Var(H)\cap \Gamma$, then if $p$ appearing in $H$ negatively, then if $C$ is a global (or an initial) clause then let $L'(s) = L(s) \setminus \{p\}$ else let $L'(s^*) = L(s^*) \setminus \{p\}$ for (each (if $C$ is an $\ALL$-step or $\ALL$-sometime clause)) $s^* \in \pi_s$, else if $C$ is a global (or an initial) clause then let $L'(s) = L(s) \cup \{p\}$ else let $L'(s^*) = L(s^*) \cup \{p\}$ for (each (if $C$ is a $\ALL$-step or $\ALL$-sometime clause)) $s^* \in \pi_s$. Where $s^*$ is a next or future state of $s$ (it depends on the type of the clause: if the clause is a $X$-step ($X\in \{\ALL, \EXIST\}$) clause then $s^*$ is the next state, else if the clause is a $X$-sometime clause then $s^*$ is a future state).
+%  % \item for other clause $C=Q\supset H$ with $p\in \Var(H)\cap \Gamma$, we can do it as (ii).
+% \end{enumerate}
 
-It is apparent that $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$, we will show that $(\Hm', s_0) \models \emph{Connect}(\Gamma)$ from the following two points:
-\begin{enumerate}[(1)]
-  \item For (ii) talked-above, we show it from the form of $\CTLsnf$ clauses. Supposing $C_1$ and $C_2$ are instantiate formula of $\Gamma$:
-  \begin{enumerate}[(a)]
-    \item If $C$ is a global clause, i.e. $C=\top \supset p \vee C_1$ with $C_1$ is a disjunction of literals (we suppose $p$ appearing in $C$ positively). If there is a $C'=\top \supset \neg p \vee C_2 \in \emph{Connect}(\Gamma)$, then there is $\top \supset C_1 \vee C_2 \in \emph{Connect}(\Gamma)$ by the resolution ($(\Hm,s) \models C_2$ due to we have suppose $(\Hm,s) \nvDash C$). It is apparent that $(\Hm', s_0) \models C \wedge C'$.
-    \item If $C = T \supset \EXIST_{\tuple{ind}}\NEXT (p \vee C_1)$.
-    %We talk about the case that $(\Hm,s)\models T$ and $(\Hm,s)\nvDash \EXIST_{\tuple{ind}}\NEXT (p \vee C_1)$
-        If there is a $C'=T' \supset \EXIST_{\tuple{ind}}\NEXT( \neg p \vee C_2) \in \emph{Connect}(\Gamma)$, then there is $T\wedge T' \supset \EXIST_{\tuple{ind}}\NEXT(C_1 \vee C_2) \in \emph{Connect}(\Gamma)$  by the resolution ($(\Hm,s) \models \EXIST_{\tuple{ind}}\NEXT C_2$ due to we have suppose $(\Hm,s) \nvDash C$). It is apparent that $(\Hm', s_0) \models C \wedge C'$.
-    \item Other cases can be proved similarly.
-  \end{enumerate}
+% It is apparent that $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$, we will show that $(\Hm', s_0) \models \emph{Connect}(\Gamma)$ from the following two points:
+% \begin{enumerate}[(1)]
+%   \item For (i), it is apparent $(\Hm', s_0) \models C$;
+%   \item For (ii) talked-above, we show it from the form of $\CTLsnf$ clauses. Supposing $C_1$ and $C_2$ are instantiate formula of $\Gamma$:
+%   \begin{enumerate}[(a)]
+%     \item If $C$ is a global clause, i.e. $C=\top \supset p \vee C_1$ with $C_1$ is a disjunction of literals (we suppose $p$ appearing in $C$ positively). If there is a $C'=\top \supset \neg p \vee C_2 \in \emph{Connect}(\Gamma)$, then there is $\top \supset C_1 \vee C_2 \in \emph{Connect}(\Gamma)$ by the resolution ($(\Hm,s) \models C_2$ due to we have suppose $(\Hm,s) \nvDash C$). It is apparent that $(\Hm', s_0) \models C \wedge C'$.
+%     \item If $C = T \supset \EXIST_{\tuple{ind}}\NEXT (p \vee C_1)$.
+%     %We talk about the case that $(\Hm,s)\models T$ and $(\Hm,s)\nvDash \EXIST_{\tuple{ind}}\NEXT (p \vee C_1)$
+%         If there is a $C'=T' \supset \EXIST_{\tuple{ind}}\NEXT( \neg p \vee C_2) \in \emph{Connect}(\Gamma)$, then there is $T\wedge T' \supset \EXIST_{\tuple{ind}}\NEXT(C_1 \vee C_2) \in \emph{Connect}(\Gamma)$  by the resolution ($(\Hm,s) \models \EXIST_{\tuple{ind}}\NEXT C_2$ due to we have suppose $(\Hm,s) \nvDash C$). It is apparent that $(\Hm', s_0) \models C \wedge C'$.
+%     \item Other cases can be proved similarly.
+%   \end{enumerate}
 
-  \item (iii) can be proved as (ii) due to the fact we point at the beginning.
-\end{enumerate}
-Therefore, we have $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$  by Proposition~\ref{pro:VI:div} and Proposition~\ref{pro:EF}.
+%  % \item  (iii) can be proved as (ii) due to the fact we point at the beginning.
+% \end{enumerate}
+% Therefore, we have $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$  by Proposition~\ref{pro:VI:div} and Proposition~\ref{pro:EF}.
 
-And then $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$ follows.
+% And then $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$ follows.
 \end{proof}
 
 
@@ -1070,15 +1126,23 @@ Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-It is easy to check.
+(i) $\forall (\Hm, s_0) \in \Mod(\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i))$ there is $(s_0, s_1)\in [ind]$ such that $(\Hm, s_1) \models \varphi_1$, \dots, $(\Hm, s_1) \models \varphi_n$, then there is $(s_0, s_1)\in R$ s.t. $(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$, i.e. $(\Hm, s_0) \models P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$.
+
+For each $(\Hm, s_0) \in \Mod(P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i)$, we suppose there is $(s_0, s_1)\in R$ s.t. $(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$. It is easy to construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except the $(s_0, s_1) \in [ind]$, i.e. $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.
+
+(ii) Intuitively, from the left to the right: for any model $(\Hm,s_0)$ of the left side of the equation if there is $(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$ with $j_i \in \{1, \dots, n\}$ and $1\leq m \leq n$, then there is some next state $s_1$ of $s_0$ with $(s_0, s_1) \in [ind]$ such that $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$. By the definition of $[ind]$, we have $(s_0, s_1) \in R$ and then $(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \supset \EXIST \NEXT (\bigwedge_{i=1}^m P_{j_i} \varphi_{j_i})$. The other side can be similarly proved as (i).
+
+(iii) From the right to the left:  for any model $(\Hm,s_0)$ of the right side of the equation if there is $(\Hm,s_0) \models P$ then there is a path $\pi_{s_0}$ such that $\varphi_i \in \pi_{s_0}$ ($1\leq i \leq n$). Then we can construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except the for each $(s_i, s_{i+1})$ of $\pi_{s_0}$ there is $(s_i, s_{i+1}) \in [ind]$. It easy to check $(\Hm', s_0) \models \bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)$ and  $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.  The other side can be similarly proved as (ii).
+
+Other results can be proved similarly.
 \end{proof}
 
 
-\begin{lemma}\label{lem:No:Ind}
+\begin{proposition}\label{lem:No:Ind}
 \textbf{(NI-BRemain)}
 Let $I$ be the set of indexes appearing in $\emph{RemA}$,
 we have $\emph{RemA}\equiv_{\tuple{{\O}, I}} \emph{Removing\_index}(\emph{RemA})$.
-\end{lemma}
+\end{proposition}
 % \begin{proof}
 % It is easy checking that from the definition of $\emph{Removing\_index}$ and Proposition~\ref{pro:In2NI}.
 % \end{proof}
@@ -1132,7 +1196,7 @@ By the processes Transform and Resolution, we can obtain $V'=\{f,z\}$ and the fo
 
  According to our Algorithm~\ref{alg:compute:forgetting:by:Resolution}, we have $\emph{Instantiate}(Res,V')=V$ since $f$ can be instantiated by $q$ and $z$ can be instantiated by $\ALL\FUTURE f$.
 
-On the one hand, in the \emph{Connect} process, by using \textbf{EF1} rule on the $Res$ we have $\alpha=z \supset (\neg q \supset  (\EXIST_{\tuple{ind}}\NEXT (q \supset \ALL\NEXT \ALL\FUTURE q )))$ and replace $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \in Res$ with $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha$ since $l$, $C_2$, $C_3$ and $C_4$ are instantiate formulae.
+On the one hand, in the \emph{Connect} process, by using \textbf{(EF1)} rule on the $Res$ we have $\alpha=z \supset (\neg q \supset  (\EXIST_{\tuple{ind}}\NEXT (q \supset \ALL\NEXT \ALL\FUTURE q )))$ and replace $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \in Res$ with $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha$ since $l$, $C_2$, $C_3$ and $C_4$ are instantiate formulae.
 Apparently, $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha \equiv z \supset q \vee \EXIST_{\tuple{ind}} \NEXT(\neg f \vee \neg q \vee \ALL\NEXT \ALL\FUTURE q)$.
 
 After the \emph{Removing\_atoms} process, we have the following set \emph{RemA} of formulae:
@@ -1189,15 +1253,10 @@ Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi,V)$, then %R(\NI(\Elm(\EXI
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-(i) ($\Rto$) $\forall (\Hm,s_0) \in \Mod(\CTLforget(\varphi, V''))$\\
- $\Rto$ $\exists (\Hm',s_0') \in \Mod(\varphi)$ s.t. $(\Hm,s_0) \lrto_{V''} (\Hm', s_0')$\\
- $\Rto$ $\exists (\Hm_1, s_1) \in \Mod(\Gamma_1)$ s.t. $(\Hm_1,s_1) \lrto_{V''} (\Hm', s_0')$ from Proposition~\ref{pro:replaceA}\\
- $\Rto$ $(\Hm,s_0) \lrto_{V''} (\Hm_1,s_1)$\\
- $\Rto$ $(\Hm,s_0) \models \Gamma_1$ \hfill ($\IR(\Gamma_1, V'')$)
+(i) ($\Rto$) $\forall (\Hm,s_0) \in \Mod(\CTLforget(\varphi, V''))$ there is $(\Hm',s_0') \in \Mod(\varphi)$ s.t. $(\Hm,s_0) \lrto_{V''} (\Hm', s_0')$ by the definition of $\CTLforget$, and then $\exists (\Hm_1, s_1) \in \Mod(\Gamma_1)$ s.t. $(\Hm_1,s_1) \lrto_{V''} (\Hm', s_0')$ by Proposition~\ref{pro:replaceA}. Hence, $(\Hm,s_0) \lrto_{V''} (\Hm_1,s_1)$ due to $\lrto$ is an equivalence relation.
+Therefore, $(\Hm,s_0) \models \Gamma_1$ due to $\IR(\Gamma_1, V'')$ and Theorem~\ref{thm:V-bisimulation:EQ}.
 
- ($\Lto$)$\forall (\Hm_1, s_1) \in \Mod(\Gamma_1)$\\
- $\Rto$ $\exists (\Hm',s_0') \in \Mod(\varphi)$ s.t. $(\Hm_1,s_1) \lrto_{V''} (\Hm', s_0')$ \\
- $\Rto$ $(\Hm_1, s_1) \models \CTLforget(\varphi, V'')$ \hfill ($\IR(\CTLforget(\varphi, V''), V'')$ and $\varphi \models \CTLforget(\varphi, V'')$)
+ ($\Lto$)$\forall (\Hm_1, s_1) \in \Mod(\Gamma_1)$ there is $(\Hm',s_0') \in \Mod(\varphi)$ s.t. $(\Hm_1,s_1) \lrto_{V''} (\Hm', s_0')$ by Proposition~\ref{pro:replaceA}. Hence, $(\Hm_1, s_1) \models \CTLforget(\varphi, V'')$ due to $\IR(\CTLforget(\varphi, V''), V'')$ and $\varphi \models \CTLforget(\varphi, V'')$.
 
  (ii) It is obtained from (i) since $\IR(\varphi, V')$.
 \end{proof}
@@ -1239,7 +1298,8 @@ Resolution, a kind of methods of Second-order quantifier elimination, has been u
 This article proposed a resolution-based algorithm to compute the forgetting in \CTL.
 Our method extend the resolution calculus in~\cite{zhang2014resolution} by adding processes including removing those irrelevant atoms and transforming the result into \CTL\ formula.
 For this purpose, a kind of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined and four EF imply rules have been proposed.
-More important, our algorithm is correct, i.e. return the result of forgetting some set of atoms, and the time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$.
+More important, our algorithm is correct, i.e. return the result of forgetting some set of atoms.
+%, and the time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$.
 Besides, examples show how to compute forgetting using our algorithm.
 
 In the future we will implement this algorithm (part of it has been implemented actually).
@@ -1250,6 +1310,133 @@ In the future we will implement this algorithm (part of it has been implemented 
 
 \appendix
 \section{Supplementary Material: Proof Appendix}
+
+\begin{lemma}\label{lem:B:relations}
+  Let  $\Hb_0, \Hb_1,\ldots$ be the ones in the definition of section 3.1.
+   Then,  for each $i\ge 0$,
+   \begin{enumerate}[(i)]
+     \item $\Hb_{i+1}\subseteq \Hb_i$;
+     \item there is a (smallest) $k\ge 0$ such that $\Hb_{k+1}=\Hb_k$;
+     \item $\Hb_i$ is reflexive, symmetric and transitive.
+   \end{enumerate}
+\end{lemma}
+\begin{proof}
+  (i)
+  Base: it is clear for $i=0$ by the above definition.
+
+  Step: suppose it holds for $i=n$, i.e., $\Hb_{n+1}\subseteq\Hb_n$. \\
+  $(s,s')\in\Hb_{n+2}$\\
+  $\Rto$ (a) $(s,s')\in  \Hb_0$,
+    (b) for every $(s,s_1)\in R$, there is $(s',s_1')\in R'$
+     such that $(s_1,s_1')\in \Hb_{n+1}$, and
+    (c)  for every $(s',s_1')\in R'$, there is $(s,s_1)\in R$
+    such that $(s_1,s_1')\in \Hb_{n+1}$\\
+  $\Rto$ (a) $(s,s')\in  \Hb_0$,
+   (b) for every $(s,s_1)\in R$, there is $(s',s_1')\in R'$
+     such that $(s_1,s_1')\in \Hb_{n}$ by inductive assumption, and
+   (c)  for every $(s',s_1')\in R'$, there is $(s,s_1)\in R$
+    such that $(s_1,s_1')\in \Hb_{n}$ by inductive assumption\\
+  $\Rto$ $(s,s')\in \Hb_{n+1}$.
+
+  (ii) and (iii) are evident from (i) and the definition of $\Hb_i$.
+\end{proof}
+
+
+\noindent\textbf{Lemma}~\ref{lem:equive}  The relation $\lrto_V$ is an equivalence relation.\\
+\begin{proof}
+It is clear from Lemma~\ref{lem:B:relations} (ii) such that there is a $k \geq $ 0 where $\Hb_k = \Hb_{k+1}$ which is  $\lrto_V$, and it is reflexive, symmetric and transitive by (iii).
+\end{proof}
+
+
+\textbf{Proposition}~\ref{div}
+Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$,
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2,3)$ be \MPK-structures (Ind-structures)
+ such that
+${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
+ Then:
+ \begin{enumerate}[(i)]
+   \item ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$;
+   \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
+ \end{enumerate}
+\begin{proof}
+(i) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+\begin{enumerate}[(a)]
+  \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
+  \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
+  \item if $(w_3, u_3) \in \Hr_3$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_2, u_3) \in \Hb_2$; and then $\exists u_1 \in S_1$ such that $(w_1, u_1) \in \Hr_1$ and $(u_1, u_2) \in \Hb$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
+\end{enumerate}
+
+(ii)  Let ${\cal K}_{i, j}=(\Hm_i, s_{i,j})$ and $(s_{i, k}, s_{i, k+1}) \in R_i$ mean that $s_{i, k+1}$ is the $(k+2)$-th node in the path
+ $(s_i, s_{i, 1}, s_{i,2}, \dots , s_{i, k+1}, \dots)$ ($i=1,2$).
+We will show that $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_2}$ for all $n \ge 0$ inductively.
+
+Base: $L_1(s_1) - V_1 = L_2(s_2) - V_1$\\
+$\Rto$ $\forall q \in {\cal A} - V_1$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$\\
+$\Rto$ $\forall q \in {\cal A} - V_2$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$ due to $V_1 \subseteq V_2$\\
+$\Rto$ $L_1(s_1) - V_2 = L_2(s_2) - V_2$, i.e.,\ $({\cal K}_1, {\cal K}_2) \in \Hb_0^{V_2}$.
+
+Step: Supposing that $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$ for all $0 \leq i \leq k$ ($k > 0)$, we will show $({\cal K}_1, {\cal K}_2) \in \Hb_{k+1}^{V_2}$.
+\begin{enumerate} [(a)]
+  \item It is apparent that $L_1(s_1) - V_2 = L_2(s_2) - V_2$ by base.
+  \item $\forall (s_1, s_{1,1}) \in R_1$, we will show that there is a $(s_2, s_{2, 1}) \in R_2$ s.t.\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k-1}^{V_2}$ by inductive assumption, we need only to prove the following points:\\
+      (a) $\forall (s_{1, k}, s_{1, k+1}) \in R_1$ there is a $(s_{2, k}, s_{2, k+1})\in R_2$ s.t.\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. It is easy to see that $L_1(s_{1, k+1}) - V_1 = L_1(s_{2, k+1}) - V_1$, then there is $L_1(s_{1, k+1})- V_2 = L_1(s_{2, k+1}) - V_2$. Therefore, $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$.\\
+      (b) $\forall (s_{2, k}, s_{2, k+1}) \in R_1$ there is a $(s_{1, k}, s_{1, k+1}) \in R_1$ s.t.\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. This can be proved as (a).
+  \item $\forall (s_2, s_{2,1}) \in R_1$, we will show that there is a $(s_1, s_{1, 1}) \in R_2$ s.t.\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. This can be proved as (ii).
+\end{enumerate}
+\end{proof}
+
+
+\noindent\textbf{Theorem}\ref{thm:V-bisimulation:EQ}
+Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
+  ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
+  ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.
+\begin{proof}
+This theorem can be proved by inducting on the formula $\phi$ and supposing $\Var(\phi) \cap V = \Empty$.
+Let ${\cal K}_1 = (\Hm, s)$ and ${\cal K}_2 = (\Hm', s')$.
+
+%Here we only prove the only-if direction. The other direction can be similarly proved.
+
+\textbf{Case} $\phi = p$ where $p \in \Ha - V$:\\
+$(\Hm, s) \models \phi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
+$\LRto$ $p \in L'(s')$ \hfill ($s \lrto_V s'$)\\
+$\LRto$ $(\Hm', s') \models \phi$
+
+\textbf{Case} $\phi = \neg \psi$:\\
+$(\Hm, s) \models \phi$ iff $(\Hm, s) \nvDash \psi$ \\
+$\LRto$ $(\Hm', s') \nvDash \psi$  \hfill   (induction hypothesis)\\
+$\LRto$ $(\Hm', s') \models \phi$
+
+\textbf{Case} $\phi = \psi_1 \vee \psi_2$:\\
+$(\Hm, s) \models \phi$\\
+$\LRto$ $(\Hm, s) \models \psi_1$ or $(\Hm, s) \models \psi_2$\\
+$\LRto$ $(\Hm', s') \models \psi_1$ or $(\Hm', s') \models \psi_2$   \hfill  (induction hypothesis)\\
+$\LRto$ $(\Hm', s') \models \phi$
+
+\textbf{Case} $\phi = \EXIST \NEXT \psi$:\\
+%By Lemma~\ref{V_path}, we assume there are two paths $\pi = s, s_1, ...$ and $\pi' = s', s_1', ...$ such that $\pi \lrto_V \pi'$.\\
+$\Hm, s \models \phi$ \\
+$\LRto$ There is a path $\pi = (s, s_1, ...)$ such that $\Hm, s_1 \models \psi$\\
+$\LRto$ There is a path $\pi' = (s', s_1', ...)$ such that $\pi \lrto_V \pi'$ \hfill   ($s \lrto_V s'$, Proposition~\ref{div})\\
+$\LRto$ $s_1 \lrto_V s_1'$  \hfill ($\pi \lrto_V \pi'$)\\
+$\LRto$ $(\Hm', s_1') \models \psi$  \hfill  (induction hypothesis)\\
+$\LRto$ $(\Hm', s') \models \phi$
+
+\textbf{Case} $\phi = \EXIST \GLOBAL \psi$:\\
+$\Hm, s \models \phi$ \\
+$\LRto$ There is a path $\pi =(s=s_0, s_1, ...)$ such that for each $i \geq 0$ there is $(\Hm, s_i) \models \psi$\\
+$\LRto$ There is a path $\pi' = (s'=s_0', s_1', ...)$ such that $\pi \lrto_V \pi'$   \hfill ($s \lrto_V s'$, Proposition~\ref{div})\\
+$\LRto$ $s_i \lrto_V s_i'$ for each $i \geq 0$ \hfill ($\pi \lrto_V \pi'$)\\
+$\LRto$ $(\Hm', s_i') \models \psi$ for each $i \geq 0$  \hfill  (induction hypothesis)\\
+$\LRto$ $(\Hm', s') \models \phi$
+
+\textbf{Case} $\phi = \EXIST [\psi_1 \UNTIL \psi_2]$:\\
+%\textbf{Case} $\varphi = \MPE \FUTURE \psi$:
+$\Hm, s \models \phi$ \\
+$\LRto$ There is a path $\pi= (s=s_0, s_1, ...)$ such that there is $i \geq 0$ such that $(\Hm, s_i) \models \psi_2$, and for all $0 \leq j < i$, $(\Hm, s_j) \models \psi_1$\\
+$\LRto$ There is a path $\pi' = (s=s_0', s_1', ...)$ such that $\pi \lrto_V \pi'$  \hfill  ($s \lrto_V s'$, Proposition~\ref{div})\\
+$\LRto$ $(\Hm', s_i') \models \psi_2$, and for all $0 \leq j < i$ $(\Hm', s_j') \models \psi_1$   \hfill   (induction hypothesis)\\
+$\LRto$ $(\Hm', s') \models \phi$
+\end{proof}
 
 \textbf{Proposition}~\ref{pro:TranE}
  Let $\varphi$ be a \CTL\ formula, then $\varphi \equiv_{\tuple{V', I}} T_{\varphi}$.
@@ -1329,6 +1516,39 @@ It has been proved that $\psi \models R_i$ in~\cite{bolotov2000clausal}, then th
 
 For rule \textbf{(ERES2)} we have the same result.
 
+\end{proof}
+
+\textbf{Proposition}~\ref{pro:elm}
+Let $V''=V \cup V'$, $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma), \Gamma)$, then  $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$ and $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$.
+\begin{proof}
+Take note the fact that for each clause $C = T \supset H$ in $\emph{Connect}(\Gamma)$, if $\Gamma \cap \Var(C) \neq \emptyset$ then there must be an atom $p\in \Gamma \cap \Var(H)$. It is apparent that $\emph{Connect}(\Gamma) \models \Gamma_1$, we will show $\forall (\Hm, s_0) \in \Mod(\Gamma_1)$ there is a $(\Hm', s_0)$ such that $(\Hm', s_0) \models \emph{Connect}(\Gamma)$ and $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$.
+Let $C = T \supset H$ in $\emph{Connect}(\Gamma)$ with $\Gamma \cap \Var(C) \neq \emptyset$,
+$\forall (\Hm, s_0) \in \Mod(\Gamma_1)$ we construct $(\Hm', s_0)$ as $(\Hm, s_0)$ except
+%We will proof this proposition from the following two points.
+ for each $s\in S$, if $(\Hm, s) \nvDash T$ then $L'(s) = L(s)$, else:
+\begin{enumerate}[(i)]
+  \item if $(\Hm,s) \models H$, then $L'(s) = L(s)$;
+  \item else if $(\Hm, s) \models T$ with $p \in \Var(H)\cap \Gamma$, then if $p$ appearing in $H$ negatively, then if $C$ is a global (or an initial) clause then let $L'(s) = L(s) \setminus \{p\}$ else let $L'(s^*) = L(s^*) \setminus \{p\}$ for (each (if $C$ is an $\ALL$-step or $\ALL$-sometime clause)) $s^* \in \pi_s$, else if $C$ is a global (or an initial) clause then let $L'(s) = L(s) \cup \{p\}$ else let $L'(s^*) = L(s^*) \cup \{p\}$ for (each (if $C$ is a $\ALL$-step or $\ALL$-sometime clause)) $s^* \in \pi_s$. Where $s^*$ is a next or future state of $s$ (it depends on the type of the clause: if the clause is a $X$-step ($X\in \{\ALL, \EXIST\}$) clause then $s^*$ is the next state, else if the clause is a $X$-sometime clause then $s^*$ is a future state).
+ % \item for other clause $C=Q\supset H$ with $p\in \Var(H)\cap \Gamma$, we can do it as (ii).
+\end{enumerate}
+
+It is apparent that $(\Hm, s_0) \lrto_{\tuple{\Gamma, \emptyset}} (\Hm', s_0)$, we will show that $(\Hm', s_0) \models \emph{Connect}(\Gamma)$ from the following two points:
+\begin{enumerate}[(1)]
+  \item For (i), it is apparent $(\Hm', s_0) \models C$;
+  \item For (ii) talked-above, we show it from the form of $\CTLsnf$ clauses. Supposing $C_1$ and $C_2$ are instantiate formula of $\Gamma$:
+  \begin{enumerate}[(a)]
+    \item If $C$ is a global clause, i.e. $C=\top \supset p \vee C_1$ with $C_1$ is a disjunction of literals (we suppose $p$ appearing in $C$ positively). If there is a $C'=\top \supset \neg p \vee C_2 \in \emph{Connect}(\Gamma)$, then there is $\top \supset C_1 \vee C_2 \in \emph{Connect}(\Gamma)$ by the resolution ($(\Hm,s) \models C_2$ due to we have suppose $(\Hm,s) \nvDash C$). It is apparent that $(\Hm', s_0) \models C \wedge C'$.
+    \item If $C = T \supset \EXIST_{\tuple{ind}}\NEXT (p \vee C_1)$.
+    %We talk about the case that $(\Hm,s)\models T$ and $(\Hm,s)\nvDash \EXIST_{\tuple{ind}}\NEXT (p \vee C_1)$
+        If there is a $C'=T' \supset \EXIST_{\tuple{ind}}\NEXT( \neg p \vee C_2) \in \emph{Connect}(\Gamma)$, then there is $T\wedge T' \supset \EXIST_{\tuple{ind}}\NEXT(C_1 \vee C_2) \in \emph{Connect}(\Gamma)$  by the resolution ($(\Hm,s) \models \EXIST_{\tuple{ind}}\NEXT C_2$ due to we have suppose $(\Hm,s) \nvDash C$). It is apparent that $(\Hm', s_0) \models C \wedge C'$.
+    \item Other cases can be proved similarly.
+  \end{enumerate}
+
+ % \item  (iii) can be proved as (ii) due to the fact we point at the beginning.
+\end{enumerate}
+Therefore, we have $\Gamma_1\equiv_{\tuple{V'', {\O}}} Res$  by Proposition~\ref{pro:VI:div} and Proposition~\ref{pro:EF}.
+
+And then $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$ follows.
 \end{proof}
 
 %% The file kr.bst is a bibliography style file for BibTeX 0.99c
