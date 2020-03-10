@@ -18,6 +18,15 @@ Michael~C. Browne, Edmund~M. Clarke, and Orna Grumberg.
   logic.
 \newblock {\em Theor. Comput. Sci.}, 59:115--131, 1988.
 
+\bibitem[\protect\citeauthoryear{Bruggink \bgroup \em et al.\egroup
+  }{2011}]{bruggink2011conditional}
+HJ~Bruggink, Rapha{\"e}l Cauderlier, Mathias H{\"u}lsbusch, and Barbara
+  K{\"o}nig.
+\newblock Conditional reactive systems.
+\newblock In {\em IARCS Annual Conference on Foundations of Software Technology
+  and Theoretical Computer Science (FSTTCS 2011)}. Schloss
+  Dagstuhl-Leibniz-Zentrum fuer Informatik, 2011.
+
 \bibitem[\protect\citeauthoryear{Clarke and Emerson}{1981}]{clarke1981design}
 Edmund~M Clarke and E~Allen Emerson.
 \newblock Design and synthesis of synchronization skeletons using branching
@@ -31,25 +40,10 @@ Edmund~M. Clarke, E.~Allen Emerson, and A.~Prasad Sistla.
   temporal logic specifications.
 \newblock {\em {ACM} Trans. Program. Lang. Syst.}, 8(2):244--263, 1986.
 
-\bibitem[\protect\citeauthoryear{Dailler \bgroup \em et al.\egroup
-  }{2018}]{dailler2018instrumenting}
-Sylvain Dailler, David Hauzar, Claude March{\'e}, and Yannick Moy.
-\newblock Instrumenting a weakest precondition calculus for counterexample
-  generation.
-\newblock {\em Journal of logical and algebraic methods in programming},
-  99:97--113, 2018.
-
 \bibitem[\protect\citeauthoryear{Dijkstra}{1978}]{dijkstra1978guarded}
 Edsger~W Dijkstra.
 \newblock Guarded commands, nondeterminacy, and formal derivation of programs.
 \newblock In {\em Programming Methodology}, pages 166--175. Springer, 1978.
-
-\bibitem[\protect\citeauthoryear{Eiter and
-  Kern-Isberner}{2019}]{eiter2019brief}
-Thomas Eiter and Gabriele Kern-Isberner.
-\newblock A brief survey on forgetting from a knowledge representation and
-  reasoning perspective.
-\newblock {\em KI-K{\"u}nstliche Intelligenz}, 33(1):9--33, 2019.
 
 \bibitem[\protect\citeauthoryear{Eiter and Wang}{2008}]{Eiter2008Semantic}
 Thomas Eiter and Kewen Wang.
@@ -109,16 +103,19 @@ Carsten Lutz and Frank Wolter.
   Conference on Artificial Intelligence}, pages 989--995, Barcelona, Catalonia,
   Spain, 2011. IJCAI/AAAI.
 
+\bibitem[\protect\citeauthoryear{Mraihi \bgroup \em et al.\egroup
+  }{2011}]{mraihi2011computing}
+Olfa Mraihi, Wided Ghardallou, Asma Louhichi, Lamia~Labed Jilani, Khaled
+  Bsaies, and Ali Mili.
+\newblock Computing preconditions and postconditions of while loops.
+\newblock In {\em International Colloquium on Theoretical Aspects of
+  Computing}, pages 173--193. Springer, 2011.
+
 \bibitem[\protect\citeauthoryear{Su \bgroup \em et al.\egroup
   }{2009}]{Kaile:JAIR:2009}
 Kaile Su, Abdul Sattar, Guanfeng Lv, and Yan Zhang.
 \newblock Variable forgetting in reasoning about knowledge.
 \newblock {\em Journal of Artificial Intelligence Research}, 35:677--716, 2009.
-
-\bibitem[\protect\citeauthoryear{Tremblay}{1996}]{tremblay1996logic}
-Jean-Paul Tremblay.
-\newblock {\em Logic and Discrete Mathematics: a Computer Science Perspective}.
-\newblock Upper Saddle River, NJ: Prentice Hall, 1996.
 
 \bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
   }{2010}]{Wang:AMAI:2010}

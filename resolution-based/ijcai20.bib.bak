@@ -1,4 +1,15 @@
 
+
+@inproceedings{herzig2008uniform,
+  title={Uniform interpolation by resolution in modal logic},
+  author={Herzig, Andreas and Mengin, J{\'e}r{\^o}me},
+  booktitle={European Workshop on Logics in Artificial Intelligence},
+  pages={219--231},
+  year={2008},
+  organization={Springer}
+}
+
+
 @article{fisher2001clausal,
   title={Clausal temporal resolution},
   author={Fisher, Michael and Dixon, Clare and Peim, Martin},

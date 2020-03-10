@@ -1,4 +1,10 @@
-
+@inproceedings{dal2002planning,
+  title={Planning with a Language for Extended Goals.},
+  author={Dal Lago, Ugo and Pistore, Marco and Traverso, Paolo},
+  booktitle={AAAI/IAAI},
+  pages={447--454},
+  year={2002}
+}
 
 @article{akintunde2017planning,
   title={Planning for CTL*-Specified Temporally Extended Goals via Model Checking},
@@ -403,6 +409,16 @@
   year={1977},
 }
 
+@article{zhang2014resolution,
+  title={A resolution calculus for the branching-time temporal logic CTL},
+  author={Zhang, Lan and Hustadt, Ullrich and Dixon, Clare},
+  journal={ACM Transactions on Computational Logic (TOCL)},
+  volume={15},
+  number={1},
+  pages={1--38},
+  year={2014},
+  publisher={ACM New York, NY, USA}
+}
 
 @incollection{emerson1990temporal,
   title={Temporal and modal logic},

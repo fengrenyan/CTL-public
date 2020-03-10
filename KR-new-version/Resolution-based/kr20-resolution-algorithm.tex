@@ -237,6 +237,12 @@ In particular, we develop a resolution calculus which extends an earlier work (\
 %\end{abstract}
 
 \section{Introduction}
+\emph{Model Checking} is an automatic, model-based, property-verification approach.
+In the past decades, it not only be used in \emph{verification} but also in \emph{planning}~\cite{giunchiglia1999planning,dal2002planning,akintunde2017planning}.
+Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.
+In those cases, as the system or planning domain has been updated-some of the elements previously considered are no longer considered-if we have had those specifications, we do not need to reproduce the specifications that different with the original one only in that the latter using lesser atoms. Besides, with the size of the system or planning domain growing, not only the number of available (proposition) increased considerably, but those specifications are often large in size and becoming more complex. This leads to the specification being difficult to maintain and modify, and costly to reuse for later processing, where only a specific part of an specification is of interest. All of this working directly on the whole of the original specification and building a new sub-specification are unadvisable. Therefore, a strong demand for techniques and automated tools for obtaining the specific sub-specification.
+
+\emph{Forgetting}, as a technology distilling from a knowledge base only the part that is relevant to a subset of alphabet, just happens to solve the problem talked above.
 As a logical notion, \emph{forgetting} was first formally defined
 in propostional and first order-logics by Lin and Reiter~\cite{lin1994forget}.
 Over the last twenty years, researchers have developed forgetting notions and theories not only in classical logic but also in other non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. In application, forgetting has been used in planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
@@ -246,20 +252,23 @@ createing restricted views of ontologies~\cite{zhao2017role},
 strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and so on.
 
 
- Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the main logical formalisms for
-program specification and verification.
+%  Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the main logical formalisms for
+% program specification and verification.
+%Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.
 Though forgetting has been extensively investigated from various aspects of different logical systems.
 The existing forgetting methods in propositional
 logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
-Similar with that in~\cite{Yan:AIJ:2009}, we have studied the forgetting in \CTL\ from the semantic forgetting point of view in ``the theory paper".
-And it is shown that our definition of forgetting satisfies those four postulates of forgetting.
+%Similar with that in~\cite{Yan:AIJ:2009}, we have studied the forgetting in \CTL\ from the semantic forgetting point of view in ``the theory paper".
+In this paper, we give the definition of forgetting in \CTL\ from the semantic forgetting point of view and explore a resolution-based method to compute it.
+%And it is shown that our definition of forgetting satisfies those four postulates of forgetting.
 
-Although we have proposed an model-based approach to compute forgetting in \CTL\ in ``the theory paper", but both time and space complexity are 2-exponential. It is urgent to find an efficient algorithm.
+% Although we have proposed an model-based approach to compute forgetting in \CTL\ in ``the theory paper", but both time and space complexity are 2-exponential. It is urgent to find an efficient algorithm.
 
 For one thing, the existing algorithm of computing forgetting in different logics talked above are not directly applicable in \CTL. For instance, in propositional forgetting theory, forgetting atom $q$ from $\varphi$ is equivalent to a formula $\varphi[q/\top] \vee \varphi[q/\perp]$, where $\varphi[q/X]$ is a formula obtained from $\varphi$ by replacing each $q$ with $X$ ($X\in \{\top, \perp\}$).
 This method cannot be extended to a \CTL\ formula. Consider a \CTL\ formula $\psi=\ALL\GLOBAL p \wedge \neg \ALL\GLOBAL q \wedge \neg \ALL\GLOBAL \neg q$. If we want to forget
-atom $q$ from $\psi$ by using the above method, we would have $\psi[q/\top] \vee \psi[q/\perp] \equiv \perp$. This is obviously not correct since after forgetting $q$ this specification should
-not become inconsistent.
+atom $q$ from $\psi$ by using the above method, we would have $\psi[q/\top] \vee \psi[q/\perp] \equiv \perp$. This is obviously not correct since after forgetting $q$ this specification should not become inconsistent.
+%Besides, we also cannot use the method in modal logic since there is
+%Another example is computing the result of forgetting $p$ from $\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$.
 
 For another, as far as I know the existing methods to compute forgetting include the classical one talked above and resolution-based approachs in propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach (second-order elimination) in description logic~\cite{Zhao:2017:IJCAI}. However, the resolution and Ackermann-based methods need a specific normal form of the formula, it is hard to obtain such normal form in \CTL.
 Although any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, but it do introduce the \emph{index} and new atoms. Both the two problems are we should solve.
@@ -882,51 +891,51 @@ Where $p, p_i$ ($1 \leq i\leq m$) are atoms and $\alpha$ is a conjunction of lit
 \end{definition}
 
 Intuitively, this process iteratively removes the atoms in $V'$ that can be represented by the formula of $\Var(\varphi) \setminus (V'' \cup V)$.
-We denote this process as $\emph{Instantiate}(\Gamma, V')$, which can be described as the following Algorithm~\ref{alg:subn}.
+We denote this process as $\emph{Instantiate}(\Gamma, V')$. %, which can be described as the following Algorithm~\ref{alg:subn}.
  After this process we obtain a set of atoms that do not has been instantiated by any instantiate formula of $V\cup V''$ in this process.
 
-\begin{algorithm}[!h]
-\caption{Computing $\emph{Instantiate}(\Gamma, V')$}% ??????
-\label{alg:subn}
-%\LinesNumbered %?????????
-\KwIn{A set $\Gamma$ of $\CTLsnf$ clauses $\varphi$ and $V,V'\subseteq \Ha$}% ????????
-\KwOut{A set of atoms}% ????
-Let $V''\lto V'$\;
-Let $V_1 \lto \emptyset$\;
-Let $\Gamma_1 \lto \emptyset$\;
-Let $\Gamma_2 \lto \Gamma$\;
-\While {($\Gamma_1\neq \Gamma_2$ or $V_1 \neq V''$)} {
-    $\Gamma_1\lto \Gamma_2$\;
-    $V_1 \lto V''$\;
-    \For {($C \in \Gamma_2$)} {
-        \If {($C$ is a global clause)} {
-            Let $C\lto D \vee \neg p$\;
-            \If{($p\in V''\cap \Var(C)$ and $\Var(D) \cap V==\emptyset$)} {
-                $C\lto p\supset D$\;
-                $V'' \lto V'' \setminus \{p\}$\;
-            }
-        }
-    }
+% \begin{algorithm}[!h]
+% \caption{Computing $\emph{Instantiate}(\Gamma, V')$}% ??????
+% \label{alg:subn}
+% %\LinesNumbered %?????????
+% \KwIn{A set $\Gamma$ of $\CTLsnf$ clauses $\varphi$ and $V,V'\subseteq \Ha$}% ????????
+% \KwOut{A set of atoms}% ????
+% Let $V''\lto V'$\;
+% Let $V_1 \lto \emptyset$\;
+% Let $\Gamma_1 \lto \emptyset$\;
+% Let $\Gamma_2 \lto \Gamma$\;
+% \While {($\Gamma_1\neq \Gamma_2$ or $V_1 \neq V''$)} {
+%     $\Gamma_1\lto \Gamma_2$\;
+%     $V_1 \lto V''$\;
+%     \For {($C \in \Gamma_2$)} {
+%         \If {($C$ is a global clause)} {
+%             Let $C\lto D \vee \neg p$\;
+%             \If{($p\in V''\cap \Var(C)$ and $\Var(D) \cap V==\emptyset$)} {
+%                 $C\lto p\supset D$\;
+%                 $V'' \lto V'' \setminus \{p\}$\;
+%             }
+%         }
+%     }
 
-    \For {($C \in \Gamma_2$)} {
-        \If {($C== p\supset \varphi$ and $p\in V''$ and $\Var(\varphi) \cap V\cup V'' == \emptyset$)} {
-            $V'' \lto V'' \setminus \{p\}$\;
-        }
-    }
+%     \For {($C \in \Gamma_2$)} {
+%         \If {($C== p\supset \varphi$ and $p\in V''$ and $\Var(\varphi) \cap V\cup V'' == \emptyset$)} {
+%             $V'' \lto V'' \setminus \{p\}$\;
+%         }
+%     }
 
-    \For {($C \in \Gamma_2$)} {
-        \If {($C==\bigwedge_{j=1}^m p_j \supset \varphi$ and $\Var(\varphi) \cap V\cup V'' == \emptyset$)} {
-            \If {(there is $\alpha \supset p_1, \dots, \alpha \supset p_m \in \Gamma_2$)} {
-                $\Gamma_2 \lto \Gamma_2 \cup \{\alpha \supset \varphi\}$\;
-            }
-        }
-    }
-}
+%     \For {($C \in \Gamma_2$)} {
+%         \If {($C==\bigwedge_{j=1}^m p_j \supset \varphi$ and $\Var(\varphi) \cap V\cup V'' == \emptyset$)} {
+%             \If {(there is $\alpha \supset p_1, \dots, \alpha \supset p_m \in \Gamma_2$)} {
+%                 $\Gamma_2 \lto \Gamma_2 \cup \{\alpha \supset \varphi\}$\;
+%             }
+%         }
+%     }
+% }
 
 
 
-\Return $V \cup V''$.
-\end{algorithm}
+% \Return $V \cup V''$.
+% \end{algorithm}
 
 \begin{example}\label{exa:until:sub}
 By using the instantiation process on result of Example~\ref{examp:Res}, we obtain that $x$ is instantiated by $f\vee m$ at first since there is $\top \supset \neg x \vee f \vee m \in T_{\varphi}$ with $x \in V'$ and $\Var(f \vee m) \cap (V\cup V') = \emptyset$, then $V''=\{y,z\}$.
@@ -1242,12 +1251,12 @@ This is what the meanning of the \emph{Connect} process.
 
 
 
-\subsection{The Correction and Complexity of the Algorithm}
+\subsection{The Soundness and Complexity of the Algorithm}
 In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure.
 %Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
 
-The correction means that the result $\emph{ERes}(\varphi,V)$ obtained from our Algorithm is $\CTLforget(\varphi, V)$, i.e. input $\varphi$ and $V$ to Algorithm~\ref{alg:compute:forgetting:by:Resolution} output the result of forgetting $V$ from $\varphi$.
-\begin{theorem}[Resolution-based CTL-forgetting]\label{thm:Res_based:V_CTLforget}
+The soundness means that the result $\emph{ERes}(\varphi,V)$ obtained from our Algorithm is $\CTLforget(\varphi, V)$, i.e. input $\varphi$ and $V$ to Algorithm~\ref{alg:compute:forgetting:by:Resolution} output the result of forgetting $V$ from $\varphi$.
+\begin{theorem}[Soundness]\label{thm:Res_based:V_CTLforget}
 Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi,V)$, then %R(\NI(\Elm(\EXIST\FUTURE(\Gamma),\Gamma)))_{\CTL}$, then
 \begin{enumerate}[(i)]
 \item $\CTLforget(\varphi, V'') \equiv \Gamma_1$;
@@ -1297,17 +1306,17 @@ Resolution, a kind of methods of Second-order quantifier elimination, has been u
  Besides, in order to eliminate those atoms introduced in the transformation, we proposed the four EF-implication rules.
 
 \section{Conclusion and Future Work}
-This article proposed a resolution-based algorithm to compute the forgetting in \CTL.
+This paper proposed a resolution-based algorithm to compute the forgetting in \CTL.
 Our method extend the resolution calculus in~\cite{zhang2014resolution} by adding processes including removing those irrelevant atoms and transforming the result into \CTL\ formula.
-For this purpose, a kind of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined and four EF imply rules have been proposed.
-More important, our algorithm is correct, i.e. return the result of forgetting some set of atoms.
+For this purpose, a kind of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined to bridge the gap between \CTL\ and $\CTLsnf$. Besides, for connecting the next state and future state we propose four EF-implication rules, this weaken the result of the original resolution and our Replacing\_atoms processes to obtain the correct result.
+Moreover, we have proved that our algorithm is sound, i.e. return the result of forgetting some set of atoms from \CTL\ formula.
 %, and the time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$.
 Besides, examples show how to compute forgetting using our algorithm.
 
-In the future we will implement this algorithm (part of it has been implemented actually).
+%In the future we will implement this algorithm (part of it has been implemented actually).
 
 
-\section*{Acknowledgments}
+%\section*{Acknowledgments}
 
 
 \appendix
@@ -1361,7 +1370,41 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
    \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
  \end{enumerate}
 \begin{proof}
-(i) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+In order to distinguish the relations $\Hb_0, \Hb_1, \dots$ for different set $V \subseteq \Ha$, by $\Hb_i^V$ we mean the relation $\Hb_1, \Hb_2, \dots$ for $V \subseteq \Ha$.
+Denote as $\Hb_0, \Hb_1, \dots$ when the underlying set $V$ is clear from the context. Moreover, for the ease of notation, we will refer to $\lrto_V$ by $\Hb$ (i.e., without subindex).
+
+The following property show our result directly.
+Let $V\subseteq\cal A$
+%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+  \begin{enumerate}[(a)]
+    \item $L_1(s_1)- V = L_2(s_2)- V$,
+    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+   \end{enumerate}
+ where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+
+ We prove it from the following two aspects:
+
+ $(\Rto)$
+(a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
+(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')- V = L_2(s_2')- V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+ This is similar with (b).
+
+$(\Lto)$ (a) $L_1(s_1)- V = L_2(s_2)- V$ implies that $(s_1, s_2) \in \Hb_0$;
+(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
+(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
+
+(i) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous steps of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
 \begin{enumerate}[(a)]
   \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
   \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.

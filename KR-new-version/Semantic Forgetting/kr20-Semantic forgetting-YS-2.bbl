@@ -1,11 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{Akintunde}{2017}]{akintunde2017planning}
-Akintunde, M.~E.
-\newblock 2017.
-\newblock Planning for ctl*-specified temporally extended goals via model
-  checking.
-
 \bibitem[\protect\citeauthoryear{Baier and Katoen}{2008}]{Baier:PMC:2008}
 Baier, C., and Katoen, J.
 \newblock 2008.
@@ -18,12 +12,6 @@ Bolotov, A.
 \newblock A clausal resolution method for ctl branching-time temporal logic.
 \newblock {\em Journal of Experimental \& Theoretical Artificial Intelligence}
   11(1):77--93.
-
-\bibitem[\protect\citeauthoryear{Bolotov}{2000}]{bolotov2000clausal}
-Bolotov, A.
-\newblock 2000.
-\newblock {\em Clausal resolution for branching-time temporal logic.}
-\newblock Ph.D. Dissertation, Manchester Metropolitan University.
 
 \bibitem[\protect\citeauthoryear{Browne, Clarke, and
   Grumberg}{1988}]{DBLP:journals/tcs/BrowneCG88}
@@ -49,6 +37,22 @@ Clarke, E.~M.; Emerson, E.~A.; and Sistla, A.~P.
   temporal logic specifications.
 \newblock {\em {ACM} Trans. Program. Lang. Syst.} 8(2):244--263.
 
+\bibitem[\protect\citeauthoryear{Dailler \bgroup et al\mbox.\egroup
+  }{2018}]{dailler2018instrumenting}
+Dailler, S.; Hauzar, D.; March{\'e}, C.; and Moy, Y.
+\newblock 2018.
+\newblock Instrumenting a weakest precondition calculus for counterexample
+  generation.
+\newblock {\em Journal of logical and algebraic methods in programming}
+  99:97--113.
+
+\bibitem[\protect\citeauthoryear{Dijkstra}{1978}]{dijkstra1978guarded}
+Dijkstra, E.~W.
+\newblock 1978.
+\newblock Guarded commands, nondeterminacy, and formal derivation of programs.
+\newblock In {\em Programming Methodology}. Springer.
+\newblock  166--175.
+
 \bibitem[\protect\citeauthoryear{Eiter and
   Kern-Isberner}{2019}]{eiter2019brief}
 Eiter, T., and Kern-Isberner, G.
@@ -63,49 +67,20 @@ Eiter, T., and Wang, K.
 \newblock {\em Semantic forgetting in answer set programming}.
 \newblock Elsevier Science Publishers Ltd.
 
+\bibitem[\protect\citeauthoryear{Emerson and
+  Halpern}{1985}]{DBLP:journals/jcss/EmersonH85}
+Emerson, E.~A., and Halpern, J.~Y.
+\newblock 1985.
+\newblock Decision procedures and expressiveness in the temporal logic of
+  branching time.
+\newblock {\em J. Comput. Syst. Sci.} 30(1):1--24.
+
 \bibitem[\protect\citeauthoryear{Fang, Liu, and
   Van~Ditmarsch}{2019}]{fang2019forgetting}
 Fang, L.; Liu, Y.; and Van~Ditmarsch, H.
 \newblock 2019.
 \newblock Forgetting in multi-agent modal logics.
 \newblock {\em Artificial Intelligence} 266:51--80.
-
-\bibitem[\protect\citeauthoryear{Fisher, Dixon, and
-  Peim}{2001}]{fisher2001clausal}
-Fisher, M.; Dixon, C.; and Peim, M.
-\newblock 2001.
-\newblock Clausal temporal resolution.
-\newblock {\em ACM Transactions on Computational Logic (TOCL)} 2(1):12--56.
-
-\bibitem[\protect\citeauthoryear{Fisher}{1991}]{fisher1991resolution}
-Fisher, M.
-\newblock 1991.
-\newblock A resolution method for temporal logic.
-\newblock In {\em Ijcai}, volume~91,  99--104.
-\newblock Citeseer.
-
-\bibitem[\protect\citeauthoryear{Fisher}{1997}]{fisher1997normal}
-Fisher, M.
-\newblock 1997.
-\newblock A normal form for temporal logics and its applications in
-  theorem-proving and execution.
-\newblock {\em Journal of Logic and Computation} 7(4):429--456.
-
-\bibitem[\protect\citeauthoryear{Giunchiglia and
-  Traverso}{1999}]{giunchiglia1999planning}
-Giunchiglia, F., and Traverso, P.
-\newblock 1999.
-\newblock Planning as model checking.
-\newblock In {\em European Conference on Planning},  1--20.
-\newblock Springer.
-
-\bibitem[\protect\citeauthoryear{Herzig and Mengin}{2008}]{herzig2008uniform}
-Herzig, A., and Mengin, J.
-\newblock 2008.
-\newblock Uniform interpolation by resolution in modal logic.
-\newblock In {\em European Workshop on Logics in Artificial Intelligence},
-  219--231.
-\newblock Springer.
 
 \bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
 Lang, J., and Marquis, P.
@@ -118,6 +93,14 @@ Lang, J., and Marquis, P.
 \newblock 2010.
 \newblock {\em Reasoning under inconsistency: a forgetting-based approach}.
 \newblock Elsevier Science Publishers Ltd.
+
+\bibitem[\protect\citeauthoryear{Lang, Liberatore, and
+  Marquis}{2003}]{DBLP:journals/jair/LangLM03}
+Lang, J.; Liberatore, P.; and Marquis, P.
+\newblock 2003.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting.
+\newblock {\em J. Artif. Intell. Res.} 18:391--443.
 
 \bibitem[\protect\citeauthoryear{Lin and Reiter}{1994}]{lin1994forget}
 Lin, F., and Reiter, R.
@@ -156,6 +139,14 @@ Lutz, C., and Wolter, F.
   Conference on Artificial Intelligence},  989--995.
 \newblock Barcelona, Catalonia, Spain: IJCAI/AAAI.
 
+\bibitem[\protect\citeauthoryear{Meier \bgroup et al\mbox.\egroup
+  }{2015}]{DBLP:journals/ijfcs/MeierTVM15}
+Meier, A.; Thomas, M.; Vollmer, H.; and Mundhenk, M.
+\newblock 2015.
+\newblock Erratum: The complexity of satisfiability for fragments of {CTL} and
+  ctl\({}^{\mbox{{\(\star\)}}}\).
+\newblock {\em Int. J. Found. Comput. Sci.} 26(8):1189.
+
 \bibitem[\protect\citeauthoryear{Su \bgroup et al\mbox.\egroup
   }{2009}]{Kaile:JAIR:2009}
 Su, K.; Sattar, A.; Lv, G.; and Zhang, Y.
@@ -189,23 +180,32 @@ Wang, Y.; Wang, K.; and Zhang, M.
   Conference on Artificial Intelligence},  1162--1168.
 \newblock Beijing, China: IJCAI/AAAI.
 
-\bibitem[\protect\citeauthoryear{Wang}{2015}]{Yisong:2015:arx}
-Wang, Y.
-\newblock 2015.
-\newblock On forgetting in tractable propositional fragments.
-\newblock http://arxiv.org/abs/1502.02799.
-
 \bibitem[\protect\citeauthoryear{Wong}{2009}]{Wong:PhD:Thesis}
 Wong, K.-S.
 \newblock 2009.
 \newblock {\em Forgetting in Logic Programs}.
 \newblock Ph.D. Dissertation, The University of New South Wales.
 
+\bibitem[\protect\citeauthoryear{Woodcock and
+  Morgan}{1990}]{woodcock1990refinement}
+Woodcock, J.~C., and Morgan, C.
+\newblock 1990.
+\newblock Refinement of state-based concurrent systems.
+\newblock In {\em International Symposium of VDM Europe},  340--351.
+\newblock Springer.
+
 \bibitem[\protect\citeauthoryear{Zhang and Foo}{2006}]{DBLP:Zhang:AIJ2006}
 Zhang, Y., and Foo, N.~Y.
 \newblock 2006.
 \newblock Solving logic program conflict through strong and weak forgettings.
 \newblock {\em Artificial Intelligence} 170(8-9):739--778.
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhou}{2008}]{Zhang2008Properties}
+Zhang, Y., and Zhou, Y.
+\newblock 2008.
+\newblock Properties of knowledge forgetting.
+\newblock In Pagnucco, M., and Thielscher, M., eds., {\em Proceedings of the
+  Twelfth International Workshop on Non-Monotonic Reasoning},  68--75.
 
 \bibitem[\protect\citeauthoryear{Zhang and Zhou}{2009}]{Yan:AIJ:2009}
 Zhang, Y., and Zhou, Y.
@@ -221,44 +221,13 @@ Zhang, Y.; Foo, N.~Y.; and Wang, K.
   Conference on Artificial Intelligence, Edinburgh, Scotland, Uk, July
   30-August},  627--634.
 
-\bibitem[\protect\citeauthoryear{Zhang, Hustadt, and
-  Dixon}{2008}]{zhang2008first}
-Zhang, L.; Hustadt, U.; and Dixon, C.
-\newblock 2008.
-\newblock First-order resolution for ctl.
-\newblock Technical report, Citeseer.
-
-\bibitem[\protect\citeauthoryear{Zhang, Hustadt, and
-  Dixon}{2009}]{zhang2009refined}
-Zhang, L.; Hustadt, U.; and Dixon, C.
-\newblock 2009.
-\newblock A refined resolution calculus for ctl.
-\newblock In {\em International Conference on Automated Deduction},  245--260.
-\newblock Springer.
-
-\bibitem[\protect\citeauthoryear{Zhang, Hustadt, and
-  Dixon}{2014}]{zhang2014resolution}
-Zhang, L.; Hustadt, U.; and Dixon, C.
-\newblock 2014.
-\newblock A resolution calculus for the branching-time temporal logic ctl.
-\newblock {\em ACM Transactions on Computational Logic (TOCL)} 15(1):1--38.
-
-\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017a}]{zhao2017role}
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017}]{zhao2017role}
 Zhao, Y., and Schmidt, R.~A.
-\newblock 2017a.
+\newblock 2017.
 \newblock Role forgetting for alcoqh ($\delta$)-ontologies using an
   ackermann-based approach.
 \newblock In {\em Proceedings of the 26th International Joint Conference on
   Artificial Intelligence},  1354--1361.
-\newblock AAAI Press.
-
-\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017b}]{Zhao:2017:IJCAI}
-Zhao, Y., and Schmidt, R.~A.
-\newblock 2017b.
-\newblock Role forgetting for alcoqh({$\Delta$})-ontologies using an
-  ackermann-based approach.
-\newblock In {\em Proceedings of the 26th International Joint Conference on
-  Artificial Intelligence}, IJCAI'17,  1354--1361.
 \newblock AAAI Press.
 
 \end{thebibliography}
