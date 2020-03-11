@@ -28,6 +28,7 @@
 \usepackage[linesnumbered,boxed]{algorithm2e}
 \usepackage{amstext}
 \usepackage{amssymb}
+\usepackage{color}
 \urlstyle{same}
 
 % the following package is optional:
@@ -60,7 +61,7 @@
 % page charge instructions.
 % Put where the files are available in the appropriate places.
 
-\title{On Sufficient and Necesay Conditions in Bounded CTL}
+\title{On Sufficient and Necessary Conditions in Bounded CTL}
 	%Forgetting in CTL to Compute Necessary and Sufficient Conditions}
 
 % Single author syntax
@@ -295,7 +296,7 @@ Since only a single-type of production is possible at a time, after each product
 The notions of SNC and WSC were considered in the scope of formal verification among others,  in generating counterexamples~\cite{dailler2018instrumenting} and refinement of  system~\cite{woodcock1990refinement}.
 On the \emph{forgetting} side, it was first formally defined
 in propositional and first order logics by Lin and Reiter~\cite{lin1994forget}.
-Over the last decades, researchers have developed forgetting notions and theories not only in classical logic but also in non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer-set semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, description logics~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. It also has been considered in planning~\cite{lin2003compiling} and conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
+Over the last decades, researchers have developed forgetting notions and theories not only in classical logic but also in non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer-set semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, description logics~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. It  has also been considered in planning~\cite{lin2003compiling} and conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
 %knowledge compilation \cite{Zhang2009Knowledge,Bienvenu2010Knowledge},
 creating restricted views of ontologies~\cite{zhao2017role},
 %{ZhaoSchmidt18a},
@@ -346,16 +347,16 @@ And it is shown that our definition of forgetting satisfies those four postulate
 %Moreover, the set-based bisimulation notion is also different
 %from  the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008},
 %which is defined for states of a given \MPK-structure.
-The rest of the paper is organised as follows. Section 2 introduces the notation and technical preliminaries. As key contributions, Section 3, introduces the notion of forgetting in \CTL, via developing the notion of $V$-bisimulation. Such bisimulation is constructed through a set-based bisimulation and more general than the classical bisimulation. Moreover,  it provides a CTL characterization for model structures (with the initial state), and studies the semantic properties of forgetting. In addition, a complexity analysis, including a relevant fragment  $\CTL_{\ALL\FUTURE}$, is carried out.
+The rest of the paper is organised as follows. Section 2 introduces the notation and technical preliminaries. As key contributions, Section 3, introduces the notion of forgetting in {\textcolor{red}{bounded}} \CTL, via developing the notion of $V$-bisimulation. Such bisimulation is constructed through a set-based bisimulation and more general than the classical bisimulation. Moreover,  it provides a CTL characterization for model structures (with the initial state), and studies the semantic properties of forgetting. In addition, a complexity analysis, including a relevant fragment  $\CTL_{\ALL\FUTURE}$, is carried out.
 Section 4 explores the relation between forgetting and SNC (WSC). Section 5 gives a model-based algorithm for computing forgetting in \CTL\ and outline its complexity. Conclusion closes the paper.
 
 
-Due to space restrictions and to avoid hindering the flow of content, all the proofs are put to the supplementary material.
+Due to space restrictions and to avoid hindering the flow of content, some of the proofs are moved to the supplementary material~\footnote{https://github.com/fengrenyan/proof-of-CTL.git}.
 
 
 
 \section{Preliminaries}
- We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
+ We start with some technical and notational preliminaries. {\textcolor{blue}{Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.}} {\textcolor{red}{Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), use $V$, $V'$ for subsets of $\Ha$ and $\overline V = \Ha - V$.}}
 \subsection{Model structures in $\CTL$}
 In general, a transition system
 %\footnote{According to \cite{Baier:PMC:2008},
@@ -500,6 +501,9 @@ and $i \in \mathbb{N}$.
 %%%To present a formal definition of forgetting, we need the concept of $V$-bisimulation.
 %%%Inspired by the notion of bisimulation in~\cite{DBLP:journals/tcs/BrowneCG88}, we define the relations $\Hb_0,\Hb_1,\ldots$
 %%%between \MPK-structures on $V$ as follows:
+{\textcolor{red}{In this section we will introduce the notion of Set-based bisimulation.
+Intuitively, bisimulation relates states that mutually mimic all individual transitions~\cite{Baier:PMC:2008}. While the Set-based bisimulation relates states that mutually mimic all individual transitions on some set of atoms, this is close with forgetting some set of atoms.}}
+
 Let
 ${\cal K}_i=({\cal M}_i,s_i)$ with $i\in\{1,2\}$,
 \begin{itemize}
@@ -638,7 +642,7 @@ $\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
 \end{enumerate}
 \end{proof}
 
-
+{\textcolor{red}{The $(iv)$ in this proposition shows that if a \MPK-structure is $V_1$ and $V_2$-bisimulation with the other two \MPK-structures respectively, then those two \MPK-structures are $V_1 \cup V_2$-bisimulation. This is important for forgetting since this laid the foundation of forgetting atoms in $V$ one by one. Besides, $(v)$ means that if two \MPK-structures are  $V_1$-bisimulation then they are $V_2$-bisimulation for each $V_2$ with $V_1\subseteq V_2 \subseteq \Ha$.}}
 
 
 
@@ -740,6 +744,7 @@ of ${\cal M}$, written $ch({\cal M},V)$, is defined as
 
 %Given a set $V\subseteq\Ha$, we define a formula $\varphi$ of $V$ (that is $\Var(\varphi) \subseteq V$) in \CTL\ that describes a computation tree.
 In the following we present characterizing formulas of initial \MPK-structures  over a signature.
+{\textcolor{red}{As a basis, we first give the definition of characterizing formulas of a computation tree.}}
 \begin{definition}\label{def:V:char:formula}
 Let $V\subseteq \Ha$, $\Hm =(S,R,L,s_0)$ be a model structure and $s\in S$.
 The {\em characterizing formula} of the computation tree $\Tr_n(s)$ on $V$,
@@ -778,11 +783,12 @@ The {\em characterizing formula} of $\cal K$ on $V$, written ${\cal F}_V(\Hm,s_0
 \begin{align*}
   &{\cal F}_V(\Tr_c(s_0)) \text{ } \wedge \\
   & \bigwedge_{s\in S}\ALL \GLOBAL\left(
-    {\cal F}_V(\Tr_c(s)) \rto
+    %{\cal F}_V(\Tr_c(s)) \rto
+    T(s) \rto
     \bigwedge_{(s,s')\in R}
         \EXIST \NEXT T(s')
         \wedge
-        \ALL \NEXT \bigvee_{(s,s')\in R}T(s')
+        \ALL \NEXT (\bigvee_{(s,s')\in R}T(s'))
     \right)
 \end{align*}
 %\begin{equation*}
@@ -798,6 +804,7 @@ The {\em characterizing formula} of $\cal K$ on $V$, written ${\cal F}_V(\Hm,s_0
 %$}
 %\end{equation*}
 It is apparent that $\IR({\cal F}_V(\Hm, s_0), \overline V)$.
+{\textcolor{red}{Besides, given a set of atomic propositions $V$,  it is easy to check that any initial \MPK-structure has its own characterizing formula on $V$. As we will see that the characterizing formula is critical to show some important properties of forgetting and compute the SNC and WSC of some property under the initial \MPK-structure.}}
 
 The following example illustrates how one can compute a characterizing formula:
 %\begin{example}
@@ -859,7 +866,8 @@ Therefore, %we have:
 \end{example}
 
 %By the following theorem, we also have that given  $V\subseteq \Ha$, the characterizing formula of an initial \MPK-structure is unique (up to semantic equivalence) which describes this initial \MPK-structure on $V$.
-The following theorem shows that the characterizing formulas of an initial \MPK-structure are equivalent.
+{\textcolor{blue}{The following theorem shows that the characterizing formulas of an initial \MPK-structure are equivalent.}}
+{\textcolor{red}{Given a set of atomic propositions $V$, two kripke structures are bisimilar w.r.t. $V$'s complement iff one of them models the others characterizing formula. Moreover, the $V$-bisimulation between two initial \MPK-structures implies the semantic equivalence of the corresponding characterizing formulas. Formally:}}
 \begin{theorem}\label{CF}
 Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be two model structures. Then,
 \begin{enumerate}[(i)]
@@ -975,7 +983,9 @@ transformed into a disjunction of the characterizing formulas for its models.
 
 
 \subsection{Semantic properties of forgetting in \CTL}
-In this subsection we present the definition of forgetting in \CTL\ and investigate its semantic properties.
+{\textcolor{blue}{In this subsection we present the definition of forgetting in \CTL\ and investigate its semantic properties.}}
+{\textcolor{red}{Based on our notion of $V$-bisimulation, we can now introduce forgetting in \CTL\ from the semantic forgetting point view.
+Which means the result of forgetting the atoms in set $V$ of atoms from \CTL\ formula $\varphi$ is a formula which shares the same models as $\varphi$ and models that are $V$-bisimulation with one of the models of $\varphi$.}}
 % We will first show via a representation theorem that our definition of forgetting correspond to the readily existing notion of forgetting which is characterised by several desirable properties (also called postulates) suggested in~\cite{Yan:AIJ:2009}. Next, we discuss various additional semantic properties of forgetting.
 %
 %Now, we give the formal definition of forgetting in \CTL\ from the semantic point view.
@@ -1069,12 +1079,28 @@ Thus, $\varphi'$ is equivalent to $\{\phi \mid \varphi \models \phi, \IR(\phi, V
 %
 %The above theorem says that, the notion of forgetting  we defined, satisfies (and entailed by) the  four postulates of forgetting. Moreover, \CTL\ is closed under our definition of forgetting, i.e.,  for any CTL formula the result of forgetting is also a CTL formula.
 
-The next leam is obvious.
+The next lemma is obvious.
 \begin{lemma}\label{lem:KF:eq}
 	Let $\varphi$ and $\alpha$ be two \CTL\ formulae and $q\in
 		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
 	$\forget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$.
 \end{lemma}
+%  \begin{proof}
+% 	Let $\varphi' =\varphi \wedge (q\lrto\alpha)$. For any model $({\cal M},s)$ of $\CTLforget(\varphi', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
+% 	by Theorem~\ref{thm:V-bisimulation:EQ}.
+
+% 	Let $(\Hm,s) \in \Mod(\varphi)$ with ${\cal M}=(S, R, L,s)$. We construct $(\Hm', s)$ with $\Hm' = (S, R, L',s)$ as follows:
+%     \begin{align*}
+%       & L':S \rto \Ha\ and\ \forall s^*\in S, L'(s^*) = L(s^*)\ if\ (\Hm, s^*) \nvDash \alpha,\\
+%       & else\ L'(s^*) = L(s^*)\cup\{q\}, \\
+%       & L'(s) = L(s) \cup\{q\}\ if\ (\Hm, s) \models \alpha,\ and\ L'(s) = L(s)\\
+%       & otherwise.
+%     \end{align*}
+% 	It is clear that $({\cal M}',s) \models \varphi$, $({\cal M}',s) \models q\lrto \alpha$ and
+% 	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$. Therefore $({\cal M}', s) \models \varphi \wedge (q\lrto\alpha)$, and then $({\cal M}, s) \models \CTLforget (\varphi \wedge (q\lrto\alpha), q)$ by
+% 	$({\cal M}', s) \lrto_{\{q\}} ({\cal M}, s)$.
+% \end{proof}
+
 
 The following proposition shows that the forgetting a set of atoms can be obtained by forgetting atoms in the set one by one.
 \begin{proposition}\label{disTF}
@@ -1083,6 +1109,34 @@ Given a formula $\varphi \in \CTL$, $V$ a set of atoms and $p$ an atom such that
 \CTLforget(\varphi, \{p\} \cup V) \equiv \CTLforget(\CTLforget(\varphi, p), V).
 \]
 \end{proposition}
+\begin{proof}
+Let $(\Hm_1, s_1) $ with ${\cal M}_1=(S_1, R_1, L_1,s_1)$ be a model of $\CTLforget(\varphi, \{p\} \cup V)$. By the definition, there exists a model $(\Hm,s)$ with ${\cal M} = (S, R,L,s)$ of $\varphi$, such that $(\Hm_1, s_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm, s)$. We construct an initial \MPK-structure $(\Hm_2, s_2)$ with ${\cal M}_2 = (S_2, R_2, L_2,s_2)$ as follows:
+\begin{enumerate}[(1)]
+  \item for $s_2$: let $s_2$ be the state such that:
+  \begin{itemize}
+    \item $p \in L_2(s_2)$ iff $p \in L_1(s_1)$,
+    \item for all $q \in V$, $q \in L_2(s_2)$ iff $q\in L(s)$,
+    \item for all other atoms $q'$, $q' \in L_2(s_2)$ iff $q' \in L_1(s_1)$ iff $q'\in L(s)$.
+  \end{itemize}
+  \item for another:
+  \begin{enumerate}[(i)]
+    \item for all pairs  $w \in S$ and $w_1 \in S_1$ such that $w \lrto_{\{p\} \cup V} w_1$, let $w_2 \in S_2$ and
+        \begin{itemize}
+          \item $p \in L_2(w_2)$ iff $p \in L_1(w_1)$,
+          \item for all $q \in V$, $q \in L_2(w_2)$ iff $q\in L(w)$,
+          \item for all other atoms $q'$, $q' \in L_2(w_2)$ iff $q' \in L_1(w_1)$ iff $q'\in L(w)$.
+        \end{itemize}
+    \item if $(w_1', w_1)\in R_1$, $w_2$ is constructed based on $w_1$ and $w_2'\in S_2$ is constructed based on $w_1'$, then $(w_2', w_2)\in R_2$.
+     %And if $w' \Hr^i w$, $w_2$ is constructed based on $w$ and $w_2'\in \Hw_2$ is constructed based on $w'$, then $w_2' \Hr_2^i w_2$
+    %\item if $\exists w_1'\in \Hw_1$ such that $w_1' \Hr_1 w_1$, then let $w_2' \in \Hw_2$, $w_2' \Hr_2 w_2$, and if $w_1' \neq s_1$ then do (i) for $w_2'$, else let$w_2' = s_2$.
+  \end{enumerate}
+  \item delete duplicated states in $S_2$ and pairs in $R_2$.
+\end{enumerate}
+Then we have $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$. Thus, $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$. And therefore $(\Hm_1, s_1) \models \CTLforget(\CTLforget(\varphi, p), V)$.
+
+On the other hand, suppose that $(\Hm_1, s_1)$ is a model of $\CTLforget(\CTLforget(\varphi, p), V)$, then there exists an initial \MPK-structure $(\Hm_2, s_2)$ such that $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$, and there exists $(\Hm, s)$ such that $(\Hm, s) \models \varphi$ and $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$. Therefore, $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$ by Proposition~\ref{div}, and consequently, $(\Hm_1, s_1) \models \CTLforget(\varphi, \{p\} \cup V)$.
+\end{proof}
+
 %This means that the result of forgetting $V$ from $\varphi$ can be obtained by forgetting atoms in $V$ one by one.
 %Moreover, the order of atoms does not matter (commutativity), which follows from  Proposition~\ref{disTF}.
 The next corollary follows from the above proposition.
@@ -1279,9 +1333,18 @@ In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can
    % \end{definition}
     It turns out that the previous notion of SNC and WSC for an atomic proposition can be lifted to any formula, or conversely the SNC and WSC of any formula can be reduced to that of a proposition.
 \begin{proposition}\label{formulaNS_to_p}
-     Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
+     Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\Gamma)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
  Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.
  \end{proposition}
+ \begin{proof}
+    We prove this for SNC. The case for WSC is similar.
+    Let $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the SNC of $\alpha$ on $V$ under $\Gamma$, and  $\emph{NC}(\varphi,\alpha,V,\Gamma)$ denote that $\varphi$ is the NC of $\alpha$ on $V$ under $\Gamma$.
+
+    ($\Rto$) We will show that if $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ holds, then $\emph{SNC}(\varphi,q,V,\Gamma')$ will be true. According to $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ and $\alpha\equiv q$, we have $\Gamma' \models q\rto \varphi$, which means $\varphi$ is a NC of $q$ on $V$ under $\Gamma'$. Suppose $\varphi'$ is any NC of $q$ on $V$ under $\Gamma'$, then $\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi', \{q\})$ and $(\PP)$, i.e., $\Gamma \models \alpha \rto \varphi'$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi',\alpha,V,\Gamma)$. Therefore, $\Gamma \models \varphi \rto \varphi'$ by the definition of SNC and $\Gamma' \models \varphi \rto \varphi'$. Hence, $\emph{SNC}(\varphi,q,V,\Gamma')$ holds.
+
+    ($\Lto$) We will show that if $\emph{SNC}(\varphi,q,V,\Gamma')$ holds, then $\emph{SNC}(\varphi,\alpha,V,\Gamma)$ will be true. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, it's not difficult to know that $\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$ due to $\alpha\equiv q$, $\emph{IR}(\alpha \rto \varphi, \{q\})$ and $(\PP)$, i.e., $\Gamma \models \alpha \rto \varphi$ by Lemma \ref{lem:KF:eq}, this means $\emph{NC}(\varphi,\alpha,V,\Gamma)$. Suppose $\varphi'$ is any NC of $\alpha$ on $V$ under $\Gamma$. Then $\Gamma' \models q \rto \varphi'$ since $\alpha\equiv q$ and $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$, which means $\emph{NC}(\varphi',q,V,\Gamma')$. According to $\emph{SNC}(\varphi,q,V,\Gamma')$, $\emph{IR}(\varphi \rto \varphi', \{q\})$ and $(\PP)$, we have
+    $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$, and $\Gamma \models \varphi \rto \varphi'$ by Lemma \ref{lem:KF:eq}. Hence, $\emph{SNC}(\varphi,\alpha,V, \Gamma)$ holds.
+    \end{proof}
 
 The following result establishes the bridge between these two notions which are central to the paper.%; basically  SNC (WSC)  and the forgetting in which the former is obtained through the latter.
 
@@ -2023,7 +2086,7 @@ Thus, $\varphi'$ is equivalent to $\{\phi | \varphi \models \phi, \IR(\phi, V)\}
 		\overline{\Var(\varphi) \cup \Var(\alpha)}$. Then
 	$\forget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$.\\
     \begin{proof}
-	Let $\varphi' =\varphi \wedge (q\lrto\alpha)$. For any model $({\cal M},s)$ of $\CTLforget(\Gamma', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
+	Let $\varphi' =\varphi \wedge (q\lrto\alpha)$. For any model $({\cal M},s)$ of $\CTLforget(\varphi', q)$ there is an initial \MPK-structure $({\cal M}',s')$ s.t.\ $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$ and $({\cal M}',s') \models \varphi'$. It's apparent that $({\cal M}',s') \models \varphi$, and then $({\cal M},s) \models \varphi$ since $\IR(\varphi,\{q\})$ and $({\cal M},s)\lrto_{\{q\}}({\cal M}',s')$
 	by Theorem~\ref{thm:V-bisimulation:EQ}.
 
 	Let $(\Hm,s) \in \Mod(\varphi)$ with ${\cal M}=(S, R, L,s)$. We construct $(\Hm', s)$ with $\Hm' = (S, R, L',s)$ as follows:
@@ -2068,7 +2131,7 @@ Let $(\Hm_1, s_1) $ with ${\cal M}_1=(S_1, R_1, L_1,s_1)$ be a model of $\CTLfor
 \end{enumerate}
 Then we have $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$. Thus, $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$. And therefore $(\Hm_1, s_1) \models \CTLforget(\CTLforget(\varphi, p), V)$.
 
-On the other hand, suppose that $(\Hm_1, s_1)$ be a model of $\CTLforget(\CTLforget(\varphi, p), V)$, then there exists an initial \MPK-structure $(\Hm_2, s_2)$ such that $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$, and there exists $(\Hm, s)$ such that $(\Hm, s) \models \varphi$ and $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$. Therefore, $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$ by Proposition~\ref{div}, and consequently, $(\Hm_1, s_1) \models \CTLforget(\varphi, \{p\} \cup V)$.
+On the other hand, suppose that $(\Hm_1, s_1)$ is a model of $\CTLforget(\CTLforget(\varphi, p), V)$, then there exists an initial \MPK-structure $(\Hm_2, s_2)$ such that $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$ and $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$, and there exists $(\Hm, s)$ such that $(\Hm, s) \models \varphi$ and $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$. Therefore, $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$ by Proposition~\ref{div}, and consequently, $(\Hm_1, s_1) \models \CTLforget(\varphi, \{p\} \cup V)$.
 \end{proof}
 
 
@@ -2220,7 +2283,7 @@ The proof of the other part of the proposition is similar.
 
 
 
-\noindent\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\phi)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
+\noindent\textbf{Proposition}~\ref{formulaNS_to_p}   Let $\Gamma$ and $\alpha$ be two formulas, $V \subseteq \Var(\alpha) \cup \Var(\Gamma)$  and $q$ is a new proposition not in $\Gamma$ and $\alpha$.
  Then, a formula $\varphi$ of $V$ is the SNC (WSC) of $\alpha$ on $V$ under  $\Gamma$ iff it is the SNC (WSC) of $q$ on $V$ under $\Gamma' = \Gamma \cup \{q \lrto \alpha\}$.
 
 \begin{proof}
@@ -2337,6 +2400,7 @@ Therefore, the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time compl
 
 
 %% The file kr.bst is a bibliography style file for BibTeX 0.99c
+\clearpage
 \bibliographystyle{kr}
 \bibliography{ijcai20}
 

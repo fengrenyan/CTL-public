@@ -78,16 +78,19 @@
 Renyan Feng$^{1,2}$\and
 Erman Acar$^2$\and
 Stefan Schlobach$^{2}$\and
-Yisong Wang$^1$ \\
+Yisong Wang$^1$ \and
+Wanwei Liu $^3$\\
 \affiliations
 $^{1}$Guizhou University, P. R. China\\
 $^{2}$Vrije Universiteit Amsterdam, Netherlands\\
+$^{3}$National University of Defense Technology, P. R. China\\
 %$^3$Third Affiliation\\
 %$^4$Fourth Affiliation \\
 \emails
 fengrenyan@gmail.com,
 \{k.s.schlobach, erman.acar\}@vu.nl,
-yswang@gzu.edu.cn
+yswang@gzu.edu.cn,
+wwliu@nudt.edu.cn
 }
 
 \begin{document}
@@ -430,7 +433,7 @@ where $p\in\cal A$. The formulas $\phi\land\psi$ and $\phi\rto\psi$
 are defined in a standard manner of propositional logic.
 The other form formulas of $\cal L$ are abbreviated
 using the forms of (\ref{def:CTL:formulas}).
-In the following we assume every formula of $\cal L$ has bounded size, where 
+In the following we assume every formula of $\cal L$ has bounded size, where
 the size $|\varphi|$ of formula $\varphi$ is its length over the alphbet of $\cal L$~\cite{DBLP:journals/jcss/EmersonH85}.
 %Notice that, according to the
 %above definition for formulas of \CTL,
@@ -1462,17 +1465,21 @@ Consider the model given in Figure 1. Assume that we are given a property $\alph
 %\end{example}
 
 \begin{proposition}\label{pro:time:alg1}
- Let $\varphi$ be a CTL formula and $V\subseteq \Ha$ with $|{\cal S}|=m$, $|\Ha|=n$ and $|V|=x$. The the space complexity is $O((n-x)*(2*m^3)^{m^3}+ 2^{(n*(m+1))})$ and the time complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is at least the same as the space.%and the space complexity is $O(2^{2m})$, where $|\Ha| = m$.
+ Let $\varphi$ be a CTL formula and $V\subseteq \Ha$ with $|{\cal S}|=m$, $|\Ha|=n$ and $|V|=x$. The the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is at least the same as the space.%and the space complexity is $O(2^{2m})$, where $|\Ha| = m$.
 \end{proposition}
 \begin{proof}
-For any $B\subseteq {\cal S}$ with $B \not = \emptyset$ and $s_0\in B$, we can construct an initial \MPK-structure $(\Hm, s_0)$ with $\Hm=(B, R, L, s_0)$, in which there is at most $\frac{|B|^2}{2}$ relations in $R$ and $|2^{\Ha}|^{|B|}$ label functions $L$. Hence, the $(\Hm, s_0)$ occupy at most $|B|+\frac{|A|^2}{2} + |2^{\Ha}|^{|B|}$ space and then for $B$ there is at most $|B|*(|B|+\frac{|B|^2}{2} + |2^{\Ha}|^{|B|}) = |B|^2+\frac{|B|^3}{2} + |B|*(2^n)^{|B|}$ space should be needed.
-Therefore, for ${\cal S}$ there is at most $Ps$ space to store those initial \MPK-structure with
-\begin{align*}
-& Ps= (1^2+\frac{1^3}{2}+1*(2^n)^1)+(2^2+\frac{2^3}{2}+2*(2^n)^2)\\
-& + \dots + (m^2+\frac{m^3}{2}+m*(2^n)^m)\\
-& = \frac{m(m+1)(2m+1)}{6} + \frac{m^2(m+1)^2}{2} + \\
-& \frac{(2^n)^{m+1}(2^n*m-m-1) + 2^n}{(2^n-1)^2}
-\end{align*}
+Supposing each state or atom occupy one byte, then a state pair $(s, s')$ occupy two bytes.
+For any $B\subseteq {\cal S}$ with $B \not = \emptyset$ and $s_0\in B$, we can construct an initial \MPK-structure $(\Hm, s_0)$ with $\Hm=(B, R, L, s_0)$, in which there is at most $\frac{|B|^2}{2}$ state pairs in $R$ and $|B|*n$ $(s, A)$ ($A \subseteq \Ha$) in $L$. Hence, the $(\Hm, s_0)$ occupy at most $|B|+|B|^2 + |B|*n$ bytes. Besides, there is at most $|B|^{|B|+1}*2^{nm}$ number of initial \MPK-structures.
+% and then for $B$ there is at most $|B|*(|B|+\frac{|B|^2}{2} + |2^{\Ha}|^{|B|}) = |B|^2+\frac{|B|^3}{2} + |B|*(2^n)^{|B|}$ space should be needed.
+% Therefore, for ${\cal S}$ there is at most $Ps$ space to store those initial \MPK-structure with
+% \begin{align*}
+% & Ps= (1^2+\frac{1^3}{2}+1*(2^n)^1)+(2^2+\frac{2^3}{2}+2*(2^n)^2)\\
+% & + \dots + (m^2+\frac{m^3}{2}+m*(2^n)^m)\\
+% & = \frac{m(m+1)(2m+1)}{6} + \frac{m^2(m+1)^2}{2} + \\
+% & \frac{(2^n)^{m+1}(2^n*m-m-1) + 2^n}{(2^n-1)^2}
+% \end{align*}
+Therefore, there is at most $m^{m+2}*2^{nm}$ number of initial \MPK-structures, hence it will at most cost $m^{m+2}*2^{nm}*(m+m^2+nm)$ bytes.
+
 
 
 Let $k=n-x$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, i.e., $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
@@ -1481,10 +1488,10 @@ Let $k=n-x$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$
  & = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
  & = \frac{(2i)^i -1}{2i-1} k.
 \end{align*}
-In the worst case, i.e., there is $i=\frac{m(m+1)(2m+1)}{6}$ initial \MPK-structure with $m$ nodes, we will spent $i*N(i)$ space to store the result of forgetting.
+In the worst case, i.e., there is $m^{m+2}*2^{nm}$ initial \MPK-structures with $m$ nodes, we will spent $m^{m+2}*2^{nm}*N(m)$ bytes to store the result of forgetting.
 
 % It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
-Therefore, the space complexity is $O((n-x)*(2*m^3)^{m^3}+ 2^{(n*(m+1))})$ and the time complexity is at least the same as the space.
+Therefore, the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time complexity is at least the same as the space.
 \end{proof}
 
 
@@ -2295,30 +2302,36 @@ As we know that any initial \MPK-structure ${\cal K}$ can be described as a char
 %If $|S| \leq 2^m$, this result clearly holds. If $|S| > 2^m$, let ${\cal K}' = {\cal K}_{|V}$, then it is apparent that ${\cal K} \lrto_{\Ha - V} {\cal K}'$ by Proposition~\ref{pro:VQ} and $(\Hm', s_0') \models \varphi$. In the worst case, the number of states in $S'$ is $2^m$ by the definition of ${\cal K}_{|V}$. Then the theorem is proved.
 %\end{proof}
 
-\noindent\textbf{Proposition}\ref{pro:time:alg1} Let $\varphi$ be a CTL formula and $V\subseteq \Ha$  with $|\Ha|=m$ and $|V|=n$. The time and space complexity of
-Algorithm~\ref{alg:compute:forgetting:by:VB} are $O(2^{m*2^m})$.\\
+\noindent\textbf{Proposition}\ref{pro:time:alg1} Let $\varphi$ be a CTL formula and $V\subseteq \Ha$ with $|{\cal S}|=m$, $|\Ha|=n$ and $|V|=x$. The the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is at least the same as the space.%and the space complexity is $O(2^{2m})$, where $|\Ha| = m$.
 \begin{proof}
-The time and space spent by Algorithm~\ref{alg:compute:forgetting:by:VB} is mainly the \textbf{for} cycles between lines 4 and 18.
-Under a given number $i$ of states, there are $i^i$ number of relations, $i^{2^m}$ number of label functions and $i$ number of possible initial states. In this case, we need the memory for the initial \MPK-model in each time is $(i+i^i+i^{2^m}+1)$.
-%Therefore, in the worst case is $i=2^m$, that is we need $(2^m + 2^{2m}+m*2^m+1)$ memory to store the initial \MPK-model.
+Supposing each state or atom occupy one byte, then a state pair $(s, s')$ occupy two bytes.
+For any $B\subseteq {\cal S}$ with $B \not = \emptyset$ and $s_0\in B$, we can construct an initial \MPK-structure $(\Hm, s_0)$ with $\Hm=(B, R, L, s_0)$, in which there is at most $\frac{|B|^2}{2}$ state pairs in $R$ and $|B|*n$ $(s, A)$ ($A \subseteq \Ha$) in $L$. Hence, the $(\Hm, s_0)$ occupy at most $|B|+|B|^2 + |B|*n$ bytes. Besides, there is at most $|B|^{|B|+1}*2^{nm}$ number of initial \MPK-structures.
+% and then for $B$ there is at most $|B|*(|B|+\frac{|B|^2}{2} + |2^{\Ha}|^{|B|}) = |B|^2+\frac{|B|^3}{2} + |B|*(2^n)^{|B|}$ space should be needed.
+% Therefore, for ${\cal S}$ there is at most $Ps$ space to store those initial \MPK-structure with
+% \begin{align*}
+% & Ps= (1^2+\frac{1^3}{2}+1*(2^n)^1)+(2^2+\frac{2^3}{2}+2*(2^n)^2)\\
+% & + \dots + (m^2+\frac{m^3}{2}+m*(2^n)^m)\\
+% & = \frac{m(m+1)(2m+1)}{6} + \frac{m^2(m+1)^2}{2} + \\
+% & \frac{(2^n)^{m+1}(2^n*m-m-1) + 2^n}{(2^n-1)^2}
+% \end{align*}
+Therefore, there is at most $m^{m+2}*2^{nm}$ number of initial \MPK-structures, hence it will at most cost $m^{m+2}*2^{nm}*(m+m^2+nm)$ bytes.
 
-For each $1\leq i \leq 2^m$, there is at most $i*i^i*i^{2^m}*i=i^2*i^{(i+2^m)}$ possible initial \MPK-models.
-Suppose that we can obtain an initial \MPK-models in unit time (at each step), then we require $(2^m)^2*(2^m)^{(2^m+2^m)} = (2^m)^{(2+2*2^m)}$ steps in the worst case.
 
-Let $k=m-n$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, i.e., $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
+
+Let $k=n-x$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, i.e., $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula.
 \begin{align*}
  & N(i)=(k+(\dots + (k + 2ik)*(2i))\dots *(2i))\\
  & = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
  & = \frac{(2i)^i -1}{2i-1} k.
 \end{align*}
-In the worst case, i.e., there is $i=2^m$ initial \MPK-structure with $2^m$ nodes, we will spent $2^m*N(i)$ space to store the result of forgetting.
+In the worst case, i.e., there is $m^{m+2}*2^{nm}$ initial \MPK-structures with $m$ nodes, we will spent $m^{m+2}*2^{nm}*N(m)$ bytes to store the result of forgetting.
 
-It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
-Therefore, the time and space complexity are $O(2^{(m*2^m)})$.
+% It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ dose not more than $O(i^2P)$ with $P$ expressing a polynomial function.
+Therefore, the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time complexity is at least the same as the space.
 \end{proof}
 
 
-\section*{Acknowledgments}
+%\section*{Acknowledgments}
 
 
 

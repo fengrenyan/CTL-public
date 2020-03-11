@@ -237,7 +237,7 @@ In particular, we develop a resolution calculus which extends an earlier work (\
 %\end{abstract}
 
 \section{Introduction}
-\emph{Model Checking} is an automatic, model-based, property-verification approach. 
+\emph{Model Checking} is an automatic, model-based, property-verification approach.
 In the past decades, it not only be used in \emph{verification} but also in \emph{planning}~\cite{giunchiglia1999planning,dal2002planning,akintunde2017planning}.
 Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.
 In those cases, as the system or planning domain has been updated-some of the elements previously considered are no longer considered-if we have had those specifications, we do not need to reproduce the specifications that different with the original one only in that the latter using lesser atoms. Besides, with the size of the system or planning domain growing, not only the number of available (proposition) increased considerably, but those specifications are often large in size and becoming more complex. This leads to the specification being difficult to maintain and modify, and costly to reuse for later processing, where only a specific part of an specification is of interest. All of this working directly on the whole of the original specification and building a new sub-specification are unadvisable. Therefore, a strong demand for techniques and automated tools for obtaining the specific sub-specification.
@@ -1251,12 +1251,12 @@ This is what the meanning of the \emph{Connect} process.
 
 
 
-\subsection{The Correction and Complexity of the Algorithm}
+\subsection{The Soundness and Complexity of the Algorithm}
 In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure.
 %Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
 
-The correction means that the result $\emph{ERes}(\varphi,V)$ obtained from our Algorithm is $\CTLforget(\varphi, V)$, i.e. input $\varphi$ and $V$ to Algorithm~\ref{alg:compute:forgetting:by:Resolution} output the result of forgetting $V$ from $\varphi$.
-\begin{theorem}[Resolution-based CTL-forgetting]\label{thm:Res_based:V_CTLforget}
+The soundness means that the result $\emph{ERes}(\varphi,V)$ obtained from our Algorithm is $\CTLforget(\varphi, V)$, i.e. input $\varphi$ and $V$ to Algorithm~\ref{alg:compute:forgetting:by:Resolution} output the result of forgetting $V$ from $\varphi$.
+\begin{theorem}[Soundness]\label{thm:Res_based:V_CTLforget}
 Let $V''=V \cup V'$ and $\Gamma_1=\emph{ERes}(\varphi,V)$, then %R(\NI(\Elm(\EXIST\FUTURE(\Gamma),\Gamma)))_{\CTL}$, then
 \begin{enumerate}[(i)]
 \item $\CTLforget(\varphi, V'') \equiv \Gamma_1$;
@@ -1306,10 +1306,10 @@ Resolution, a kind of methods of Second-order quantifier elimination, has been u
  Besides, in order to eliminate those atoms introduced in the transformation, we proposed the four EF-implication rules.
 
 \section{Conclusion and Future Work}
-This article proposed a resolution-based algorithm to compute the forgetting in \CTL.
+This paper proposed a resolution-based algorithm to compute the forgetting in \CTL.
 Our method extend the resolution calculus in~\cite{zhang2014resolution} by adding processes including removing those irrelevant atoms and transforming the result into \CTL\ formula.
-For this purpose, a kind of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined to bridge the gap between \CTL\ and $\CTLsnf$. Besides, for connect the next state and future state we propose four EF-implication rules, this weaken the result of the original resolution and our Replacing\_atoms processes to obtain the correct result.
-More important, our algorithm is correct, i.e. return the result of forgetting some set of atoms.
+For this purpose, a kind of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined to bridge the gap between \CTL\ and $\CTLsnf$. Besides, for connecting the next state and future state we propose four EF-implication rules, this weaken the result of the original resolution and our Replacing\_atoms processes to obtain the correct result.
+Moreover, we have proved that our algorithm is sound, i.e. return the result of forgetting some set of atoms from \CTL\ formula.
 %, and the time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$.
 Besides, examples show how to compute forgetting using our algorithm.
 
@@ -1370,7 +1370,41 @@ ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
    \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
  \end{enumerate}
 \begin{proof}
-(i) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+In order to distinguish the relations $\Hb_0, \Hb_1, \dots$ for different set $V \subseteq \Ha$, by $\Hb_i^V$ we mean the relation $\Hb_1, \Hb_2, \dots$ for $V \subseteq \Ha$.
+Denote as $\Hb_0, \Hb_1, \dots$ when the underlying set $V$ is clear from the context. Moreover, for the ease of notation, we will refer to $\lrto_V$ by $\Hb$ (i.e., without subindex).
+
+The following property show our result directly.
+Let $V\subseteq\cal A$
+%${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be model structures
+and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+  \begin{enumerate}[(a)]
+    \item $L_1(s_1)- V = L_2(s_2)- V$,
+    \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+    \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+   \end{enumerate}
+ where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+
+ We prove it from the following two aspects:
+
+ $(\Rto)$
+(a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
+(b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+$({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')- V = L_2(s_2')- V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+(c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+ This is similar with (b).
+
+$(\Lto)$ (a) $L_1(s_1)- V = L_2(s_2)- V$ implies that $(s_1, s_2) \in \Hb_0$;
+(b) Condition (ii) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
+(c) Condition (iii) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
+$\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
+
+(i) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous steps of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
 \begin{enumerate}[(a)]
   \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
   \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.

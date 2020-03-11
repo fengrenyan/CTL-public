@@ -1,18 +1,18 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Model structure in CTL}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Syntax and semantics of CTL}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{The normal form of CTL}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Syntax and Semantics of CTL}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{The Normal Form of CTL}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{Problem Definition}{}% 6
 \BOOKMARK [1][-]{section.4}{The Calculus}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{The Transform process}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{The Resolution process}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{The Elimination process}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.4}{Remove the Index and start}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.5}{An example for Connect process}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.6}{The Correction and Complexity of the Algorithm}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.1}{The Transform Process}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{The Resolution Process}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{The Elimination Process}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{Remove the Index and Start}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.5}{An Example for Connect Process}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.6}{The Soundness and Complexity of the Algorithm}{section.4}% 13
 \BOOKMARK [1][-]{section.5}{Related work}{}% 14
 \BOOKMARK [2][-]{subsection.5.1}{Resolution-based satisfiability of CTL}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.2}{Using Resolution Computing forgetting}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Using Resolution Computing Forgetting}{section.5}% 16
 \BOOKMARK [1][-]{section.6}{Conclusion and Future Work}{}% 17
 \BOOKMARK [1][-]{appendix.1}{Supplementary Material: Proof Appendix}{}% 18
