@@ -214,11 +214,11 @@ yswang@gzu.edu.cn
 
 \begin{abstract}
 
-Computation Tree Logic (CTL) is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.  Orthogonal to this, forgetting is the field of study which concerns removing such a piece of information, deemed irrelevant or obsolete,  from a knowledge base (e.g., a set of such specifications) while guaranteeing certain properties.
+Computation Tree Logic (CTL) is a popular logical formalism in computer science with a wide range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.  Orthogonal to this, forgetting is the field of study which concerns removing information that is deemed irrelevant or obsolete from a knowledge base while guaranteeing certain properties.
 
 In this paper, we present a resolution-based approach to perform \emph{forgetting} in \CTL.
 %As we show, having such an approach let us perform forgetting while avoiding undesirable complications that arise from handling it on the semantic level.
-In particular, we develop a resolution calculus which extends an earlier work (\CTL\ with \emph{index} i.e., $\CTLsnf$) with additional rules i.e., EF-implication which connects \emph{next\ state} and \emph{future\ state}.  Since tailoring a resolution calculus for forgetting is a challenging task, our technical contribution is manifolded: ($i$) we provide with a bisimulation between \CTL\ formulae and $\CTLsnf$ clauses; ($ii$) we introduce techniques for eliminating undesired atoms resulting from such transformation. Moreover, we show the soundness of our approach and analyse its computational complexity.
+More specifically, we develop a calculus which extends earlier work (\CTL\ with \emph{index} i.e., $\CTLsnf$) with additional rules i.e., EF-implication which connects \emph{next\ state} and \emph{future\ state}. As tailoring a resolution calculus for forgetting is a non-trivial task our technical contribution is manifolded: ($i$) we provide a bisimulation between \CTL\ formulae and $\CTLsnf$ clauses; ($ii$) we introduce techniques for eliminating undesired atoms resulting from such transformation. Moreover, we show the soundness of our approach and analyse its computational complexity.
 
 
 %Furthermore, it is shown that our algorithm is correct and the time and space complexity of our algorithm are $O((m+1)2^{4(n+n')}$.
@@ -237,54 +237,58 @@ In particular, we develop a resolution calculus which extends an earlier work (\
 %\end{abstract}
 
 \section{Introduction}
-\emph{Model Checking} is an automatic, model-based, property-verification approach.
-In the past decades, it not only be used in \emph{verification} but also in \emph{planning}~\cite{giunchiglia1999planning,dal2002planning,akintunde2017planning}.
-Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.
-In those cases, as the system or planning domain has been updated-some of the elements previously considered are no longer considered-if we have had those specifications, we do not need to reproduce the specifications that different with the original one only in that the latter using lesser atoms. Besides, with the size of the system or planning domain growing, not only the number of available (proposition) increased considerably, but those specifications are often large in size and becoming more complex. This leads to the specification being difficult to maintain and modify, and costly to reuse for later processing, where only a specific part of an specification is of interest. All of this working directly on the whole of the original specification and building a new sub-specification are unadvisable. Therefore, a strong demand for techniques and automated tools for obtaining the specific sub-specification.
+%\emph{Model Checking} is an automatic, model-based, property-verification approach.
+%In the past decades, it is not only  used in \emph{verification} but also in other domains e.g.,  \emph{planning}
 
-\emph{Forgetting}, as a technology distilling from a knowledge base only the part that is relevant to a subset of alphabet, just happens to solve the problem talked above.
+Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning~\cite{giunchiglia1999planning,dal2002planning,akintunde2017planning}.
+%In those cases, as the system or planning domain has been updated-some of the elements previously considered are no longer considered-if we have had those specifications, we do not need to reproduce the specifications that different from the original one only in that the latter using lesser atoms. Besides, with the size of the system or planning domain growing, not only the number of available (proposition) increased considerably, but also those specifications are often large in size and becoming more complex. This leads to the specification being difficult to maintain and modify, and costly to reuse for later processing, where only a specific part of an specification is of interest. All of this working directly on the whole of the original specification and building a new sub-specification are inadvisable. Therefore, a strong demand for techniques and automated tools for obtaining the specific sub-specification.
+Both in planning and verification updates are required where, e.g., some of the elements previously considered are no longer required. In these cases it is desirable to update the specifications such that they contain only the relevant vocabulary without the need to fully reproduce them. Moreover, with increasing size of the systems or planning domains the formalization becomes prohibitively large in size and complexity. As a consequence specifications become overly difficult to maintain and modify and re-use for later processing overly costly, even if only a specific part of a specification is of interest. Therefore, techniques and automated tools for obtaining sub-specification based on restricted vocabularies are required.
+
+\emph{Forgetting}, the task of distilling a reduced knowledge base that is relevant to a subset of the signature, addresses these issues.
 As a logical notion, \emph{forgetting} was first formally defined
 in propostional and first order-logics by Lin and Reiter~\cite{lin1994forget}.
-Over the last twenty years, researchers have developed forgetting notions and theories not only in classical logic but also in other non-classical logic systems~\cite{eiter2019brief}, such as forgetting in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and knowledge forgetting in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. In application, forgetting has been used in planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
+Over the last twenty years, not only have researchers developed forgetting notions and theories in classical logic, but also in other non-classical systems~\cite{eiter2019brief}, such as in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role} and in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. Forgetting has been used in several application domains, such as planning~\cite{lin2003compiling},  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving},
 %knowledge compilation \cite{Zhang2009Knowledge,Bienvenu2010Knowledge},
 createing restricted views of ontologies~\cite{zhao2017role},
 %{ZhaoSchmidt18a},
-strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and so on.
+strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and others.
 
 
 %  Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the main logical formalisms for
 % program specification and verification.
 %Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide-range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.
-Though forgetting has been extensively investigated from various aspects of different logical systems.
-The existing forgetting methods in propositional
-logic, answer set programming, description logic and modal logic are not directly applicable in \CTL.
+Although forgetting has been extensively investigated from various aspects of different logical systems,
+%these existing forgetting methods in propositional
+%logic, answer set programming, description logic and modal logic
+are not directly applicable to \CTL knolwledge bases.
 %Similar with that in~\cite{Yan:AIJ:2009}, we have studied the forgetting in \CTL\ from the semantic forgetting point of view in ``the theory paper".
 In this paper, we give the definition of forgetting in \CTL\ from the semantic forgetting point of view and explore a resolution-based method to compute it.
 %And it is shown that our definition of forgetting satisfies those four postulates of forgetting.
 
 % Although we have proposed an model-based approach to compute forgetting in \CTL\ in ``the theory paper", but both time and space complexity are 2-exponential. It is urgent to find an efficient algorithm.
-
-For one thing, the existing algorithm of computing forgetting in different logics talked above are not directly applicable in \CTL. For instance, in propositional forgetting theory, forgetting atom $q$ from $\varphi$ is equivalent to a formula $\varphi[q/\top] \vee \varphi[q/\perp]$, where $\varphi[q/X]$ is a formula obtained from $\varphi$ by replacing each $q$ with $X$ ($X\in \{\top, \perp\}$).
-This method cannot be extended to a \CTL\ formula. Consider a \CTL\ formula $\psi=\ALL\GLOBAL p \wedge \neg \ALL\GLOBAL q \wedge \neg \ALL\GLOBAL \neg q$. If we want to forget
+There are a number of challenges as existing algorithm of computing forgetting in other logics are not directly applicable in \CTL. For instance, in propositional forgetting theory, forgetting atom $q$ from $\varphi$ is equivalent to a formula $\varphi[q/\top] \vee \varphi[q/\perp]$, where $\varphi[q/X]$ is a formula obtained from $\varphi$ by replacing each $q$ with $X$ ($X\in \{\top, \perp\}$).
+This method cannot be extended to \CTL. Consider a \CTL\ formula $\psi=\ALL\GLOBAL p \wedge \neg \ALL\GLOBAL q \wedge \neg \ALL\GLOBAL \neg q$. If we want to forget
 atom $q$ from $\psi$ by using the above method, we would have $\psi[q/\top] \vee \psi[q/\perp] \equiv \perp$. This is obviously not correct since after forgetting $q$ this specification should not become inconsistent.
 %Besides, we also cannot use the method in modal logic since there is
 %Another example is computing the result of forgetting $p$ from $\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$.
 
-For another, as far as I know the existing methods to compute forgetting include the classical one talked above and resolution-based approachs in propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach (second-order elimination) in description logic~\cite{Zhao:2017:IJCAI}. However, the resolution and Ackermann-based methods need a specific normal form of the formula, it is hard to obtain such normal form in \CTL.
-Although any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, but it do introduce the \emph{index} and new atoms. Both the two problems are we should solve.
+%For another, as far as I know the existing methods to compute forgetting include the classical one talked above and resolution-based approaches in propositional
 
-In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} by eliminating the atoms introduced in the transformation process and combining the \CTL\ with $\CTLsnf$ by using the \emph{binary bisimulation relation} (one is the set of atoms and another one is the set of indexes).
-Such a bisimulation relation is an extension of the set-based bisimulation talked in ``the theory paper" by takeing \emph{index} into account.
+Another problem is that resolution based methods for propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach (second-order elimination) in description logic~\cite{Zhao:2017:IJCAI} require a specific normal form which does not exist in this form in \CTL.
+While any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, which is a variant of \CTL\ for which such a normal form does exist, it introduces \emph{indices} and extra atoms. Both these two problems will have to be addressed.
 
-The paper is structured as follows:  Section 2
-introduces the notation and technical preliminaries.
-In section 3 we give a more precise definition of the problem.
- As key contributions, Section 4, introduces the resolution-based approach.
-  Conclusion closes the paper.
+In this paper we extend the Resolution Calculus in~\cite{zhang2014resolution} by eliminating the atoms introduced in the transformation process %and combining the \CTL\ with $\CTLsnf$
+by using a \emph{binary bisimulation relation} (one on the set of atoms, one on indices).
+Such a bisimulation relation is an extension of the set-based bisimulation introduced in \cite{arxiv} by taking \emph{index} into account.
+
+In Section 2 we introduce the notation and technical preliminaries.
+In Section 3 we give a more precise definition of the forgetting problem.
+As key contributions, Section 4, introduces the resolution-based approach, as well as the proofs of correctness and complexity.
+We conclude the paper with some related and future work, as well as a brief discussion. Due to space restrictions and to avoid hindering the flow of content, some of the proves are moved to the supplementary material~\footnote{https://github.com/fengrenyan/Resolution-proof-CTL.git}.
 %
 %
 \section{Preliminaries}
-We start with some technical and notational preliminaries. Throughout this paper, we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
+We start with some technical and notational preliminaries. Throughout this paper we fix a finite set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
 % In the following several parts, we will introduce the structure we will use for \CTL, syntax and semantic of \CTL\ and the normal form $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) of \CTL~\cite{zhang2009refined}.
 \subsection{Model structure in \CTL}
  In general, a transition system
@@ -310,7 +314,7 @@ If $s_0$ is an initial state of $\Hm$, then we denote this model structure $\Hm$
 
 For a given model structure $\Hm=(S,R,L,s_0)$ and $s\in S$,
 the {\em computation tree}
-$\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n$ and is rooted at $s$, is recursively defined as~\cite{DBLP:journals/tcs/BrowneCG88}, for $n\ge 0$,
+$\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n \ge 0$ and is rooted at $s$, is recursively defined \cite{DBLP:journals/tcs/BrowneCG88} as follows:
 \begin{itemize}
   \item $\Tr_0(s)$ consists of a single node $s$ with label $s$.
   \item $\Tr_{n+1}(s)$ has as its root a node $m$ with label  $s$, and
@@ -323,12 +327,12 @@ $\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n$ and i
 A {\em \MPK-structure} (or {\em \MPK-interpretation}) is a model structure
 ${\cal M}=(S, R, L, s_0)$ associating
 with a state $s\in S$, which is written as $({\cal M},s)$ for convenience in the following.
-In the case $s=s_0$ is an initial state of $\cal M$, the \MPK-structure is {\em initial}.
+In case $s=s_0$ is an initial state of $\cal M$, the \MPK-structure is {\em initial}.
 
 
 
-\subsection{Syntax and semantics of \CTL}
-In the following we briefly review the basic syntax and semantics
+\subsection{Syntax and Semantics of \CTL}
+In the following, we briefly review the basic syntax and semantics
 of the \CTL~\cite{DBLP:journals/toplas/ClarkeES86}.
 The {\em signature} of the language $\cal L$ of \CTL\ includes:
 \begin{itemize}
@@ -356,9 +360,9 @@ $\cal L$ are inductively defined via a Backus Naur form:
 %    \ALL [\phi\ \UNTIL\ \phi]
 \end{equation}
 where $p\in\cal A$. The formulas $\phi\land\psi$ and $\phi\supset \psi$
-are defined in a standard manner of propositional logic.
-The other form formulas of $\cal L$ are abbreviated
-using the forms of (\ref{def:CTL:formulas}).
+are defined in the usual way.
+Other formulas in $\cal L$ are abbreviated
+using the forms in (\ref{def:CTL:formulas}).
 %Notice that, according to the
 %above definition for formulas of \CTL,
 %each of the \CTL\ {\em temporal connectives} has the form $XY$
@@ -369,8 +373,8 @@ using the forms of (\ref{def:CTL:formulas}).
  % \prec \land \prec \lor \prec \EXIST\UNTIL, \ALL\UNTIL, \EXIST \UNLESS, \ALL \UNLESS, \rto.
 %\end{equation*}
 
-We are now in the position to define the semantics of $\cal L$.
-Let ${\cal M}=(S,R,L,s_0)$ be a model structure, $s\in S$ and $\phi$ a formula of $\cal L$.
+Next, we define the semantics.
+Let ${\cal M}=(S,R,L,s_0)$ be a model structure, $s\in S$ and $\phi \in \cal L$.
 The {\em satisfiability} relationship between $({\cal M},s)$ and $\phi$,
 written $({\cal M},s)\models\phi$, is inductively defined on the structure of $\phi$ as follows:
 
@@ -399,18 +403,18 @@ whenever ${\cal K}\models\phi$.
 %Let $\Pi$ be a set of formulae, ${\cal K} \models \Pi$ if for each $\phi\in \Pi$ there is $\cal K \models \phi$.
 We denote $\Mod(\phi)$ the set of models of $\phi$.
 The formula $\phi$  is {\em satisfiable}
-if $\Mod(\phi)\neq\emptyset$.
-Given two formulas $\phi_1$ and $\phi_2$,  $\phi_1\models\phi_2$ we mean $\Mod(\phi_1)\subseteq\Mod(\phi_2)$, and
+iff $\Mod(\phi)\neq\emptyset$.
+Given two formulas $\phi_1$ and $\phi_2$, by $\phi_1\models\phi_2$, we mean $\Mod(\phi_1)\subseteq\Mod(\phi_2)$, and
 by $\phi_1\equiv\phi_2$, we mean $\phi_1\models\phi_2$ and $\phi_2\models\phi_1$.
-In this case $\phi_1$ is {\em equivalent} to $\phi_2$.
-The set of atoms occurring in $\phi_1$, is denoted by $\Var(\phi_1)$.
- $\phi_1$ is $V$-{\em irrelevant}, written $\IR(\phi_1,V)$,
+In this case, $\phi_1$ is {\em equivalent} to $\phi_2$.
+The set of atoms occurring in $\phi_1$, is denoted by $\Var(\phi_1)$. We say that
+ $\phi_1$ is $V$-{\em irrelevant}, and write $\IR(\phi_1,V)$,
 if there is a formula $\psi$ with
 $\Var(\psi)\cap V=\emptyset$ such that $\phi_1\equiv\psi$.
 
 
-\subsection{The normal form of \CTL}
-It has proved that any \CTL\ formula $\varphi$ can be transformed into a set $T_\varphi$ of $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) clauses in polynomial time such that $\varphi$ is satisfiable iff $T_\varphi$ is satisfiable~\cite{zhang2008first}.
+\subsection{The Normal Form of \CTL}
+It is  known that any \CTL\ formula $\varphi$ can be transformed into a set $T_\varphi$ of $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) clauses in polynomial time such that $\varphi$ is satisfiable iff $T_\varphi$ is satisfiable~\cite{zhang2008first}.
 An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ is an extension of the syntax of \CTL\ to use indices. These indices can be used to preserve a particular path context. The language of $\CTLsnf$ clauses is defined over an extension of \CTL. That is the language is based on: (1) the language of CTL; (2) a propositional constant $\start$; (3) a countably infinite index set $\Ind$; and (4) temporal operators: $\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$, and $\EXIST_{\tuple{ind}} \UNTIL$. % and $\EXIST_{\tuple{ind}} \UNLESS$.
 
 %The priorities for the $\CTLsnf$\ connectives are assumed to be (from the highest to the lowest):
@@ -421,7 +425,7 @@ An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ i
 %Where the operators in the same brackets have the same priority.
 
 %The $\CTLsnf$ clauses consists of formulae of the following forms: $\ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j)$ (initial clause), $\ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j)$ (global clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \NEXT \bigvee_{j=1}^k m_j)$ (\ALL-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^k m_j)$ (\EXIST-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l)$ (\ALL-sometime clause) and $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l)$ (\EXIST-sometime clause),
-Before talk about the sematic of this language, we introduce the $\CTLsnf$ clauses at first. The $\CTLsnf$ clauses consists of formulae of the following forms.
+Before talk about the semantic of this language, we introduce the $\CTLsnf$ clauses at first. The $\CTLsnf$ clauses consists of formulae of the following forms.
 \begin{align*}
 & \ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j) && (initial\ clause) \\
 & \ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j) && (global\ clause) \\
@@ -469,7 +473,9 @@ Other terminologies are similar with those in \CTL\ sub-section.
 
 
 \section{Problem Definition}
-In this section, we present the notion of forgetting in \CTL.
+In this section we will introduce forgetting based on the notion of $V$-bisimulation.
+Intuitively, bisimulation relates states that mutually mimic all individual transitions~\cite{Baier:PMC:2008}. While the $V$-bisimulation relates states that mutually mimic all individual transitions on $\Ha - V$, this is close with forgetting some set $V$ of atoms.
+
 For convenience, in the following we denote $\Hm=(S, R, L, s_0)$,
 $\Hm'=(S',R',L',s_0')$, $\Hm_i=(S_i, R_i,L_i, s_0^i)$ (or $\Hm=(S, R, L, [\_], s_0)$,
 $\Hm'=(S',R',L', [\_],s_0')$, $\Hm_i=(S_i, R_i,L_i, [\_], s_0^i)$) and ${\cal K}_i=(\Hm_i, s_i)$ with $s_i \in S_i$
@@ -529,7 +535,10 @@ It is  apparent that $\lrto_V$ is a binary relation.
   The relation $\lrto_V$ is an equivalence relation.
 \end{lemma}
 
-Besides, we have the following properties:
+%Besides, we have the following properties:
+The following proposition shows that if a \MPK-structure (or an Ind-structure) is $V_1$ and $V_2$-bisimulation with the other two \MPK-structures (or an Ind-structures) respectively, then those two \MPK-structures (or an Ind-structures) are $V_1 \cup V_2$-bisimulation. This is important for forgetting since this laid the foundation of resolving atoms in $V$ one by one in the resolution process later.
+Moreover, the $V_1$-bisimulation between two \MPK-structures (Ind-structures) implies those two \MPK-structure (Ind-structures) are $V_2$-bisimulation for all $V_2$ with $V_1 \subseteq V_2 \subseteq \Ha$.
+Formally,
 
 \begin{proposition}\label{div}
 Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$,
@@ -560,7 +569,9 @@ For instance, let $\phi = \psi_1 \vee \psi_2$, the induction hypothesis is ${\ca
 %Other cases can be proved similarly.
 \end{proof}
 
-Now we give the formal definition of forgetting in \CTL\ from the semantic forgetting point view.
+%Now we give the formal definition of forgetting in \CTL\ from the semantic forgetting point view.
+Based on our notion of $V$-bisimulation, we can now introduce forgetting in \CTL\ from the semantic forgetting point view.
+Which means the result of forgetting the atoms in set $V$ of atoms from \CTL\ formula $\varphi$ is a formula which shares the same models as $\varphi$ and models that are $V$-bisimulation with one of the models of $\varphi$.
 \begin{definition}[Forgetting]\label{def:V:forgetting}
   Let $V\subseteq\cal A$ and $\phi$ a \CTL\ formula.
 A \CTL\ formula $\psi$ with $\Var(\psi)\cap V=\emptyset$
@@ -575,7 +586,9 @@ $\Mod(\psi)=\Mod(\psi')$, \ie, $\psi$ and $\psi'$ have the same models. In the s
 of equivalence the forgetting result is unique (up to equivalence).
 
 
-Similar with the $V$-bisimulation between \MPK-structures, we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
+In order to bridge the gap between \CTL\ and $\CTLsnf$, which has introduced the index for the existential quantifier,
+%Similar with the $V$-bisimulation between \MPK-structures,
+we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
 \begin{definition}[binary bisimulation relation] \label{def:VInd:bisimulation}
 %\textbf{($\tuple{V,I}$-bisimulation)}
 Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation $\beta_{\tuple{V,I}}$ between initial \Ind-structures is a set that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \notin I$ there is
@@ -586,6 +599,7 @@ Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-stru
 %$\forall j \notin I$ there is $[j]_1 = [j]_2$.
 \end{definition}
 We call this relation as \emph{binary bisimulation relation}, also denoted as $\lrto_{\tuple{V,I}}$. Apparently, this definition is similar with our concept $V$-bisimulation except that this $\tuple{V,I}$-bisimulation has introduced the index.
+This new type of bisimulation will later be used to prove the equivalence between a \CTL\ formula and a $\CTLsnf$ formula.
 %Besides, it is not difficult to prove $\tuple{V,I}$-bisimulation possess those properties (talked-above) possessed by $V$-bisimulation.
 
 \begin{proposition}\label{pro:VI:div}
@@ -609,7 +623,8 @@ $\forall (s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_
 
 (ii) This can be proved from (ii) of Proposition~\ref{div}.
 \end{proof}
-
+%Apparently, this Proposition contain the same meaning with Proposition~\ref{div} except the index have been take into consider in this result.
+Obviously, this proposition has the same meaning as Proposition~\ref{div}, except that the index is taked into account.
 
 
 \section{The Calculus}
@@ -619,7 +634,7 @@ We use the transformation rules Trans(1) to Trans(12) and resolution rules (SRES
 
 The key problems of this method include: (1) How to fill the gap between \CTL\ and $\CTLsnf$ since there is index for existential quantifier in $\CTLsnf$; and (2) How to eliminate the irrelevant atoms, which we want to forget and introduced by the transformation rules, in the formula.
 We will resolve these two problems by $\tuple{V,I}$-bisimulation and \emph{eliminate} operator respectively.
-For convenient, we use $V\subseteq \Ha$ denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation and resolution processes below, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clauses obtained from $\varphi$ by using transformation rules on it and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly state.
+For convenience, we use $V\subseteq \Ha$ to denote the set we want to forget, $V' \subseteq \Ha$ with $V \cap V'={\O}$ the set of atoms introduced in the transformation process below, $\varphi$  the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clauses obtained from $\varphi$ by using transformation rules on it and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly state.
  Let $T$, $T'$ be two sets of formulae, $I$ a set of indexes introduced in the transformation and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
 
 
@@ -672,7 +687,7 @@ $\Rp \lto \emph{Replacing\_atoms}(\NI)$\;
 
 
 
-\subsection{The Transform process}
+\subsection{The Transform Process}
 The \emph{Transform} process, denoted as $\emph{Transform}(\varphi)$, is to transform the \CTL\ formula into a set of $\CTLsnf$ clauses by using the rules  Trans(1) to Trans(12) in~\cite{zhang2009refined}).
 
 The \emph{transformation} of any \CTL\ formula $\varphi$ into the set $T_{\varphi}$ is a sequence $T_0, T_1,\dots, T_n=T_{\varphi}$ of sets of formulae with $T_0=\{\ALL \GLOBAL(\start \supset p), \ALL \GLOBAL(p \supset \simp(\nnf(\varphi)))\}$ such that for every $i$ ($0 \leq i< n$), $T_{i+1} = (T_i \setminus \{\psi\}) \cup R_i$~\cite{zhang2009refined}), where $p$ is a new atom not appearing in $\varphi$, $\psi$ is a formula in $T_i$ not in $\CTLsnf$ clause and $R_i$ is the result set of applying a matching transformation rule to $\psi$. Note that throughout the transformation formulae are kept in negation normal form.
@@ -775,7 +790,7 @@ Besides, the set of new atoms introduced in this process is $V'=\{x, y,x\}$.
 
 
 
-\subsection{The Resolution process}
+\subsection{The Resolution Process}
 The \emph{Resolution} process is to compute all the possible resolutions of $T_{\varphi}$ on $V\cup V'$, denoted as $\emph{Resolution}(T_{\varphi}, V\cup V')$.
 A \emph{derivation} on a set $V\cup V'$ of atoms and $T_{\varphi}$ is a sequence $T_0=T_{\varphi}, T_1, T_2$, $\dots$, $T_n=Res$ of sets of $\CTLsnf$ clauses such that $T_{i+1} = T_i \cup R_i$ for all $0\leq i < n$, where $R_i$ is a set of clauses obtained as the conclusion of the application of a resolution rule to premises in $T_i$.
 Note that all the $T_i$ ($0 \leq i \leq n$) are set of $\CTLsnf$ clauses.
@@ -866,7 +881,7 @@ The resolutions of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cu
 \end{align*}
 \end{example}
 
-\subsection{The Elimination process}
+\subsection{The Elimination Process}
 For resolving problem (2), we should pay attention to the following properties that obtained from the transformation and resolution rules at first:
 \begin{itemize}
   \item \textbf{(GNA)} For each atom $p$ in $\Var(\varphi)$, $p$ do not positively appear in the left hand of the $\CTLsnf$ clause;
@@ -875,10 +890,10 @@ For resolving problem (2), we should pay attention to the following properties t
 \end{itemize}
 
 This \emph{Elimination} process include three sub-processes: \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms}. We will describe those sub-processes carefully blow.
-\subsubsection{The Instantiation process}
+\subsubsection{The Instantiation Process}
 An \emph{instantiate formula} $\psi$ of set $V''$ of atoms is a formula such that $\Var(\psi) \cap V'' ={\O}$.
 Given a formula of the form $p \supset \psi$ with $p$ is an atom not in $V'' \cup \Var(\psi)$, if $\psi$ is an  instantiate formula of set $V''$ then we call $p$ is instantiated by $\psi$.
-A key point to compute forgetting is eliminateing those irrelevant atoms, for this purpose we define the follow instantiation process.
+A key point to compute forgetting is eliminating those irrelevant atoms, for this purpose we define the follow instantiation process.
 \begin{definition}[instantiation]\label{def:subst}
  Let $V''=V'$ and $\Gamma=Res$, then the process of instantiation is as follows:
 \begin{enumerate}[(i)]
@@ -968,7 +983,7 @@ That is $\emph{Instantiate}(Res, V') = V$, which means all the introduced atoms 
 By instantiation operator, we guarantee those atoms in $V\cup V''$ are really irrelevant, \ie should be forgot.
 
 
-\subsubsection{The Connect process}
+\subsubsection{The Connect Process}
 Let $P$ be a conjunction of literals, $l$, $l_1$ be literals,
 in which $\Var(l_1)\in V \cup V'$,
 and $C_i$ ($i\in \{2,3,4\}$) be classical clauses.
@@ -1121,7 +1136,7 @@ After removing the clauses that include atoms in $V=\{p\}$, the following clause
 
 In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$, it is easy to check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
 
-\subsection{Remove the Index and \start}
+\subsection{Remove the Index and Start}
 %The $\emph{Removing\_index}(\Gamma)$ process is to change the set $\Gamma$ of formulas into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
 %The following proposition is important for our algorithm since ... .
 The $\emph{Removing\_index}(\emph{RemA})$ process is to change the set $\emph{RemA}$ obtained above into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
@@ -1148,6 +1163,7 @@ For each $(\Hm, s_0) \in \Mod(P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i)
 Other results can be proved similarly.
 \end{proof}
 
+The following proposition follow from Proposition~\ref{pro:In2NI}.
 
 \begin{proposition}\label{lem:No:Ind}
 \textbf{(NI-BRemain)}
@@ -1195,7 +1211,7 @@ By using the \emph{Replacing\_atoms} process on result of Example~\ref{examp:rem
 
 
 
-\subsection{An example for Connect process}
+\subsection{An Example for Connect Process}
 In order to show the necessity of the Connect process, we give the following example at first.
 \begin{example}
 Let $\psi=\ALL\FUTURE(p \wedge q) \wedge \EXIST \NEXT \neg p$ and $V=\{p\}$.
@@ -1298,7 +1314,7 @@ In those papers, the main idea is also to transform any \CTL\ formula into the n
 But the \CTL\ is a kind of branch time temporal logic, they introduced the ``index" besides \start\ for that purpose.
 
 All in all, a complete set of transformation and resolution rules had been proposed for both PLTL and \CTL. And it shows that the transformation is satisfiability preserving and also for the result obtained from using the resolution rules on the normal form.
-\subsection{Using Resolution Computing forgetting}
+\subsection{Using Resolution Computing Forgetting}
 Resolution, a kind of methods of Second-order quantifier elimination, has been used to compute the forgetting or uniform interpretation in propositional logic~\cite{Yisong:2015:arx} and Modal logic~\cite{herzig2008uniform}. In those case, the formula is required to be a paradigm with a particular form-``CNF" (the definition of CNF in Modal logic can be found in~\cite{herzig2008uniform}).
 
  As have said above that the normal form used to resolution is an extension of \CTL\ by introducing the \start\ and ``index".
@@ -1318,7 +1334,7 @@ Besides, examples show how to compute forgetting using our algorithm.
 
 %\section*{Acknowledgments}
 
-
+\clearpage
 \appendix
 \section{Supplementary Material: Proof Appendix}
 
@@ -1597,6 +1613,7 @@ And then $\Gamma_1 \equiv_{\tuple{V'', I}} \varphi$ follows.
 \end{proof}
 
 %% The file kr.bst is a bibliography style file for BibTeX 0.99c
+\clearpage
 \bibliographystyle{kr}
 \bibliography{ijcai20}
 

@@ -624,7 +624,7 @@ $\forall (s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_
 (ii) This can be proved from (ii) of Proposition~\ref{div}.
 \end{proof}
 %Apparently, this Proposition contain the same meaning with Proposition~\ref{div} except the index have been take into consider in this result.
-Obviously, this proposition has the same meaning as Proposition~\ref{div}, except that the index takes into account the result.
+Obviously, this proposition has the same meaning as Proposition~\ref{div}, except that the index is taken into account.
 
 
 \section{The Calculus}
@@ -752,7 +752,8 @@ For another, $\forall (\Hm_1,s_1) \in \Mod(T_0)$, it is apparent that $(\Hm_1,s_
 
 \end{proof}
 
-This means that $\varphi$ has the same models with $T_{\varphi}$ excepting that the atoms in $V'$ and the relations $[i]$ with $i\in I$.
+This means that models of $\varphi$ and $T_{\varphi}$ are $\tuple{V', I}$-bisimulation to each other.
+%, i.e. except that the label function for those atoms in $V'$ and the relations $[i]$ with $i\in I$ may be different in those models.
 
 \begin{algorithm}[!h]
 \caption{$\emph{Transform}(\varphi)$}% ??????
@@ -889,9 +890,9 @@ For resolving problem (2), we should pay attention to the following properties t
   \item \textbf{(PI)} For each atom $p\in V'$, if $p$ appearing in the left hand of a $\CTLsnf$ clause, then $p$ appear positively.
 \end{itemize}
 
-This \emph{Elimination} process include three sub-processes: \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms}. We will describe those sub-processes carefully blow.
+The \emph{Elimination} process include three sub-processes: \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms}. We will describe those sub-processes carefully blow.
 \subsubsection{The Instantiation Process}
-An \emph{instantiate formula} $\psi$ of set $V''$ of atoms is a formula such that $\Var(\psi) \cap V'' ={\O}$.
+An \emph{instantiate formula} of set $V''$ of atoms is a formula $\psi$ such that $\Var(\psi) \cap V'' ={\O}$.
 Given a formula of the form $p \supset \psi$ with $p$ is an atom not in $V'' \cup \Var(\psi)$, if $\psi$ is an  instantiate formula of set $V''$ then we call $p$ is instantiated by $\psi$.
 A key point to compute forgetting is eliminating those irrelevant atoms, for this purpose we define the follow instantiation process.
 \begin{definition}[instantiation]\label{def:subst}

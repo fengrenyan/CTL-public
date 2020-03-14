@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  11 MAR 2020 20:38
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  12 MAR 2020 09:09
 entering extended mode
 **D:/Git/CTL-public/KR-new-version/Resolution-based/kr20-resolution-algorithm.t
 ex
@@ -706,176 +706,182 @@ LaTeX Warning: Command \O invalid in math mode on input line 700.
 LaTeX Warning: Command \O invalid in math mode on input line 702.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 763.
+Underfull \hbox (badness 1735) in paragraph at lines 755--757
+[]\OT1/ptm/m/n/10 This mean-s that mod-el-s of $\OML/cmm/m/it/10 '$ \OT1/ptm/m/
+n/10 and $\OML/cmm/m/it/10 T[]$ \OT1/ptm/m/n/10 are $[]$-
+ []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 776.
+LaTeX Warning: Command \O invalid in math mode on input line 764.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 776.
+LaTeX Warning: Command \O invalid in math mode on input line 777.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 777.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 786.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 787.
 
-Overfull \hbox (4.25146pt too wide) in paragraph at lines 786--786
+Overfull \hbox (4.25146pt too wide) in paragraph at lines 787--787
 [] 
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 805.
+LaTeX Warning: Command \O invalid in math mode on input line 806.
 
 [5]
 
-LaTeX Warning: Command \O invalid in math mode on input line 838.
+LaTeX Warning: Command \O invalid in math mode on input line 839.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 894.
+LaTeX Warning: Command \O invalid in math mode on input line 895.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 900.
+LaTeX Warning: Command \O invalid in math mode on input line 901.
 
 [6]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1045.
+LaTeX Warning: Command \O invalid in math mode on input line 1046.
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 1045--1046
+Underfull \hbox (badness 1430) in paragraph at lines 1046--1047
 []\OT1/ptm/b/n/10 Proposition 5. []\OT1/ptm/m/it/10 Let $\OT1/cmr/m/n/10   = \O
 ML/cmm/m/it/10 Res$\OT1/ptm/m/it/10 , we have $\OT1/cmr/m/n/10   \OMS/cmsy/m/n/
 10 []$
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1053.
+LaTeX Warning: Command \O invalid in math mode on input line 1054.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1074.
+LaTeX Warning: Command \O invalid in math mode on input line 1075.
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 1080--1082
+Underfull \hbox (badness 2452) in paragraph at lines 1081--1083
 []\OT1/ptm/m/n/10 Which mean-s that if the for-mu-la $\OML/cmm/m/it/10 C$ \OT1/
 ptm/m/n/10 con-tain-ing at
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 1080--1082
+Underfull \hbox (badness 1424) in paragraph at lines 1081--1083
 \OT1/ptm/m/n/10 be true, else be $\OML/cmm/m/it/10 C$ \OT1/ptm/m/n/10 it-self. 
 For con-ve-nience, for any
  []
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 1080--1082
+Underfull \hbox (badness 1817) in paragraph at lines 1081--1083
 \OT1/ptm/m/n/10 set $\OML/cmm/m/it/10 T$ \OT1/ptm/m/n/10 of for-mu-la we have $
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T; V\OT1/cmr/m/n/10 ) =$
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1086.
+LaTeX Warning: Command \O invalid in math mode on input line 1087.
 
 
-Underfull \hbox (badness 4927) in paragraph at lines 1086--1087
+Underfull \hbox (badness 4927) in paragraph at lines 1087--1088
 \OT1/ptm/m/it/10 and $\OT1/cmr/m/n/10  [] = []$ $([]( )\OML/cmm/m/it/10 ; \OT1/
 cmr/m/n/10  )$\OT1/ptm/m/it/10 , then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1148--1149
+Underfull \hbox (badness 10000) in paragraph at lines 1149--1150
 []$[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[] \OMS/cmsy/m/n/10  [][][]\OML/cmm/
 m/it/10 '[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 []$
  []
 
 [7]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1171.
+LaTeX Warning: Command \O invalid in math mode on input line 1172.
 
 
-Underfull \hbox (badness 3209) in paragraph at lines 1169--1172
+Underfull \hbox (badness 3209) in paragraph at lines 1170--1173
 \OT1/ptm/m/it/10 dex-es ap-pear-ing in $[]$, we have $[] \OMS/cmsy/m/n/10 []$
  []
 
 
-Underfull \hbox (badness 2326) in paragraph at lines 1189--1190
+Underfull \hbox (badness 2326) in paragraph at lines 1190--1191
 []\OT1/ptm/m/n/10 The last step of our al-go-rith-m is to e-lim-i-nate al-
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 1189--1190
+Underfull \hbox (badness 1552) in paragraph at lines 1190--1191
 \OT1/ptm/m/n/10 l the atom-s in $\OML/cmm/m/it/10 V[]$ \OT1/ptm/m/n/10 which ha
 s been in-tro-duced in the
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 1189--1190
+Underfull \hbox (badness 3199) in paragraph at lines 1190--1191
 \OT1/ptm/m/it/10 Trans-for-m \OT1/ptm/m/n/10 pro-cess. Let $\OT1/cmr/m/n/10   =
  [](\OML/cmm/m/it/10 Res; V[]\OT1/cmr/m/n/10 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1189--1190
+Underfull \hbox (badness 10000) in paragraph at lines 1190--1191
 \OT1/ptm/m/n/10 and $\OT1/cmr/m/n/10  [] = []([]( ))$\OT1/ptm/m/n/10 , then
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 1189--1190
+Underfull \hbox (badness 1924) in paragraph at lines 1190--1191
 $[]\OT1/cmr/m/n/10 ([]( []))$ \OT1/ptm/m/n/10 is ob-tained from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1198--1199
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1200
 []\OT1/ptm/b/n/10 Proposition 9. []\OT1/ptm/m/it/10 Let $\OT1/cmr/m/n/10  [] = 
 [](\OML/cmm/m/it/10 Res; V[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/it/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1198--1199
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1200
 $\OT1/cmr/m/n/10  [] = []$ $([]( [])\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10  [])$ \O
 T1/ptm/m/it/10 and
  []
 
 
-Underfull \hbox (badness 7667) in paragraph at lines 1198--1199
+Underfull \hbox (badness 7667) in paragraph at lines 1199--1200
 $\OT1/cmr/m/n/10  [] = []([]( []))$\OT1/ptm/m/it/10 , then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+Underfull \hbox (badness 10000) in paragraph at lines 1225--1226
 []\OT1/ptm/m/it/10 According to our Al-go-rith-m []1[], we have
  []
 
 <models.png, id=309, 294.09875pt x 198.7425pt>
 File: models.png Graphic file (type png)
  <use models.png>
-Package pdftex.def Info: models.png used on input line 1259.
+Package pdftex.def Info: models.png used on input line 1260.
 (pdftex.def)             Requested size: 142.26378pt x 96.13829pt.
  [8]
-Overfull \hbox (0.66203pt too wide) in paragraph at lines 1296--1296
+Overfull \hbox (0.66203pt too wide) in paragraph at lines 1297--1297
 [] 
  []
 
 [9 <D:/Git/CTL-public/KR-new-version/Resolution-based/models.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1374
+Underfull \hbox (badness 10000) in paragraph at lines 1373--1375
 
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 1430--1433
+Underfull \hbox (badness 1424) in paragraph at lines 1431--1434
 \OT1/ptm/m/n/10 mean that $\OML/cmm/m/it/10 s[]$ \OT1/ptm/m/n/10 is the $\OT1/c
 mr/m/n/10 (\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 2)$\OT1/ptm/m/n/10 -th n-ode in
  the path
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 1442--1445
+Underfull \hbox (badness 1642) in paragraph at lines 1443--1446
 []$\OMS/cmsy/m/n/10 8\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 
 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$\OT1/ptm/m/n/10 , we will show that t
 here is a
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 1445--1446
+Underfull \hbox (badness 1642) in paragraph at lines 1446--1447
 []$\OMS/cmsy/m/n/10 8\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 
 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$\OT1/ptm/m/n/10 , we will show that t
 here is a
@@ -885,13 +891,13 @@ here is a
 
 ]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1508.
+LaTeX Warning: Command \O invalid in math mode on input line 1509.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1510.
+LaTeX Warning: Command \O invalid in math mode on input line 1511.
 
 
-Underfull \hbox (badness 3240) in paragraph at lines 1512--1513
+Underfull \hbox (badness 3240) in paragraph at lines 1513--1514
 []$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 (\OT1/cmr/m/n/10 )$ $\OMS/cmsy/m/n/10 8\OT
 1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/
 cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )$\OT1/ptm
@@ -899,75 +905,75 @@ cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )$\OT1/ptm
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1521.
+LaTeX Warning: Command \O invalid in math mode on input line 1522.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1532.
+LaTeX Warning: Command \O invalid in math mode on input line 1533.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1538.
+LaTeX Warning: Command \O invalid in math mode on input line 1539.
 
 [11]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1549.
+LaTeX Warning: Command \O invalid in math mode on input line 1550.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1559.
+LaTeX Warning: Command \O invalid in math mode on input line 1560.
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 1556--1560
+Underfull \hbox (badness 7030) in paragraph at lines 1557--1561
 []\OT1/ptm/b/n/10 Proposition []\OT1/ptm/m/n/10 4[] Let $\OML/cmm/m/it/10 '$ \O
 T1/ptm/m/n/10 be a CTL for-mu-la, then
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1568.
+LaTeX Warning: Command \O invalid in math mode on input line 1569.
 
 
-Underfull \hbox (badness 4981) in paragraph at lines 1568--1569
+Underfull \hbox (badness 4981) in paragraph at lines 1569--1570
 []\OT1/ptm/m/n/10 (1) If $\OML/cmm/m/it/10   \OMS/cmsy/m/n/10 ![] \OML/cmm/m/it
 /10 R[]$ \OT1/ptm/m/n/10 by an ap-pli-ca-tion of $\OML/cmm/m/it/10 r \OMS/cmsy/
 m/n/10 2$
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1574.
+LaTeX Warning: Command \O invalid in math mode on input line 1575.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1576.
+LaTeX Warning: Command \O invalid in math mode on input line 1577.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1583.
+LaTeX Warning: Command \O invalid in math mode on input line 1584.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1582--1585
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1586
 []\OT1/ptm/b/n/10 Proposition []\OT1/ptm/m/n/10 6[] Let $\OML/cmm/m/it/10 V[] \
 OT1/cmr/m/n/10 = \OML/cmm/m/it/10 V \OMS/cmsy/m/n/10 [ \OML/cmm/m/it/10 V[]$\OT
 1/ptm/m/n/10 , $\OT1/cmr/m/n/10   =$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1582--1585
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1586
 $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Res; V[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10
  and $\OT1/cmr/m/n/10  [] = []$
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1610.
+LaTeX Warning: Command \O invalid in math mode on input line 1611.
 
 [12]
 (D:\Git\CTL-public\KR-new-version\Resolution-based\kr20-resolution-algorithm.bb
 l)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1620.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1621.
  [13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1620.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1621.
 
 (D:\Git\CTL-public\KR-new-version\Resolution-based\kr20-resolution-algorithm.au
 x)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1620.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1620.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1621.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1621.
 
 Package rerunfilecheck Info: File `kr20-resolution-algorithm.out' has not chang
 ed.
@@ -998,7 +1004,7 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type
 1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CT
 EX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on kr20-resolution-algorithm.pdf (13 pages, 396075 bytes).
+Output written on kr20-resolution-algorithm.pdf (13 pages, 396022 bytes).
 PDF statistics:
  518 PDF objects out of 1000 (max. 8388607)
  186 named destinations out of 1000 (max. 500000)
