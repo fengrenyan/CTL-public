@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  16 MAR 2020 22:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.10.19)  15 MAR 2020 00:27
 entering extended mode
 **D:/Git/CTL-public/KR-new-version/Resolution-based/kr20-resolution-algorithm.t
 ex
@@ -25,7 +25,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(D:\Git\CTL-public\KR-new-version\Resolution-based\kr.sty
+("D:\Git\CTL-public\KR-new-version\Semantic Forgetting\kr.sty"
 Conference Style for KR for LaTeX 2e -- version 1.2 (27-Feb-2020)
 \titlepad=\skip43
 \titlebox=\skip44
@@ -574,8 +574,8 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \c@example=\count119
 \c@theorem=\count120
 
-(D:\Git\CTL-public\KR-new-version\Resolution-based\kr20-resolution-algorithm.au
-x)
+("D:\Git\CTL-public\KR-new-version\Semantic Forgetting\kr20-resolution-algorith
+m.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
 LaTeX Font Info:    ... okay on input line 95.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
@@ -609,10 +609,10 @@ LaTeX Info: Redefining \ref on input line 95.
 LaTeX Info: Redefining \pageref on input line 95.
 LaTeX Info: Redefining \nameref on input line 95.
 
-(D:\Git\CTL-public\KR-new-version\Resolution-based\kr20-resolution-algorithm.ou
-t)
-(D:\Git\CTL-public\KR-new-version\Resolution-based\kr20-resolution-algorithm.ou
-t)
+("D:\Git\CTL-public\KR-new-version\Semantic Forgetting\kr20-resolution-algorith
+m.out")
+("D:\Git\CTL-public\KR-new-version\Semantic Forgetting\kr20-resolution-algorith
+m.out")
 \@outlinefile=\write3
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -686,10 +686,10 @@ l.435
 
  
 Here is how much of TeX's memory you used:
- 8685 strings out of 495354
- 122225 string characters out of 3183858
+ 8690 strings out of 495354
+ 122362 string characters out of 3183858
  246407 words of memory out of 3000000
- 11697 multiletter control sequences out of 15000+200000
+ 11699 multiletter control sequences out of 15000+200000
  39729 words of font info for 84 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  36i,8n,38p,1010b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
