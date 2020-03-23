@@ -489,7 +489,46 @@ if there is a formula $\psi$ with
 $\Var(\psi)\cap V=\emptyset$ such that $\phi_1\equiv\psi$.
 The $V$-{\em irrelevant} of a set of formulas can be defined similarly.
 
+%%%Add for 毕业论文
+{\textcolor{red} {The following facts are important for the Resolution-based Algorithm.}}
+The \emph{Replacing\_atoms}($\Gamma$) is obtained from the following two steps:
+\begin{enumerate}[(i)]
+  \item If there is a set of clauses $C$ satisfy the post-condition of the Trans($i$) with $1\leq i \leq 12$, then let $\Gamma = (\Gamma \setminus C) \cup \{\alpha\}$ with the $\alpha$ is the pre-condition of Trans($i$), else go to (ii).
+  \item for each $p\rto \psi$ with $p\in V'$, replacing $p$ with $\psi$.
+\end{enumerate}
 
+ \begin{theorem}
+ Let $\psi$ be a \CTL\ formula, then \emph{Replacing\_atoms}$(\Gamma) \equiv_{\tuple{V, I}} \psi$.
+ \end{theorem}
+ \begin{proof}
+ We prove the Trans(11), other rules can be prove similarly.
+
+ The ($i$) above is obvious by Proposition 3. We will show ($ii$) from the following two points:
+
+ (A) $p$ do not instantiated by some instantiate formula. This can be proved by induction on the
+structures of $\varphi$ (Without loss of generality, we assume $p\rto \varphi$ is a $\CTLsnf$ clause since any formula can be translated into a set of $\CTLsnf$ clauses).
+
+case 1: $\varphi = a$ is a proposition formula, then $a \in V$. It is easy check that $q \rto \textbf{P} (\varphi \UNTIL l) \equiv_{\tuple{\{a\}, I}} q \rto \textbf{P} \FUTURE l$.
+
+case 2: $\varphi = \EXIST \NEXT C_1$ and $a \in \Var(C_1) \cap C$. In this case we have $q \rto \textbf{P} (\varphi \UNTIL l) \models q \rto \textbf{P} \FUTURE l$. For each model $(\Hm, s_0)$ of $q \rto \textbf{P} \FUTURE l$ we can construct a model $(\Hm', s_0)$ the same as $(\Hm, s_0)$ except for each state $s \in \pi_{s_0}$ (note $\textbf{P} \in \{\EXIST, \ALL\}$) before the sate $s'$ (may be $s=s'$) with $(\Hm, s') \models l$ we add or delete $a$ for $L(s)$. It is easy check that $(\Hm', s_0)\models q \rto \textbf{P} (\varphi \UNTIL l)$ and $(\Hm, s_0) \equiv_{\tuple{\{a\}, I}} (\Hm', s_0)$. Therefore, $q \rto \textbf{P} (\varphi \UNTIL l) \equiv_{\tuple{\{a\}, I}} q \rto \textbf{P} \FUTURE l$.
+
+Other cases can be proved similarly.
+
+(B) $a\in \Var(l) \subseteq V$. We prove it from the following two aspects.
+
+(a) $p$ do not instantiated by some instantiate formula. In this case, all the clauses include $p$ were deleted before, i.e. $\Gamma = \Gamma \setminus C$ ($C$ is replaced with $\top$). Therefore, for any initial \Ind-structure $(\Hm, s_0)$ we can construct an initial \Ind-structure $(\Hm', s_0)$ the same as $(\Hm, s_0)$ except $L(s_0) \models a$ (if $l$ is a positive literal) or $L(s_0) \not\models a$ (else).
+It is easy check $(\Hm', s_0)\models q \rto \textbf{P} (\varphi \UNTIL l)$ and $(\Hm, s_0) \equiv_{\tuple{\{a\}, I}} (\Hm', s_0)$. Therefore, $q \rto \textbf{P} (\varphi \UNTIL l) \equiv_{\tuple{\{a\}, I}} q \rto \textbf{P} \FUTURE l$.
+
+(b) $p$ is instantiated by some instantiate formula. In this case $p\rto \varphi$ is changed into $\varphi\rto \varphi \equiv \top$ by (ii) above. Hence, we can construct the model as (a).
+ \end{proof}
+
+%\begin{align*}
+% \EXIST(\varphi \UNTIL \psi) & \equiv  \EXIST \FUTURE \psi \wedge (\psi \vee (\varphi \wedge \EXIST \NEXT(\varphi \vee \psi))) \wedge\\
+%& \ALL\GLOBAL((\varphi \wedge \EXIST \NEXT(\varphi \vee \psi)) \rto \EXIST \NEXT(\psi \vee (\varphi \wedge \EXIST \NEXT(\varphi \vee \psi)))).
+%\end{align*}
+%\begin{proof}
+%($\Rto$) For all model $(\Hm, s_0) \in \Mod(\EXIST(\varphi \UNTIL \psi))$. By the semantics of $\EXIST \UNTIL$ there is a path $\pi_{s_0}$ s.t. for some state $s_i$ with $i \geq 0$, $(\Hm, s_i) \models \psi$, and then $(\Hm, s_0) \models \EXIST \FUTURE \psi$. Besides, $(\Hm, s_j) \models \varphi$ for each $0\leq j < i$.
+%\end{proof}
 
 
 
