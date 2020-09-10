@@ -27,6 +27,14 @@ Browne, M.~C.; Clarke, E.~M.; and Grumberg, O.
   logic.
 \newblock {\em Theor. Comput. Sci.} 59:115--131.
 
+\bibitem[\protect\citeauthoryear{Clarke and Emerson}{1981}]{clarke1981design}
+Clarke, E.~M., and Emerson, E.~A.
+\newblock 1981.
+\newblock Design and synthesis of synchronization skeletons using branching
+  time temporal logic.
+\newblock In {\em Workshop on Logic of Programs},  52--71.
+\newblock Springer.
+
 \bibitem[\protect\citeauthoryear{Clarke, Emerson, and
   Sistla}{1986}]{DBLP:journals/toplas/ClarkeES86}
 Clarke, E.~M.; Emerson, E.~A.; and Sistla, A.~P.
@@ -49,19 +57,41 @@ Eiter, T., and Wang, K.
 \newblock {\em Semantic forgetting in answer set programming}.
 \newblock Elsevier Science Publishers Ltd.
 
-\bibitem[\protect\citeauthoryear{Emerson}{1990}]{emerson1990temporal}
-Emerson, E.~A.
-\newblock 1990.
-\newblock Temporal and modal logic.
-\newblock In {\em Formal Models and Semantics}. Elsevier.
-\newblock  995--1072.
-
 \bibitem[\protect\citeauthoryear{Fang, Liu, and
   Van~Ditmarsch}{2019}]{fang2019forgetting}
 Fang, L.; Liu, Y.; and Van~Ditmarsch, H.
 \newblock 2019.
 \newblock Forgetting in multi-agent modal logics.
 \newblock {\em Artificial Intelligence} 266:51--80.
+
+\bibitem[\protect\citeauthoryear{Fisher, Dixon, and
+  Peim}{2001}]{fisher2001clausal}
+Fisher, M.; Dixon, C.; and Peim, M.
+\newblock 2001.
+\newblock Clausal temporal resolution.
+\newblock {\em ACM Transactions on Computational Logic (TOCL)} 2(1):12--56.
+
+\bibitem[\protect\citeauthoryear{Fisher}{1991}]{fisher1991resolution}
+Fisher, M.
+\newblock 1991.
+\newblock A resolution method for temporal logic.
+\newblock In {\em Ijcai}, volume~91,  99--104.
+\newblock Citeseer.
+
+\bibitem[\protect\citeauthoryear{Fisher}{1997}]{fisher1997normal}
+Fisher, M.
+\newblock 1997.
+\newblock A normal form for temporal logics and its applications in
+  theorem-proving and execution.
+\newblock {\em Journal of Logic and Computation} 7(4):429--456.
+
+\bibitem[\protect\citeauthoryear{Herzig and Mengin}{2008}]{herzig2008uniform}
+Herzig, A., and Mengin, J.
+\newblock 2008.
+\newblock Uniform interpolation by resolution in modal logic.
+\newblock In {\em European Workshop on Logics in Artificial Intelligence},
+  219--231.
+\newblock Springer.
 
 \bibitem[\protect\citeauthoryear{Lang and Marquis}{2008}]{Lang2008On}
 Lang, J., and Marquis, P.
@@ -145,6 +175,12 @@ Wang, Y.; Wang, K.; and Zhang, M.
   Conference on Artificial Intelligence},  1162--1168.
 \newblock Beijing, China: IJCAI/AAAI.
 
+\bibitem[\protect\citeauthoryear{Wang}{2015}]{Yisong:2015:arx}
+Wang, Y.
+\newblock 2015.
+\newblock On forgetting in tractable propositional fragments.
+\newblock http://arxiv.org/abs/1502.02799.
+
 \bibitem[\protect\citeauthoryear{Wong}{2009}]{Wong:PhD:Thesis}
 Wong, K.-S.
 \newblock 2009.
@@ -186,13 +222,29 @@ Zhang, L.; Hustadt, U.; and Dixon, C.
 \newblock In {\em International Conference on Automated Deduction},  245--260.
 \newblock Springer.
 
-\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017}]{zhao2017role}
+\bibitem[\protect\citeauthoryear{Zhang, Hustadt, and
+  Dixon}{2014}]{zhang2014resolution}
+Zhang, L.; Hustadt, U.; and Dixon, C.
+\newblock 2014.
+\newblock A resolution calculus for the branching-time temporal logic ctl.
+\newblock {\em ACM Transactions on Computational Logic (TOCL)} 15(1):1--38.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017a}]{zhao2017role}
 Zhao, Y., and Schmidt, R.~A.
-\newblock 2017.
+\newblock 2017a.
 \newblock Role forgetting for alcoqh ($\delta$)-ontologies using an
   ackermann-based approach.
 \newblock In {\em Proceedings of the 26th International Joint Conference on
   Artificial Intelligence},  1354--1361.
+\newblock AAAI Press.
+
+\bibitem[\protect\citeauthoryear{Zhao and Schmidt}{2017b}]{Zhao:2017:IJCAI}
+Zhao, Y., and Schmidt, R.~A.
+\newblock 2017b.
+\newblock Role forgetting for alcoqh({$\Delta$})-ontologies using an
+  ackermann-based approach.
+\newblock In {\em Proceedings of the 26th International Joint Conference on
+  Artificial Intelligence}, IJCAI'17,  1354--1361.
 \newblock AAAI Press.
 
 \end{thebibliography}

@@ -1597,7 +1597,7 @@ By using the \emph{Replacing\_atoms} process on result of Example~\ref{examp:rem
 
 
 \subsection{The Correction and Complexity of the Algorithm}
-In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure. 
+In the case that formula dose not include index, we use model structure $\Hm=(S,R,L, s_0)$ to interpret formula instead of \Ind-model structure.
 %Therefore it is apparent that $\forall (\Hm,s_0) \in \Mod(\varphi)$ there is a $(\Hm',s_0') \in \Mod(\Gamma_1)$ such that $(\Hm,s_0) \lrto_{V \cup V'} (\Hm',s_0')$ and vice versa.
 
 
@@ -1852,7 +1852,7 @@ Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
 \begin{proof}
 This theorem can be proved by inducting on the formula $\phi$ and supposing $\Var(\phi) \cap V = \O$.
 
-Here we only prove the only-if direction. The other direction can be similarly proved.
+%Here we only prove the only-if direction. The other direction can be similarly proved.
 
 \textbf{Case} $\phi = p$ where $p \in \Ha - V$:\\
 $(\Hm, s) \models \phi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
@@ -1921,7 +1921,7 @@ $(s, s')\in \Hb_0$. Therefore $(s_1, s_2) \in \Hb_1$, and then we will have $(s_
   There exists a least  $k$ such that
   $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.\\
 \begin{proof}
-If $s\not\lrto_V s'$, then there exists a least constant $k$ such that $(s_i, s_j) \notin \Hb_k$, and then there is a least constant m ($m \leq k$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-corresponding by Proposition~\ref{B_to_T}. Let $c=m$, the lemma is proved.
+If $s\not\lrto_V s'$, then there exists a least constant $c$ such that $(s_i, s_j) \notin \Hb_c$, and then there is a least constant $m$ ($m \leq c$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-bisimilar by Proposition~\ref{B_to_T}. Let $k=m$, the lemma is proved.
 \end{proof}
 
 

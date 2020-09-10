@@ -552,6 +552,15 @@ What's more, the set-based bisimulation notion is also different
 from  the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008},
 which is defined for states of a given \MPK-structure.
 
+\begin{example}
+\begin{figure}[ht]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=5cm]{yK1.png}\\
+  \caption{Car Engine Manufacturing Scenario }\label{yK1}
+\end{figure}
+\end{example}
+
 It is  apparent that $\lrto_V$ is a binary relation.
  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
  by $s_1 \lrto_V s_2 $
@@ -638,6 +647,13 @@ Intuitively, if two \MPK-structures are $V$-bisimilar, then they satisfy the sam
   ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
   ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.
 \end{theorem}
+\begin{proof}
+This theorem can be proved by inducting on the formula $\phi$ and supposing $\Var(\phi) \cap V = \O$ due to $\IR(\phi,V)$.
+
+For the case $\phi = \psi_1 \vee \psi_2$, the induction hypothesis is ${\cal K}_1 \models \psi_i$ iff ${\cal K}_2 \models \psi_i$ with $i\in \{1,2\}$. Then we can see that ${\cal K}_1 \models \phi$ iff ${\cal K}_1 \models \psi_1$ or ${\cal K}_1 \models \psi_2$ iff ${\cal K}_2 \models \psi_1$ or ${\cal K}_2 \models \psi_2$ by induction hypothesis.
+
+Other cases can be proved similarly.
+\end{proof}
 
 
 Let $V\subseteq\cal A$, ${\cal M}_i~(i=1,2)$ be  model structures.
@@ -663,6 +679,12 @@ hold trivially for $n=0$.
   \[(s_1,s_2)\in{\cal B}_n\mbox{ iff }
   \Tr_j(s_1)\lrto_V\Tr_j(s_2)\mbox{ for every $0\le j\le n$}.\]
 \end{proposition}
+\begin{proof} 
+From left to the right is apparent since $(s_1,s_2)\in{\cal B}_n$ implies that $(s_1,s_2)\in{\cal B}_m$ for every $0 \le m \le n$.
+
+For the other direction, in order to show $(s_1,s_2)\in{\cal B}_n$ we need only to prove for any $s_1'$ with $(s_1, s_1') \in R_1$ there is $s_2'$ with $(s_2, s_2')\in R_2$ \st $(s_2, s_2') \in {\cal B}_{n-1}$ and vice versa.
+$\Tr_0(s_1)\lrto_V\Tr_0(s_2)$ implies $(s_1, s_2) \in B_0$, $\Tr_1(s_1)\lrto_V\Tr_1(s_2)$ implies for any $s_1'$ with $(s_1, s_1') \in R_1$ there is $s_2'$ with $(s_2, s_2')\in R_2$ \st $(s_2, s_2') \in B_0$ and vice versa, hence $(s_1, s_2) \in B_1$. Therefore, we can prove $(s_1,s_2)\in{\cal B}_n$ recursively.
+\end{proof}
 This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto_V s_2$, otherwise there is some $k$ such that $\Tr_k(s_1)$ and $\Tr_k(s_2)$ are not $V$-bisimilar.
 
 \begin{proposition}\label{pro:k}
@@ -671,6 +693,9 @@ This means that $\Tr_j(s_1) \lrto_V \Tr_j(s_2)$ for all $j \geq 0$ if $s_1 \lrto
   There exists a least  $k$ such that
   $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.
 \end{proposition}
+\begin{proof}
+If $s\not\lrto_V s'$, then there exists a least constant $c$ such that $(s_i, s_j) \notin \Hb_c$, and then there is a least constant $m$ ($m \leq c$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-bisimilar by Proposition~\ref{B_to_T}. Let $k=m$, the lemma is proved.
+\end{proof}
 In this case the  model structure ${\cal M}$ is called $V$-{\em distinguishable} (by
 states $s$ and $s'$ at the least depth $k$), which is denoted by $\dis_V({\cal M},s,s',k)$.
 %It is evident that
@@ -733,7 +758,7 @@ Let $s'=s$, it shows that for any formula $\varphi$ of $V$, if $\varphi$ is a ch
 
 Let $V\subseteq\cal A$,
 %, ${\cal M}=(S,R,L,s_0)$
- ${\cal K}=({\cal M},s_0)$ be an initial \MPK-structure and $T(s') = {\cal F}_V(\Tr_c(s'))$.
+ ${\cal K}=({\cal M},s_0)$ be an initial \MPK-structure, $c=ch({\cal M},V)$ and $T(s') = {\cal F}_V(\Tr_c(s'))$ for each state $s'$ in $\Hm$.
 The {\em characterizing formula} of $\cal K$ on $V$, written ${\cal F}_V(\Hm,s_0)$ (or ${\cal F}_V({\cal K})$ in short), is
 defined as the following formula:
 \begin{align*}
@@ -758,7 +783,7 @@ defined as the following formula:
 %    \right)
 %$}
 %\end{equation*}
-where $c=ch({\cal M},V)$. It is apparent that $\IR({\cal F}_V(\Hm, s_0), \overline V)$.
+It is apparent that $\IR({\cal F}_V(\Hm, s_0), \overline V)$.
 
 The following example show how to compute characterizing formula:
 %\begin{example}
@@ -831,65 +856,71 @@ Given $V\subseteq \Ha$, let $\Hm=(S,R,L,s_0)$  and $\Hm'=(S',R', L',s_0')$ be tw
 \end{enumerate}
 
 \end{theorem}
-
-In order to prove Theorem~\ref{CF}, we prove the following two lemmas at first.
-
-\begin{lemma}\label{Bn:to:Tn}
-Let $V\subseteq \Ha$, $\Hm=(S, R, L,s_0)$ and $\Hm'=(S', R', L',s_0')$ be two model structures,
-$s\in S$, $s'\in S'$ and $n\ge 0$.
-\begin{enumerate}[(i)]
-  \item $({\cal M},s)\models{\cal F}_V(\Tr_n(s))$.
-  \item If $({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$ then
-  $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$.
-\end{enumerate}
-\end{lemma}
 \begin{proof}
-(i) It is apparent from the definition of ${\cal F}_V(\Tr_n(s))$.
-Base. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$.\\
-Step. For $k \geq 0$, supposing the result talked in (i) is correct in $k - 1$, we will show that $({\cal M},s)\models {\cal F}_V(\Tr_{k+1}(s))$, i.e.,:
-\begin{equation*}
-\resizebox{.91\linewidth}{!}{$
-    \displaystyle
- %\[
- ({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
-    \EXIST \NEXT T(s')\right)
-    \wedge \ALL \NEXT\left(\bigvee_{(s,s')\in R}
-    T(s')\right)
-    \wedge {\cal F}_V(\Tr_0(s)).%\]
- $}
-\end{equation*}
-Where $T(s') ={\cal F}_V(\Tr_k(s'))$. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$ by Base. It is apparent that for any $(s,s') \in R$, there is $({\cal M}, s') \models {\cal F}_V(\Tr_k(s'))$ by inductive assumption. Then we have $({\cal M},s)\models \EXIST \NEXT {\cal F}_V(\Tr_k(s')$, and then $({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
-    \EXIST \NEXT {\cal F}_V(\Tr_k(s'))\right)$. Similarly, we have that for any $(s,s') \in R$, there is $({\cal M}, s') \models \bigvee_{(s,s'')\in R}
-    {\cal F}_V(\Tr_k(s'') )$. Therefore, $({\cal M},s)\models \ALL \NEXT\left(\bigvee_{(s,s'')\in R}
-    {\cal F}_V(\Tr_k(s'') )\right)$.
-
-(ii)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) - \overline V = L'(s') - \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
-    \textbf{Step}. Supposing $n>0$ and the result talked in (ii) is correct in $n-1$.\\
-   (a) It is easy to see that $L(s) - \overline V = L'(s') - \overline V$.\\
-   (b) We will show that for each $(s, s_1) \in R$, there is a $(s', s_1') \in R'$ such that $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$.
-      Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models \ALL \NEXT\left(\bigvee_{(s',s_1')\in R}{\cal F}_V(\Tr_{n-1}(s_1') )\right)$.
-      Therefore, for each $(s, s_1) \in R$ there is a $(s', s_1') \in R'$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1') )$. Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.\\
-   (c) We will show that for each $(s',s_1')\in R'$ there is a $(s,s_1)\in R$ such that $\Tr_{n-1}(s_1') \lrto_{\overline V} \Tr_{n-1}(s_1)$.
-      Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models  \bigwedge_{(s',s_1')\in R'} \EXIST \NEXT {\cal F}_V(\Tr_{n-1}(s_1'))$.
-      Therefore, for each $(s',s_1')\in R'$ there is a $(s,s_1)\in R$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1')$.
-      Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.
+(i) Let $k={ch({\cal M},V)}$, we give the proof idea of it. For one thing, we can check $({\cal M},s)\models{\cal F}_V(\Tr_n(s))$ for $n \geq 0$ and then $(\Hm, s)\models {\cal F}_V(\Tr_k(s))$. For another, $({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$ implies 
+  $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$. In this case, we can easily proof that for each $s'\in S$, $({\cal M},s) \lrto_{\overline V} ({\cal M},s')$ if and only if $({\cal M},s')\models{\cal F}_V(\Tr_k(s))$. And then obtained our result.
+  
+(ii) This is obtained from Lemma~\ref{lem:Vb:TrFormula:Equ}.
 \end{proof}
 
-
-A consequence of the previous lemma is:
-
-\begin{lemma}\label{div_s}
-Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure, $k={ch({\cal M},V)}$ and $s\in S$.
-%There is a formula $\phi$ such that
-\begin{itemize}
-  \item $(\Hm, s)\models {\cal F}_V(\Tr_k(s))$, and
-  \item for each $s'\in S$, $({\cal M},s) \lrto_{\overline V} ({\cal M},s')$
-  if and only if $({\cal M},s')\models{\cal F}_V(\Tr_k(s))$.
-\end{itemize}
-\end{lemma}
-\begin{proof}
-Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha - V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
-\end{proof}
+%In order to prove Theorem~\ref{CF}, we prove the following two lemmas at first.
+%
+%\begin{lemma}\label{Bn:to:Tn}
+%Let $V\subseteq \Ha$, $\Hm=(S, R, L,s_0)$ and $\Hm'=(S', R', L',s_0')$ be two model structures,
+%$s\in S$, $s'\in S'$ and $n\ge 0$.
+%\begin{enumerate}[(i)]
+%  \item $({\cal M},s)\models{\cal F}_V(\Tr_n(s))$.
+%  \item If $({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$ then
+%  $\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$.
+%\end{enumerate}
+%\end{lemma}
+%\begin{proof}
+%(i) It is apparent from the definition of ${\cal F}_V(\Tr_n(s))$.
+%Base. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$.\\
+%Step. For $k \geq 0$, supposing the result talked in (i) is correct in $k - 1$, we will show that $({\cal M},s)\models {\cal F}_V(\Tr_{k+1}(s))$, i.e.,:
+%\begin{equation*}
+%\resizebox{.91\linewidth}{!}{$
+%    \displaystyle
+% %\[
+% ({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
+%    \EXIST \NEXT T(s')\right)
+%    \wedge \ALL \NEXT\left(\bigvee_{(s,s')\in R}
+%    T(s')\right)
+%    \wedge {\cal F}_V(\Tr_0(s)).%\]
+% $}
+%\end{equation*}
+%Where $T(s') ={\cal F}_V(\Tr_k(s'))$. It is apparent that $({\cal M},s)\models {\cal F}_V(\Tr_0(s))$ by Base. It is apparent that for any $(s,s') \in R$, there is $({\cal M}, s') \models {\cal F}_V(\Tr_k(s'))$ by inductive assumption. Then we have $({\cal M},s)\models \EXIST \NEXT {\cal F}_V(\Tr_k(s')$, and then $({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
+%    \EXIST \NEXT {\cal F}_V(\Tr_k(s'))\right)$. Similarly, we have that for any $(s,s') \in R$, there is $({\cal M}, s') \models \bigvee_{(s,s'')\in R}
+%    {\cal F}_V(\Tr_k(s'') )$. Therefore, $({\cal M},s)\models \ALL \NEXT\left(\bigvee_{(s,s'')\in R}
+%    {\cal F}_V(\Tr_k(s'') )\right)$.
+%
+%(ii)  \textbf{Base}. If $n=0$, then $(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ implies $L(s) - \overline V = L'(s') - \overline V$. Hence, $\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$.\\
+%    \textbf{Step}. Supposing $n>0$ and the result talked in (ii) is correct in $n-1$.\\
+%   (a) It is easy to see that $L(s) - \overline V = L'(s') - \overline V$.\\
+%   (b) We will show that for each $(s, s_1) \in R$, there is a $(s', s_1') \in R'$ such that $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$.
+%      Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models \ALL \NEXT\left(\bigvee_{(s',s_1')\in R}{\cal F}_V(\Tr_{n-1}(s_1') )\right)$.
+%      Therefore, for each $(s, s_1) \in R$ there is a $(s', s_1') \in R'$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1') )$. Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.\\
+%   (c) We will show that for each $(s',s_1')\in R'$ there is a $(s,s_1)\in R$ such that $\Tr_{n-1}(s_1') \lrto_{\overline V} \Tr_{n-1}(s_1)$.
+%      Since $(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$, then $(\Hm, s) \models  \bigwedge_{(s',s_1')\in R'} \EXIST \NEXT {\cal F}_V(\Tr_{n-1}(s_1'))$.
+%      Therefore, for each $(s',s_1')\in R'$ there is a $(s,s_1)\in R$ such that $(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1')$.
+%      Hence, $\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$ by inductive hypothesis.
+%\end{proof}
+%
+%
+%A consequence of the previous lemma is:
+%
+%\begin{lemma}\label{div_s}
+%Let $V\subseteq \Ha$, $\Hm=(S,R,L,s_0)$ a model structure, $k={ch({\cal M},V)}$ and $s\in S$.
+%%There is a formula $\phi$ such that
+%\begin{itemize}
+%  \item $(\Hm, s)\models {\cal F}_V(\Tr_k(s))$, and
+%  \item for each $s'\in S$, $({\cal M},s) \lrto_{\overline V} ({\cal M},s')$
+%  if and only if $({\cal M},s')\models{\cal F}_V(\Tr_k(s))$.
+%\end{itemize}
+%\end{lemma}
+%\begin{proof}
+%Let $\phi = {\cal F}_V(\Tr_k(s))$, where $k$ is the V-characteristic number of $\Hm$. $(\Hm, s) \models \phi$ by the definition of ${\cal F}$, and then $\forall s' \in S$, if $s \lrto_{\overline V} s'$ there is $(\Hm, s') \models \phi$ by Theorem~\ref{thm:V-bisimulation:EQ} due to $\IR(\phi, \Ha - V)$. Supposing $(\Hm, s')\models \phi$, if $s \nleftrightarrow_{\overline V} s'$, then $\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$, and then $(\Hm, s')\nvDash \phi$ by Lemma~\ref{Bn:to:Tn}, a contradiction.
+%\end{proof}
 
 
 
@@ -900,6 +931,9 @@ Moreover, we know that any initial \MPK-structure can be described as a \CTL\ fo
     \varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
 \end{equation}
 \end{lemma}
+\begin{proof}
+Let $(\Hm', s_0')$ be a model of $\varphi$. Then $(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$ due to $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$. On the other hand, suppose that $(\Hm', s_0')$ is a model of $\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$. Then there is a $(\Hm, s_0)\in \Mod(\varphi)$ such that $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm, s_0)$. And then $(\Hm, s_0) \lrto_{\O} (\Hm', s_0')$ by Theorem~\ref{CF}. Therefore, $(\Hm, s_0)$ is also a model of $\varphi$ by Theorem~\ref{thm:V-bisimulation:EQ}.
+\end{proof}
 It follows that any \CTL\ formula  can rewritten in the form of a  characterizing formula (in the form of a disjunction of characterizing formulas; each corresponds to a single model.
 %It follows that any \CTL\ formula can be described by the disjunction of the characterizing formulas of all the models of itself due to the number of models of a \CTL\ formula is finite.
 
@@ -1137,6 +1171,26 @@ $\Mod(\psi)=\Mod(\psi')$, i.e., $\psi$ and $\psi'$ have the same models. In the 
 of equivalence the SNC (WSC) is unique (up to equivalence).
 
 \begin{example}\label{examp:WSC}
+Let $\psi = sl \supset (\ALL\NEXT sr \vee \EXIST \NEXT le \vee \EXIST \NEXT(se \vee lc))$, $\varphi = sl \supset \ALL\NEXT sr$, $\Ha =\{sl, sr, se, lc, le\}$ and $V = \{sl, sr\}$, then we can check as follows that the WSC of $\psi$ on $V$ under our initial  \MPK-structure $(\Hm, s_0)$ in Figure~\ref{BVM} is $\varphi$.
+
+We check this result from the following two steps:
+\begin{enumerate}[(i)]
+  \item It is apparent that $\varphi \models \psi$ and $\Var(\varphi) \subseteq V$. Besides, $(\Hm, s_0) \models \varphi \wedge \psi$, hence $(\Hm, s_0) \models \varphi \supset \psi$, which means $\varphi$ is a SC of $\psi$ on $V$ under $(\Hm, s_0)$,
+  \item We will show that for any SC $\varphi'$ of $\psi$ on $V$ under $(\Hm, s_0)$, there is $(\Hm, s_0) \models \varphi' \supset \varphi$. Following Figure~\ref{carVB}, we can see that $(\Hm', s_0) \lrto_{\Ha \setminus V} (\Hm, s_0)$. By Theorem~\ref{CF} we can easily obtain the characterizing formula of $(\Hm', s_0)$, \ie ${\cal F}_V(\Hm', s_0) = sl \wedge \neg sr \wedge \ALL\GLOBAL ((sl \wedge \neg sr) \supset \ALL \NEXT (\neg sl \wedge sr)) \wedge \ALL \GLOBAL((\neg sl \wedge sr) \supset \ALL\NEXT (sl \wedge \neg sr))$, due to $ch(\Hm, \Ha \setminus V) =0$.
+
+      If ${\cal F}_V(\Hm', s_0) \not \models \varphi'$ or $\varphi \models \neg sl$ then we have ${\cal F}_V(\Hm', s_0) \models \varphi' \supset \varphi$ i.e. $(\Hm, s_0) \models \varphi' \supset \varphi$. Therefore, we suppose ${\cal F}_V(\Hm', s_0) \models \varphi'$. In this case we can construct $\varphi'$ as follows: (1) $sl$ is a sub-formula of $\varphi'$ due to ${\cal F}_V(\Hm', s_0) \models \varphi'$; (2) $sl \supset \ALL\NEXT sr$ is also a sub-formula by (1) and we need $(\Hm, s_0) \models \varphi' \supset \psi$ and $\Var(\varphi') \subseteq V$. This means that each SC $\varphi'$ should be as one of the following form with $\beta$ be any other \CTL\ formula of $V$
+      \[
+      sl \wedge (sl \supset \ALL\NEXT sr) \wedge \beta;\ \  sl \wedge (sl \supset \ALL\NEXT sr) \vee \beta.
+      \]
+    In this case, we have $(\Hm, s_0) \models \varphi' \supset \varphi$ for all SC $\varphi'$ of $\psi$ on $V$ under $(\Hm, s_0)$ since $\forall \alpha$ with $\Var(\alpha) \subseteq V$ $(\Hm, s_0) \models \alpha$ iff $(\Hm', s_0) \models \alpha$ by Theorem~\ref{thm:V-bisimulation:EQ}.
+\end{enumerate}
+
+\begin{figure}[ht]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=3cm]{carVB.png}\\
+  \caption{A model structure $\Hm'$ with initial state $s_0$}\label{carVB}
+\end{figure}
 
 \end{example}
 
@@ -1526,8 +1580,9 @@ Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
   ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.\\
 \begin{proof}
 This theorem can be proved by inducting on the formula $\phi$ and supposing $\Var(\phi) \cap V = \O$.
+Let ${\cal K}_1 = (\Hm, s)$ and ${\cal K}_2 = (\Hm', s')$.
 
-Here we only prove the only-if direction. The other direction can be similarly proved.
+%Here we only prove the only-if direction. The other direction can be similarly proved.
 
 \textbf{Case} $\phi = p$ where $p \in \Ha - V$:\\
 $(\Hm, s) \models \phi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
@@ -1596,7 +1651,7 @@ $(s, s')\in \Hb_0$. Therefore $(s_1, s_2) \in \Hb_1$, and then we will have $(s_
   There exists a least  $k$ such that
   $\Tr_k(s)$ and $\Tr_k(s')$ are not $V$-bisimilar.\\
 \begin{proof}
-If $s\not\lrto_V s'$, then there exists a least constant $k$ such that $(s_i, s_j) \notin \Hb_k$, and then there is a least constant m ($m \leq k$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-corresponding by Proposition~\ref{B_to_T}. Let $c=m$, the lemma is proved.
+If $s\not\lrto_V s'$, then there exists a least constant $c$ such that $(s_i, s_j) \notin \Hb_c$, and then there is a least constant $m$ ($m \leq c$) such that $\Tr_m(s_i)$ and $\Tr_m(s_j)$ are not V-bisimilar by Proposition~\ref{B_to_T}. Let $k=m$, the lemma is proved.
 \end{proof}
 
 
